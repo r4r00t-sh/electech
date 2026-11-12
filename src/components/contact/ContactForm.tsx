@@ -120,7 +120,7 @@ export function ContactForm() {
           <input
             {...register("projectType")}
             className={inputClass}
-            placeholder="Fit-out, villa, maintenance…"
+            placeholder="MEP or maintenance"
           />
         </Field>
       </div>

@@ -35,7 +35,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "MEP Contractor Dubai",
   description: siteConfig.description,
-  image: "/images/heroes/hero-02-construction-site-workers.jpg",
+  image: "/images/heroes/hero-02-electrical-installation.jpg",
   path: "/",
 });
 
@@ -62,7 +62,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-5 max-w-xl text-[17px] text-white/90 md:text-lg">
               One-stop mechanical, electrical, plumbing and fire safety
-              contractor with 12+ years delivering precision work across the UAE.
+              contractor with 14+ years in the UAE delivering precision work.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/solutions">Explore Our Solutions</Button>

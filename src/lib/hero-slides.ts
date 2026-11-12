@@ -4,8 +4,8 @@ import type { MediaRef } from "@/lib/media";
 
 const HOME_HEROES: MediaRef[] = [
   {
-    src: "/images/heroes/hero-02-construction-site-workers.jpg",
-    alt: "Construction workers in high-visibility clothing working on an active concrete slab with rebar.",
+    src: "/images/heroes/hero-02-electrical-installation.jpg",
+    alt: "Electrician in safety gear installing and testing wiring at an electrical distribution box.",
     objectPosition: "center right",
   },
   {

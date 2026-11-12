@@ -41,7 +41,7 @@ export function Button({
 
   if (href) {
     return (
-      <Link href={href} className={classes} aria-label={ariaLabel}>
+      <Link href={href} className={classes} aria-label={ariaLabel} onClick={onClick}>
         {children}
       </Link>
     );

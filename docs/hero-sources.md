@@ -6,7 +6,7 @@ All heroes are free commercial-use stock (Unsplash License or Pexels License). F
 
 | File | Source | Why it fits |
 |------|--------|-------------|
-| `heroes/hero-02-construction-site-workers.jpg` | Unsplash `photo-1504307651254-35680f356dfd` | Live-site workers in high-vis on slab/rebar — delivery credibility |
+| `heroes/hero-02-electrical-installation.jpg` | Unsplash `photo-1621905251918-48416bd8575a` | Electrician at a distribution box — electrical / MEP installation |
 | `heroes/hero-03-plant-room-pipework.jpg` | Unsplash `photo-1513828583688-c52646db42da` | Clean stainless plant room with pumps and pipework — MEP craft |
 
 Slider behaviour: 6.5s interval, 1.2s crossfade, Ken Burns max 5%, pause on hover, `prefers-reduced-motion` respected, first slide `priority` / eager.

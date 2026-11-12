@@ -28,7 +28,7 @@ export const siteConfig = {
   },
   stats: [
     { value: 2012, label: "Established", suffix: "", prefix: "" },
-    { value: 12, label: "Years in the UAE", suffix: "+", prefix: "" },
+    { value: 14, label: "Years in the UAE", suffix: "+", prefix: "" },
     {
       value: 0,
       label: "Projects delivered",

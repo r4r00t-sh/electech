@@ -38,7 +38,7 @@ export default function CertificationsPage() {
         <p className="mt-3 max-w-2xl text-slate-dark">
           International Organization for Standardization management systems.
         </p>
-        <div className="relative mx-auto mt-8 aspect-[806/372] max-w-3xl overflow-hidden rounded-md border border-navy/10 bg-white">
+        <div className="relative mx-auto mt-8 aspect-[797/372] max-w-3xl overflow-hidden rounded-md border border-navy/10 bg-white">
           <PhotoMedia
             image={certificationsBoard}
             sizes="(max-width: 768px) 100vw, 720px"

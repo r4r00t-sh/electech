@@ -14,7 +14,7 @@ export const aboutContent = {
         heading: "What We Do",
         paragraphs: [
           "Electech is a leader in delivering comprehensive Electromechanical Works across the UAE. Renowned for our commitment to excellence, we serve a diverse clientele, including interior fit-out, construction, facility management, villa developers, healthcare, the hospitality sector, and private owners of commercial and residential properties.",
-          "As a leading Electromechanical company in Dubai for over 12 years, we have been breaking creative boundaries and redefining Electromechanical services. We provide beautiful living spaces and create purposeful masterpieces enriched with comfort, convenience, and flamboyance. We have transformed homes, palaces, offices, restaurants, and hotels into environments as unique as our clients themselves. Serving those who desire only the best for their properties, we offer innovative designs built to your personalized preferences.",
+          "As a leading Electromechanical company in Dubai for over 14 years, we have been breaking creative boundaries and redefining Electromechanical services. We provide beautiful living spaces and create purposeful masterpieces enriched with comfort, convenience, and flamboyance. We have transformed homes, palaces, offices, restaurants, and hotels into environments as unique as our clients themselves. Serving those who desire only the best for their properties, we offer innovative designs built to your personalized preferences.",
         ],
       },
       {
@@ -39,7 +39,7 @@ export const aboutContent = {
       {
         heading: "Our Approach",
         paragraphs: [
-          "Leveraging the latest technologies, a highly trained workforce, and over 12 years of expertise, we handle all types of complex and bespoke projects. Our emphasis is on creating a balanced living environment, and all other aspects of the atmosphere are beautifully coordinated to complement your taste and personality. We work with you to make your living spaces the ideal homes where architectural excellence and design finesse integrate seamlessly. When our team takes up a project, we prioritize creating the perfect blend of aesthetics, luxury, and comfortable living.",
+          "Leveraging the latest technologies, a highly trained workforce, and over 14 years of expertise, we handle all types of complex and bespoke projects. Our emphasis is on creating a balanced living environment, and all other aspects of the atmosphere are beautifully coordinated to complement your taste and personality. We work with you to make your living spaces the ideal homes where architectural excellence and design finesse integrate seamlessly. When our team takes up a project, we prioritize creating the perfect blend of aesthetics, luxury, and comfortable living.",
         ],
       },
     ],
@@ -157,7 +157,7 @@ export const aboutContent = {
           "Timely delivery supported by weekly reporting and clear stakeholder communication.",
       },
       {
-        title: "12+ years in Dubai",
+        title: "14+ years in the UAE",
         description:
           "Operating since 2012 across fit-out, hospitality, healthcare, government and residential work.",
       },

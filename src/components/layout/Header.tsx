@@ -82,6 +82,8 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
+  const [mobileSection, setMobileSection] = useState<string | null>(null);
+  const [mobileBucket, setMobileBucket] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -96,6 +98,20 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
+
+  useEffect(() => {
+    if (!mobileOpen) {
+      setMobileSection(null);
+      setMobileBucket(null);
+    }
+  }, [mobileOpen]);
+
+  const closeMobile = () => setMobileOpen(false);
+
+  const toggleMobileSection = (key: string) => {
+    setMobileSection((current) => (current === key ? null : key));
+    setMobileBucket(null);
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white">
@@ -251,48 +267,119 @@ export function Header() {
           mobileOpen ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
-        <nav className="container-site flex h-full flex-col gap-2 overflow-y-auto py-6 pb-28">
-          {nav.map((item) => (
-            <div key={item.label} className="border-b border-navy/10 pb-3">
-              <Link
-                href={item.href}
-                className="block py-2 font-display text-lg font-semibold text-navy"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
-              {item.mega
-                ? solutionChildren.map((bucket) => (
-                    <div key={bucket.id} className="mb-3 ml-2">
-                      <p className="mt-2 text-xs font-semibold text-slate">
-                        {bucket.short}
-                      </p>
-                      {bucket.pages.map((page) => (
-                        <Link
-                          key={page.href}
-                          href={page.href}
-                          className="block py-1.5 text-sm text-slate-dark"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {page.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))
-                : null}
-              {item.children?.map((child) => (
+        <nav className="container-site flex h-full flex-col gap-1 overflow-y-auto py-6 pb-28">
+          {nav.map((item) => {
+            const hasDropdown = Boolean(item.children || item.mega);
+            const sectionOpen = mobileSection === item.label;
+
+            if (!hasDropdown) {
+              return (
                 <Link
-                  key={child.href}
-                  href={child.href}
-                  className="ml-2 block py-1.5 text-sm text-slate-dark"
-                  onClick={() => setMobileOpen(false)}
+                  key={item.label}
+                  href={item.href}
+                  className="border-b border-navy/10 py-3 font-display text-lg font-semibold text-navy"
+                  onClick={closeMobile}
                 >
-                  {child.label}
+                  {item.label}
                 </Link>
-              ))}
-            </div>
-          ))}
-          <Button href="/contact" className="mt-4 w-full">
+              );
+            }
+
+            return (
+              <div key={item.label} className="border-b border-navy/10">
+                <div className="flex items-center gap-1">
+                  <Link
+                    href={item.href}
+                    className="flex-1 py-3 font-display text-lg font-semibold text-navy"
+                    onClick={closeMobile}
+                  >
+                    {item.label}
+                  </Link>
+                  <button
+                    type="button"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-md text-navy"
+                    aria-expanded={sectionOpen}
+                    aria-label={`${sectionOpen ? "Collapse" : "Expand"} ${item.label}`}
+                    onClick={() => toggleMobileSection(item.label)}
+                  >
+                    <ChevronDown
+                      className={cn(
+                        "h-5 w-5 transition-transform",
+                        sectionOpen && "rotate-180",
+                      )}
+                    />
+                  </button>
+                </div>
+
+                {sectionOpen && item.children ? (
+                  <div className="mb-3 space-y-0.5 pl-2">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.href}
+                        href={child.href}
+                        className="block rounded-md px-2 py-2.5 text-sm text-slate-dark hover:bg-mist"
+                        onClick={closeMobile}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+
+                {sectionOpen && item.mega
+                  ? solutionChildren.map((bucket) => {
+                      const bucketOpen = mobileBucket === bucket.id;
+                      return (
+                        <div key={bucket.id} className="mb-2 pl-2">
+                          <div className="flex items-center gap-1">
+                            <Link
+                              href={bucket.href}
+                              className="flex-1 rounded-md px-2 py-2 text-sm font-semibold text-navy"
+                              onClick={closeMobile}
+                            >
+                              {bucket.label}
+                            </Link>
+                            <button
+                              type="button"
+                              className="inline-flex h-10 w-10 items-center justify-center rounded-md text-slate-dark"
+                              aria-expanded={bucketOpen}
+                              aria-label={`${bucketOpen ? "Collapse" : "Expand"} ${bucket.label}`}
+                              onClick={() =>
+                                setMobileBucket((current) =>
+                                  current === bucket.id ? null : bucket.id,
+                                )
+                              }
+                            >
+                              <ChevronDown
+                                className={cn(
+                                  "h-4 w-4 transition-transform",
+                                  bucketOpen && "rotate-180",
+                                )}
+                              />
+                            </button>
+                          </div>
+                          {bucketOpen ? (
+                            <div className="mb-1 space-y-0.5 pl-2">
+                              {bucket.pages.map((page) => (
+                                <Link
+                                  key={page.href}
+                                  href={page.href}
+                                  className="block rounded-md px-2 py-2 text-sm text-slate-dark hover:bg-mist"
+                                  onClick={closeMobile}
+                                >
+                                  {page.label}
+                                </Link>
+                              ))}
+                            </div>
+                          ) : null}
+                        </div>
+                      );
+                    })
+                  : null}
+              </div>
+            );
+          })}
+          <Button href="/contact" className="mt-4 w-full" onClick={closeMobile}>
             Get a Quote
           </Button>
         </nav>

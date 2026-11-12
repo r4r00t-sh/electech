@@ -172,8 +172,8 @@ export function stockImageForBucket(
 /** Default hero slides — prefer resolveHeroSlides() dedicated files */
 export const defaultHeroSlides: MediaRef[] = [
   {
-    src: "/images/heroes/hero-02-construction-site-workers.jpg",
-    alt: "Site workers in high-vis on an active slab.",
+    src: "/images/heroes/hero-02-electrical-installation.jpg",
+    alt: "Electrician installing wiring at an electrical distribution box.",
     objectPosition: "center right",
   },
   {
