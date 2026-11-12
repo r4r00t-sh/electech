@@ -250,8 +250,12 @@ export const homeBucketImages: Record<BucketId, MediaRef> = {
   maintenance: media.hvacSquare,
 };
 
-/** Why-choose panel on home */
-export const homeWhyImage: MediaRef = media.elv;
+/** Why-choose panel on home — craftsmanship / delivery, not ELV racks */
+export const homeWhyImage: MediaRef = {
+  src: "/images/pages/why-choose-workshop.jpg",
+  alt: "Industrial fabricator welding steel with precision on the shop floor",
+  objectPosition: "center right",
+};
 
 /**
  * Homepage sectors — all 8 matched to a subject-appropriate photo.
