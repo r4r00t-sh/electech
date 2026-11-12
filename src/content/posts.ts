@@ -10,8 +10,8 @@ export const posts: BlogPost[] = [
     author: "ElecTech Engineering Team",
     publishedAt: "2025-09-12",
     readingTime: 8,
-    ogImage: "/images/services/electrical-system.jpg",
-    ogAlt: "Engineer reviewing MEP progress documentation on site", featured: true,
+    ogImage: "/images/pages/certifications-documents.jpg",
+    ogAlt: "Professional reviewing project documents and charts at a desk", featured: true,
     body: `
 ## Why weekly reporting matters
 
@@ -44,18 +44,6 @@ Transparent reporting is not bureaucracy — it is how professional MEP teams pr
 [CLIENT TO PROVIDE: brand-approved example metrics or anonymised sample pages.]
 
 Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
 `.trim(),
   },
   {
@@ -67,8 +55,8 @@ Clear documentation, honest status and early coordination remain the practical f
     author: "ElecTech Engineering Team",
     publishedAt: "2025-10-03",
     readingTime: 8,
-    ogImage: "/images/services/hvac-refrigeration.jpg",
-    ogAlt: "HVAC ductwork installation in a commercial ceiling void",
+    ogImage: "/images/pages/hvac-equipment-detail.jpg",
+    ogAlt: "Modern interior with exposed ceiling services and glazing",
     body: `
 ## Start with the survey
 
@@ -99,24 +87,6 @@ A disciplined HVAC checklist is less about paperwork and more about preventing i
 [CLIENT TO PROVIDE: any client-specific standards or preferred equipment notes for publication.]
 
 Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
 `.trim(),
   },
   {
@@ -128,8 +98,8 @@ Clear documentation, honest status and early coordination remain the practical f
     author: "ElecTech Engineering Team",
     publishedAt: "2025-11-01",
     readingTime: 8,
-    ogImage: "/images/services/fire-alarm-install.jpg",
-    ogAlt: "Fire alarm panel and sprinkler interface in a commercial building",
+    ogImage: "/images/pages/fire-control-panels.jpg",
+    ogAlt: "Fire sprinkler riser with alarm bell and control valves",
     body: `
 ## Systems that must talk
 
@@ -158,26 +128,6 @@ A certified install still needs drills, inspections and responsive maintenance. 
 Life-safety performance is a system property, not a single product. Getting interfaces right on paper and on site is the difference between a certificate and genuine readiness.
 
 [CLIENT TO PROVIDE: authority-facing wording and any brand-approved case notes.]
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
-
-Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
 
 Clear documentation, honest status and early coordination remain the practical foundations of professional MEP delivery on live sites across the UAE.
 `.trim(),

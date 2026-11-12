@@ -34,4 +34,4 @@
 
 ## Imagery
 
-Real photography from electechmep.com under `/public/images/services/`. Prefer wide 1232×542 assets for heroes. Low-res 278×206 assets need client replacement (see HANDOVER).
+Photography lives under `/public/images/pages/` (page heroes) and `/public/images/projects/works/` (client project photos). The legacy `/public/images/services/` folder is old-site imagery and must not be referenced.

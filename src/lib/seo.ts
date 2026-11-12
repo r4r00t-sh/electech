@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/content/site";
 
-/** Absolute site origin from env (Vercel preview / production). */
+/** Absolute production site origin — never use preview-deployment hosts. */
 export function getSiteUrl() {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
-  }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL.replace(/\/$/, "")}`;
   }
   return siteConfig.url.replace(/\/$/, "");
 }
@@ -16,7 +13,7 @@ export function pageMetadata({
   title,
   description,
   path = "",
-  image = "/images/services/hvac-installation.jpg",
+  image = "/images/pages/mep-industrial-systems.jpg",
 }: {
   title: string;
   description: string;

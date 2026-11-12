@@ -9,7 +9,7 @@
     "featured": true
   },
   {
-    "name": "Mövenpick",
+    "name": "M\u00f6venpick",
     "slug": "movenpick",
     "logo": "/images/clients/client-movenpick.jpg",
     "sector": "Hospitality",
@@ -80,13 +80,13 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-wasl-02.jpeg",
     "order": 9,
-    "featured": true
+    "featured": false
   },
   {
     "name": "A&T Group Interiors",
     "slug": "at-group",
     "logo": "/images/clients/client-at-group.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-at-group-02.jpeg",
     "order": 10,
     "featured": false
@@ -114,7 +114,7 @@
     "name": "Summertown Interiors",
     "slug": "summertown",
     "logo": "/images/clients/client-summertown.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-summertown-02.jpeg",
     "order": 13,
     "featured": false
@@ -159,7 +159,7 @@
     "name": "Arco Interiors",
     "slug": "arco",
     "logo": "/images/clients/client-arco.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-arco-02.jpeg",
     "order": 18,
     "featured": false
@@ -196,7 +196,7 @@
     "name": "KG Interiors",
     "slug": "kg-interiors",
     "logo": "/images/clients/client-kg-interiors.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-kg-interiors-02.jpeg",
     "order": 22,
     "featured": false
@@ -220,10 +220,10 @@
     "featured": true
   },
   {
-    "name": "Visualize Interior Decsheets",
+    "name": "Visualize Interior Decoration LLC",
     "slug": "visualize",
     "logo": "/images/clients/client-visualize.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-visualize-02.jpeg",
     "order": 25,
     "featured": false
@@ -253,7 +253,7 @@
     "sector": "Commercial",
     "sourceFile": "clients/client-real-image-02.jpeg",
     "order": 28,
-    "featured": true,
+    "featured": false,
     "storySlug": "corporate-headquarters-upgrade-real-image"
   },
   {
@@ -263,7 +263,7 @@
     "sector": "Commercial",
     "sourceFile": "clients/client-ascentia-02.jpeg",
     "order": 29,
-    "featured": true,
+    "featured": false,
     "storySlug": "commercial-office-revamp-ascentia"
   },
   {
@@ -273,7 +273,7 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-grand-hyatt-02.jpeg",
     "order": 30,
-    "featured": true
+    "featured": false
   },
   {
     "name": "Barr + Wray",
@@ -297,7 +297,7 @@
     "name": "Royal Classic Contracting",
     "slug": "royal-classic",
     "logo": "/images/clients/client-royal-classic.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-royal-classic-02.jpeg",
     "order": 33,
     "featured": false
@@ -345,7 +345,7 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-marriott-02.jpeg",
     "order": 38,
-    "featured": true
+    "featured": false
   },
   {
     "name": "The Ritz-Carlton",
@@ -354,6 +354,6 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-ritz-carlton-02.jpeg",
     "order": 39,
-    "featured": true
+    "featured": false
   }
 ]

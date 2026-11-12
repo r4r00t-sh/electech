@@ -9,6 +9,7 @@ export const metadata = pageMetadata({
   title: "Why Choose Us",
   description:
     "Why fit-out firms, developers and facility managers choose ElecTech MEP in Dubai.",
+  image: "/images/pages/why-choose-workshop.jpg",
   path: "/about/why-choose-us",
 });
 
@@ -40,6 +41,9 @@ export default function WhyChooseUsPage() {
             </div>
           ))}
         </div>
+        <p className="prose-mep mt-10 text-lg font-medium text-navy">
+          {content.closing}
+        </p>
       </Section>
       <Section tone="mist">
         <CtaBanner />

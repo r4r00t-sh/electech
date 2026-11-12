@@ -9,6 +9,7 @@ export const metadata = pageMetadata({
   title: "Who We Are",
   description:
     "About ElecTech Electromechanical Works LLC — MEP contractor Dubai operating since 2012.",
+  image: "/images/pages/who-we-are-construction.jpg",
   path: "/about/who-we-are",
 });
 
@@ -26,8 +27,19 @@ export default function WhoWeArePage() {
         ]}
       />
       <Section>
-        <div className="prose-mep whitespace-pre-line text-slate">
-          {content.body}
+        <div className="space-y-10">
+          {content.sections.map((section) => (
+            <div key={section.heading}>
+              <h2 className="font-display text-2xl font-bold text-navy md:text-3xl">
+                {section.heading}
+              </h2>
+              <div className="prose-mep mt-4 space-y-4 text-slate">
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </Section>
       <Section tone="mist">

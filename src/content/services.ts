@@ -30,9 +30,7 @@ export const servicePages: ServicePage[] = [
     intro:
       "Electech Electromechanical Works LLC is a distinguished provider of MEP solutions, seamlessly integrating personalized support and accessibility with the robustness, stability, and extensive resources of a leading industry player.",
     overview: `
-Electech Electromechanical Works LLC is a distinguished provider of MEP solutions, seamlessly integrating personalized support and accessibility with the robustness, stability, and extensive resources of a leading industry player.
-
-We cater to a diverse clientele across multiple sectors, including residential, commercial, hospitality, educational institutions, healthcare, showrooms, factories, and warehouses. Our core strength lies in our unwavering commitment to meticulous design and installation practices, utilisation of superior materials, fail-safe equipment, and profound expertise in our field. We compliance with local regulations and safety standards is a cornerstone of our approach. We use certified materials, adhere to installation guidelines, and conduct regular safety inspections to ensure that all systems meet the highest standards of safety and reliability.
+We cater to a diverse clientele across multiple sectors, including residential, commercial, hospitality, educational institutions, healthcare, showrooms, factories, and warehouses. Our core strength lies in our unwavering commitment to meticulous design and installation practices, utilisation of superior materials, fail-safe equipment, and profound expertise in our field. Our compliance with local regulations and safety standards is a cornerstone of our approach. We use certified materials, adhere to installation guidelines, and conduct regular safety inspections to ensure that all systems meet the highest standards of safety and reliability.
 
 Regular maintenance and timely upgrades are crucial components of our service offering. We provide ongoing support to prevent system breakdowns and extend the lifespan of equipment. Upgrading outdated systems with modern, energy-efficient solutions not only enhances performance but also reduces operational costs, making it a smart investment for any facility.
 `.trim(),
@@ -91,7 +89,7 @@ Regular maintenance and timely upgrades are crucial components of our service of
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/mep-industrial-systems.jpg",
     heroAlt: "Coordinated MEP installation including HVAC plant and services",
   },
   {
@@ -134,7 +132,7 @@ Mechanical and Plumbing Services covers HVAC installation and plumbing and drain
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/hvac-refrigeration.jpg",
+    heroImage: "/images/pages/mechanical-factory-floor.jpg",
     heroAlt: "Mechanical plant and plumbing services installation",
   },
   {
@@ -195,7 +193,7 @@ Trust Electech for all your HVAC needs, and experience the assurance of top-notc
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/hvac-equipment-detail.jpg",
     heroAlt: "HVAC ductwork and air-conditioning installation in Dubai",
   },
   {
@@ -246,7 +244,7 @@ Our team of skilled engineers collaborates closely with clients to deliver tailo
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/plumbing.jpg",
+    heroImage: "/images/pages/plumbing-finished-bathroom.jpg",
     heroAlt: "Plumbing and drainage pipework installation",
   },
   {
@@ -294,7 +292,7 @@ Electrical Services covers electrical installation, extra low voltage installati
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/electrical-installation.jpg",
+    heroImage: "/images/pages/electrical-power-infrastructure.jpg",
     heroAlt: "Electrical installation and switchgear works",
   },
   {
@@ -345,7 +343,7 @@ By working closely with our clients, we ensure that each electrical system is ta
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/electrical-installation.jpg",
+    heroImage: "/images/pages/electrical-installation-work.jpg",
     heroAlt: "Electrical installation on a commercial project",
   },
   {
@@ -391,7 +389,7 @@ We work closely with our clients to provide accurate assessments and recommend t
           "[CLIENT TO PROVIDE: definitive ELV system list for marketing pages.]",
       },
     ],
-    heroImage: "/images/services/elv.jpg",
+    heroImage: "/images/pages/elv-server-racks.jpg",
     heroAlt: "Extra low voltage / low-current system installation",
   },
   {
@@ -442,7 +440,7 @@ Our services include customized system design, seamless installation, comprehens
           "[CLIENT TO PROVIDE: exact approvals scope for solar projects.]",
       },
     ],
-    heroImage: "/images/services/solar.jpg",
+    heroImage: "/images/pages/solar-rooftop-array.jpg",
     heroAlt: "Solar power plant installation in Dubai and Sharjah",
   },
   {
@@ -485,7 +483,7 @@ Fire Protection and Safety Services covers fire fighting and fire alarm installa
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/fire-alarm.jpg",
+    heroImage: "/images/pages/fire-services-corridor.jpg",
     heroAlt: "Fire protection and fire alarm system installation",
   },
   {
@@ -537,7 +535,7 @@ We provide regular maintenance and conduct drills to ensure the system’s effec
           "[CLIENT TO PROVIDE: Civil Defence / approvals wording for marketing pages.]",
       },
     ],
-    heroImage: "/images/services/fire-alarm.jpg",
+    heroImage: "/images/pages/fire-control-panels.jpg",
     heroAlt: "Fire fighting and fire alarm installation in the UAE",
   },
   {
@@ -591,7 +589,7 @@ Our fire stopping services include sealing and protecting penetrations through f
           "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
-    heroImage: "/images/services/fire-alarm-install.jpg",
+    heroImage: "/images/pages/fire-stopping-interior.jpg",
     heroAlt: "Fire stopping and fire-rated sealing works",
   },
   {
@@ -634,7 +632,7 @@ Maintenance includes a wide variety of tasks depending on the particular busines
           "[CLIENT TO PROVIDE: standard maintenance contract scope for marketing pages.]",
       },
     ],
-    heroImage: "/images/services/elv.jpg",
+    heroImage: "/images/pages/maintenance-workshop.jpg",
     heroAlt: "Planned MEP maintenance on building services",
   },
 ];

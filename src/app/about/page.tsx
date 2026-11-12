@@ -10,6 +10,7 @@ export const metadata = pageMetadata({
   title: "About Us",
   description:
     "Learn about ElecTech Electromechanical Works LLC — MEP and fire safety contractor in Dubai since 2012.",
+  image: "/images/pages/about-glass-tower.jpg",
   path: "/about",
 });
 

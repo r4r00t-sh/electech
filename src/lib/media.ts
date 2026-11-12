@@ -1,8 +1,13 @@
 import type { BucketId } from "@/lib/buckets";
 
 /**
- * Unique photography inventory + display-layer image map.
- * Prefer files the client drops into /public/images (hero-*.jpg, etc.).
+ * Display-layer image map.
+ *
+ * Rules:
+ * - Never use the legacy old-site service photo folder.
+ * - Prefer client-uploaded /images/projects/works/* where the subject matches.
+ * - Otherwise use the page heroes under /images/pages/*, matched by subject
+ *   (hotel is not a restaurant bar; healthcare is not fire-alarm hardware).
  *
  * TODO(image): replace topic stand-ins with dedicated project photography —
  * see /docs/image-todo.md
@@ -18,53 +23,77 @@ export type MediaRef = {
   objectPosition?: string;
 };
 
+/** Topic photography — all sourced from /images/pages (new site library). */
 export const media = {
   hvacWide: {
-    src: "/images/services/hvac-installation.jpg",
-    alt: "Air-conditioning ductwork and HVAC installation on a Dubai project",
+    src: "/images/pages/hvac-equipment-detail.jpg",
+    alt: "Modern interior with exposed ceiling services, glazing and ventilation",
   },
   hvacSquare: {
-    src: "/images/services/hvac-refrigeration.jpg",
-    alt: "Air-conditioning and refrigeration plant installation",
+    src: "/images/pages/maintenance-workshop.jpg",
+    alt: "Technician servicing a rooftop air-conditioning unit",
   },
   electricalWide: {
-    src: "/images/services/electrical-installation.jpg",
-    alt: "Electrical installation and cable containment on site",
+    src: "/images/pages/electrical-installation-work.jpg",
+    alt: "Organised circuit-breaker panel with colour-coded wiring",
   },
   electricalSmall: {
-    src: "/images/services/electrical-system.jpg",
-    alt: "Electrical system installation detail",
-    lowRes: true,
+    src: "/images/pages/electrical-power-infrastructure.jpg",
+    alt: "Electrical switchgear corridor in an industrial control room",
   },
   plumbingWide: {
-    src: "/images/services/plumbing.jpg",
-    alt: "Plumbing pipework installation in a building services shaft",
+    src: "/images/pages/plumbing-finished-bathroom.jpg",
+    alt: "Finished bathroom with modern plumbing fixtures",
   },
   plumbingSmall: {
-    src: "/images/services/plumbing-drainage.jpg",
-    alt: "Plumbing and drainage installation",
-    lowRes: true,
+    src: "/images/pages/mechanical-factory-floor.jpg",
+    alt: "Industrial pipework, valves and gauges on a plant wall",
   },
   elv: {
-    src: "/images/services/elv.jpg",
-    alt: "Extra low voltage / low-current system installation in Dubai",
-    lowRes: true,
+    src: "/images/pages/elv-server-racks.jpg",
+    alt: "Server racks with organised low-current cabling and status lights",
   },
   fireWide: {
-    src: "/images/services/fire-alarm.jpg",
-    alt: "Fire alarm and life-safety system installation in the UAE",
+    src: "/images/pages/fire-services-corridor.jpg",
+    alt: "Red fire-sprinkler risers and valve manifold",
   },
   fireSmall: {
-    src: "/images/services/fire-alarm-install.jpg",
-    alt: "Fire alarm installation works in Dubai",
-    lowRes: true,
+    src: "/images/pages/fire-control-panels.jpg",
+    alt: "Fire sprinkler riser with alarm bell, gauges and control valves",
+  },
+  fireStopping: {
+    src: "/images/pages/fire-stopping-interior.jpg",
+    alt: "Open electrical junction box showing cable pathways that need fire-stopping",
   },
   solar: {
-    src: "/images/services/solar.jpg",
-    alt: "Solar power plant installation in Dubai and Sharjah",
-    lowRes: true,
+    src: "/images/pages/solar-rooftop-array.jpg",
+    alt: "Photovoltaic solar array under a clear sky",
   },
-} as const;
+  mepPlant: {
+    src: "/images/pages/mep-industrial-systems.jpg",
+    alt: "Switchgear corridor with coordinated building services",
+  },
+  corporateOffice: {
+    src: "/images/pages/clients-corporate-office.jpg",
+    alt: "Contemporary glazed office corridor and workspace",
+  },
+  cleanInterior: {
+    src: "/images/pages/projects-office-interior.jpg",
+    alt: "Bright, clean interior with glass partitions and a long corridor",
+  },
+  residentialTower: {
+    src: "/images/pages/about-glass-tower.jpg",
+    alt: "Modern apartment building exterior with glass and white cladding",
+  },
+  reportsDesk: {
+    src: "/images/pages/certifications-documents.jpg",
+    alt: "Professional reviewing project documents and charts at a desk",
+  },
+  drawingsDesk: {
+    src: "/images/pages/insights-technical-desk.jpg",
+    alt: "Architectural drawings and technical plans on a desk",
+  },
+} as const satisfies Record<string, MediaRef>;
 
 /** Client-uploaded project photography (named works) */
 export const works = {
@@ -76,19 +105,19 @@ export const works = {
     src: "/images/projects/works/office-commercial-fitout-01.jpg",
     alt: "Open-plan commercial office with ceiling services and workstations.",
   },
-  governmentEtisalat: {
+  etisalatOffice: {
     src: "/images/projects/works/office-etisalat-open-plan-01.jpg",
     alt: "Open-plan office floor with desks, partitions and ceiling services.",
   },
-  restaurant1: {
+  restaurantDining: {
     src: "/images/projects/works/restaurant-dining-interior-01.jpg",
     alt: "Restaurant dining room with tables, chairs and ambient lighting.",
   },
-  restaurant2: {
+  restaurantBar: {
     src: "/images/projects/works/restaurant-bar-lounge-01.jpg",
     alt: "Restaurant bar and lounge with decorative lighting and seating.",
   },
-} as const;
+} as const satisfies Record<string, MediaRef>;
 
 export function silentPlaceholder(bucket: BucketId, alt: string): MediaRef {
   return {
@@ -168,164 +197,159 @@ export const pageHeroes = {
 } as const satisfies Record<string, MediaRef>;
 
 /**
- * Homepage solution cards — must not collide with hero home-*.jpg
- * (duplicates of hvacWide / electricalWide / plumbingWide).
- * Maintenance must NOT reuse the plumbing photo.
+ * Homepage solution cards — one image per bucket, matched by subject.
+ * Maintenance is a technician servicing plant (never solar); MEP is an
+ * integrated switchgear / plant corridor.
  */
 export const homeBucketImages: Record<BucketId, MediaRef> = {
-  mep: media.fireWide,
-  "mechanical-plumbing": media.hvacSquare,
-  electrical: media.electricalSmall,
-  "fire-protection": media.fireSmall,
-  maintenance: media.solar,
+  mep: media.mepPlant,
+  "mechanical-plumbing": media.plumbingSmall,
+  electrical: media.electricalWide,
+  "fire-protection": media.fireWide,
+  maintenance: media.hvacSquare,
 };
 
 /** Why-choose panel on home */
 export const homeWhyImage: MediaRef = media.elv;
 
 /**
- * Homepage sectors — prefer client-uploaded works; remainder silent navy.
- * Must not collide with hero/solutions/blogs on the homepage.
+ * Homepage sectors — all 8 matched to a subject-appropriate photo.
+ * Government uses a civic-style glazed office (never the Etisalat photo).
  */
 export const homeSectorImages: { label: string; image: MediaRef }[] = [
   { label: "Interior fit-out", image: works.artGallery },
   {
     label: "Villa developers",
-    image: silentPlaceholder("mep", "Villa developers sector"),
+    image: {
+      src: "/images/pages/who-we-are-construction.jpg",
+      alt: "High-rise construction for villa and residential programmes",
+    },
   },
-  { label: "Hospitality", image: works.restaurant2 },
-  {
-    label: "Healthcare",
-    image: silentPlaceholder("mechanical-plumbing", "Healthcare sector"),
-  },
+  { label: "Hospitality", image: works.restaurantDining },
+  { label: "Healthcare", image: media.cleanInterior },
   { label: "Commercial", image: works.commercialOffice },
-  { label: "Government", image: works.governmentEtisalat },
-  {
-    label: "Facility management",
-    image: silentPlaceholder("maintenance", "Facility management sector"),
-  },
-  {
-    label: "Residential",
-    image: silentPlaceholder("mep", "Residential sector"),
-  },
+  { label: "Government", image: media.corporateOffice },
+  { label: "Facility management", image: media.electricalSmall },
+  { label: "Residential", image: media.residentialTower },
 ];
 
 /**
- * Story heroes — client works where matched; otherwise service library.
- * All 12 srcs unique for the Projects index.
+ * Story heroes — one unique src per story (12/12) so the Projects index never
+ * repeats a photo. Hotel uses the dining interior (not the bar); healthcare
+ * uses a clean clinical-style interior (not fire-alarm hardware).
  */
 export const storyImages: Record<string, MediaRef> = {
   "luxurious-villa-transformation": {
     ...media.plumbingWide,
-    objectPosition: "left center",
-    alt: "Villa electromechanical services",
+    objectPosition: "center center",
+    alt: "Finished luxury bathroom in a private villa",
   },
   "hospitality-sector-excellence-sofitel": {
-    ...works.restaurant2,
+    ...works.restaurantDining,
     objectPosition: "center 40%",
-    alt: "Hospitality interior with electromechanical fit-out",
+    alt: "Hospitality dining and lounge interior",
   },
   "amazon-ecommerce-office": {
     ...works.commercialOffice,
     objectPosition: "center center",
-    alt: "Commercial office electromechanical fit-out",
+    alt: "Open-plan commercial office with ceiling services",
   },
   "corporate-headquarters-upgrade-real-image": {
-    ...media.electricalWide,
-    objectPosition: "center top",
-    alt: "Corporate headquarters electrical works",
+    ...media.hvacWide,
+    objectPosition: "center 40%",
+    alt: "Corporate headquarters interior with glazing and meeting area",
   },
   "healthcare-facility-upgrade-smart-salem": {
-    ...media.fireSmall,
-    objectPosition: "center 35%",
-    alt: "Healthcare facility building services",
+    ...media.cleanInterior,
+    objectPosition: "center center",
+    alt: "Clean, bright facility interior with glass partitions",
   },
   "innovative-food-outlet-and-park-imdaad": {
-    ...works.restaurant1,
+    ...works.restaurantBar,
     objectPosition: "center center",
-    alt: "Food outlet / restaurant electromechanical fit-out",
+    alt: "Food outlet bar and lounge with decorative lighting",
   },
   "two-bedroom-flat-dhiraj-kumar": {
-    ...media.solar,
-    objectPosition: "right bottom",
-    alt: "Residential apartment services",
+    ...media.residentialTower,
+    objectPosition: "center center",
+    alt: "Modern apartment building exterior",
   },
   "retail-space-innovation-atelier-difc": {
     ...works.artGallery,
     objectPosition: "center center",
-    alt: "Art gallery / retail outlet fit-out",
+    alt: "Contemporary retail gallery interior with feature lighting",
   },
   "etisalat-office-kifaf": {
-    ...works.governmentEtisalat,
+    ...works.etisalatOffice,
     objectPosition: "center center",
-    alt: "Etisalat office floor electromechanical works",
+    alt: "Etisalat open-plan office floor with ceiling services",
   },
   "logistics-office-development-gtz": {
-    ...media.hvacSquare,
-    objectPosition: "center 60%",
-    alt: "Logistics facility electromechanical infrastructure",
+    ...media.elv,
+    objectPosition: "center center",
+    alt: "Server racks and low-current cabling for a logistics operations hub",
   },
   "government-office-modernization-anex": {
-    ...media.electricalSmall,
-    objectPosition: "center 25%",
-    alt: "Government office life-safety and electrical works",
+    ...media.corporateOffice,
+    objectPosition: "center center",
+    alt: "Modernised office corridor and glazed workspace",
   },
   "commercial-office-revamp-ascentia": {
-    ...media.hvacWide,
-    objectPosition: "center center",
-    alt: "Commercial office building services",
+    ...media.hvacSquare,
+    objectPosition: "center right",
+    alt: "Technician servicing building air-conditioning plant",
   },
 };
 
-/** Inline gallery stand-ins per story (must differ from hero src on that page) */
+/** Inline gallery per story (2 each; never the story's own hero src). */
 export const storyGalleryImages: Record<string, MediaRef[]> = {
   "luxurious-villa-transformation": [
-    { ...media.electricalSmall, objectPosition: "center center", alt: "Villa electrical distribution detail" },
-    { ...media.hvacSquare, objectPosition: "center 40%", alt: "Villa HVAC plant detail" },
+    { ...media.electricalWide, alt: "Villa-style distribution board with labelled circuits" },
+    { ...media.hvacWide, objectPosition: "center 40%", alt: "Finished interior with exposed ceiling air-conditioning services" },
   ],
   "hospitality-sector-excellence-sofitel": [
-    { ...media.elv, objectPosition: "center top", alt: "Hospitality low-current systems" },
-    { ...media.fireWide, objectPosition: "left center", alt: "Hospitality life-safety installation" },
+    { ...media.hvacWide, objectPosition: "center 40%", alt: "Hospitality-grade interior with ceiling air-conditioning services" },
+    { ...media.elv, alt: "Low-current racks supporting smart building controls" },
   ],
   "amazon-ecommerce-office": [
-    { ...media.electricalWide, objectPosition: "center 30%", alt: "Office electrical installation" },
-    { ...media.elv, objectPosition: "right center", alt: "Office ELV pathways" },
+    { ...media.elv, alt: "Data and low-current cabling for an office floor" },
+    { ...media.electricalWide, alt: "Office electrical distribution board" },
   ],
   "corporate-headquarters-upgrade-real-image": [
-    { ...media.hvacWide, objectPosition: "right center", alt: "Headquarters HVAC services" },
-    { ...media.electricalWide, objectPosition: "center center", alt: "Headquarters electrical services" },
+    { ...media.corporateOffice, alt: "Corporate office corridor with glazed meeting rooms" },
+    { ...media.electricalWide, alt: "Headquarters electrical distribution board" },
   ],
   "healthcare-facility-upgrade-smart-salem": [
-    { ...media.plumbingWide, objectPosition: "center 40%", alt: "Healthcare plumbing services" },
-    { ...media.hvacSquare, objectPosition: "left top", alt: "Healthcare HVAC installation" },
+    { ...media.plumbingSmall, alt: "Pipework, valves and gauges for domestic water services" },
+    { ...media.hvacSquare, objectPosition: "center right", alt: "Technician servicing air-conditioning plant" },
   ],
   "innovative-food-outlet-and-park-imdaad": [
-    { ...works.restaurant2, objectPosition: "center 55%", alt: "Restaurant bar and dining MEP context" },
-    { ...media.plumbingWide, objectPosition: "center center", alt: "Food outlet plumbing services" },
+    { ...works.restaurantDining, alt: "Restaurant dining area with ambient lighting" },
+    { ...media.plumbingSmall, alt: "Pipework and valves for water supply and drainage" },
   ],
   "two-bedroom-flat-dhiraj-kumar": [
-    { ...media.plumbingWide, objectPosition: "left center", alt: "Apartment plumbing installation" },
-    { ...media.electricalSmall, objectPosition: "right top", alt: "Apartment electrical installation" },
+    { ...media.plumbingWide, alt: "Finished bathroom with modern plumbing fixtures" },
+    { ...media.electricalWide, alt: "Apartment-style distribution board with labelled circuits" },
   ],
   "retail-space-innovation-atelier-difc": [
-    { ...media.electricalWide, objectPosition: "center 20%", alt: "Retail electrical and lighting power" },
-    { ...media.fireSmall, objectPosition: "center center", alt: "Retail life-safety devices" },
+    { ...media.electricalWide, alt: "Retail distribution board and lighting circuits" },
+    { ...media.elv, alt: "Low-current racks for security and audio-visual systems" },
   ],
   "etisalat-office-kifaf": [
-    { ...media.electricalWide, objectPosition: "center 50%", alt: "Office electrical services" },
-    { ...media.elv, objectPosition: "left bottom", alt: "Office low-current systems" },
+    { ...media.electricalWide, alt: "Office distribution board with labelled circuits" },
+    { ...media.elv, alt: "Data racks and organised low-current cabling" },
   ],
   "logistics-office-development-gtz": [
-    { ...media.electricalWide, objectPosition: "center 70%", alt: "Logistics electrical infrastructure" },
-    { ...media.solar, objectPosition: "right center", alt: "Logistics energy systems context" },
+    { ...media.electricalSmall, alt: "Switchgear corridor for a large facility" },
+    { ...media.mepPlant, alt: "Integrated switchgear and plant corridor" },
   ],
   "government-office-modernization-anex": [
-    { ...media.fireWide, objectPosition: "center top", alt: "Fire alarm installation detail" },
-    { ...media.fireSmall, objectPosition: "center center", alt: "Life-safety device installation" },
+    { ...media.fireSmall, objectPosition: "center 25%", alt: "Fire sprinkler riser with alarm bell and control valves" },
+    { ...media.fireStopping, alt: "Cable pathways that require fire-stopping" },
   ],
   "commercial-office-revamp-ascentia": [
-    { ...media.elv, objectPosition: "left center", alt: "Office ELV installation" },
-    { ...media.fireSmall, objectPosition: "center 40%", alt: "Office life-safety services" },
+    { ...media.hvacWide, objectPosition: "center 40%", alt: "Office interior with exposed ceiling services" },
+    { ...media.electricalWide, alt: "Office electrical distribution board" },
   ],
 };
 
@@ -394,48 +418,33 @@ export const serviceHeroImages: Record<string, MediaRef> = {
 
 export const blogImages: Record<string, MediaRef> = {
   "weekly-mep-progress-reports": {
-    ...media.electricalSmall,
-    objectPosition: "center 20%",
-    alt: "Engineer reviewing electrical progress on site",
+    ...media.reportsDesk,
+    objectPosition: "center 40%",
   },
   "hvac-installation-checklist-dubai": {
-    ...media.hvacSquare,
-    objectPosition: "center 45%",
-    alt: "HVAC installation checklist context — plant and ductwork",
+    ...media.hvacWide,
+    objectPosition: "center 40%",
+    alt: "Interior with exposed ceiling ductwork and diffusers",
   },
   "fire-alarm-fire-fighting-interfaces": {
     ...media.fireSmall,
-    objectPosition: "center center",
-    alt: "Fire alarm and fire fighting interface equipment",
+    objectPosition: "center 25%",
   },
 };
 
 /**
- * Homepage insight cards — paths not used by solutions / why / sectors.
- * (Hero uses /images/heroes/home-*.jpg, so these service paths stay unique on /.)
+ * Homepage insight cards — distinct from solutions / why / sector images.
  */
 export const homeBlogImages: MediaRef[] = [
-  {
-    ...media.electricalWide,
-    objectPosition: "center 30%",
-    alt: "MEP progress reporting context",
-  },
-  {
-    ...media.hvacWide,
-    objectPosition: "center 55%",
-    alt: "HVAC checklist context",
-  },
-  {
-    ...media.plumbingWide,
-    objectPosition: "left center",
-    alt: "Fire systems coordination context",
-  },
+  { ...media.reportsDesk, objectPosition: "center 40%" },
+  { ...media.hvacWide, objectPosition: "center 40%", alt: "Interior with exposed ceiling ductwork and diffusers" },
+  { ...media.fireSmall, objectPosition: "center 25%" },
 ];
 
 export function getStoryDisplayImage(slug: string): MediaRef {
   return (
     storyImages[slug] ?? {
-      ...media.hvacWide,
+      ...media.mepPlant,
       alt: "ElecTech project photography",
     }
   );
@@ -443,13 +452,13 @@ export function getStoryDisplayImage(slug: string): MediaRef {
 
 export function getStoryGallery(slug: string): MediaRef[] {
   return storyGalleryImages[slug] ?? [
-    { ...media.electricalSmall, alt: "Electromechanical installation detail" },
+    { ...media.electricalWide, alt: "Electromechanical installation detail" },
     { ...media.plumbingSmall, alt: "Building services installation detail" },
   ];
 }
 
 export function getServiceDisplayImage(slug: string): MediaRef {
-  return serviceHeroImages[slug] ?? media.hvacWide;
+  return serviceHeroImages[slug] ?? media.mepPlant;
 }
 
 export function getBlogDisplayImage(slug: string): MediaRef {

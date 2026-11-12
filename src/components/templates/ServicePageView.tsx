@@ -176,6 +176,7 @@ export function ServicePageView({
           stories={stories}
           description="Related projects from this solutions bucket."
           excludeSrcs={heroMedia.src ? [heroMedia.src] : []}
+          silentImages
         />
       </Section>
 

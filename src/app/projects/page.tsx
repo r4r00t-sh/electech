@@ -10,6 +10,7 @@ export const metadata = pageMetadata({
   title: "Projects / Client Success Stories",
   description:
     "Client success stories from ElecTech MEP — villa, hospitality, healthcare, retail, government and commercial projects across the UAE.",
+  image: "/images/pages/projects-office-interior.jpg",
   path: "/projects",
 });
 

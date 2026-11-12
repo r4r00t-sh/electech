@@ -9,6 +9,7 @@ export const metadata = pageMetadata({
   title: "Vision and Mission",
   description:
     "ElecTech MEP vision, mission, values, expertise and delivery process.",
+  image: "/images/pages/vision-site-plans.jpg",
   path: "/about/vision-mission",
 });
 
@@ -55,8 +56,10 @@ export default function VisionMissionPage() {
       </Section>
       <Section>
         <SectionHeading title="Our expertise" />
-        <div className="prose-mep whitespace-pre-line text-slate">
-          {content.expertise}
+        <div className="prose-mep space-y-4 text-slate">
+          {content.expertise.map((paragraph) => (
+            <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+          ))}
         </div>
       </Section>
       <Section tone="mist">
@@ -77,6 +80,16 @@ export default function VisionMissionPage() {
             </li>
           ))}
         </ol>
+        <div className="mt-10 space-y-8">
+          {content.processNarrative.map((block) => (
+            <div key={block.heading}>
+              <h3 className="font-display text-xl font-bold text-navy">
+                {block.heading}
+              </h3>
+              <p className="prose-mep mt-3 text-slate">{block.body}</p>
+            </div>
+          ))}
+        </div>
       </Section>
       <Section>
         <CtaBanner />

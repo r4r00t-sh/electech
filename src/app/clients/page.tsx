@@ -16,6 +16,7 @@ export const metadata = pageMetadata({
   title: "Our Clients",
   description:
     "Organisations that trust Electech Electromechanical Works LLC across hospitality, retail, commercial and facility management projects in the UAE.",
+  image: "/images/pages/clients-corporate-office.jpg",
   path: "/clients",
 });
 

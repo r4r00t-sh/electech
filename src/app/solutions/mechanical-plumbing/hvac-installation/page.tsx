@@ -8,6 +8,7 @@ const slug = "hvac-installation";
 export const metadata = pageMetadata({
   title: "HVAC Installation Dubai",
   description: "HVAC installation Dubai — design, install and commission comfort systems with ElecTech MEP.",
+  image: "/images/pages/hvac-equipment-detail.jpg",
   path: "/solutions/mechanical-plumbing/hvac-installation",
 });
 

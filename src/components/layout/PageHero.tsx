@@ -18,7 +18,7 @@ export function PageHero({
   media?: MediaRef;
 }) {
   const resolved: MediaRef = media ?? {
-    src: image ?? "/images/services/hvac-installation.jpg",
+    src: image ?? "/images/pages/mep-industrial-systems.jpg",
     alt: imageAlt ?? "ElecTech MEP project photography",
   };
 

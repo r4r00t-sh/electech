@@ -8,6 +8,7 @@ const slug = "maintenance";
 export const metadata = pageMetadata({
   title: "Maintenance Contract",
   description: "MEP maintenance contracts Dubai from ElecTech MEP.",
+  image: "/images/pages/maintenance-workshop.jpg",
   path: "/solutions/maintenance",
 });
 

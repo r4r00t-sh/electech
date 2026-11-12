@@ -11,6 +11,7 @@ export const metadata = pageMetadata({
   title: "Insights",
   description:
     "Engineering insights from ElecTech MEP — project delivery, HVAC and fire protection notes for Dubai projects.",
+  image: "/images/pages/insights-technical-desk.jpg",
   path: "/insights",
 });
 

@@ -8,6 +8,7 @@ const slug = "fire-stopping-sealant-application";
 export const metadata = pageMetadata({
   title: "Fire Stopping Sealant Application",
   description: "Fire stopping sealant application Dubai by ElecTech MEP.",
+  image: "/images/pages/fire-stopping-interior.jpg",
   path: "/solutions/fire-protection/fire-stopping-sealant-application",
 });
 

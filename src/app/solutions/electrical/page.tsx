@@ -8,6 +8,7 @@ const slug = "electrical";
 export const metadata = pageMetadata({
   title: "Electrical Services",
   description: "Electrical, ELV and solar installation Dubai from ElecTech MEP.",
+  image: "/images/pages/electrical-power-infrastructure.jpg",
   path: "/solutions/electrical",
 });
 

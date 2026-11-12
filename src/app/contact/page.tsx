@@ -11,6 +11,7 @@ export const metadata = pageMetadata({
   title: "Contact Us",
   description:
     "Contact Electech Electromechanical Works LLC in Dubai — Hamsah Building, Oud Metha. Request a quote for MEP, HVAC, electrical, fire protection or maintenance.",
+  image: "/images/pages/contact-dubai-coastline.jpg",
   path: "/contact",
 });
 

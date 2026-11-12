@@ -8,6 +8,7 @@ const slug = "plumbing-drainage-installation";
 export const metadata = pageMetadata({
   title: "Plumbing and Drainage Installation",
   description: "Plumbing and drainage installation Dubai by ElecTech MEP.",
+  image: "/images/pages/plumbing-finished-bathroom.jpg",
   path: "/solutions/mechanical-plumbing/plumbing-drainage-installation",
 });
 

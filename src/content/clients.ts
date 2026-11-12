@@ -20,8 +20,8 @@ export function getClientsSorted() {
   return [...clients].sort((a, b) => a.order - b.order);
 }
 
-export function getFeaturedClients() {
-  return getClientsSorted().filter((c) => c.featured);
+export function getFeaturedClients(limit = 12) {
+  return getClientsSorted().filter((c) => c.featured).slice(0, limit);
 }
 
 export function getClientSectors(): string[] {

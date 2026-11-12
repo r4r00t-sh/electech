@@ -8,6 +8,7 @@ const slug = "electrical-installation";
 export const metadata = pageMetadata({
   title: "Electrical Installation Dubai",
   description: "Electrical installation Dubai — power and distribution by ElecTech MEP.",
+  image: "/images/pages/electrical-installation-work.jpg",
   path: "/solutions/electrical/electrical-installation",
 });
 

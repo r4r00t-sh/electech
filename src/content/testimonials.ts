@@ -17,7 +17,11 @@ export function getTestimonialsByBucket(
   bucket: Testimonial["buckets"][number],
   limit = 3,
 ) {
-  return testimonials.filter((t) => t.buckets.includes(bucket)).slice(0, limit);
+  const matched = testimonials.filter((t) => t.buckets.includes(bucket));
+  if (matched.length >= limit) return matched.slice(0, limit);
+  // Pad with featured / other testimonials so every bucket page can rotate 3
+  const extras = testimonials.filter((t) => !matched.includes(t));
+  return [...matched, ...extras].slice(0, limit);
 }
 
 export function getFeaturedTestimonials(limit = 3) {

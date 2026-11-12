@@ -13,6 +13,7 @@ export const metadata = pageMetadata({
   title: "Certifications",
   description:
     "Electech Electromechanical Works LLC certifications — ISO 9001, ISO 14001 and ISO 45001.",
+  image: "/images/pages/certifications-documents.jpg",
   path: "/about/certifications",
 });
 

@@ -10,12 +10,12 @@ Paths relative to `/public/images/`. See also `image-rename-map.md`.
 | `clients/client-*.jpg` (canonical, no `-NN` suffix) | `/clients`, homepage marquee |
 | `projects/works/retail-art-gallery-interior-01.jpg` | Atelier DIFC story; Interior fit-out sector |
 | `projects/works/office-commercial-fitout-01.jpg` | Amazon story; Commercial sector |
-| `projects/works/office-etisalat-open-plan-01.jpg` | Etisalat story; Government sector |
-| `projects/works/restaurant-dining-interior-01.jpg` | Imdaad story |
-| `projects/works/restaurant-bar-lounge-01.jpg` | Sofitel story; Hospitality sector; Imdaad gallery |
+| `projects/works/office-etisalat-open-plan-01.jpg` | Etisalat story only (not Government) |
+| `projects/works/restaurant-dining-interior-01.jpg` | Sofitel (hospitality) story; Hospitality sector |
+| `projects/works/restaurant-bar-lounge-01.jpg` | Imdaad food outlet story |
 | `certs/iso-board.jpg` | Home + certifications page |
 | `certs/iso-9001.svg`, `iso-14001.svg`, `iso-45001.svg` | Certification content badges |
-| `services/*.jpg` | Solution heroes, story stand-ins, insights OG |
+| `pages/*.jpg` | Page heroes, solution cards, story heroes/galleries (matched by subject), insights OG |
 | `heroes/home-1.jpg` … `home-4.jpg` | Homepage hero |
 | `og-default.svg` | Fallback OG |
 
@@ -30,7 +30,8 @@ Paths relative to `/public/images/`. See also `image-rename-map.md`.
 | `certs/iso-certifications-board-01.jpeg`, `iso-certifications-board-02.jpg` | Extra ISO board copies |
 | `certs/civil-defence.svg` | Not shown (no Civil Defence asset approved) |
 | `contact-details.jpeg`, `copyright.jpeg` | Source for copy only |
-| `heroes/*.svg`, `insights/*.svg`, `projects/*-hero.svg`, `services/*-hero.svg` | Unused SVG placeholders |
+| `services/*` (all) | Legacy old-site images — no longer referenced; do not reuse |
+| `heroes/*.svg`, `insights/*.svg`, `projects/*-hero.svg` | Unused SVG placeholders |
 
 ## Project photo naming
 

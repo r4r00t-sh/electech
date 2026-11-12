@@ -81,14 +81,8 @@ Build with `npm run build` and host on Vercel, Netlify, or any Node host support
 
 ## Images that still need client replacement
 
-**Low-resolution (~278×206) — replace with full-size originals:**
+**Legacy old-site photos:** nothing under `/public/images/services/` is referenced any more; the site uses `/public/images/pages/*` and `/public/images/projects/works/*`.
 
-- `/public/images/services/electrical-system.jpg`
-- `/public/images/services/plumbing-drainage.jpg`
-- `/public/images/services/elv.jpg`
-- `/public/images/services/fire-alarm-install.jpg`
-- `/public/images/services/solar.jpg`
-
-**Story heroes — currently closest service photos; need real project shots:**
+**Story heroes — currently subject-matched page / works photos; need real project shots:**
 
 - All 12 stories under `/projects/[slug]` (alts already marked `[CLIENT TO PROVIDE project photo]`)

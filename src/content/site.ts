@@ -6,13 +6,11 @@ export const siteConfig = {
     "One-stop MEP and fire safety contractor in Dubai, UAE. Precision delivery since 2012 for fit-out firms, developers, hospitality, healthcare and commercial owners.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-    (process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL.replace(/\/$/, "")}`
-      : "https://www.electechmep.com"),
+    "https://www.electechmep.com",
   email: "info@electechmep.com",
-  phone: "+971(4)8806332",
+  phone: "+971 (4) 880 6332",
   phoneTel: "+97148806332",
-  whatsapp: "+971 586452051",
+  whatsapp: "+971 58 645 2051",
   whatsappTel: "+971586452051",
   address: {
     lines: [
@@ -23,8 +21,8 @@ export const siteConfig = {
     mapEmbedUrl:
       "https://www.google.com/maps?q=Hamsah+Building+Oud+Metha+Dubai&output=embed",
   },
-  /** From client copyright artwork */
-  copyrightYear: 2024,
+  /** Dynamic copyright year in the footer */
+  copyrightYear: new Date().getFullYear(),
   social: {
     linkedin: "https://www.linkedin.com/company/electech-mep",
   },
@@ -47,6 +45,6 @@ export const siteConfig = {
     },
   ],
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
-} as const;
+};
 
 export type SiteConfig = typeof siteConfig;

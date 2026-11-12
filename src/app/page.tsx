@@ -35,6 +35,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "MEP Contractor Dubai",
   description: siteConfig.description,
+  image: "/images/heroes/hero-02-construction-site-workers.jpg",
   path: "/",
 });
 
@@ -254,33 +255,6 @@ export default function HomePage() {
         <ClientSuccessStories stories={stories} silentImages />
       </Section>
 
-      {/* Dark navy stats band between stories and testimonials */}
-      <section className="bg-navy">
-        <div className="container-site grid grid-cols-2 gap-6 py-12 md:grid-cols-4 md:gap-0">
-          {siteConfig.stats.map((stat, i) => (
-            <div
-              key={`band-${stat.label}`}
-              className={`md:px-6 ${i > 0 ? "md:border-l md:border-white/15" : ""}`}
-            >
-              <p className="font-display text-4xl font-bold !text-white md:text-5xl">
-                {"placeholder" in stat && stat.value === 0 ? (
-                  <span className="text-[15px] font-semibold text-white/70">
-                    {stat.placeholder}
-                  </span>
-                ) : (
-                  <>
-                    {stat.prefix}
-                    {stat.value}
-                    {stat.suffix}
-                  </>
-                )}
-              </p>
-              <p className="mt-2 text-[15px] text-white/75">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <TestimonialsBanner items={testimonials} />
 
       {/* Sectors — 8 image tiles */}
@@ -353,7 +327,7 @@ export default function HomePage() {
                 <PhotoMedia
                   image={
                     homeBlogImages[i] ?? {
-                      src: "/images/services/electrical-system.jpg",
+                      src: "/images/pages/electrical-installation-work.jpg",
                       alt: post.title,
                     }
                   }

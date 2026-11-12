@@ -8,6 +8,7 @@ const slug = "solar-power-plant-installation";
 export const metadata = pageMetadata({
   title: "Solar Power Plant Installation",
   description: "Solar power plant installation Dubai by ElecTech MEP.",
+  image: "/images/pages/solar-rooftop-array.jpg",
   path: "/solutions/electrical/solar-power-plant-installation",
 });
 

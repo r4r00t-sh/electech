@@ -1,6 +1,6 @@
 # Image TODO — ElecTech MEP
 
-Slots still waiting for dedicated photography. Until then the site uses client-uploaded works, topic images from `/public/images/services` (distinct crops), or silent navy tiles — **never** visitor-facing “[CLIENT TO PROVIDE photo]” text.
+Slots still waiting for dedicated photography. Until then the site uses client-uploaded works, topic images from `/public/images/pages` (matched by subject), or silent navy tiles — **never** visitor-facing “[CLIENT TO PROVIDE photo]” text.
 
 ## Wired from latest uploads
 

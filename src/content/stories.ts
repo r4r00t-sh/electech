@@ -1,15 +1,16 @@
 import type { Story } from "./types";
 
 /**
- * Client Success Stories — quotes and narrative facts from the client website docx.
- * Bodies expanded with neutral, true-by-definition descriptions of the work type.
+ * Client Success Stories — lead paragraph and testimonials are verbatim from the client website docx.
+ * Remaining sections are neutral descriptions of the work type; client-specific gaps are marked [CLIENT TO PROVIDE].
+ * No paragraph may repeat within a story (enforced by scripts/check-duplicate-paragraphs.mjs).
  * Display images are resolved in src/lib/media.ts (not heroImage paths below).
  */
 export const stories: Story[] = [
   {
     title: "Luxurious Villa Transformation",
     slug: "luxurious-villa-transformation",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/plumbing-finished-bathroom.jpg",
     heroAlt: "Luxurious Villa Transformation project photography",
     primaryBucket: "mep",
     secondaryBuckets: ["electrical"],
@@ -24,33 +25,39 @@ export const stories: Story[] = [
 
 One of our most rewarding projects involved transforming a vacant plot into a luxurious villa for a prominent family in Dubai. The client wanted a home that combined modern amenities with traditional aesthetics. Our team worked closely with the family to understand their vision and preferences. The result was a stunning villa that featured state-of-the-art technology, elegant design, and sustainable solutions. The family was thrilled with the outcome, praising our attention to detail and commitment to quality.
 
-## Understanding villa electromechanical work
+## What a villa electromechanical package involves
 
-A villa electromechanical package typically brings together air-conditioning and ventilation, electrical distribution and lighting support, and plumbing and drainage so that comfort systems, power and wet services operate as one coordinated whole. In a residential setting this means planning outdoor unit positions, condensate routes, board locations and pipe risers early enough that architecture and interiors can close walls and ceilings with confidence.
+A villa electromechanical package brings together air-conditioning and ventilation, electrical distribution and lighting power, and plumbing and drainage. In a private home these services share the same walls, ceilings and risers, so their routes are normally agreed with the architect and interior designer before finishes are chosen.
 
-Installation work on villas usually proceeds in stages: first-fix containment and pipework, second-fix devices and fixtures, then testing before finishes are sealed. Attention to service access panels, noise from plant and maintainable layouts helps owners care for the home after handover. Material selections for UAE climates focus on durability under heat, humidity and dust — without substituting for project-specific engineering decisions that must be confirmed on drawings.
+Cooling for a villa is usually a choice between split units, ducted systems or a combination of both, with outdoor units, condensate drains and refrigerant routes planned around the building envelope. Electrical work covers the main distribution board, final circuits, containment and earthing, plus provision for lighting control and any home automation the owner has requested.
 
-Coordination meetings with the family or their representatives keep preferences visible while technical teams resolve clashes between ducts, cable trays and sanitary stacks. Weekly communication, where used, is a practical way to show what has been installed, what is awaiting inspection and what remains before occupation.
+Plumbing and drainage covers hot and cold water supply, sanitary pipework, floor drains and roof or balcony drainage. Pressure testing before concealment is standard practice, because a leak behind finished tiles or joinery is expensive to trace and repair.
 
-## How we approach the work
+## Coordination on a private residence
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Villa projects often involve several decision-makers: family members, a design consultant, an interior designer and a main contractor. A shared coordination drawing for ceiling voids and risers helps everyone see where ducts, cable trays and soil stacks sit, and where access panels must remain.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+Work normally proceeds in stages. First fix covers containment and pipework while walls are open, second fix covers devices and fixtures after finishes, and testing follows before the home is occupied. Where a brief blends modern amenities with traditional detailing, concealed routes and carefully placed grilles help services stay out of sight without losing access for maintenance.
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+## Testing, commissioning and handover
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Before handover, electrical circuits are tested for insulation resistance and earth continuity, water systems are pressure tested and flushed, and air-conditioning is run and balanced so that each room can reach its design temperature.
 
-## After handover
+An owner-focused handover typically includes as-built drawings, equipment data, warranty information and a walk-through showing where isolators, stop valves and filters are located.
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+## Care after handover
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+Villas in the UAE run cooling for much of the year, so filters, drains and outdoor units benefit from regular attention. Labelled boards and valves let a household or its facilities contractor respond quickly when something needs checking.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## From vacant plot to finished home
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Building on a vacant plot means the electromechanical package starts with the ground itself: incoming utilities, external drainage, sleeves through foundations and routes for electrical and water services are set out long before any room is finished. Decisions made at this stage are difficult to change later, so they are normally confirmed with the design team and, where required, the relevant authorities.
+
+As the structure rises, services follow it. Risers, plant positions, roof equipment areas and meter rooms are held free of other trades, and sleeves are checked against the structural drawings before concrete is poured.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: villa plot and built-up area, programme dates, equipment makes and capacities, specific technology installed, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -70,7 +77,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Hospitality Sector Excellence",
     slug: "hospitality-sector-excellence-sofitel",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/projects/works/restaurant-dining-interior-01.jpg",
     heroAlt: "Hospitality Sector Excellence project photography",
     primaryBucket: "mep",
     secondaryBuckets: ["mechanical-plumbing"],
@@ -85,37 +92,45 @@ Coordination across disciplines remains essential from first fix through final i
 
 A luxury hotel chain enlisted our services to renovate one of their flagship properties. The goal was to create an opulent yet functional space that would enhance the guest experience. We redesigned the hotel’s interiors, upgraded the electromechanical systems, and incorporated smart technology. The renovation was a resounding success, with the hotel receiving rave reviews from guests and industry experts alike. The client appreciated our dedication to excellence and our ability to deliver a project that exceeded their expectations.
 
-## Understanding hospitality electromechanical work
+## What hospitality electromechanical upgrades involve
 
-Hospitality projects place a premium on quiet operation, reliable cooling and power, and life-safety readiness because guest areas cannot easily tolerate disruption. Electromechanical upgrades in hotels often include HVAC plant and distribution, electrical circuits for lighting and specialty loads, and interfaces with fire detection and suppression as specified for the building.
+Hotels place a premium on quiet operation, reliable cooling and power, and life-safety readiness, because guest areas cannot easily tolerate disruption. Electromechanical upgrades in a hotel commonly cover air-conditioning plant and distribution, electrical circuits for lighting and specialist loads, and interfaces with fire detection and suppression as defined by the approved design.
 
-Works are commonly sequenced around operational constraints: noisy tasks planned for quieter periods, finished corridors protected, and plant rooms kept accessible for facilities teams. Smart technology interfaces — where specified — must be coordinated with ELV and IT so that control points, sensors and panels land in maintainable locations.
+Smart technology, where specified, depends on low-current infrastructure: control cabling, sensors, panels and network links. Their locations need to be agreed with the interior design team so that devices land in places that look right and can still be reached by engineering staff.
 
-Commissioning in hospitality settings typically verifies comfort set-points, emergency lighting behaviour and cause-and-effect relationships that protect occupants. Documentation handed to the engineering team supports inspections and routine maintenance after opening.
+## Working around live operations
 
-## How we approach the work
+Renovating a flagship property usually means working within operational constraints. Noisy or dusty tasks are planned for quieter periods, finished corridors and lifts are protected, and plant rooms are kept accessible to the engineering team throughout.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Phasing by floor, wing or outlet allows part of the property to keep trading while another is upgraded. Clear communication with the hotel engineering department helps schedule isolations of power, water and cooling so that guests are affected as little as possible.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Commissioning for a guest environment
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Hospitality commissioning typically verifies comfort set-points, noise levels from ventilation, emergency lighting behaviour and the cause-and-effect relationships that protect occupants. Rooms and public areas are tested against the approved design before they are returned to service.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Documentation handed to the engineering team, such as drawings, test certificates and operating notes, supports statutory inspections and routine maintenance once the property reopens its refurbished areas.
 
-## After handover
+## Keeping a hotel running after the upgrade
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Hotels operate every hour of the day, so planned preventive maintenance and a clear call-out route are part of keeping upgraded systems reliable. Labelled valves, isolators and panels shorten the time needed to find and resolve a fault.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Redesigned interiors and the services behind them
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+When interiors are redesigned, the services above and behind them are rarely left unchanged. New ceiling designs, lighting concepts and furniture layouts change where diffusers, luminaires, sockets and sensors should be. An electromechanical upgrade is therefore planned alongside the interior design instead of after it.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+In a luxury setting, visible devices such as grilles, sprinkler heads, detectors and switch plates are usually selected or finished to suit the design. Early agreement on those items avoids a rushed substitution late in the programme.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Back-of-house areas matter just as much as guest areas. Plant rooms, risers, kitchens and service corridors keep the property operating, so any upgrade must preserve the engineering team's access and the safe separation between guest and service routes.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Documentation for engineering teams
+
+A hotel engineering department relies on clear records. Marked-up drawings, equipment schedules, valve and isolator charts and test certificates allow the team to carry out routine maintenance, respond to faults and support inspections. Collecting this documentation as work progresses is easier than reconstructing it at the end.
+
+Where upgrades are carried out in stages, each completed area is documented before the next begins, so the property always has an accurate picture of what is installed.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: property name approval for publication, number of floors or keys covered, programme dates, specific smart technology installed, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -135,7 +150,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Amazon E-commerce Office",
     slug: "amazon-ecommerce-office",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/projects/works/office-commercial-fitout-01.jpg",
     heroAlt: "Amazon E-commerce Office project photography",
     primaryBucket: "mep",
     secondaryBuckets: [],
@@ -150,39 +165,49 @@ Coordination across disciplines remains essential from first fix through final i
 
 We were commissioned to execute a large e-commerce office for Amazon in Dubai. The project required creating a highly functional and innovative workspace that could accommodate a large workforce and support Amazon’s dynamic operations. Our team designed an open-plan office with collaborative workspaces, advanced technology, and sustainable solutions. The project was completed on time and within budget, and the client was extremely satisfied with the new office environment.
 
-## Understanding office electromechanical work
+## What a large office fit-out involves
 
-Open-plan offices depend on even cooling, clear power distribution for dense workstation loads, and cable pathways that leave ceiling voids maintainable. Electromechanical delivery for offices usually covers HVAC distribution, electrical boards and small power, lighting power infrastructure and coordination with ELV systems that support access, data and safety.
+Open-plan offices depend on even cooling, clear power distribution for dense workstation loads, and cable pathways that keep ceiling voids maintainable. Electromechanical delivery for an office typically covers air-conditioning distribution, electrical boards and small power, lighting power infrastructure and coordination with the low-current systems that support access control, data and safety.
 
-Flexible meeting rooms and collaborative zones introduce variable occupancy, so ventilation and thermostat zoning need careful agreement with the interior layout. Containment routes should respect acoustic ceilings and feature lighting. Testing before energisation protects equipment and gives facilities managers a clear as-built record.
+Collaborative zones and flexible meeting rooms create variable occupancy, so ventilation and thermostat zoning need to be agreed with the interior layout early. Containment routes should respect acoustic ceilings and feature lighting rather than fight them.
 
-Live-office or phased programmes require protection of occupied floors, temporary power strategies where needed, and close liaison with IT so cutovers do not interrupt operations longer than planned.
+## Supporting a large workforce
 
-## How we approach the work
+A workspace designed for a large workforce raises the stakes on diversity assumptions for power, the capacity of risers and the resilience of cooling. Spare ways in distribution boards and spare capacity in containment make later changes simpler, which matters for teams whose headcount and layout can change.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Floor boxes, power poles and workstation feeds are normally set out against the furniture plan. Agreeing that plan before first fix avoids cutting into finished floors or ceilings later.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Programme and testing
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Large office programmes depend on tidy sequencing between first-fix services, ceilings, flooring and furniture. Testing before energisation protects equipment, and a clear as-built record gives facilities managers a reliable starting point for operation.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Where technology is installed alongside the electromechanical packages, shared pathways and agreed cut-over dates keep IT teams and installers from working against each other.
 
-## After handover
+## Operating the space
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Offices change over time. Well-labelled boards, accessible plant and documented zoning let a facilities team reconfigure the space without rediscovering how the building was built.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Sustainable solutions in an office environment
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Sustainability in an office is often delivered through ordinary engineering choices: efficient lighting with occupancy or daylight control, air-conditioning zoned to follow occupancy, properly insulated pipework and equipment that can be maintained to stay efficient. These measures are specified by the design team and installed and commissioned to the approved design.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Metering and monitoring points, where specified, let building operators see how energy is used across floors and tenancies, and are a practical starting point for later improvements.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Technology and infrastructure together
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Advanced technology in a workplace depends on infrastructure that is easy to overlook: containment for data cabling, space in risers, resilient power for network equipment and cooling for communications rooms. When these are planned together with electrical and mechanical works, the technology can be installed without competing for the same ceiling space.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+A clear interface list between the electromechanical team, the IT team and the interior contractor assigns responsibility for each device and cable route, reducing gaps and overlaps.
+
+## Delivering to a fixed programme
+
+Corporate fit-outs often have fixed occupation dates, so programme discipline matters. Long-lead items such as switchgear, air-handling equipment and specialist luminaires are ordered early, and inspection hold points are agreed with the consultant in advance.
+
+A weekly progress record helps the client and design team see how the work is advancing and decide quickly when a question needs an answer.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: floor area, headcount supported, programme dates, building and floor name approved for publication, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -202,7 +227,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Corporate Headquarters Upgrade",
     slug: "corporate-headquarters-upgrade-real-image",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/hvac-equipment-detail.jpg",
     heroAlt: "Corporate Headquarters Upgrade project photography",
     primaryBucket: "mep",
     secondaryBuckets: [],
@@ -217,41 +242,49 @@ Coordination across disciplines remains essential from first fix through final i
 
 A major media production company required a complete overhaul of their corporate headquarters to improve functionality and aesthetics. We implemented modern design elements, upgraded the electromechanical systems, and created a more efficient layout. The project was completed seamlessly, and the client reported improved employee satisfaction and operational efficiency.
 
-## Understanding office electromechanical work
+## What a headquarters overhaul involves
 
-Open-plan offices depend on even cooling, clear power distribution for dense workstation loads, and cable pathways that leave ceiling voids maintainable. Electromechanical delivery for offices usually covers HVAC distribution, electrical boards and small power, lighting power infrastructure and coordination with ELV systems that support access, data and safety.
+A headquarters upgrade is more than a cosmetic refresh. Layout changes move partitions, ceilings and furniture, which in turn move air-conditioning diffusers, lighting circuits, small-power outlets and data points. The electromechanical package has to follow the new plan rather than the old one.
 
-Flexible meeting rooms and collaborative zones introduce variable occupancy, so ventilation and thermostat zoning need careful agreement with the interior layout. Containment routes should respect acoustic ceilings and feature lighting. Testing before energisation protects equipment and gives facilities managers a clear as-built record.
+Existing installations are surveyed before work begins so that serviceable equipment can be retained and ageing plant can be replaced where the design calls for it. Upgrading distribution boards, containment and ventilation in one coordinated package usually creates less disruption than several uncoordinated visits.
 
-Live-office or phased programmes require protection of occupied floors, temporary power strategies where needed, and close liaison with IT so cutovers do not interrupt operations longer than planned.
+## Considerations for a media production company
 
-## How we approach the work
+Offices serving media and creative teams often combine open workspace with meeting rooms, editing or review rooms and equipment areas. These rooms can have higher cooling loads, tighter noise limits and denser data requirements than an ordinary office floor.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Where such rooms are part of the brief, ventilation noise, power quality and cable routes are considered alongside the design of the room so that equipment performs and occupants stay comfortable.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Testing and handover
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Before staff move back in, circuits are tested, air-conditioning is balanced and any life-safety changes are verified with the relevant parties. A seamless completion depends on snagging early, while trades are still on site and finishes can be touched up.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Handover typically includes as-built drawings, board schedules and operating information, so the operations team can maintain the upgraded systems.
 
-## After handover
+## Efficiency after completion
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+A more efficient layout is supported by services that are zoned sensibly, easy to adjust and easy to reach. Clear documentation helps a facilities team keep running costs predictable.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Planning an efficient layout
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+A more efficient layout starts with how people actually work: which teams sit together, how often they meet, which rooms are used most and where equipment needs to be. Electromechanical services then follow that plan, with power, data and cooling provided in the right quantities in the right places.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Poorly planned services can undermine a good layout. Diffusers placed over desks, lighting that does not match the furniture plan, or sockets too far from work areas all reduce comfort and productivity. A coordinated design avoids these problems before installation starts.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Modern design elements and building services
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Modern design features such as exposed ceilings, glazed partitions, feature lighting and acoustic treatments each bring constraints for services. Exposed ductwork needs neat installation because it is part of the interior, glazed partitions limit where cables can run, and acoustic treatments need cut-outs that are formed carefully.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Coordinating these features in a single drawing set lets the designers, contractors and the building owner agree on a result that looks right and can still be maintained.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Staff comfort and everyday operation
+
+People notice building services only when they fail: a room that is too warm, lighting that flickers or a socket that is out of reach. Careful design and installation prevent these everyday irritations, and clear controls let staff or the facilities team adjust conditions without calling a contractor.
+
+Simple operating guidance for thermostats, lighting scenes and meeting room equipment helps employees get the best out of an upgraded workplace.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: building and floor area, scope of the electromechanical upgrade, programme dates, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -270,7 +303,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Healthcare Facility Upgrade",
     slug: "healthcare-facility-upgrade-smart-salem",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/projects-office-interior.jpg",
     heroAlt: "Healthcare Facility Upgrade project photography",
     primaryBucket: "mechanical-plumbing",
     secondaryBuckets: ["fire-protection"],
@@ -285,39 +318,47 @@ Coordination across disciplines remains essential from first fix through final i
 
 A renowned healthcare provider needed to upgrade their facilities to meet the growing demand for their services. We undertook the challenge of modernizing their existing infrastructure while ensuring minimal disruption to their operations. Our team implemented advanced electromechanical systems, improved energy efficiency, and enhanced patient comfort. The project was completed ahead of schedule, and the client expressed their gratitude for our professionalism and expertise. The upgraded facility now serves as a benchmark for other healthcare providers in the region.
 
-## Understanding healthcare electromechanical work
+## What healthcare electromechanical upgrades involve
 
-Healthcare and medical fitness environments require electromechanical systems that support hygiene, air quality and uninterrupted operations. Upgrades in occupied clinics often proceed with phased isolations, temporary arrangements and strict protection of clinical areas so patient services continue.
+Healthcare and medical fitness environments need electromechanical systems that support hygiene, air quality and uninterrupted operation. Upgrades in an occupied facility are normally phased, with temporary arrangements and strict protection of treatment and patient areas so services can continue.
 
-Mechanical and plumbing packages may address cooling, ventilation, domestic water and drainage with cleanability and maintainability in mind. Fire protection interfaces — detection, alarms and compartment sealing — are coordinated so life-safety performance matches the approved design for the facility type.
+Mechanical and plumbing packages may address cooling, ventilation, domestic water and drainage, with cleanability and maintainability in mind. Equipment selections favour accessible filters, drains and isolation valves so that routine service does not disturb patients or staff.
 
-Energy-efficient equipment selections, where specified, are commissioned and demonstrated to facilities teams. Clear labelling and O&M information help clinical operations teams respond quickly when a system needs attention.
+## Minimising disruption in an operating facility
 
-## How we approach the work
+Working in a live facility means agreeing work areas, noise limits and dust control with the operator before work starts. Short, planned isolations of power, water or cooling are scheduled around appointment times, and every isolation is communicated to the people who rely on that service.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Infection control expectations apply to contractors as well as clinicians. Protective barriers, sealed work areas and careful clean-up help protect patients while construction is under way.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Energy efficiency and patient comfort
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Energy-efficient equipment and sensible zoning can reduce running costs while improving comfort. Temperature, humidity and fresh-air provision are checked against the approved design, and results are demonstrated to the facilities team at handover.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Lighting power, ventilation and cooling are coordinated so that treatment rooms, waiting areas and back-of-house spaces each receive the conditions suited to their use.
 
-## After handover
+## Testing and handover
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Commissioning confirms that mechanical, plumbing and electrical systems behave as designed, and that any related life-safety interfaces match the approved drawings for the facility type. Clear labelling and operating information help the clinical operations team respond quickly when a system needs attention.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Water, drainage and hygiene
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+In healthcare buildings, domestic water and drainage systems are part of hygiene. Hot-water temperatures, stagnation, backflow prevention and the ease of cleaning fixtures and drains are all considered when pipework is designed and installed. Pipework is flushed and tested before use, and valves and isolation points are labelled for the maintenance team.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Wash-hand basins, sinks and showers are usually positioned to suit the clinical workflow. Their supply and drainage connections are set out against room layouts and finishes that are easy to clean.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Ventilation and air quality
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Ventilation influences comfort, odour control and the removal of airborne contaminants. Fresh-air rates, filtration levels and air pressure relationships between rooms are set by the design team to suit the facility type. Installation and testing then confirm that the delivered airflows match the approved design.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Accessible filters, clearly marked dampers and easy-to-reach coils make routine maintenance simpler and reduce the need to enter treatment rooms for service.
+
+## Documentation for clinical operators
+
+Healthcare operators need clear records of what is installed and how it should be maintained. Operating and maintenance information, test results and equipment schedules are compiled so facilities staff can plan servicing around clinical activity.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: floor area and number of treatment rooms, scope of mechanical and plumbing works, programme dates, and dedicated project photography of the completed facility.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -337,7 +378,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Innovative Food Outlet and Park",
     slug: "innovative-food-outlet-and-park-imdaad",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/projects/works/restaurant-bar-lounge-01.jpg",
     heroAlt: "Innovative Food Outlet and Park project photography",
     primaryBucket: "mechanical-plumbing",
     secondaryBuckets: ["maintenance"],
@@ -352,39 +393,49 @@ Coordination across disciplines remains essential from first fix through final i
 
 We work with a leading facility management company to design and execute a large-scale innovative food outlet. The project required meticulous planning and coordination to ensure timely delivery and adherence to the highest standards of quality. Our team successfully delivered a modern, sustainable living environment that has become a sought-after address in the region.
 
-## Understanding food outlet electromechanical work
+## What a food outlet electromechanical package involves
 
-Food outlets combine high kitchen loads with public dining and often outdoor or park interfaces. Electromechanical scope commonly includes HVAC for kitchen extract and dining comfort, plumbing and drainage for food preparation and wash-up, and electrical infrastructure for cooking equipment, refrigeration and lighting.
+Food outlets combine high kitchen loads with public dining and, in a park setting, outdoor or semi-outdoor areas. Electromechanical scope commonly includes air-conditioning and kitchen extract, plumbing and drainage for preparation and wash-up, and electrical infrastructure for cooking equipment, refrigeration and lighting.
 
-Grease management, condensate and make-up air must be coordinated so kitchens remain safe and comfortable. Public toilets and amenity blocks need reliable water supply and drainage. Installation sequencing follows kitchen equipment delivery and interior fit-out so first-fix services are not trapped behind late design changes.
+Grease management, condensate and make-up air have to be coordinated so that kitchens remain safe and comfortable for staff. Public toilets and amenity blocks need reliable water supply and drainage that copes with peak use.
 
-Facility management partners benefit when plant is accessible, meters are readable and maintenance routes are clear from day one — reducing the need to open finished ceilings for routine service.
+## Planning and coordination
 
-## How we approach the work
+A large-scale outlet needs meticulous planning because several packages depend on one another: kitchen equipment, interior fit-out, landscaping and utilities. Installation sequencing follows equipment delivery so that first-fix services are not trapped behind late design changes.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Coordination with a facility management partner helps ensure that plant is accessible, meters are readable and maintenance routes are clear from the first day of operation.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Quality and timely delivery
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Meeting deadlines in hospitality-led projects usually depends on early procurement of long-lead equipment and clear approval routes. Keeping a live snag list and a weekly progress record shows what has been installed, what is awaiting inspection and what remains.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Testing covers electrical circuits, water supply, drainage and ventilation before the venue opens. Any issues found at that stage are far easier to correct than after trading begins.
 
-## After handover
+## Operating a busy outlet
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Food and beverage venues work long hours, so reliable cooling, hot water and power are essential. Planned preventive maintenance of extract systems, grease traps and refrigeration helps keep the venue running through peak periods.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Kitchens, extraction and ventilation
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Commercial kitchens generate heat, steam and grease, so extraction and make-up air are central to safety and comfort. Hood sizes, duct routes, fan locations and fire-rated ductwork where required are set out to suit the equipment layout. Make-up air should be provided in a way that keeps the dining area comfortable and avoids drafts.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Kitchen extract ductwork requires access for cleaning, and grease-laden routes are designed to allow it. Clear access panels and labelled fan isolators are small details that make a large difference to long-term maintenance.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Water supply and drainage for food service
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Food preparation areas need hot and cold water at the right pressure, floor drains positioned around equipment, and grease interceptors sized for the load. Sinks, hand-wash stations and dishwashers each need a defined supply and drain, which are normally coordinated with the kitchen equipment supplier's drawings.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+For a park or outdoor setting, drainage must also account for surface water, irrigation and landscape features, which are usually shared between several trades.
+
+## Safety and compliance in food service
+
+Food service premises are subject to hygiene, fire and building safety requirements. Materials in food areas are chosen so that surfaces can be cleaned, penetrations are sealed, and fire-related services are installed and tested to the approved design.
+
+Inspections by the relevant authorities are part of opening a venue, so documentation and test records are prepared with that in mind.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: site name and approved description, floor area, number of outlets, programme dates, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -403,7 +454,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Two-Bedroom Flat",
     slug: "two-bedroom-flat-dhiraj-kumar",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/about-glass-tower.jpg",
     heroAlt: "Two-Bedroom Flat project photography",
     primaryBucket: "mechanical-plumbing",
     secondaryBuckets: [],
@@ -418,39 +469,49 @@ Coordination across disciplines remains essential from first fix through final i
 
 Expat family approached us to transform their newly purchased two-bedroom flat into a modern, comfortable home. They wanted a space that was both functional and stylish, with an emphasis on maximizing storage and natural light. Our team designed and executed a plan that included custom-built furniture, energy-efficient lighting, and smart home technology. The couple was delighted with the result, which perfectly matched their lifestyle and aesthetic preferences.
 
-## Understanding apartment electromechanical work
+## What an apartment fit-out involves
 
-Apartment fit-outs focus on comfort within compact footprints: quiet indoor units, tidy electrical boards, and plumbing that maximises usable storage and keeps wet areas reliable. Energy-efficient lighting support and smart home devices — where specified — need early cable pathways and device locations agreed with the interior layout.
+Apartment fit-outs focus on comfort within a compact footprint: quiet indoor units, tidy electrical boards, and plumbing that protects usable storage and keeps wet areas reliable. Services need to share limited ceiling and wall depth, so routes are planned early.
 
-Work in a newly purchased flat often means protecting finishes, working within developer constraints and sequencing around furniture and joinery. Testing of circuits, water lines and cooling before final decoration reduces callback risk.
+Energy-efficient lighting and smart home devices, where specified, need early cable pathways and device locations agreed with the interior layout. Custom-built furniture and joinery should be set out with sockets, switches and access panels in mind.
 
-Owners typically want systems that are simple to operate and serviceable without major demolition — access panels, labelled isolators and clear handover notes support that goal.
+## Working in a newly purchased flat
 
-## How we approach the work
+Working in a newly purchased flat often means protecting existing finishes, following building management rules and fitting around deliveries. Sequencing between joinery, electrical second fix and decoration reduces rework.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Testing circuits, water lines and cooling before final decoration lowers the risk of callbacks. Concealed pipework is pressure tested before walls are closed.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Making the most of storage and light
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+A brief that emphasises storage and natural light affects the services as well as the interiors. Compact distribution boards, slim ceiling bulkheads and carefully placed lighting circuits help keep walls and ceilings free for storage and daylight.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Lighting layouts that combine general, task and accent lighting need clear circuit planning so that scenes can be controlled without crowding the walls with switches.
 
-## After handover
+## Handover to the owner
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Owners generally want systems that are simple to operate and can be serviced without major demolition. Access panels, labelled isolators and a clear handover note covering filters, drains and breakers support that goal.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Air-conditioning in a flat
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Apartment cooling may come from a central building system, from split units, or from a fan-coil arrangement connected to the building's chilled water. Each option has different requirements for access, drainage and noise. A flat's layout, window orientation and ceiling height influence how air is distributed.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Quiet operation is particularly important in bedrooms. Equipment is normally placed away from beds where possible, and condensate drains are routed with a continuous fall so that they do not leak or make noise.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Lighting, power and smart devices
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Good lighting design in a small home layers general lighting with task and accent lighting. Each layer is usually on its own circuit or control group so that the household can set the mood and save energy. Switches and dimmers are positioned for convenience and agreed with the interior layout.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Smart home technology can include remote control of lighting, curtains, cooling and security. It depends on power and data being available at each device, which is easiest to provide before walls and ceilings are closed.
+
+## Respecting the building and neighbours
+
+Apartment buildings have rules about working hours, deliveries, lift protection and waste removal. Following them keeps relations with building management and neighbours positive and avoids interruptions to the work.
+
+Penetrations in walls and floors that separate flats, and any work touching shared risers, normally need building management approval, so these items are raised early in the programme.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: building name and unit size approved for publication, specific smart home features installed, programme dates, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -469,7 +530,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Retail Space Innovation",
     slug: "retail-space-innovation-atelier-difc",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/projects/works/retail-art-gallery-interior-01.jpg",
     heroAlt: "Retail Space Innovation project photography",
     primaryBucket: "electrical",
     secondaryBuckets: [],
@@ -484,37 +545,49 @@ Coordination across disciplines remains essential from first fix through final i
 
 We were tasked with creating a dynamic retail environment for a high-end fashion brand. The client wanted a space that would reflect their brand’s identity and attract discerning customers. Our team designed a sleek, contemporary store with innovative lighting, interactive displays, and sustainable materials. The store’s grand opening was a huge success, and the client saw a marked increase in foot traffic and sales. They commended our ability to bring their vision to life with such precision and creativity.
 
-## Understanding retail electrical work
+## What retail electrical work involves
 
-Retail environments rely on lighting to express brand identity, on clean power for interactive displays and on containment that keeps back-of-house rooms organised. Electrical packages for stores typically include distribution boards, lighting circuits, small power for POS and displays, and coordination with ELV for security and audio-visual systems as specified.
+Retail environments rely on lighting to express brand identity, on clean power for interactive displays and on containment that keeps back-of-house rooms organised. Electrical packages for stores typically include distribution boards, lighting circuits, small power for point-of-sale and displays, and coordination with low-current systems for security and audio-visual equipment.
 
-Installation must align with feature ceilings, wall linings and floor boxes so the visual result matches the brand intent. Temporary lighting during fit-out keeps trades productive while permanent circuits are completed. Testing and labelling before opening day give store teams confidence when troubleshooting.
+In a high-end fashion setting the lighting design is part of the brand, so circuits, dimming and fixture positions follow the lighting designer's drawings closely. Installation tolerances are tight because fixtures sit beside finished walls and feature ceilings.
 
-Sustainable material choices in the wider fit-out — where specified by the design team — are supported by efficient lighting control strategies and maintainable fixture access.
+## Fitting out inside a retail destination
 
-## How we approach the work
+Stores inside a retail destination such as a shopping avenue operate under the landlord's technical and working-hours rules. Deliveries, noisy work and use of common areas are scheduled with the landlord's management team.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Temporary lighting and power keep trades productive during fit-out while permanent circuits are finished. Landlord approval of electrical and fire-related interfaces is normally required before a store can open.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Interactive displays and sustainable finishes
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Interactive displays depend on reliable power and data at the right locations, often in floors, plinths or joinery. Agreeing these locations before joinery is made avoids drilling into finished units.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Where sustainable materials are specified by the design team, efficient lighting and sensible control strategies support the same goal, and fixtures positioned for easy access keep maintenance simple.
 
-## After handover
+## Testing before opening day
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Circuits are tested and labelled before the store opens, giving store teams confidence when troubleshooting. A tidy distribution board and clear schedule are valuable to a retail operator who may be managing many stores.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Lighting as part of the brand
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+In fashion retail, lighting influences how products look, how customers move through the store and how the brand is perceived. Display lighting is typically separate from general lighting so that it can be adjusted without affecting circulation areas, and fittings are positioned relative to rails, shelving and focal displays.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Dimming, scene control and emergency lighting each need to be wired and tested together so that the store looks right and remains safe. Lighting control panels are placed where staff can use them easily, and are labelled clearly.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Air-conditioning and comfort for shoppers
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Shoppers spend longer in a store that feels comfortable. Cooling is normally designed to maintain a steady temperature without drafts on display areas or fitting rooms, and fresh air is provided according to the approved design. Heat from lighting and equipment is part of the cooling load and is included in the calculations.
+
+Diffusers are positioned to suit ceiling features and lighting, and thermostats or sensors are placed away from direct sunlight and heat sources so that they read accurately.
+
+## Keeping a store trading
+
+A retail store earns money only while it is open, so reliable services matter. Distribution boards sized with spare capacity, clearly labelled circuits and accessible isolators reduce the time needed to resolve a fault, and easy-to-reach air-conditioning units keep maintenance visits short.
+
+Store teams benefit from a short, clear handover covering lighting control, emergency lighting tests and whom to call when something does not work as expected.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: store area, brand name approval for publication, opening date, lighting and display specifications, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -534,7 +607,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Etisalat Office, 2nd Floor, Kifaf",
     slug: "etisalat-office-kifaf",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/projects/works/office-etisalat-open-plan-01.jpg",
     heroAlt: "Etisalat Office, 2nd Floor, Kifaf project photography",
     primaryBucket: "electrical",
     secondaryBuckets: [],
@@ -549,41 +622,55 @@ Coordination across disciplines remains essential from first fix through final i
 
 We were engaged by Etisalat to revamp their office space on the 2nd floor in Kifaf. The goal was to create a modern, efficient workspace that would enhance employee productivity and reflect Etisalat’s innovative brand. Our team designed a sleek, open-plan office with state-of-the-art technology, ergonomic workstations, and collaborative zones. The project was completed ahead of schedule, and the client was extremely pleased with the results.
 
-## Understanding office electrical installation
+## What corporate office electrical installation involves
 
-Corporate office electrical work centres on safe distribution, neat containment and capacity for technology-dense floors. Boards, cable trays, floor boxes and final circuits must be coordinated with furniture layouts and collaborative zones so power is available where people work.
+Corporate office electrical work centres on safe distribution, neat containment and capacity for technology-dense floors. Boards, cable trays, floor boxes and final circuits are coordinated with furniture layouts and collaborative zones so power is available where people work.
 
-Ergonomic workstation planning informs socket density and data pathways. State-of-the-art technology loads require careful diversity assumptions and clear spare ways for future adds. Testing, earthing verification and as-built drawings are part of a professional handover.
+Ergonomic workstation planning informs socket density and data pathways. Technology loads call for careful diversity assumptions and spare ways for future additions.
 
-On multi-tenant or phased floors, isolations and live working controls protect adjacent occupants while new circuits are brought online.
+## Open-plan layouts and collaborative zones
 
-## How we approach the work
+An open-plan floor concentrates many people and devices in one space, so cooling, lighting and power have to work together. Zoning allows separate control of collaborative areas, meeting rooms and quieter desks.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Containment that follows the ceiling grid and floor boxes set out against the furniture plan keep the finished office tidy. Where a floor is revamped rather than built new, existing services are surveyed before new routes are chosen.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Working on a floor within a larger building
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+On a single floor of a larger building, isolations and live-working controls protect neighbouring occupants while new circuits are brought online. Out-of-hours work is common where a floor shares risers or plant with other tenants.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Coordination with building management covers access, lift use, waste removal and any interface with the shared fire alarm and air-conditioning systems.
 
-## After handover
+## Testing and as-built records
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Testing, earthing verification and as-built drawings are part of a professional handover. A labelled board schedule helps the facilities manager find and isolate circuits quickly after the new workspace is occupied.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Lighting, cooling and comfort on an office floor
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Office lighting is designed to provide even illumination on desks without glare on screens. Luminaires are laid out against the ceiling grid and furniture plan, and controls such as occupancy sensing or zone switching help avoid unnecessary use. Air-conditioning diffusers and returns are positioned so that cool air reaches occupants without causing drafts.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+On a technology-dense floor, heat from equipment affects cooling needs, so communications rooms and meeting rooms are often given their own cooling provision.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Technology-ready infrastructure
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+State-of-the-art technology depends on reliable power and well-planned cabling. Dedicated circuits for sensitive equipment, tidy containment for data and low-current cables, and clear separation between power and data routes all help prevent interference and make future changes easier.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Labelling of cables, patch panels and distribution boards is a small effort at installation time and a large benefit to whoever maintains the floor afterwards.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Phasing and out-of-hours work
+
+Where a floor remains partly in use, work is split into zones so that staff can relocate temporarily. Noisy or disruptive activities such as drilling and cutting are scheduled outside working hours where possible.
+
+A clear handback process for each zone, including a short snagging walk, lets the occupier see progress and confirm that finished areas meet their expectations.
+
+## Handover to a facilities team
+
+A facilities manager looks after the floor for years after the project ends, so handover documents matter. Drawings, board schedules, test certificates and equipment information give the facilities team a reliable starting point for maintenance and later alterations.
+
+A short walk-through, showing where isolators, valves and filters are located and how controls are set, helps the team operate the new workspace confidently from the first day.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: floor area, headcount, programme dates, scope of electrical and technology works, and dedicated project photography of the completed floor.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -602,7 +689,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Logistics Office Development",
     slug: "logistics-office-development-gtz",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/elv-server-racks.jpg",
     heroAlt: "Logistics Office Development project photography",
     primaryBucket: "electrical",
     secondaryBuckets: [],
@@ -617,43 +704,57 @@ Coordination across disciplines remains essential from first fix through final i
 
 We collaborated with a leading logistics company to develop a state-of-the-art logistics hub. The project involved designing and implementing advanced electromechanical systems to ensure efficient operations and energy savings. Our team delivered a highly functional and sustainable facility that has significantly improved the company’s logistics capabilities.
 
-## Understanding logistics facility electromechanical work
+## What a logistics hub electromechanical package involves
 
-Logistics hubs combine office areas with operational spaces that may need robust power, lighting and environmental control for staff comfort and equipment reliability. Electromechanical design focuses on efficient operations and energy-conscious plant selections as specified for the facility.
+Logistics hubs combine office areas with operational spaces that need robust power, lighting and environmental control for staff comfort and equipment reliability. Electromechanical design focuses on efficient operation and energy-conscious plant selection as defined by the approved design.
 
-Cable routes, switchgear locations and mechanical plant rooms should leave clear circulation for forklifts, racking and maintenance vehicles where relevant. Energy monitoring points — where included — help operators track performance after occupation.
+Cable routes, switchgear locations and mechanical plant rooms should leave clear circulation for forklifts, racking and maintenance vehicles. Lighting in storage areas is normally designed around racking layouts so that aisles are evenly lit.
 
-Commissioning verifies that systems serving offices and operational zones behave as designed under expected load patterns, with documentation suited to facilities and operations teams.
+## Energy savings in a large facility
 
-## How we approach the work
+Large floor areas make energy performance important. Efficient lighting with sensible controls, well-insulated services and appropriately sized cooling plant can reduce running costs over the life of the building.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Where energy monitoring points are included in the design, they help operators track performance after occupation and identify where adjustments would be worthwhile.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Office and operational zones together
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+The office area of a hub has different needs from the warehouse floor. Staff areas call for comfortable temperatures, good lighting and reliable data, while operational areas prioritise robust power, clear circulation and equipment protection.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Dividing services so that each zone can be isolated and maintained separately limits the effect of a fault or planned shutdown on the rest of the facility.
 
-## After handover
+## Commissioning for operations
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Commissioning verifies that systems serving offices and operational zones behave as designed under expected load patterns. Documentation suited to facilities and operations teams supports safe operation and planned maintenance.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Power and lighting for operational areas
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Operational areas such as loading bays, sorting zones and storage aisles need durable power distribution and lighting that suits the way the space is used. Luminaires are selected for mounting height and robustness, and circuits are arranged so that a single fault does not darken a whole zone.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Sockets and power drops are positioned for equipment such as chargers, conveyors and handheld devices. Containment is mounted out of reach of vehicle movements, or protected where it cannot be.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Cooling, ventilation and staff comfort
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Large, high-roofed spaces present specific challenges for ventilation and cooling. The design team decides which areas are fully air-conditioned, which are ventilated, and how loading doors and other openings are handled. Staff areas and offices within the hub typically have conventional air-conditioning for comfort.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Plant such as chillers, air handlers and fans is positioned to allow maintenance access and to reduce noise in occupied areas.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Safety in an industrial setting
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Logistics facilities include vehicle movements, working at height and heavy equipment, so installation work is planned around them. Segregated work areas, clear signage and coordination with operations staff help keep contractors and employees safe.
+
+Electrical, mechanical and fire-related systems are tested and documented so that the operator can demonstrate compliance during inspections.
+
+## Designing for growth and flexibility
+
+Logistics operations change with demand, so a hub is more useful when its services can adapt. Spare capacity in switchgear, space in containment and provision for additional cooling or lighting allow the facility to grow without wholesale replacement of its infrastructure.
+
+Clear zoning of power and lighting also supports changes to racking layouts, loading arrangements and office areas, because circuits can be modified one zone at a time. Records of capacity and loading are kept so that the operator knows how much headroom remains before upgrades are needed.
+
+Designing for access also matters: plant rooms, panels and valves are placed where they can be reached safely, without interrupting day-to-day movements across the site.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: site size, office and warehouse areas, energy-saving measures installed, programme dates, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -672,7 +773,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Government Office Modernization",
     slug: "government-office-modernization-anex",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/clients-corporate-office.jpg",
     heroAlt: "Government Office Modernization project photography",
     primaryBucket: "fire-protection",
     secondaryBuckets: ["maintenance"],
@@ -687,41 +788,57 @@ Coordination across disciplines remains essential from first fix through final i
 
 We were commissioned to modernize a government office building to improve efficiency and create a more welcoming environment for both employees and visitors. Our team implemented advanced electromechanical systems, energy-efficient solutions, and modernized the interior design. The project was completed ahead of schedule, and the government office now serves as a model for other public sector projects.
 
-## Understanding government office electromechanical modernisation
+## What government office modernisation involves
 
-Public-sector office modernisation balances efficiency improvements with a welcoming environment for employees and visitors. Electromechanical upgrades may include HVAC, electrical distribution, energy-efficient solutions and life-safety systems that meet approved designs and authority expectations.
+Public-sector office modernisation balances efficiency improvements with a welcoming environment for employees and visitors. Electromechanical upgrades may include air-conditioning, electrical distribution, energy-efficient lighting and life-safety systems that meet the approved design and authority expectations.
 
-Work in occupied government buildings is typically phased to keep services available. Clear communication with floor managers helps schedule noisy or invasive tasks. Fire detection, alarms and compartment integrity are verified so the building remains inspection-ready.
+Reception areas, service counters and waiting spaces are public-facing, so comfort, lighting and clear signage matter as much as back-office efficiency. Services are planned to support that mix of public and staff areas.
 
-Energy-efficient solutions are commissioned and explained to the teams who will operate them daily. Maintainable layouts reduce future disruption when components need service.
+## Working in an occupied building
 
-## How we approach the work
+Work in occupied government buildings is typically phased to keep services available to the public. Clear communication with floor managers helps schedule noisy or invasive tasks outside peak hours.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+Temporary arrangements for power, cooling and access are planned in advance, and every isolation is notified so that staff and visitors are not caught out.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Life-safety and compliance
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Fire detection, alarms and compartment integrity are verified so the building stays inspection-ready. Cable and pipe penetrations through fire-rated walls and floors need to be sealed with approved products, and the work is recorded for inspection.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+Regulatory approvals and inspections form part of the programme, and documentation is prepared with that in mind.
 
-## After handover
+## Efficiency and maintainability
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Energy-efficient equipment is commissioned and explained to the teams who will operate it daily. Maintainable layouts reduce future disruption when components need service.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Efficient and welcoming public spaces
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+A welcoming environment for visitors depends on comfortable temperatures, good lighting and clear wayfinding as much as on appearance. Electromechanical systems support this by keeping reception and waiting areas evenly cooled and lit, and by keeping noise from plant and ventilation low.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+For staff, efficiency comes from reliable systems and well-planned workspaces. Power and data are available at each desk, meeting rooms have suitable ventilation and lighting, and equipment such as printers has appropriate power and cooling.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Energy-efficient systems in a public building
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Public buildings often operate long hours, so efficient lighting, appropriately sized cooling plant and sensible controls can reduce running costs. Equipment is selected and commissioned to the approved design, and settings are explained to the building's operators.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Where meters or monitoring points are specified, they help the building owner track consumption and plan future improvements. Keeping documentation up to date ensures later changes build on what is actually installed.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Clear communication with building users
+
+Employees and visitors are more accepting of disruption when they know what to expect. Notices on planned isolations, temporary routes and noisy work help them plan their day, and a named contact on site gives staff someone to talk to.
+
+Regular progress meetings with the building management team keep the programme aligned with the needs of the department.
+
+## Modernising the interior alongside the services
+
+Interior modernisation and electromechanical upgrades affect each other. New ceilings need the lighting, air-conditioning and fire detection layouts to be coordinated with them, and new partitions change how cooling is distributed and where detectors must be placed.
+
+Carrying out both together reduces repeated disturbance of the building, because ceilings and walls are opened once. Agreed drawings showing the final layout of services in each area are the best protection against clashes and rework.
+
+Where a building houses public services, signage, queue systems and information displays may also need power and data. These items are included in the coordination so that they are ready when the area reopens.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: floor area, authority or department approval for publication, scope of life-safety and electrical works, programme dates, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
@@ -741,7 +858,7 @@ Coordination across disciplines remains essential from first fix through final i
   {
     title: "Commercial Office Revamp",
     slug: "commercial-office-revamp-ascentia",
-    heroImage: "/images/services/hvac-installation.jpg",
+    heroImage: "/images/pages/maintenance-workshop.jpg",
     heroAlt: "Commercial Office Revamp project photography",
     primaryBucket: "maintenance",
     secondaryBuckets: ["fire-protection"],
@@ -756,41 +873,55 @@ Coordination across disciplines remains essential from first fix through final i
 
 A leading multinational corporation approached us to revamp their Dubai headquarters. They needed a space that would foster creativity and collaboration among their employees. We designed an open-plan office with flexible workspaces, modern meeting rooms, and recreational areas. The project was completed on time and within budget, and the client reported a significant boost in employee morale and productivity. They continue to rely on us for ongoing maintenance and future expansion.
 
-## Understanding office revamp and ongoing maintenance
+## What an office revamp involves
 
-A headquarters revamp that continues into maintenance benefits from installers who understand the as-built condition of plant, boards and life-safety interfaces. During the capital works phase, open-plan layouts, meeting rooms and recreational areas are supported with coordinated electromechanical systems and accessible service routes.
+An office revamp changes layout, finishes and often the way a floor is used. Open-plan areas, flexible workspaces, meeting rooms and recreational areas all place different demands on cooling, lighting and power, so the electromechanical package is planned around how each area will be occupied.
 
-After handover, planned maintenance covers inspections, filter changes, electrical checks and call-out response as agreed in the contract scope. Knowing the original install shortens diagnosis time when a fault appears.
+Meeting rooms need quiet ventilation and good control of temperature, while recreation and breakout areas may need extra power and different lighting. Flexible workspaces benefit from containment and floor boxes that can follow a changing layout.
 
-Transparent visit records and recommendations help owners plan future expansion without rediscovering the building’s systems from scratch.
+## Why the installer matters afterwards
 
-## How we approach the work
+A headquarters revamp that continues into maintenance benefits from installers who understand the as-built condition of plant, boards and life-safety interfaces. Knowing the original installation shortens diagnosis time when a fault appears.
 
-Delivery begins with listening: clarifying the brief, walking the site and aligning electromechanical routes with architecture and interiors. Submittals and material choices are agreed before concealment. Installation protects finished areas, keeps other trades informed and records progress against the agreed sequence.
+After handover, planned maintenance typically covers inspections, filter changes, electrical checks and call-out response as agreed in the contract scope.
 
-Testing and commissioning confirm that systems operate as intended before occupation. Handover packs — drawings, certificates and operating notes as applicable — give owners and facilities teams a practical starting point for day-to-day care.
+## Planning for future expansion
 
-Attention to detail shows up in tidy terminations, labelled boards, sealed duct joints and protected flooring — ordinary marks of professional electromechanical work. Commitment to quality means correcting defects before handover rather than leaving them for occupation.
+Spare capacity in distribution boards, containment and cooling plant makes later expansion simpler. Transparent visit records and recommendations let owners plan changes without rediscovering the building's systems from scratch.
 
-Where the project involves multiple stakeholders, a single accountable electromechanical team reduces gaps between mechanical, electrical and plumbing packages and keeps interfaces visible.
+When an office grows, new partitions, desks and meeting rooms can be added with less disruption if the original services were laid out with that flexibility in mind.
 
-## After handover
+## Testing and handover
 
-Electromechanical systems continue to need care after occupation: filters, drains, breaker checks and seasonal adjustments. Owners who retain clear O&M information and labelled isolation points can respond faster when something needs attention. Where a maintenance relationship is agreed, scheduled visits and call-out cover keep assets ready for daily use without reinventing the building’s service history.
+Circuits, air-conditioning and life-safety interfaces are tested before staff return. Handover typically includes as-built drawings, schedules and operating information that the maintenance team can build on.
 
-[CLIENT TO PROVIDE: programme dates, floor areas and dedicated project photography.]
+## Creativity and collaboration in the workplace
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Workplaces designed to encourage creativity and collaboration often include a mix of open areas, quiet rooms, informal seating and meeting spaces. Each type of space has different requirements for lighting levels, ventilation and acoustics, which the electromechanical design takes into account.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Flexible furniture and movable partitions mean that power and data should be available across the floor rather than only at fixed desks. Floor boxes, ceiling-mounted drops and perimeter trunking are common ways to provide this flexibility.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Planned maintenance for an office floor
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+A planned maintenance programme normally combines scheduled inspections with a call-out service. Typical tasks include air-conditioning filter changes and coil cleaning, checks on electrical boards and emergency lighting, and visual inspections of life-safety devices. Visit reports record what was done, what was found and what is recommended.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+Over time, these records form a service history for the building. They help owners budget for repairs and replacements and help the maintenance team spot recurring issues earlier.
 
-Coordination across disciplines remains essential from first fix through final inspection, so that services installed today remain accessible and documented for the life of the building.
+## Keeping records up to date
+
+When a contractor both builds and maintains systems, records should stay current. Each modification, replacement part and settings change is noted, so the next engineer to visit sees the true condition of the building.
+
+Up-to-date board schedules, equipment lists and drawings also speed up future works, because designers and installers start from accurate information.
+
+## Delivering on time and within budget
+
+Predictable delivery comes from early planning, clear scope and fast decisions. Procurement of major equipment, agreement of finishes and inspection hold points are all scheduled with the client and consultant before work begins.
+
+Changes are inevitable on any project, so a simple change-control routine, in which each variation is described, priced and approved before it is built, helps keep budget and programme under control.
+
+## Project details to be confirmed
+
+[CLIENT TO PROVIDE: floor area, programme dates, scope of the ongoing maintenance agreement, and dedicated project photography.]
 `.trim(),
     gallery: [],
     testimonial: {
