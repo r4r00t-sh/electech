@@ -251,19 +251,7 @@ export default function HomePage() {
       </section>
 
       <Section>
-        <ClientSuccessStories
-          stories={stories}
-          excludeSrcs={[
-            homeBucketImages.mep.src,
-            homeBucketImages["mechanical-plumbing"].src,
-            homeBucketImages.electrical.src,
-            homeBucketImages["fire-protection"].src,
-            homeBucketImages.maintenance.src,
-            homeWhyImage.src,
-            ...homeSectorImages.map((s) => s.image.src),
-            ...homeBlogImages.map((img) => img.src),
-          ].filter(Boolean)}
-        />
+        <ClientSuccessStories stories={stories} />
       </Section>
 
       <TestimonialsBanner items={testimonials} />
