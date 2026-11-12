@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Story } from "@/content/types";
 import { bucketLabel } from "@/lib/buckets";
-import { getStoryDisplayImage } from "@/lib/media";
+import { getStoryDisplayImage, stockImageForBucket } from "@/lib/media";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 
@@ -10,7 +10,10 @@ export function ClientSuccessStories({
   stories,
   title = "Client Success Stories",
   description,
-  /** When true, use silent navy tiles so homepage photos stay unique. */
+  /**
+   * @deprecated Prefer showing story photos. When true, still uses
+   * topic-matched stock images (never a blank navy tile).
+   */
   silentImages = false,
   excludeSrcs = [],
 }: {
@@ -21,6 +24,8 @@ export function ClientSuccessStories({
   excludeSrcs?: string[];
 }) {
   if (!stories.length) return null;
+
+  const used = new Set(excludeSrcs);
 
   return (
     <div>
@@ -45,15 +50,22 @@ export function ClientSuccessStories({
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {stories.map((story, i) => {
           let image = getStoryDisplayImage(story.slug);
-          if (silentImages || (image.src && excludeSrcs.includes(image.src))) {
-            // TODO(image): dedicated story photo — docs/image-todo.md
-            image = {
-              src: "",
-              alt: story.title,
-              placeholder: true,
-              bucket: story.primaryBucket,
-            };
+          const clash =
+            silentImages ||
+            (image.src ? used.has(image.src) : true) ||
+            !image.src ||
+            image.placeholder;
+
+          if (clash) {
+            image = stockImageForBucket(
+              story.primaryBucket,
+              story.title,
+              [...used],
+            );
           }
+
+          if (image.src) used.add(image.src);
+
           return (
             <FadeIn key={story.slug} delay={i * 0.04}>
               <article className="group overflow-hidden rounded-md border border-navy/10 bg-white">
@@ -61,11 +73,7 @@ export function ClientSuccessStories({
                   <PhotoMedia
                     image={image}
                     sizes="(max-width: 768px) 100vw, 33vw"
-                    className={
-                      image.placeholder
-                        ? undefined
-                        : "transition duration-500 group-hover:scale-105"
-                    }
+                    className="transition duration-500 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-5">

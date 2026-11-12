@@ -119,13 +119,54 @@ export const works = {
   },
 } as const satisfies Record<string, MediaRef>;
 
+/** Topic-matched stock photo when a dedicated project image is unavailable. */
+export const bucketStockImages: Record<BucketId, MediaRef> = {
+  mep: media.mepPlant,
+  "mechanical-plumbing": media.plumbingSmall,
+  electrical: media.electricalWide,
+  "fire-protection": media.fireWide,
+  maintenance: media.hvacSquare,
+};
+
+/**
+ * Prefer a real stock photo over a blank tile. Kept name for call sites that
+ * previously rendered a silent navy fallback.
+ */
 export function silentPlaceholder(bucket: BucketId, alt: string): MediaRef {
+  const stock = bucketStockImages[bucket] ?? media.mepPlant;
   return {
-    src: "",
-    alt,
-    placeholder: true,
+    ...stock,
+    alt: alt || stock.alt,
     bucket,
   };
+}
+
+/** Pick a stock photo for a bucket that is not in `excludeSrcs` when possible. */
+export function stockImageForBucket(
+  bucket: BucketId,
+  alt: string,
+  excludeSrcs: string[] = [],
+): MediaRef {
+  const primary = silentPlaceholder(bucket, alt);
+  if (!primary.src || !excludeSrcs.includes(primary.src)) return primary;
+
+  const alternates: MediaRef[] = [
+    media.hvacWide,
+    media.electricalSmall,
+    media.plumbingWide,
+    media.elv,
+    media.fireSmall,
+    media.solar,
+    media.corporateOffice,
+    media.cleanInterior,
+    works.commercialOffice,
+    works.artGallery,
+  ];
+  const free = alternates.find((img) => img.src && !excludeSrcs.includes(img.src));
+  if (free) {
+    return { ...free, alt: alt || free.alt, bucket };
+  }
+  return primary;
 }
 
 /** Default hero slides — prefer resolveHeroSlides() dedicated files */

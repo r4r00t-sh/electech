@@ -35,7 +35,8 @@ export function PhotoMedia({
 }) {
   const position = objectPosition ?? image.objectPosition;
 
-  if (image.placeholder || !image.src) {
+  // Blank navy only when no src is available — callers should prefer stock photos.
+  if (!image.src) {
     const Icon = image.bucket ? bucketIcons[image.bucket] : Settings2;
     return (
       <div
@@ -46,7 +47,6 @@ export function PhotoMedia({
         role="img"
         aria-label={image.alt}
       >
-        {/* TODO(image): dedicated photo — see docs/image-todo.md */}
         <Icon className="h-10 w-10 text-green" aria-hidden />
       </div>
     );

@@ -251,8 +251,19 @@ export default function HomePage() {
       </section>
 
       <Section>
-        {/* Silent tiles on home — library photos already used by hero/solutions/blogs */}
-        <ClientSuccessStories stories={stories} silentImages />
+        <ClientSuccessStories
+          stories={stories}
+          excludeSrcs={[
+            homeBucketImages.mep.src,
+            homeBucketImages["mechanical-plumbing"].src,
+            homeBucketImages.electrical.src,
+            homeBucketImages["fire-protection"].src,
+            homeBucketImages.maintenance.src,
+            homeWhyImage.src,
+            ...homeSectorImages.map((s) => s.image.src),
+            ...homeBlogImages.map((img) => img.src),
+          ].filter(Boolean)}
+        />
       </Section>
 
       <TestimonialsBanner items={testimonials} />
