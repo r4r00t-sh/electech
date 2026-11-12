@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { posts } from "@/content/posts";
-import { getBlogDisplayImage, media } from "@/lib/media";
+import { getBlogDisplayImage, pageHeroes } from "@/lib/media";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -25,7 +25,7 @@ export default function InsightsPage() {
       <PageHero
         title="Insights"
         intro="Practical notes from our engineers on delivery, systems and life safety."
-        media={media.hvacWide}
+        media={pageHeroes.insights}
         crumbs={[{ label: "Insights" }]}
       />
       <Section>

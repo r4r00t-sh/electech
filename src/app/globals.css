@@ -28,13 +28,23 @@
     rgba(10, 20, 40, 0.25) 55%,
     rgba(10, 20, 40, 0) 100%
   );
-  --photo-scrim-left: linear-gradient(
-    to right,
-    rgba(10, 20, 40, 0.75) 0%,
-    rgba(10, 20, 40, 0.45) 45%,
-    rgba(10, 20, 40, 0.15) 70%,
-    rgba(10, 20, 40, 0) 100%
-  );
+  /* Neutral dark-navy only — ~70% left → ~15% mid → clear right;
+     plus a light bottom lift so headlines stay readable on mobile */
+  --photo-scrim-left:
+    linear-gradient(
+      to top,
+      rgba(10, 20, 40, 0.5) 0%,
+      rgba(10, 20, 40, 0.18) 42%,
+      rgba(10, 20, 40, 0) 72%
+    ),
+    linear-gradient(
+      to right,
+      rgba(10, 20, 40, 0.72) 0%,
+      rgba(10, 20, 40, 0.55) 28%,
+      rgba(10, 20, 40, 0.28) 52%,
+      rgba(10, 20, 40, 0.15) 68%,
+      rgba(10, 20, 40, 0) 100%
+    );
 }
 
 @theme inline {
@@ -194,4 +204,23 @@ body {
 
 .animate-clients-marquee {
   animation: clients-marquee 45s linear infinite;
+}
+
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.animate-hero-kenburns {
+  animation: hero-kenburns 7s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-kenburns {
+    animation: none !important;
+  }
 }

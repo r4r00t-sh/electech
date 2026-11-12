@@ -29,7 +29,12 @@ export function PageHero({
       </div>
       <div className="relative overflow-hidden bg-[#0a1428]">
         <div className="absolute inset-0 z-0">
-          <PhotoMedia image={resolved} priority sizes="100vw" />
+          <PhotoMedia
+            image={resolved}
+            priority
+            sizes="100vw"
+            objectPosition={resolved.objectPosition ?? "center right"}
+          />
         </div>
         {/* Neutral scrim only behind text — left side */}
         <div className="pointer-events-none absolute inset-0 z-[1] photo-scrim-left" />

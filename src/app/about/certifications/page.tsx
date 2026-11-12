@@ -6,7 +6,7 @@ import {
   certifications,
   certificationsBoard,
 } from "@/content/certifications";
-import { media } from "@/lib/media";
+import { pageHeroes } from "@/lib/media";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -24,8 +24,7 @@ export default function CertificationsPage() {
       <PageHero
         title="Certifications"
         intro="Quality, safety and environmental management credentials that support our delivery across the UAE."
-        image={media.electricalWide.src}
-        imageAlt={media.electricalWide.alt}
+        media={pageHeroes.certifications}
         crumbs={[
           { label: "About Us", href: "/about" },
           { label: "Certifications" },

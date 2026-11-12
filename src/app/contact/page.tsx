@@ -5,6 +5,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { siteConfig } from "@/content/site";
 import { pageMetadata } from "@/lib/seo";
 import { whatsappLink } from "@/lib/utils";
+import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
   title: "Contact Us",
@@ -17,6 +18,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        media={pageHeroes.contact}
         title="Contact Us"
         intro="Talk to our engineers about your next fit-out, upgrade or maintenance brief."
         crumbs={[{ label: "Contact Us" }]}

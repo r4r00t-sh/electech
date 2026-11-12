@@ -4,6 +4,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { pageMetadata } from "@/lib/seo";
+import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
   title: "About Us",
@@ -44,6 +45,7 @@ export default function AboutLandingPage() {
   return (
     <>
       <PageHero
+        media={pageHeroes.about}
         title="About Us"
         intro="ElecTech MEP is a Dubai-based electromechanical contractor delivering precision MEP and fire safety since 2012."
         crumbs={[{ label: "About Us" }]}

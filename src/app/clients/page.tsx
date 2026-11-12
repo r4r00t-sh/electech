@@ -10,6 +10,7 @@ import {
   organizationSchema,
   pageMetadata,
 } from "@/lib/seo";
+import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
   title: "Our Clients",
@@ -33,6 +34,7 @@ export default function ClientsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <PageHero
+        media={pageHeroes.clients}
         title="Our Clients"
         intro="Trusted by leading organisations across the UAE."
         crumbs={[{ label: "Our Clients" }]}

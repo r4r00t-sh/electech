@@ -3,6 +3,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { aboutContent } from "@/content/about";
 import { pageMetadata } from "@/lib/seo";
+import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
   title: "Why Choose Us",
@@ -16,6 +17,7 @@ export default function WhyChooseUsPage() {
   return (
     <>
       <PageHero
+        media={pageHeroes.whyChoose}
         title={content.title}
         intro={content.intro}
         crumbs={[

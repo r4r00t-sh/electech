@@ -4,6 +4,7 @@ import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { ProjectsFilter } from "@/components/projects/ProjectsFilter";
 import { stories } from "@/content/stories";
 import { pageMetadata } from "@/lib/seo";
+import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
   title: "Projects / Client Success Stories",
@@ -16,6 +17,7 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero
+        media={pageHeroes.projects}
         title="Projects / Client Success Stories"
         intro="Real programmes across our five solutions buckets — filter by capability to find relevant work."
         crumbs={[{ label: "Projects" }]}

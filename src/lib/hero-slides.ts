@@ -1,52 +1,28 @@
-import { existsSync, readdirSync } from "fs";
+import { existsSync } from "fs";
 import path from "path";
-import { defaultHeroSlides, type MediaRef } from "@/lib/media";
+import type { MediaRef } from "@/lib/media";
 
-function collectHeroJpgs(): MediaRef[] {
-  const found: MediaRef[] = [];
-  const seen = new Set<string>();
+const HOME_HEROES: MediaRef[] = [
+  {
+    src: "/images/heroes/hero-02-construction-site-workers.jpg",
+    alt: "Construction workers in high-visibility clothing working on an active concrete slab with rebar.",
+    objectPosition: "center right",
+  },
+  {
+    src: "/images/heroes/hero-03-plant-room-pipework.jpg",
+    alt: "Clean stainless-steel plant room with pumps, valves and industrial pipework.",
+    objectPosition: "center right",
+  },
+];
 
-  const push = (publicRel: string, alt: string) => {
-    if (seen.has(publicRel)) return;
-    if (!existsSync(path.join(process.cwd(), "public", publicRel))) return;
-    seen.add(publicRel);
-    found.push({ src: `/${publicRel}`, alt });
-  };
-
-  // Prefer explicit hero-*.jpg at images root or images/heroes
-  for (const root of ["images", "images/heroes"]) {
-    for (let i = 1; i <= 8; i++) {
-      push(
-        `${root}/hero-${i}.jpg`,
-        `Dubai skyline and construction photography ${i}`,
-      );
-    }
-  }
-
-  // Also pick up client drops: home-*.jpg, skyline-*.jpg under images/heroes
-  const heroesDir = path.join(process.cwd(), "public", "images", "heroes");
-  if (existsSync(heroesDir)) {
-    const files = readdirSync(heroesDir)
-      .filter((f) => /\.(jpe?g|webp)$/i.test(f))
-      .filter((f) => /^(hero|home|skyline)-/i.test(f))
-      .sort();
-    for (const file of files) {
-      push(
-        `images/heroes/${file}`,
-        "Dubai skyline and construction photography",
-      );
-    }
-  }
-
-  return found;
+function fileExists(publicPath: string) {
+  return existsSync(
+    path.join(process.cwd(), "public", publicPath.replace(/^\//, "")),
+  );
 }
 
-/** Server-only: prefer client-added hero photos when present. */
+/** Server-only: dedicated home hero photos (never old-site crops). */
 export function resolveHeroSlides(): MediaRef[] {
-  const found = collectHeroJpgs();
-  if (found.length >= 3) return found.slice(0, 3);
-  if (found.length > 0) {
-    return [...found, ...defaultHeroSlides].slice(0, 3);
-  }
-  return defaultHeroSlides;
+  const ready = HOME_HEROES.filter((h) => fileExists(h.src));
+  return ready.length > 0 ? ready : HOME_HEROES;
 }

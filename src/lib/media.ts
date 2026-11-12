@@ -99,12 +99,73 @@ export function silentPlaceholder(bucket: BucketId, alt: string): MediaRef {
   };
 }
 
-/** Default hero slides when no /images/hero-*.jpg / home-*.jpg are present */
+/** Default hero slides — prefer resolveHeroSlides() dedicated files */
 export const defaultHeroSlides: MediaRef[] = [
-  media.hvacWide,
-  media.electricalWide,
-  media.plumbingWide,
+  {
+    src: "/images/heroes/hero-02-construction-site-workers.jpg",
+    alt: "Site workers in high-vis on an active slab.",
+    objectPosition: "center right",
+  },
+  {
+    src: "/images/heroes/hero-03-plant-room-pipework.jpg",
+    alt: "Plant room stainless pipework and pump sets.",
+    objectPosition: "center right",
+  },
 ];
+
+/** Unique inner-page heroes — never reuse home hero files */
+export const pageHeroes = {
+  about: {
+    src: "/images/pages/about-glass-tower.jpg",
+    alt: "Modern geometric building exterior with glass and white cladding.",
+    objectPosition: "center right",
+  },
+  whoWeAre: {
+    src: "/images/pages/who-we-are-construction.jpg",
+    alt: "Active construction site with tower cranes and structural works.",
+    objectPosition: "center 40%",
+  },
+  vision: {
+    src: "/images/pages/vision-site-plans.jpg",
+    alt: "Engineer drafting plans with an architect’s scale on a desk.",
+    objectPosition: "left center",
+  },
+  whyChoose: {
+    src: "/images/pages/why-choose-workshop.jpg",
+    alt: "Industrial fabricator welding steel with sparks on the shop floor.",
+    objectPosition: "center right",
+  },
+  certifications: {
+    src: "/images/pages/certifications-documents.jpg",
+    alt: "Professional reviewing documents and charts at a work desk.",
+    objectPosition: "center center",
+  },
+  solutions: {
+    src: "/images/pages/solutions-fabrication.jpg",
+    alt: "Live-site metalwork with sparks from cutting steel on site.",
+    objectPosition: "center right",
+  },
+  projects: {
+    src: "/images/pages/projects-office-interior.jpg",
+    alt: "Bright modern office interior ready for fit-out handover.",
+    objectPosition: "center center",
+  },
+  insights: {
+    src: "/images/pages/insights-technical-desk.jpg",
+    alt: "Architectural drawings and technical plans on a study desk.",
+    objectPosition: "center 35%",
+  },
+  clients: {
+    src: "/images/pages/clients-corporate-office.jpg",
+    alt: "Contemporary glazed office workspace representing client environments.",
+    objectPosition: "center center",
+  },
+  contact: {
+    src: "/images/pages/contact-dubai-coastline.jpg",
+    alt: "Dubai skyline at night with towers under construction.",
+    objectPosition: "center 35%",
+  },
+} as const satisfies Record<string, MediaRef>;
 
 /**
  * Homepage solution cards — must not collide with hero home-*.jpg
@@ -269,19 +330,66 @@ export const storyGalleryImages: Record<string, MediaRef[]> = {
 };
 
 export const serviceHeroImages: Record<string, MediaRef> = {
-  mep: media.hvacWide,
-  "mechanical-plumbing": media.hvacSquare,
-  "hvac-installation": media.hvacWide,
-  "plumbing-drainage-installation": media.plumbingWide,
-  electrical: media.electricalWide,
-  "electrical-installation": media.electricalWide,
-  "extra-low-voltage-installation": media.elv,
-  "solar-power-plant-installation": media.solar,
-  "fire-protection": media.fireWide,
-  "fire-fighting-fire-alarm-installation": media.fireWide,
-  "fire-stopping-sealant-application": media.fireSmall,
-  // Maintenance must not use the plumbing photo
-  maintenance: media.elv,
+  mep: {
+    src: "/images/pages/mep-industrial-systems.jpg",
+    alt: "Industrial electrical switchgear corridor with coordinated building services.",
+    objectPosition: "center center",
+  },
+  "mechanical-plumbing": {
+    src: "/images/pages/mechanical-factory-floor.jpg",
+    alt: "Industrial pipework, valves and gauges on a plant wall.",
+    objectPosition: "center 40%",
+  },
+  "hvac-installation": {
+    src: "/images/pages/hvac-equipment-detail.jpg",
+    alt: "Exposed ceiling HVAC ductwork and diffusers in a modern interior.",
+    objectPosition: "center 30%",
+  },
+  "plumbing-drainage-installation": {
+    src: "/images/pages/plumbing-finished-bathroom.jpg",
+    alt: "Finished bathroom with modern plumbing fixtures and ventilation.",
+    objectPosition: "center center",
+  },
+  electrical: {
+    src: "/images/pages/electrical-power-infrastructure.jpg",
+    alt: "Industrial electrical control room with switchgear panels.",
+    objectPosition: "left center",
+  },
+  "electrical-installation": {
+    src: "/images/pages/electrical-installation-work.jpg",
+    alt: "Organised circuit-breaker panel with colour-coded wiring.",
+    objectPosition: "center center",
+  },
+  "extra-low-voltage-installation": {
+    src: "/images/pages/elv-server-racks.jpg",
+    alt: "Data centre racks with organised low-current cabling and status lights.",
+    objectPosition: "center center",
+  },
+  "solar-power-plant-installation": {
+    src: "/images/pages/solar-rooftop-array.jpg",
+    alt: "Photovoltaic solar array under a clear sky.",
+    objectPosition: "center right",
+  },
+  "fire-protection": {
+    src: "/images/pages/fire-services-corridor.jpg",
+    alt: "Red fire-sprinkler zone risers and valve manifold on a building exterior.",
+    objectPosition: "center 45%",
+  },
+  "fire-fighting-fire-alarm-installation": {
+    src: "/images/pages/fire-control-panels.jpg",
+    alt: "Fire sprinkler riser with alarm bell, gauges and control valves.",
+    objectPosition: "center 25%",
+  },
+  "fire-stopping-sealant-application": {
+    src: "/images/pages/fire-stopping-interior.jpg",
+    alt: "Open electrical switchboard showing cable pathways that require fire-stopping.",
+    objectPosition: "center center",
+  },
+  maintenance: {
+    src: "/images/pages/maintenance-workshop.jpg",
+    alt: "Technician servicing a rooftop air-conditioning unit.",
+    objectPosition: "center right",
+  },
 };
 
 export const blogImages: Record<string, MediaRef> = {

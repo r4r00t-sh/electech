@@ -3,6 +3,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { aboutContent } from "@/content/about";
 import { pageMetadata } from "@/lib/seo";
+import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
   title: "Vision and Mission",
@@ -16,6 +17,7 @@ export default function VisionMissionPage() {
   return (
     <>
       <PageHero
+        media={pageHeroes.vision}
         title={content.title}
         intro="The principles and process that guide every ElecTech MEP engagement."
         crumbs={[

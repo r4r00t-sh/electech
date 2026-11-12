@@ -5,6 +5,7 @@ import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { BUCKETS } from "@/lib/buckets";
 import { pageMetadata } from "@/lib/seo";
+import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
   title: "Our Solutions",
@@ -17,6 +18,7 @@ export default function SolutionsLandingPage() {
   return (
     <>
       <PageHero
+        media={pageHeroes.solutions}
         title="Our Solutions"
         intro="Five service buckets covering the full electromechanical lifecycle — from design-led installation to maintenance."
         crumbs={[{ label: "Our Solutions" }]}
