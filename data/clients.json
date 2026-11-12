@@ -1,0 +1,359 @@
+[
+  {
+    "name": "OAKS Hotels & Resorts",
+    "slug": "oaks",
+    "logo": "/images/clients/client-oaks.jpg",
+    "sector": "Hospitality",
+    "sourceFile": "clients/client-oaks-02.jpeg",
+    "order": 1,
+    "featured": true
+  },
+  {
+    "name": "Mövenpick",
+    "slug": "movenpick",
+    "logo": "/images/clients/client-movenpick.jpg",
+    "sector": "Hospitality",
+    "sourceFile": "clients/client-movenpick-02.jpeg",
+    "order": 2,
+    "featured": true
+  },
+  {
+    "name": "Mall of the Emirates",
+    "slug": "mall-of-the-emirates",
+    "logo": "/images/clients/client-mall-of-the-emirates.jpg",
+    "sector": "Retail",
+    "sourceFile": "clients/client-mall-of-the-emirates-02.jpeg",
+    "order": 3,
+    "featured": true
+  },
+  {
+    "name": "Circle Mall",
+    "slug": "circle-mall",
+    "logo": "/images/clients/client-circle-mall.jpg",
+    "sector": "Retail",
+    "sourceFile": "clients/client-circle-mall-02.jpeg",
+    "order": 4,
+    "featured": false
+  },
+  {
+    "name": "Sofitel",
+    "slug": "sofitel",
+    "logo": "/images/clients/client-sofitel.jpg",
+    "sector": "Hospitality",
+    "sourceFile": "clients/client-sofitel-02.jpeg",
+    "order": 5,
+    "featured": true,
+    "storySlug": "hospitality-sector-excellence-sofitel"
+  },
+  {
+    "name": "Dubai Mall",
+    "slug": "dubai-mall",
+    "logo": "/images/clients/client-dubai-mall.jpg",
+    "sector": "Retail",
+    "sourceFile": "clients/client-dubai-mall-02.jpeg",
+    "order": 6,
+    "featured": true
+  },
+  {
+    "name": "Imdaad",
+    "slug": "imdaad",
+    "logo": "/images/clients/client-imdaad.jpg",
+    "sector": "Facility Management",
+    "sourceFile": "clients/client-imdaad-02.jpeg",
+    "order": 7,
+    "featured": true,
+    "storySlug": "innovative-food-outlet-and-park-imdaad"
+  },
+  {
+    "name": "DAMAC",
+    "slug": "damac",
+    "logo": "/images/clients/client-damac.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-damac-02.jpeg",
+    "order": 8,
+    "featured": true
+  },
+  {
+    "name": "wasl properties",
+    "slug": "wasl",
+    "logo": "/images/clients/client-wasl.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-wasl-02.jpeg",
+    "order": 9,
+    "featured": true
+  },
+  {
+    "name": "A&T Group Interiors",
+    "slug": "at-group",
+    "logo": "/images/clients/client-at-group.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-at-group-02.jpeg",
+    "order": 10,
+    "featured": false
+  },
+  {
+    "name": "Nakheel",
+    "slug": "nakheel",
+    "logo": "/images/clients/client-nakheel.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-nakheel-02.jpeg",
+    "order": 11,
+    "featured": true
+  },
+  {
+    "name": "Amazon",
+    "slug": "amazon",
+    "logo": "/images/clients/client-amazon.jpg",
+    "sector": "Commercial",
+    "sourceFile": "clients/client-amazon-02.jpeg",
+    "order": 12,
+    "featured": true,
+    "storySlug": "amazon-ecommerce-office"
+  },
+  {
+    "name": "Summertown Interiors",
+    "slug": "summertown",
+    "logo": "/images/clients/client-summertown.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-summertown-02.jpeg",
+    "order": 13,
+    "featured": false
+  },
+  {
+    "name": "Emaar",
+    "slug": "emaar",
+    "logo": "/images/clients/client-emaar.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-emaar-02.jpeg",
+    "order": 14,
+    "featured": true
+  },
+  {
+    "name": "Multiline",
+    "slug": "multiline",
+    "logo": "/images/clients/client-multiline.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-multiline-02.jpeg",
+    "order": 15,
+    "featured": false
+  },
+  {
+    "name": "VAA",
+    "slug": "vaa",
+    "logo": "/images/clients/client-vaa.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-vaa-02.jpeg",
+    "order": 16,
+    "featured": false
+  },
+  {
+    "name": "Al Barari",
+    "slug": "al-barari",
+    "logo": "/images/clients/client-al-barari.jpg",
+    "sector": "Residential",
+    "sourceFile": "clients/client-al-barari-02.jpeg",
+    "order": 17,
+    "featured": false
+  },
+  {
+    "name": "Arco Interiors",
+    "slug": "arco",
+    "logo": "/images/clients/client-arco.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-arco-02.jpeg",
+    "order": 18,
+    "featured": false
+  },
+  {
+    "name": "Etisalat",
+    "slug": "etisalat",
+    "logo": "/images/clients/client-etisalat.jpg",
+    "sector": "Commercial",
+    "sourceFile": "clients/client-etisalat-02.jpeg",
+    "order": 19,
+    "featured": true,
+    "storySlug": "etisalat-office-kifaf"
+  },
+  {
+    "name": "Dubai Hills Estate",
+    "slug": "dubai-hills",
+    "logo": "/images/clients/client-dubai-hills.jpg",
+    "sector": "Residential",
+    "sourceFile": "clients/client-dubai-hills-02.jpeg",
+    "order": 20,
+    "featured": false
+  },
+  {
+    "name": "Ibn Battuta Mall",
+    "slug": "ibn-battuta",
+    "logo": "/images/clients/client-ibn-battuta.jpg",
+    "sector": "Retail",
+    "sourceFile": "clients/client-ibn-battuta-02.jpeg",
+    "order": 21,
+    "featured": false
+  },
+  {
+    "name": "KG Interiors",
+    "slug": "kg-interiors",
+    "logo": "/images/clients/client-kg-interiors.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-kg-interiors-02.jpeg",
+    "order": 22,
+    "featured": false
+  },
+  {
+    "name": "Liva Insurance",
+    "slug": "liva",
+    "logo": "/images/clients/client-liva.jpg",
+    "sector": "Commercial",
+    "sourceFile": "clients/client-liva-02.jpeg",
+    "order": 23,
+    "featured": false
+  },
+  {
+    "name": "JLL",
+    "slug": "jll",
+    "logo": "/images/clients/client-jll.jpg",
+    "sector": "Commercial",
+    "sourceFile": "clients/client-jll-02.jpeg",
+    "order": 24,
+    "featured": true
+  },
+  {
+    "name": "Visualize Interior Decsheets",
+    "slug": "visualize",
+    "logo": "/images/clients/client-visualize.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-visualize-02.jpeg",
+    "order": 25,
+    "featured": false
+  },
+  {
+    "name": "Axis Communications",
+    "slug": "axis",
+    "logo": "/images/clients/client-axis.jpg",
+    "sector": "Commercial",
+    "sourceFile": "clients/client-axis-02.jpeg",
+    "order": 26,
+    "featured": false
+  },
+  {
+    "name": "Emirates National Facilities Management",
+    "slug": "enfm",
+    "logo": "/images/clients/client-enfm.jpg",
+    "sector": "Facility Management",
+    "sourceFile": "clients/client-enfm-02.jpeg",
+    "order": 27,
+    "featured": false
+  },
+  {
+    "name": "Real Image",
+    "slug": "real-image",
+    "logo": "/images/clients/client-real-image.jpg",
+    "sector": "Commercial",
+    "sourceFile": "clients/client-real-image-02.jpeg",
+    "order": 28,
+    "featured": true,
+    "storySlug": "corporate-headquarters-upgrade-real-image"
+  },
+  {
+    "name": "Ascentia",
+    "slug": "ascentia",
+    "logo": "/images/clients/client-ascentia.jpg",
+    "sector": "Commercial",
+    "sourceFile": "clients/client-ascentia-02.jpeg",
+    "order": 29,
+    "featured": true,
+    "storySlug": "commercial-office-revamp-ascentia"
+  },
+  {
+    "name": "Grand Hyatt",
+    "slug": "grand-hyatt",
+    "logo": "/images/clients/client-grand-hyatt.jpg",
+    "sector": "Hospitality",
+    "sourceFile": "clients/client-grand-hyatt-02.jpeg",
+    "order": 30,
+    "featured": true
+  },
+  {
+    "name": "Barr + Wray",
+    "slug": "barr-wray",
+    "logo": "/images/clients/client-barr-wray.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-barr-wray-02.jpeg",
+    "order": 31,
+    "featured": false
+  },
+  {
+    "name": "AEW Technik",
+    "slug": "aew-technik",
+    "logo": "/images/clients/client-aew-technik.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-aew-technik-02.jpeg",
+    "order": 32,
+    "featured": false
+  },
+  {
+    "name": "Royal Classic Contracting",
+    "slug": "royal-classic",
+    "logo": "/images/clients/client-royal-classic.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-royal-classic-02.jpeg",
+    "order": 33,
+    "featured": false
+  },
+  {
+    "name": "CRI",
+    "slug": "cri",
+    "logo": "/images/clients/client-cri.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-cri-02.jpeg",
+    "order": 34,
+    "featured": false
+  },
+  {
+    "name": "Kalandoor Group",
+    "slug": "kalandoor",
+    "logo": "/images/clients/client-kalandoor.jpg",
+    "sector": "[CLIENT TO PROVIDE]",
+    "sourceFile": "clients/client-kalandoor-03.jpeg",
+    "order": 35,
+    "featured": false
+  },
+  {
+    "name": "Vogo Grand Hotel",
+    "slug": "vogo-grand",
+    "logo": "/images/clients/client-vogo-grand.jpg",
+    "sector": "Hospitality",
+    "sourceFile": "clients/client-vogo-grand-02.jpeg",
+    "order": 36,
+    "featured": false
+  },
+  {
+    "name": "MEBS Facility Services",
+    "slug": "mebs",
+    "logo": "/images/clients/client-mebs.jpg",
+    "sector": "Facility Management",
+    "sourceFile": "clients/client-mebs-02.jpeg",
+    "order": 37,
+    "featured": false
+  },
+  {
+    "name": "Marriott",
+    "slug": "marriott",
+    "logo": "/images/clients/client-marriott.jpg",
+    "sector": "Hospitality",
+    "sourceFile": "clients/client-marriott-02.jpeg",
+    "order": 38,
+    "featured": true
+  },
+  {
+    "name": "The Ritz-Carlton",
+    "slug": "ritz-carlton",
+    "logo": "/images/clients/client-ritz-carlton.jpg",
+    "sector": "Hospitality",
+    "sourceFile": "clients/client-ritz-carlton-02.jpeg",
+    "order": 39,
+    "featured": true
+  }
+]

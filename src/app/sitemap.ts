@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/content/site";
 import { stories } from "@/content/stories";
 import { posts } from "@/content/posts";
+import { getSiteUrl } from "@/lib/seo";
 
 const staticRoutes = [
   "",
@@ -10,6 +10,7 @@ const staticRoutes = [
   "/about/vision-mission",
   "/about/why-choose-us",
   "/about/certifications",
+  "/clients",
   "/solutions",
   "/solutions/mep",
   "/solutions/mechanical-plumbing",
@@ -30,22 +31,23 @@ const staticRoutes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
+  const origin = getSiteUrl();
 
   return [
     ...staticRoutes.map((path) => ({
-      url: `${siteConfig.url}${path}`,
+      url: `${origin}${path}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: path === "" ? 1 : 0.7,
     })),
     ...stories.map((story) => ({
-      url: `${siteConfig.url}/projects/${story.slug}`,
+      url: `${origin}/projects/${story.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
     ...posts.map((post) => ({
-      url: `${siteConfig.url}/insights/${post.slug}`,
+      url: `${origin}/insights/${post.slug}`,
       lastModified: new Date(post.publishedAt),
       changeFrequency: "monthly" as const,
       priority: 0.5,

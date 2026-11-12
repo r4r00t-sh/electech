@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play, Quote } from "lucide-react";
 import type { Testimonial } from "@/content/types";
 import { getStoryDisplayImage } from "@/lib/media";
@@ -15,6 +15,7 @@ export function TestimonialsBanner({
 }) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
     if (paused || items.length < 2) return;
@@ -32,11 +33,44 @@ export function TestimonialsBanner({
     ? getStoryDisplayImage(current.storySlug)
     : getStoryDisplayImage("");
 
-  // Role + company only (docx provides roles, not personal names)
-  const attribution = [current.role, current.company].filter(Boolean).join(", ");
+  // Role + company only (docx provides roles / attributions, not personal names).
+  // If role already includes the full attribution, skip repeating company.
+  const attribution = (() => {
+    const role = current.role?.trim() ?? "";
+    const company = current.company?.trim() ?? "";
+    if (!company) return role;
+    if (role.includes(company)) return role;
+    return [role, company].filter(Boolean).join(", ");
+  })();
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0]?.clientX ?? null;
+    setPaused(true);
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const start = touchStartX.current;
+    touchStartX.current = null;
+    if (start == null || items.length < 2) return;
+    const end = e.changedTouches[0]?.clientX ?? start;
+    const delta = end - start;
+    if (Math.abs(delta) < 40) return;
+    setIndex((i) =>
+      delta < 0 ? (i + 1) % items.length : (i - 1 + items.length) % items.length,
+    );
+  };
 
   return (
-    <section className="bg-navy">
+    <section
+      className="bg-navy"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) setPaused(false);
+      }}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
       <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
         <div className="section-pad px-6 md:px-10 lg:px-14">
           <div className="mb-6 flex items-center justify-between gap-4">

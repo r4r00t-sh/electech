@@ -1,36 +1,34 @@
 import type { Certification } from "./types";
 
+/** From client certifications artwork: ISO 9001, ISO 14001, ISO 45001 */
 export const certifications: Certification[] = [
   {
     id: "iso-9001",
-    name: "ISO 9001 (placeholder)",
+    name: "ISO 9001",
     description:
-      "[CLIENT TO PROVIDE] Quality management certification details and certificate file.",
+      "Quality management systems — International Organization for Standardization.",
     badgeImage: "/images/certs/iso-9001.svg",
     order: 1,
   },
   {
-    id: "iso-45001",
-    name: "ISO 45001 (placeholder)",
+    id: "iso-14001",
+    name: "ISO 14001",
     description:
-      "[CLIENT TO PROVIDE] Occupational health & safety certification details.",
-    badgeImage: "/images/certs/iso-45001.svg",
+      "Environmental management systems — International Organization for Standardization.",
+    badgeImage: "/images/certs/iso-14001.svg",
     order: 2,
   },
   {
-    id: "iso-14001",
-    name: "ISO 14001 (placeholder)",
+    id: "iso-45001",
+    name: "ISO 45001",
     description:
-      "[CLIENT TO PROVIDE] Environmental management certification details.",
-    badgeImage: "/images/certs/iso-14001.svg",
+      "Occupational health and safety management systems — International Organization for Standardization.",
+    badgeImage: "/images/certs/iso-45001.svg",
     order: 3,
   },
-  {
-    id: "civil-defence",
-    name: "Civil Defence approvals (placeholder)",
-    description:
-      "[CLIENT TO PROVIDE] Dubai Civil Defence / relevant authority approvals.",
-    badgeImage: "/images/certs/civil-defence.svg",
-    order: 4,
-  },
 ];
+
+export const certificationsBoard = {
+  src: "/images/certs/iso-board.jpg",
+  alt: "ISO 9001, ISO 14001 and ISO 45001 certifications",
+} as const;

@@ -18,71 +18,77 @@ export type ServicePage = {
   heroAlt: string;
 };
 
+/**
+ * Service page copy — body text taken from the client website docx.
+ * Key Services headings match the client's supplied lists where provided.
+ */
 export const servicePages: ServicePage[] = [
   {
     slug: "mep",
     title: "MEP Solutions",
     bucket: "mep",
     intro:
-      "Integrated mechanical, electrical and plumbing delivery for projects that need one accountable contractor.",
+      "Electech Electromechanical Works LLC is a distinguished provider of MEP solutions, seamlessly integrating personalized support and accessibility with the robustness, stability, and extensive resources of a leading industry player.",
     overview: `
-ElecTech Electromechanical Works LLC stands as a premium provider of MEP solutions, blending the accessibility of a local firm with the stability and resources needed for demanding programmes. We cater to residential, commercial, hospitality, educational, healthcare, showroom, factory and warehouse clients.
+Electech Electromechanical Works LLC is a distinguished provider of MEP solutions, seamlessly integrating personalized support and accessibility with the robustness, stability, and extensive resources of a leading industry player.
 
-Our strength is meticulous design and installation practice, quality materials, fail-safe equipment and deep field expertise. We comply with local regulations and safety standards, use certified materials, follow installation guidelines and conduct regular safety inspections.
+We cater to a diverse clientele across multiple sectors, including residential, commercial, hospitality, educational institutions, healthcare, showrooms, factories, and warehouses. Our core strength lies in our unwavering commitment to meticulous design and installation practices, utilisation of superior materials, fail-safe equipment, and profound expertise in our field. We compliance with local regulations and safety standards is a cornerstone of our approach. We use certified materials, adhere to installation guidelines, and conduct regular safety inspections to ensure that all systems meet the highest standards of safety and reliability.
 
-Regular maintenance and timely upgrades prevent breakdowns, extend equipment life and reduce operating costs — a smart investment for any facility.
+Regular maintenance and timely upgrades are crucial components of our service offering. We provide ongoing support to prevent system breakdowns and extend the lifespan of equipment. Upgrading outdated systems with modern, energy-efficient solutions not only enhances performance but also reduces operational costs, making it a smart investment for any facility.
 `.trim(),
     keyServices: [
       {
-        title: "Coordinated MEP design support",
+        title: "Design and installation",
         description:
-          "Constructible drawings and coordination with architecture, interiors and structure.",
+          "Meticulous design and installation practices across mechanical, electrical and plumbing packages.",
       },
       {
-        title: "Multi-discipline installation",
+        title: "Certified materials and equipment",
         description:
-          "Mechanical, electrical and plumbing executed as one sequenced package.",
+          "Utilisation of superior materials and fail-safe equipment aligned with local regulations and safety standards.",
       },
       {
-        title: "Testing and commissioning",
+        title: "Safety inspections",
         description:
-          "Documented checks before concealment and at handover.",
+          "Regular safety inspections to support systems that meet expected standards of safety and reliability.",
       },
       {
-        title: "Authority compliance",
+        title: "Maintenance and upgrades",
         description:
-          "Installations aligned with local authority and safety expectations.",
+          "Ongoing support to help prevent breakdowns, extend equipment life and support energy-efficient upgrades.",
       },
     ],
     howWeWork: [
-      "Survey and brief clarification",
-      "Coordinated drawings and material submittals",
-      "Sequenced installation with weekly reporting",
-      "Testing, handover and optional maintenance",
+      "Brief and site survey",
+      "Coordinated design and material selection",
+      "Sequenced multi-discipline installation",
+      "Inspection, handover and maintenance options",
     ],
     sectors: [
       "Residential",
       "Commercial",
       "Hospitality",
-      "Healthcare",
       "Education",
-      "Industrial",
+      "Healthcare",
+      "Showrooms",
+      "Factories",
+      "Warehouses",
     ],
     faqs: [
       {
-        question: "Can ElecTech deliver full MEP as a single package?",
+        question: "What sectors do you serve with MEP solutions?",
         answer:
-          "Yes. We coordinate mechanical, electrical and plumbing as one accountable delivery team.",
+          "We cater to residential, commercial, hospitality, educational institutions, healthcare, showrooms, factories and warehouses.",
       },
       {
-        question: "Do you work with fit-out contractors?",
+        question: "Do you offer maintenance after installation?",
         answer:
-          "Yes. Interior fit-out firms are a core client group. We sequence works around finishes and occupation plans.",
+          "Yes. Regular maintenance and timely upgrades are part of our service offering.",
       },
       {
-        question: "How do you keep clients informed?",
+        question: "[CLIENT TO PROVIDE]",
         answer:
-          "We issue weekly progress reports covering completed works, risks and upcoming milestones.",
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/hvac-installation.jpg",
@@ -93,45 +99,39 @@ Regular maintenance and timely upgrades prevent breakdowns, extend equipment lif
     title: "Mechanical and Plumbing Services",
     bucket: "mechanical-plumbing",
     intro:
-      "HVAC and plumbing systems engineered for comfort, hygiene and dependable performance.",
+      "HVAC installation, plumbing and drainage services designed, installed and maintained for reliable building performance.",
     overview: `
-Our mechanical and plumbing teams design, install and maintain HVAC and wet services for fit-outs and new builds. We focus on constructible details, quiet operation and maintainable access — so facilities teams can care for assets after handover.
+Mechanical and Plumbing Services covers HVAC installation and plumbing and drainage installation. Our teams deliver these packages with attention to functionality, safety and maintainability for residential, commercial and specialised environments.
 `.trim(),
     keyServices: [
       {
-        title: "HVAC installation",
-        description: "Cooling, ventilation and related controls for UAE climates.",
+        title: "HVAC Installation",
+        description:
+          "Installation, service and maintenance of HVAC systems tailored to project needs.",
       },
       {
-        title: "Plumbing and drainage",
-        description: "Water supply and drainage networks for reliable daily use.",
-      },
-      {
-        title: "Plant coordination",
-        description: "Outdoor units, pumps and plant spaces planned for service access.",
-      },
-      {
-        title: "Commissioning support",
-        description: "Balancing, leak tests and documented handover packs.",
+        title: "Plumbing and Drainage Installation",
+        description:
+          "In-house design, installation and maintenance of plumbing and drainage systems.",
       },
     ],
     howWeWork: [
-      "Load and route assessment",
-      "Equipment selection and submittals",
-      "Protected installation on live or finishing sites",
-      "Testing and O&M handover",
+      "Survey and brief",
+      "Design coordination",
+      "Installation and protection of finishes",
+      "Testing and handover",
     ],
     sectors: ["Residential", "Hospitality", "Healthcare", "Commercial", "F&B"],
     faqs: [
       {
-        question: "Do you handle both HVAC and plumbing?",
+        question: "Which pages sit under Mechanical and Plumbing?",
         answer:
-          "Yes. Mechanical and plumbing can be delivered together or as focused packages.",
+          "HVAC Installation and Plumbing and Drainage Installation.",
       },
       {
-        question: "Can you work in occupied buildings?",
+        question: "[CLIENT TO PROVIDE]",
         answer:
-          "Yes. We plan noisy and invasive tasks carefully and protect finished areas.",
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/hvac-refrigeration.jpg",
@@ -143,17 +143,38 @@ Our mechanical and plumbing teams design, install and maintain HVAC and wet serv
     bucket: "mechanical-plumbing",
     parentHref: "/solutions/mechanical-plumbing",
     intro:
-      "Heating, ventilation and air-conditioning installation for comfort and efficiency in Dubai projects.",
+      "At Electech, we recognize that different projects demand a multi-specialist provider for HVAC installation, service, and maintenance.",
     overview: `
-We understand that different projects require a multi-specialist provider of HVAC installation, service and maintenance. Our trained technicians deliver reliable, high-quality HVAC services suited to the project's needs and budget, maintaining systems for dependable comfort and performance.
+At Electech, we recognize that different projects demand a multi-specialist provider for HVAC installation, service, and maintenance. Our team of trained and certified HVAC technicians brings expertise, speed, and reliability to every project, ensuring high-quality HVAC services tailored to your specific needs.
 
-Air-conditioning, refrigeration and ventilation works are planned around architectural constraints, acoustic expectations and UAE operating conditions.
+Trust Electech for all your HVAC needs, and experience the assurance of top-notch service and performance.
 `.trim(),
     keyServices: [
-      { title: "Split and VRF systems", description: "Selection and installation matched to zone loads." },
-      { title: "Ducted ventilation", description: "Supply, return and exhaust routes with proper support and sealing." },
-      { title: "Controls basics", description: "Thermostats and control interfaces coordinated with the electrical package." },
-      { title: "Service access", description: "Panels and clearances that make maintenance practical." },
+      {
+        title: "Installation",
+        description:
+          "Expert installation of HVAC systems to ensure optimal performance and efficiency.",
+      },
+      {
+        title: "Service and Maintenance",
+        description:
+          "Regular maintenance and prompt service to keep your HVAC systems in top condition, ensuring maximum comfort and reliability.",
+      },
+      {
+        title: "Expert Technicians",
+        description:
+          "Our certified technicians are skilled in handling a wide range of HVAC systems, providing solutions that meet the highest standards of performance and service.",
+      },
+      {
+        title: "Customized Solutions",
+        description:
+          "We work within your budget to deliver HVAC services that are dependable and tailored to your needs.",
+      },
+      {
+        title: "Commitment to Quality",
+        description:
+          "We maintain your HVAC system to ensure it operates efficiently, providing you with comfort and peace of mind.",
+      },
     ],
     howWeWork: [
       "Survey and capacity confirmation",
@@ -164,14 +185,14 @@ Air-conditioning, refrigeration and ventilation works are planned around archite
     sectors: ["Villas", "Apartments", "Offices", "Hospitality", "Healthcare"],
     faqs: [
       {
-        question: "Do you provide HVAC maintenance after installation?",
+        question: "Do you both install and maintain HVAC systems?",
         answer:
-          "Yes. Ask about our maintenance contracts for preventive care and call-outs.",
+          "Yes. Our offering covers HVAC installation, service and maintenance.",
       },
       {
-        question: "Can you retrofit systems in existing buildings?",
+        question: "[CLIENT TO PROVIDE]",
         answer:
-          "Yes. We assess structural and architectural constraints before proposing routes and equipment.",
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/hvac-installation.jpg",
@@ -183,30 +204,46 @@ Air-conditioning, refrigeration and ventilation works are planned around archite
     bucket: "mechanical-plumbing",
     parentHref: "/solutions/mechanical-plumbing",
     intro:
-      "In-house design, installation and maintenance of plumbing and drainage systems.",
+      "At Electech, we specialize in the in-house design, installation, and maintenance of comprehensive plumbing and drainage systems.",
     overview: `
-We are capable of in-house design, installation and maintenance of plumbing and drainage systems. Plumbing supplies water to kitchen and toilet outlets through pipe distribution systems. Drainage removes waste through a planned network of drainage pipes.
+At Electech, we specialize in the in-house design, installation, and maintenance of comprehensive plumbing and drainage systems. Our expertise ensures a reliable water supply to kitchen and toilet outlets through meticulously designed pipe distribution systems. Additionally, our drainage solutions efficiently manage waste removal via a well-arranged network of drainage pipes.
 
-Installations prioritise leak integrity, accessibility and compliance with local expectations.
+Our team of skilled engineers collaborates closely with clients to deliver tailored solutions that meet the highest standards of functionality and safety. By providing accurate assessments and recommending optimal alternatives, we create environments that are not only highly functional but also aesthetically pleasing. Trust Electech for all your plumbing and drainage needs, ensuring seamless and efficient water management for your projects.
 `.trim(),
     keyServices: [
-      { title: "Domestic water", description: "Supply pipework to wet areas with clean isolation strategy." },
-      { title: "Drainage networks", description: "Gravity and pumped drainage planned for reliability." },
-      { title: "Sanitary coordination", description: "Alignment with interiors and fixture schedules." },
-      { title: "Testing", description: "Pressure and flow checks before concealment." },
+      {
+        title: "Plumbing systems",
+        description:
+          "Reliable water supply to kitchen and toilet outlets through meticulously designed pipe distribution systems.",
+      },
+      {
+        title: "Drainage systems",
+        description:
+          "Drainage solutions that manage waste removal via a well-arranged network of drainage pipes.",
+      },
+      {
+        title: "Design and collaboration",
+        description:
+          "Skilled engineers collaborate with clients to deliver tailored solutions for functionality and safety.",
+      },
     ],
     howWeWork: [
       "Route survey",
-      "Shop drawings / mark-ups",
+      "Assessments and alternatives",
       "Installation and protection",
       "Test and handover",
     ],
     sectors: ["Residential", "Commercial", "Hospitality", "Healthcare"],
     faqs: [
       {
-        question: "Do you coordinate with interior designers?",
+        question: "Do you design as well as install plumbing and drainage?",
         answer:
-          "Yes. Fixture positions and access panels are agreed before closing walls and ceilings.",
+          "Yes. We specialize in in-house design, installation and maintenance of plumbing and drainage systems.",
+      },
+      {
+        question: "[CLIENT TO PROVIDE]",
+        answer:
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/plumbing.jpg",
@@ -217,28 +254,44 @@ Installations prioritise leak integrity, accessibility and compliance with local
     title: "Electrical Services",
     bucket: "electrical",
     intro:
-      "Power, extra-low voltage and solar installations engineered for safety and longevity.",
+      "Electrical Installation, Extra Low Voltage Installation and Solar Power Plant Installation for organisations and projects across the UAE.",
     overview: `
-Our electrical services cover systems that help organisations manage operating costs while meeting performance needs. Beyond execution, we consult clients on strategies and cost allocations for specific electrical systems — from distribution to ELV and solar.
+Electrical Services covers electrical installation, extra low voltage installation and solar power plant installation. Our teams focus on systems that support reliable operation and informed decisions on strategy and cost.
 `.trim(),
     keyServices: [
-      { title: "Electrical installation", description: "HV/LV distribution, containment and final circuits." },
-      { title: "ELV systems", description: "Low-current systems supporting safety and connectivity." },
-      { title: "Solar power plants", description: "Photovoltaic systems for cleaner on-site generation." },
-      { title: "Testing & certification support", description: "Documented checks ready for inspection." },
+      {
+        title: "Electrical Installation",
+        description:
+          "Comprehensive electrical systems from design through installation and maintenance.",
+      },
+      {
+        title: "Extra Low Voltage Installation",
+        description:
+          "In-house design, installation and maintenance of low current systems.",
+      },
+      {
+        title: "Solar Power Plant Installation",
+        description:
+          "Solar photovoltaic energy systems with design, installation, maintenance and monitoring.",
+      },
     ],
     howWeWork: [
       "Load assessment and design coordination",
       "Approved materials",
-      "Neat containment and termination",
-      "Testing and as-built documentation",
+      "Installation and termination",
+      "Testing and documentation",
     ],
     sectors: ["Offices", "Retail", "Logistics", "Residential", "Education"],
     faqs: [
       {
-        question: "Do you install ELV and solar as well as power?",
+        question: "Which pages sit under Electrical Services?",
         answer:
-          "Yes. Electrical Installation, Extra Low Voltage and Solar Power Plant Installation are part of this bucket.",
+          "Electrical Installation, Extra Low Voltage Installation and Solar Power Plant Installation.",
+      },
+      {
+        question: "[CLIENT TO PROVIDE]",
+        answer:
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/electrical-installation.jpg",
@@ -250,30 +303,46 @@ Our electrical services cover systems that help organisations manage operating c
     bucket: "electrical",
     parentHref: "/solutions/electrical",
     intro:
-      "In-house design, installation and maintenance of high voltage, low voltage and related systems.",
+      "At Electech, we offer comprehensive electrical services that cover a full range of electrical systems, designed to provide lower operating costs for organizations and electrical projects.",
     overview: `
-We are capable of in-house design, installation and maintenance of high voltage, low voltage and low current systems. Our electrical services encompass a full range of systems that can reduce operating costs when specified and installed correctly.
+At Electech, we offer comprehensive electrical services that cover a full range of electrical systems, designed to provide lower operating costs for organizations and electrical projects. Our expertise ensures that every project is executed with precision and efficiency, delivering optimal performance and cost savings.
 
-We consult clients on strategies and associated costs for each electrical system on their project.
+By working closely with our clients, we ensure that each electrical system is tailored to meet their unique requirements, delivering both functionality and value. Trust Electech to provide innovative electrical solutions that drive efficiency and cost-effectiveness for your projects.
 `.trim(),
     keyServices: [
-      { title: "Distribution boards", description: "Organised, labelled boards ready for facilities teams." },
-      { title: "Containment & cabling", description: "Neat routes that respect other trades." },
-      { title: "Lighting support", description: "Power infrastructure for architectural lighting packages." },
-      { title: "Small power", description: "Workstations, kitchens and specialty loads." },
+      {
+        title: "Full Range of Electrical Systems",
+        description:
+          "From design to installation and maintenance, we handle all aspects of electrical systems to ensure seamless operation and reliability.",
+      },
+      {
+        title: "Cost-Effective Solutions",
+        description:
+          "Our systems are engineered to reduce operating costs, providing long-term savings and enhanced efficiency for our clients.",
+      },
+      {
+        title: "Consultation and Strategy",
+        description:
+          "Beyond project execution, we offer expert consultation on various strategies and associated costs for specific electrical systems. Our goal is to help clients make informed decisions that align with their budget and operational needs.",
+      },
     ],
     howWeWork: [
       "Survey and coordination",
       "Material submittals",
-      "First and second fix",
+      "Installation",
       "Testing and energisation support",
     ],
     sectors: ["Commercial", "Retail", "Residential", "Hospitality"],
     faqs: [
       {
-        question: "Can you work to consultant specifications?",
+        question: "Do you consult on electrical strategies as well as install?",
         answer:
-          "Yes. We install to approved drawings and raise RFIs when site conditions require clarification.",
+          "Yes. Beyond project execution, we offer consultation on strategies and associated costs for specific electrical systems.",
+      },
+      {
+        question: "[CLIENT TO PROVIDE]",
+        answer:
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/electrical-installation.jpg",
@@ -285,22 +354,33 @@ We consult clients on strategies and associated costs for each electrical system
     bucket: "electrical",
     parentHref: "/solutions/electrical",
     intro:
-      "Design, installation and maintenance of low-current systems for functional, safe spaces.",
+      "At Electech, we excel in the in-house design, installation, and maintenance of low current systems.",
     overview: `
-We are capable of in-house design, installation and maintenance of low current systems. Our engineers provide designer services for electrical distribution and lighting-related ELV needs across project types.
+At Electech, we excel in the in-house design, installation, and maintenance of low current systems. Our engineers bring extensive expertise in providing designer services for electrical distribution and lighting systems across a variety of projects. This deep knowledge base allows us to deliver highly functional, safe, and aesthetically pleasing environments.
 
-We work closely with clients to assess requirements, recommend alternatives and deliver environments that are functional, safe and aesthetically aligned with the interior brief.
+We work closely with our clients to provide accurate assessments and recommend the best alternatives. Our collaborative approach ensures that every project meets the highest standards of functionality and safety while enhancing the overall aesthetic appeal. Trust Electech to deliver comprehensive low current system solutions tailored to your specific needs.
 `.trim(),
     keyServices: [
-      { title: "Structured pathways", description: "Containment ready for ELV devices and future adds." },
-      { title: "Device installation", description: "Clean mounting coordinated with interiors." },
-      { title: "Integration support", description: "Interfaces with fire, access and BMS as specified." },
-      { title: "Testing", description: "Point-to-point checks before handover." },
+      {
+        title: "Low current systems",
+        description:
+          "In-house design, installation and maintenance of low current systems.",
+      },
+      {
+        title: "Distribution and lighting design support",
+        description:
+          "Designer services for electrical distribution and lighting systems across a variety of projects.",
+      },
+      {
+        title: "Client collaboration",
+        description:
+          "Accurate assessments and recommended alternatives to meet functionality and safety standards.",
+      },
     ],
     howWeWork: [
-      "Brief and device schedule review",
-      "Containment first-fix",
-      "Device fit-off",
+      "Brief and assessment",
+      "Recommended alternatives",
+      "Installation",
       "Testing with stakeholders",
     ],
     sectors: ["Offices", "Education", "Healthcare", "Hospitality"],
@@ -320,30 +400,46 @@ We work closely with clients to assess requirements, recommend alternatives and 
     bucket: "electrical",
     parentHref: "/solutions/electrical",
     intro:
-      "Photovoltaic systems that generate electricity with less pollution — often rooftop ready.",
+      "At Electech, we provide innovative solar photovoltaic (PV) energy systems that generate electricity with minimal pollution.",
     overview: `
-Environmental concerns continue to grow. Generating electricity with less pollution is increasingly attractive. Unlike conventional generation, the fuel for solar photovoltaic energy is available at no cost. Solar PV systems can often be installed on roofs where structure and access allow.
+As environmental concerns grow, the demand for cleaner energy solutions increases. At Electech, we provide innovative solar photovoltaic (PV) energy systems that generate electricity with minimal pollution. Solar PV energy harnesses the sun’s power, a renewable resource available at no cost, reducing reliance on fossil fuels and lowering greenhouse gas emissions.
 
-[CLIENT TO PROVIDE: typical system sizes, authority pathway notes and case metrics.]
+Our services include customized system design, seamless installation, comprehensive maintenance, and real-time energy monitoring. Benefits include cost savings, reduced carbon footprint, and greater energy independence. Experience the advantages of solar PV energy with Electech and join us in creating a sustainable future.
 `.trim(),
     keyServices: [
-      { title: "Rooftop PV arrays", description: "Module layout planned for access and wind exposure." },
-      { title: "Inverters & AC interface", description: "Safe connection to the building electrical system." },
-      { title: "Monitoring basics", description: "Visibility of generation for facilities teams." },
-      { title: "Maintenance pathway", description: "Cleaning and inspection routines after handover." },
+      {
+        title: "Customized system design",
+        description:
+          "Solar PV system design tailored to the project and site conditions.",
+      },
+      {
+        title: "Seamless installation",
+        description:
+          "Installation of solar photovoltaic energy systems.",
+      },
+      {
+        title: "Comprehensive maintenance",
+        description:
+          "Ongoing maintenance to support system performance after handover.",
+      },
+      {
+        title: "Real-time energy monitoring",
+        description:
+          "Monitoring that supports visibility of generation for facilities teams.",
+      },
     ],
     howWeWork: [
-      "Feasibility and structure review",
-      "Design and approvals support",
-      "Install and electrical interface",
-      "Commissioning and training",
+      "Feasibility and design",
+      "Installation",
+      "Commissioning and monitoring setup",
+      "Maintenance pathway",
     ],
     sectors: ["Commercial", "Industrial", "Education", "Hospitality"],
     faqs: [
       {
-        question: "Do you handle authority approvals?",
+        question: "Do you handle authority approvals for solar?",
         answer:
-          "We support the technical package. [CLIENT TO PROVIDE: exact approvals scope.]",
+          "[CLIENT TO PROVIDE: exact approvals scope for solar projects.]",
       },
     ],
     heroImage: "/images/services/solar.jpg",
@@ -354,28 +450,39 @@ Environmental concerns continue to grow. Generating electricity with less pollut
     title: "Fire Protection and Safety Services",
     bucket: "fire-protection",
     intro:
-      "Fire fighting, fire alarm and fire-stopping systems that protect people first — then property.",
+      "Fire Fighting and Fire Alarm Installation and Fire Stopping Sealant Application for building safety.",
     overview: `
-Fire protection is among the most important building services. Our solutions are designed to detect and suppress fire risks swiftly, supporting occupant safety and limiting damage. We coordinate installation, testing and the documentation facilities teams need for inspections.
+Fire Protection and Safety Services covers fire fighting and fire alarm installation, and fire stopping sealant application. These packages support early detection, suppression readiness and compartment integrity as specified for each project.
 `.trim(),
     keyServices: [
-      { title: "Fire fighting & fire alarm", description: "Detection and suppression packages working together." },
-      { title: "Fire stopping", description: "Sealing penetrations to protect compartments." },
-      { title: "Inspection readiness", description: "Documentation and testing support." },
-      { title: "Maintenance", description: "Ongoing care to keep systems ready." },
+      {
+        title: "Fire Fighting and Fire Alarm Installation",
+        description:
+          "Detection and suppression components working together for building safety.",
+      },
+      {
+        title: "Fire Stopping Sealant Application",
+        description:
+          "Sealing and protecting penetrations through fire compartment walls and floors.",
+      },
     ],
     howWeWork: [
-      "Risk and drawing review",
-      "Material and cause-and-effect alignment",
+      "Drawing and risk review",
+      "Material and system alignment",
       "Installation and interface testing",
       "Handover and maintenance options",
     ],
     sectors: ["Government", "Healthcare", "Commercial", "Hospitality", "Residential"],
     faqs: [
       {
-        question: "Do you install both detection and suppression?",
+        question: "Which pages sit under Fire Protection and Safety?",
         answer:
-          "Yes. Fire fighting and fire alarm installation is a core offering, complemented by fire stopping.",
+          "Fire Fighting and Fire Alarm Installation, and Fire Stopping Sealant Application.",
+      },
+      {
+        question: "[CLIENT TO PROVIDE]",
+        answer:
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/fire-alarm.jpg",
@@ -387,30 +494,47 @@ Fire protection is among the most important building services. Our solutions are
     bucket: "fire-protection",
     parentHref: "/solutions/fire-protection",
     intro:
-      "Detection and suppression systems designed to protect life and limit property damage.",
+      "At Electech, we understand that a firefighting system is one of the most critical building services, prioritizing human life first and property second.",
     overview: `
-A firefighting system is one of the most critical building services, prioritising human life first and property second. Our solution is designed to detect and suppress fires swiftly. Key components include fire alarms, sprinkler systems, fire extinguishers and smoke detectors working together.
+At Electech, we understand that a firefighting system is one of the most critical building services, prioritizing human life first and property second. Our expertly designed solutions swiftly detect and suppress fires, ensuring occupant safety and minimizing damage.
 
-We provide regular maintenance and support drills to help keep systems effective.
+We provide regular maintenance and conduct drills to ensure the system’s effectiveness, making our firefighting systems indispensable for any building’s safety infrastructure. Trust Electech to safeguard your property and lives with our comprehensive firefighting solutions.
 `.trim(),
     keyServices: [
-      { title: "Fire alarm systems", description: "Detection, panels and notification devices." },
-      { title: "Sprinkler & fighting systems", description: "Pipework and devices installed to specification." },
-      { title: "Interface testing", description: "Cause-and-effect verification with related trades." },
-      { title: "Maintenance & drills support", description: "Keep readiness after handover." },
+      {
+        title: "Fire Alarms",
+        description: "Early detection and alert systems.",
+      },
+      {
+        title: "Sprinkler Systems",
+        description: "Automated fire suppression.",
+      },
+      {
+        title: "Fire Extinguishers",
+        description: "Accessible and effective fire control.",
+      },
+      {
+        title: "Smoke Detectors",
+        description: "Continuous monitoring for smoke and fire.",
+      },
     ],
     howWeWork: [
       "Drawing and matrix review",
-      "First fix pipework/cabling",
-      "Device fit-off",
-      "Integrated testing and handover",
+      "Installation of detection and suppression components",
+      "Integrated testing",
+      "Maintenance and drills support",
     ],
     sectors: ["Commercial", "Government", "Healthcare", "Hospitality"],
     faqs: [
       {
-        question: "Do you coordinate with Civil Defence requirements?",
+        question: "Do you support maintenance after fire system installation?",
         answer:
-          "Installations follow approved designs and local authority expectations. [CLIENT TO PROVIDE: specific approval process wording.]",
+          "Yes. We provide regular maintenance and conduct drills to support system effectiveness.",
+      },
+      {
+        question: "[CLIENT TO PROVIDE]",
+        answer:
+          "[CLIENT TO PROVIDE: Civil Defence / approvals wording for marketing pages.]",
       },
     ],
     heroImage: "/images/services/fire-alarm.jpg",
@@ -422,30 +546,49 @@ We provide regular maintenance and support drills to help keep systems effective
     bucket: "fire-protection",
     parentHref: "/solutions/fire-protection",
     intro:
-      "Sealing penetrations and joints so fire compartments perform as designed.",
+      "Our fire stopping services include sealing and protecting penetrations through fire compartment walls and floors.",
     overview: `
-Our fire stopping services include sealing and protecting penetrations through fire compartment walls and floors. We install fire barriers around combinations of penetrations and apply fire-rated solutions to ducts, pipes, joints, electrical conduits and gaps. We also offer acoustic and non-fire-rated sealant applications where specified.
-
-Work adheres to specifications, safety guidelines and local authority regulations, with periodic inspections to support a risk-controlled environment.
+Our fire stopping services include sealing and protecting penetrations through fire compartment walls and floors. We also install fire barriers around combinations of penetrations in fire zones and apply fire-rated solutions to ducts, various types of pipes, joints, electrical conduits, and gaps. Additionally, we offer a range of acoustic and non-fire-rated sealant applications. Our work adheres to specifications, safety guidelines, and local authority regulations, with periodic inspections conducted to ensure quality and a risk-free environment.
 `.trim(),
     keyServices: [
-      { title: "Penetration seals", description: "Pipes, cables and ducts through rated walls and floors." },
-      { title: "Linear joint seals", description: "Joints protected to the specified rating." },
-      { title: "Mixed service barriers", description: "Combined penetrations treated as a system." },
-      { title: "Inspection support", description: "Traceable applications ready for review." },
+      {
+        title: "Penetration seals",
+        description:
+          "Sealing and protecting penetrations through fire compartment walls and floors.",
+      },
+      {
+        title: "Fire barriers",
+        description:
+          "Fire barriers around combinations of penetrations in fire zones.",
+      },
+      {
+        title: "Fire-rated applications",
+        description:
+          "Fire-rated solutions to ducts, pipes, joints, electrical conduits and gaps.",
+      },
+      {
+        title: "Acoustic and non-fire-rated sealants",
+        description:
+          "A range of acoustic and non-fire-rated sealant applications where specified.",
+      },
     ],
     howWeWork: [
       "Survey of openings",
       "Approved system selection",
       "Application and labelling",
-      "Record photos and handover",
+      "Periodic inspection support",
     ],
     sectors: ["Commercial", "Healthcare", "Government", "Hospitality"],
     faqs: [
       {
-        question: "Can you attend after other trades create new openings?",
+        question: "Do you work to local authority regulations?",
         answer:
-          "Yes. Fire stopping often continues as a rolling package through the fit-out.",
+          "Yes. Our work adheres to specifications, safety guidelines and local authority regulations.",
+      },
+      {
+        question: "[CLIENT TO PROVIDE]",
+        answer:
+          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
       },
     ],
     heroImage: "/images/services/fire-alarm-install.jpg",
@@ -456,38 +599,42 @@ Work adheres to specifications, safety guidelines and local authority regulation
     title: "Maintenance Contract",
     bucket: "maintenance",
     intro:
-      "Planned maintenance that keeps MEP assets reliable, compliant and ready for daily use.",
+      "Maintenance includes a wide variety of tasks depending on the particular business or organization.",
     overview: `
-Maintenance includes a wide variety of tasks depending on the organisation. It is the behind-the-scenes work that keeps facilities functional and comfortable. Our experienced team coordinates civil, mechanical, electrical, plumbing and IT-related interfaces without the delay of waiting on multiple vendors for basic information — speeding estimates and improving service for building amenities.
-
-Whether you need preventive routines after a fit-out or an ongoing contract for an occupied asset, we provide clear scopes, responsive call-outs and transparent reporting.
+Maintenance includes a wide variety of tasks depending on the particular business or organization. It encompasses a great deal of ‘behind the scenes’ work to ensure that facilities or buildings remain functional and comfortable for their users. Our experienced team works together to coordinate the intricate layout of all your civil, mechanical, electrical, plumbing, and IT systems without the delay of waiting on other businesses for information. This not only speeds up the estimating of requirements but also leads to a far better service for your building amenities.
 `.trim(),
     keyServices: [
-      { title: "Preventive maintenance", description: "Scheduled inspections and servicing for MEP assets." },
-      { title: "Responsive call-outs", description: "Support when systems need urgent attention." },
-      { title: "Multi-discipline coordination", description: "One team across mechanical, electrical and plumbing." },
-      { title: "Reporting", description: "Clear records of visits, findings and recommendations." },
+      {
+        title: "Multi-discipline coordination",
+        description:
+          "Coordination across civil, mechanical, electrical, plumbing and IT systems.",
+      },
+      {
+        title: "Facility readiness",
+        description:
+          "Behind-the-scenes work that helps facilities remain functional and comfortable for users.",
+      },
+      {
+        title: "Faster estimating",
+        description:
+          "One experienced team reduces delay from waiting on multiple vendors for basic information.",
+      },
     ],
     howWeWork: [
       "Asset and criticality review",
-      "Agreed SLA and visit plan",
-      "Scheduled service + call-out response",
-      "Monthly or weekly status reporting as agreed",
+      "Agreed visit plan",
+      "Scheduled service and call-out response",
+      "Status reporting as agreed",
     ],
     sectors: ["Commercial", "Hospitality", "Healthcare", "Retail", "Government"],
     faqs: [
       {
-        question: "Can maintenance follow an ElecTech installation?",
+        question: "What does a maintenance contract typically cover?",
         answer:
-          "Yes. Many clients continue with us after handover so knowledge of the install is retained.",
-      },
-      {
-        question: "Do you maintain systems installed by others?",
-        answer:
-          "Often yes, after a condition survey. [CLIENT TO PROVIDE: onboarding process.]",
+          "[CLIENT TO PROVIDE: standard maintenance contract scope for marketing pages.]",
       },
     ],
-    heroImage: "/images/services/plumbing.jpg",
+    heroImage: "/images/services/elv.jpg",
     heroAlt: "Planned MEP maintenance on building services",
   },
 ];

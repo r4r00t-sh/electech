@@ -17,6 +17,7 @@ const nav = [
       { label: "Who We Are", href: "/about/who-we-are" },
       { label: "Vision and Mission", href: "/about/vision-mission" },
       { label: "Why Choose Us", href: "/about/why-choose-us" },
+      { label: "Our Clients", href: "/clients" },
       { label: "Certifications", href: "/about/certifications" },
     ],
   },

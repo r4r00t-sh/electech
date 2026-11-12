@@ -29,6 +29,11 @@ const links = [
     description: "The reasons fit-out firms and owners appoint ElecTech MEP.",
   },
   {
+    href: "/clients",
+    title: "Our Clients",
+    description: "Organisations across the UAE that trust Electech MEP.",
+  },
+  {
     href: "/about/certifications",
     title: "Certifications",
     description: "Quality, safety and authority credentials.",

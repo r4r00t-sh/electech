@@ -33,21 +33,21 @@ export function PhotoMedia({
   objectPosition?: string;
   fill?: boolean;
 }) {
+  const position = objectPosition ?? image.objectPosition;
+
   if (image.placeholder || !image.src) {
     const Icon = image.bucket ? bucketIcons[image.bucket] : Settings2;
     return (
       <div
         className={cn(
-          "flex h-full w-full flex-col items-center justify-center gap-3 bg-navy-deep text-white/70",
+          "flex h-full w-full items-center justify-center bg-navy-deep text-white/70",
           className,
         )}
         role="img"
         aria-label={image.alt}
       >
+        {/* TODO(image): dedicated photo — see docs/image-todo.md */}
         <Icon className="h-10 w-10 text-green" aria-hidden />
-        <span className="max-w-[12rem] px-3 text-center text-[14px] leading-snug text-white/55">
-          [CLIENT TO PROVIDE photo]
-        </span>
       </div>
     );
   }
@@ -60,7 +60,7 @@ export function PhotoMedia({
         fill
         priority={priority}
         className={cn("object-cover", className)}
-        style={objectPosition ? { objectPosition } : undefined}
+        style={position ? { objectPosition: position } : undefined}
         sizes={sizes}
       />
     );
@@ -74,7 +74,7 @@ export function PhotoMedia({
       height={800}
       priority={priority}
       className={cn("h-full w-full object-cover", className)}
-      style={objectPosition ? { objectPosition } : undefined}
+      style={position ? { objectPosition: position } : undefined}
       sizes={sizes}
     />
   );

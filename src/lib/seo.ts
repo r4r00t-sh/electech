@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/content/site";
 
+/** Absolute site origin from env (Vercel preview / production). */
+export function getSiteUrl() {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL.replace(/\/$/, "")}`;
+  }
+  return siteConfig.url.replace(/\/$/, "");
+}
+
 export function pageMetadata({
   title,
   description,
@@ -12,43 +23,46 @@ export function pageMetadata({
   path?: string;
   image?: string;
 }): Metadata {
-  const url = `${siteConfig.url}${path}`;
-  const fullTitle = `${title} | ${siteConfig.name}`;
+  const origin = getSiteUrl();
+  const url = `${origin}${path}`;
+  // Root layout already applies `template: "%s | ElecTech MEP"` — pass bare title.
+  const absoluteImage = image.startsWith("http") ? image : `${origin}${image}`;
 
   return {
-    title: fullTitle,
+    title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title: fullTitle,
+      title,
       description,
       url,
       siteName: siteConfig.name,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      images: [{ url: absoluteImage, width: 1200, height: 630, alt: title }],
       locale: "en_AE",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: fullTitle,
+      title,
       description,
-      images: [image],
+      images: [absoluteImage],
     },
   };
 }
 
 export function organizationSchema() {
+  const origin = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": ["Organization", "LocalBusiness"],
     name: siteConfig.legalName,
     alternateName: siteConfig.name,
-    url: siteConfig.url,
+    url: origin,
     email: siteConfig.email,
     telephone: siteConfig.phone,
     foundingDate: "2012",
-    logo: `${siteConfig.url}/images/brand/electech-logo.png`,
-    image: `${siteConfig.url}/images/brand/electech-logo.png`,
+    logo: `${origin}/images/brand/electech-logo.png`,
+    image: `${origin}/images/brand/electech-logo.png`,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Hamsah Building, Oud Metha",
@@ -61,6 +75,7 @@ export function organizationSchema() {
 }
 
 export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  const origin = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -69,13 +84,13 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: siteConfig.url,
+        item: origin,
       },
       ...items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 2,
         name: item.name,
-        item: `${siteConfig.url}${item.path}`,
+        item: `${origin}${item.path}`,
       })),
     ],
   };

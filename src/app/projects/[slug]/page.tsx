@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -13,7 +14,7 @@ import {
   stories,
 } from "@/content/stories";
 import { bucketLabel } from "@/lib/buckets";
-import { getStoryDisplayImage } from "@/lib/media";
+import { getStoryDisplayImage, getStoryGallery } from "@/lib/media";
 import { pageMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/content/site";
@@ -39,6 +40,14 @@ export async function generateMetadata({
   });
 }
 
+function attribution(role: string, company: string) {
+  const r = role?.trim() ?? "";
+  const c = company?.trim() ?? "";
+  if (!c) return r;
+  if (r.includes(c)) return r;
+  return [r, c].filter(Boolean).join(", ");
+}
+
 export default async function StoryPage({
   params,
 }: {
@@ -49,11 +58,12 @@ export default async function StoryPage({
   if (!story) notFound();
 
   const { prev, next } = getAdjacentStories(slug);
-  const related = getStoriesByBucket(story.primaryBucket, 4).filter(
-    (s) => s.slug !== story.slug,
-  ).slice(0, 3);
+  const related = getStoriesByBucket(story.primaryBucket, 4)
+    .filter((s) => s.slug !== story.slug)
+    .slice(0, 3);
 
   const displayImage = getStoryDisplayImage(story.slug);
+  const gallery = getStoryGallery(story.slug);
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -65,6 +75,9 @@ export default async function StoryPage({
     author: { "@type": "Organization", name: siteConfig.legalName },
     publisher: { "@type": "Organization", name: siteConfig.legalName },
   };
+
+  const bodyLines = story.body.split("\n");
+  let galleryInserted = false;
 
   return (
     <>
@@ -105,13 +118,33 @@ export default async function StoryPage({
       <Section>
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
           <article className="prose-mep whitespace-pre-line text-slate">
-            {story.body.split("\n").map((line, i) => {
+            {bodyLines.map((line, i) => {
               if (line.startsWith("## ")) {
-                return (
-                  <h2 key={i} className="font-display text-navy">
+                const heading = (
+                  <h2 key={`h-${i}`} className="font-display text-navy">
                     {line.replace("## ", "")}
                   </h2>
                 );
+                // Insert inline gallery after the first major section body
+                if (!galleryInserted && i > 0) {
+                  galleryInserted = true;
+                  return (
+                    <Fragment key={`sec-${i}`}>
+                      {heading}
+                      <div className="my-8 grid gap-4 not-prose md:grid-cols-2">
+                        {gallery.map((img) => (
+                          <div
+                            key={`${img.src}-${img.objectPosition ?? ""}-${img.alt}`}
+                            className="relative aspect-[4/3] overflow-hidden rounded-md"
+                          >
+                            <PhotoMedia image={img} sizes="50vw" />
+                          </div>
+                        ))}
+                      </div>
+                    </Fragment>
+                  );
+                }
+                return heading;
               }
               if (line.startsWith("### ")) {
                 return (
@@ -124,22 +157,14 @@ export default async function StoryPage({
               return <p key={i}>{line}</p>;
             })}
 
-            {story.gallery.length ? (
-              <div className="my-8 grid gap-4 md:grid-cols-2">
-                {story.gallery.map((img) => (
+            {!galleryInserted && gallery.length ? (
+              <div className="my-8 grid gap-4 not-prose md:grid-cols-2">
+                {gallery.map((img) => (
                   <div
-                    key={img.src}
+                    key={`${img.src}-${img.alt}`}
                     className="relative aspect-[4/3] overflow-hidden rounded-md"
                   >
-                    <PhotoMedia
-                      image={{
-                        src: "",
-                        alt: img.alt,
-                        placeholder: true,
-                        bucket: story.primaryBucket,
-                      }}
-                      sizes="50vw"
-                    />
+                    <PhotoMedia image={img} sizes="50vw" />
                   </div>
                 ))}
               </div>
@@ -151,18 +176,19 @@ export default async function StoryPage({
                 “{story.testimonial.quote}”
               </blockquote>
               <figcaption className="mt-4 text-[15px] text-slate-dark">
-                {[story.testimonial.role, story.testimonial.company]
-                  .filter(Boolean)
-                  .join(", ")}
+                {attribution(
+                  story.testimonial.role,
+                  story.testimonial.company,
+                )}
               </figcaption>
             </figure>
           </article>
 
-          <aside className="h-fit rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6 lg:sticky lg:top-24">
+          <aside className="h-fit rounded-md border border-navy/10 bg-mist p-6 lg:sticky lg:top-24">
             <h2 className="font-display text-lg font-bold text-navy">
               Project facts
             </h2>
-            <dl className="mt-4 space-y-4 text-sm">
+            <dl className="mt-4 space-y-4 text-[15px]">
               {[
                 ["Client", story.client],
                 ["Location", story.location],
@@ -188,9 +214,9 @@ export default async function StoryPage({
           {story.results.map((result) => (
             <div
               key={result.label}
-              className="rounded-[var(--radius-card)] border border-navy/8 bg-white p-5"
+              className="rounded-md border border-navy/10 bg-white p-5"
             >
-              <p className="text-sm text-slate">{result.label}</p>
+              <p className="text-[15px] text-slate">{result.label}</p>
               <p className="mt-1 font-display text-xl font-bold text-navy">
                 {result.value}
               </p>
@@ -204,7 +230,7 @@ export default async function StoryPage({
           {prev ? (
             <Link
               href={`/projects/${prev.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-amber"
+              className="inline-flex items-center gap-2 text-[15px] font-semibold text-navy hover:text-green"
             >
               <ArrowLeft className="h-4 w-4" /> {prev.title}
             </Link>
@@ -214,7 +240,7 @@ export default async function StoryPage({
           {next ? (
             <Link
               href={`/projects/${next.slug}`}
-              className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-amber"
+              className="inline-flex items-center gap-2 text-[15px] font-semibold text-navy hover:text-green"
             >
               {next.title} <ArrowRight className="h-4 w-4" />
             </Link>

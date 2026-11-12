@@ -1,4 +1,4 @@
-import { Mail, MapPin, MessageCircle, Phone, Clock } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ContactForm } from "@/components/contact/ContactForm";
@@ -9,7 +9,7 @@ import { whatsappLink } from "@/lib/utils";
 export const metadata = pageMetadata({
   title: "Contact Us",
   description:
-    "Contact ElecTech MEP in Dubai — request a quote for MEP, HVAC, electrical, fire protection or maintenance.",
+    "Contact Electech Electromechanical Works LLC in Dubai — Hamsah Building, Oud Metha. Request a quote for MEP, HVAC, electrical, fire protection or maintenance.",
   path: "/contact",
 });
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
           <div>
             <SectionHeading
               title="Send an enquiry"
-              description="We respond to project enquiries at info@electechmep.com."
+              description={`We respond to project enquiries at ${siteConfig.email}.`}
             />
             <ContactForm />
           </div>
@@ -45,9 +45,6 @@ export default function ContactPage() {
                         {line}
                       </span>
                     ))}
-                    <span className="mt-2 block text-xs text-slate">
-                      {siteConfig.address.note}
-                    </span>
                   </span>
                 </li>
                 <li>
@@ -79,22 +76,12 @@ export default function ContactPage() {
                     {siteConfig.email}
                   </a>
                 </li>
-                <li className="flex gap-3">
-                  <Clock className="mt-0.5 h-4 w-4 shrink-0 text-amber" />
-                  <span>
-                    {siteConfig.hours.map((h) => (
-                      <span key={h.day} className="block">
-                        <strong className="text-navy">{h.day}:</strong> {h.time}
-                      </span>
-                    ))}
-                  </span>
-                </li>
               </ul>
             </div>
 
             <div className="overflow-hidden rounded-[var(--radius-card)] border border-navy/8">
               <iframe
-                title="ElecTech MEP office map — Hamsah Building, Oud Metha, Dubai"
+                title="Electech Electromechanical Works LLC — Hamsah Building, Oud Metha, Dubai"
                 src={siteConfig.address.mapEmbedUrl}
                 className="h-72 w-full"
                 loading="lazy"

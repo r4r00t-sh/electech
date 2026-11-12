@@ -9,6 +9,7 @@ const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Who We Are", href: "/about/who-we-are" },
   { label: "Why Choose Us", href: "/about/why-choose-us" },
+  { label: "Our Clients", href: "/clients" },
   { label: "Projects", href: "/projects" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
@@ -66,7 +67,6 @@ export function Footer() {
           <h3 className="font-display text-sm font-bold text-white">Contact</h3>
           <ul className="mt-4 space-y-3 text-sm text-white/70">
             <li>
-              {/* Confirm with client: old WP site listed Al Makhawi Building, Bur Dubai */}
               {siteConfig.address.lines.map((line) => (
                 <span key={line} className="block">
                   {line}
@@ -109,15 +109,12 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col gap-2 py-4 text-[14px] text-white/45 md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {siteConfig.legalName}. All rights
+            © {siteConfig.copyrightYear} {siteConfig.legalName}. All rights
             reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <p className="text-[13px]">{siteConfig.address.note}</p>
-            <a href="#main" className="font-medium text-white/70 hover:text-green">
-              Back to top
-            </a>
-          </div>
+          <a href="#main" className="font-medium text-white/70 hover:text-green">
+            Back to top
+          </a>
         </div>
       </div>
     </footer>

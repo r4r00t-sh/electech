@@ -10,10 +10,15 @@ export function ClientSuccessStories({
   stories,
   title = "Client Success Stories",
   description,
+  /** When true, use silent navy tiles so homepage photos stay unique. */
+  silentImages = false,
+  excludeSrcs = [],
 }: {
   stories: Story[];
   title?: string;
   description?: string;
+  silentImages?: boolean;
+  excludeSrcs?: string[];
 }) {
   if (!stories.length) return null;
 
@@ -39,7 +44,16 @@ export function ClientSuccessStories({
       </div>
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {stories.map((story, i) => {
-          const image = getStoryDisplayImage(story.slug);
+          let image = getStoryDisplayImage(story.slug);
+          if (silentImages || (image.src && excludeSrcs.includes(image.src))) {
+            // TODO(image): dedicated story photo — docs/image-todo.md
+            image = {
+              src: "",
+              alt: story.title,
+              placeholder: true,
+              bucket: story.primaryBucket,
+            };
+          }
           return (
             <FadeIn key={story.slug} delay={i * 0.04}>
               <article className="group overflow-hidden rounded-md border border-navy/10 bg-white">

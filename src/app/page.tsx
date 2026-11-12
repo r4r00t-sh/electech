@@ -14,14 +14,15 @@ import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { HeroSlider } from "@/components/home/HeroSlider";
 import { ClientSuccessStories } from "@/components/widgets/ClientSuccessStories";
 import { TestimonialsBanner } from "@/components/widgets/TestimonialsBanner";
-import { ClientLogoStrip } from "@/components/widgets/ClientLogoStrip";
+import { ClientsMarquee } from "@/components/clients/ClientsMarquee";
+import { getFeaturedClients } from "@/content/clients";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { BUCKETS } from "@/lib/buckets";
 import {
+  homeBlogImages,
   homeBucketImages,
   homeSectorImages,
   homeWhyImage,
-  placeholder,
 } from "@/lib/media";
 import { resolveHeroSlides } from "@/lib/hero-slides";
 import { siteConfig } from "@/content/site";
@@ -249,7 +250,8 @@ export default function HomePage() {
       </section>
 
       <Section>
-        <ClientSuccessStories stories={stories} />
+        {/* Silent tiles on home — library photos already used by hero/solutions/blogs */}
+        <ClientSuccessStories stories={stories} silentImages />
       </Section>
 
       {/* Dark navy stats band between stories and testimonials */}
@@ -303,35 +305,27 @@ export default function HomePage() {
       </Section>
 
       <Section tone="mist">
-        <p className="mb-2 text-center text-[14px] font-medium text-slate">
-          [CLIENT TO PROVIDE logos]
-        </p>
-        <ClientLogoStrip />
+        <ClientsMarquee clients={getFeaturedClients()} />
       </Section>
 
-      {/* Certifications row with placeholder badges */}
       <section className="border-y border-navy/10 bg-white">
         <div className="container-site py-10">
           <h2 className="font-display text-2xl font-bold text-navy">
             Certifications
           </h2>
           <p className="mt-2 text-[15px] text-slate-dark">
-            Official certificates will appear here once supplied.
+            ISO 9001, ISO 14001 and ISO 45001 — quality, environmental and
+            occupational health &amp; safety management systems.
           </p>
-          <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {["ISO 9001", "ISO 45001", "ISO 14001", "Civil Defence"].map(
-              (label) => (
-                <div
-                  key={label}
-                  className="flex aspect-[4/3] flex-col items-center justify-center rounded-md border border-dashed border-navy/20 bg-mist px-3 text-center"
-                >
-                  <p className="font-display text-[15px] font-semibold text-navy">
-                    {label}
-                  </p>
-                  <p className="mt-2 text-[14px] text-slate">[CLIENT TO PROVIDE]</p>
-                </div>
-              ),
-            )}
+          <div className="relative mx-auto mt-6 aspect-[806/372] max-w-3xl overflow-hidden rounded-md border border-navy/10 bg-white">
+            <PhotoMedia
+              image={{
+                src: "/images/certs/iso-board.jpg",
+                alt: "ISO 9001, ISO 14001 and ISO 45001 certifications",
+              }}
+              sizes="(max-width: 768px) 100vw, 720px"
+              className="object-contain"
+            />
           </div>
         </div>
       </section>
@@ -349,16 +343,20 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {posts.map((post) => (
+          {posts.map((post, i) => (
             <Link
               key={post.slug}
               href={`/insights/${post.slug}`}
               className="group overflow-hidden rounded-md border border-navy/10 bg-white"
             >
               <div className="relative aspect-[16/10]">
-                {/* Placeholders on home to avoid repeating solution-card photos */}
                 <PhotoMedia
-                  image={placeholder("mep", post.title)}
+                  image={
+                    homeBlogImages[i] ?? {
+                      src: "/images/services/electrical-system.jpg",
+                      alt: post.title,
+                    }
+                  }
                   sizes="33vw"
                 />
               </div>
