@@ -8,8 +8,8 @@ import { pageHeroes } from "@/lib/media";
 export const metadata = pageMetadata({
   title: "Who We Are",
   description:
-    "About ElecTech Electromechanical Works LLC — MEP contractor Dubai operating since 2012.",
-  image: "/images/pages/who-we-are-construction.jpg",
+    "Electech Electromechanical Works LLC is an established Dubai-based MEP contractor with more than 14 years of UAE operations.",
+  image: "/images/pages/electrical-installation-work.jpg",
   path: "/about/who-we-are",
 });
 
@@ -33,17 +33,35 @@ export default function WhoWeArePage() {
               <h2 className="font-display text-2xl font-bold text-navy md:text-3xl">
                 {section.heading}
               </h2>
-              <div className="prose-mep mt-4 space-y-4 text-slate">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph.slice(0, 48)}>{paragraph}</p>
-                ))}
-              </div>
+              {section.paragraphs.length ? (
+                <div className="prose-mep mt-4 space-y-4 text-slate">
+                  {section.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 48)}>{paragraph}</p>
+                  ))}
+                </div>
+              ) : null}
+              {"bullets" in section && section.bullets?.length ? (
+                <ul className="mt-4 space-y-3">
+                  {section.bullets.map((item) => (
+                    <li key={item.title} className="text-slate-dark">
+                      <span className="font-semibold text-navy">
+                        {item.title}:
+                      </span>{" "}
+                      {item.description}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ))}
         </div>
       </Section>
       <Section tone="mist">
-        <CtaBanner />
+        <CtaBanner
+          title={content.ctaTitle}
+          description="Share your project location, scope, drawings or service requirements."
+          buttonLabel="Request a Quotation"
+        />
       </Section>
     </>
   );

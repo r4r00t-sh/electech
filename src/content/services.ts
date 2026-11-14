@@ -16,6 +16,7 @@ export type ServicePage = {
   faqs: { question: string; answer: string }[];
   heroImage: string;
   heroAlt: string;
+  ctaTitle?: string;
 };
 
 /**
@@ -25,115 +26,133 @@ export type ServicePage = {
 export const servicePages: ServicePage[] = [
   {
     slug: "mep",
-    title: "MEP Solutions",
+    title: "Integrated MEP Solutions",
     bucket: "mep",
     intro:
-      "Electech Electromechanical Works LLC is a distinguished provider of MEP solutions, seamlessly integrating personalized support and accessibility with the robustness, stability, and extensive resources of a leading industry player.",
+      "Coordinated Mechanical, Electrical & Plumbing Services",
     overview: `
-We cater to a diverse clientele across multiple sectors, including residential, commercial, hospitality, educational institutions, healthcare, showrooms, factories, and warehouses. Our core strength lies in our unwavering commitment to meticulous design and installation practices, utilisation of superior materials, fail-safe equipment, and profound expertise in our field. Our compliance with local regulations and safety standards is a cornerstone of our approach. We use certified materials, adhere to installation guidelines, and conduct regular safety inspections to ensure that all systems meet the highest standards of safety and reliability.
+Electech delivers integrated MEP installation, modification, testing and maintenance services for commercial offices, residential villas, retail premises, hospitality properties and other building environments.
 
-Regular maintenance and timely upgrades are crucial components of our service offering. We provide ongoing support to prevent system breakdowns and extend the lifespan of equipment. Upgrading outdated systems with modern, energy-efficient solutions not only enhances performance but also reduces operational costs, making it a smart investment for any facility.
+Our work covers HVAC and ventilation, electrical distribution, lighting, water supply, drainage, pumping systems and associated building-services infrastructure.
+
+We coordinate with main contractors, consultants and other trades to address technical interfaces, site conditions, installation sequencing and handover requirements.
 `.trim(),
     keyServices: [
       {
-        title: "Design and installation",
+        title: "Mechanical Services",
         description:
-          "Meticulous design and installation practices across mechanical, electrical and plumbing packages.",
+          "Air-conditioning installation and modifications, ventilation, ductwork, equipment connections and maintenance.",
       },
       {
-        title: "Certified materials and equipment",
+        title: "Electrical Services",
         description:
-          "Utilisation of superior materials and fail-safe equipment aligned with local regulations and safety standards.",
+          "Power distribution, DB/SMDB installation and modifications, lighting, cabling, containment, EV charging provisions and ELV infrastructure.",
       },
       {
-        title: "Safety inspections",
+        title: "Plumbing Services",
         description:
-          "Regular safety inspections to support systems that meet expected standards of safety and reliability.",
+          "Water supply, drainage, sanitary installations, water filtration, pumping systems, pressure controls and solar water heating.",
       },
       {
-        title: "Maintenance and upgrades",
+        title: "Fire Protection Installation Support",
         description:
-          "Ongoing support to help prevent breakdowns, extend equipment life and support energy-efficient upgrades.",
+          "Fire alarm and firefighting containment, cabling, piping and equipment installation within the approved project scope.",
+      },
+      {
+        title: "MEP Maintenance",
+        description:
+          "Preventive and corrective maintenance, troubleshooting, system upgrades and annual maintenance contracts.",
       },
     ],
     howWeWork: [
-      "Brief and site survey",
-      "Coordinated design and material selection",
-      "Sequenced multi-discipline installation",
-      "Inspection, handover and maintenance options",
+      "Scope review and site assessment",
+      "Technical coordination and material planning",
+      "Supervised installation",
+      "Inspection, applicable testing and documentation",
+      "Handover and maintenance support",
     ],
     sectors: [
-      "Residential",
-      "Commercial",
-      "Hospitality",
-      "Education",
-      "Healthcare",
-      "Showrooms",
-      "Factories",
-      "Warehouses",
+      "Commercial offices",
+      "Residential villas",
+      "Retail premises",
+      "Hospitality properties",
     ],
     faqs: [
       {
-        question: "What sectors do you serve with MEP solutions?",
+        question: "Do you undertake both new installations and modifications?",
         answer:
-          "We cater to residential, commercial, hospitality, educational institutions, healthcare, showrooms, factories and warehouses.",
+          "Yes. Electech undertakes MEP installation, alteration, refurbishment and system-upgrade works according to project requirements.",
       },
       {
-        question: "Do you offer maintenance after installation?",
+        question:
+          "Do you support occupied commercial offices and residential villas?",
         answer:
-          "Yes. Regular maintenance and timely upgrades are part of our service offering.",
+          "Yes. We plan work around access requirements, existing services, operational constraints and protection of completed finishes.",
       },
       {
-        question: "[CLIENT TO PROVIDE]",
+        question: "Can Electech provide maintenance after installation?",
         answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
+          "Yes. Preventive maintenance, corrective works and annual maintenance arrangements can be provided according to the agreed scope.",
       },
     ],
     heroImage: "/images/pages/mep-industrial-systems.jpg",
     heroAlt: "Coordinated MEP installation including HVAC plant and services",
+    ctaTitle: "Request an MEP Quotation",
   },
   {
     slug: "mechanical-plumbing",
     title: "Mechanical and Plumbing Services",
     bucket: "mechanical-plumbing",
     intro:
-      "HVAC installation, plumbing and drainage services designed, installed and maintained for reliable building performance.",
+      "Reliable Building Systems for Everyday Performance",
     overview: `
-Mechanical and Plumbing Services covers HVAC installation and plumbing and drainage installation. Our teams deliver these packages with attention to functionality, safety and maintainability for residential, commercial and specialised environments.
+Electech provides HVAC, ventilation, plumbing, drainage and water-system installation and maintenance services for commercial and residential properties.
+
+Our mechanical and plumbing works are coordinated with architectural layouts, equipment requirements, existing services and site conditions to support functionality, accessibility and long-term maintainability.
+
+How We Work
+
+We review site requirements, coordinate the installation scope, execute the works, undertake applicable testing and provide relevant handover documentation.
 `.trim(),
     keyServices: [
       {
-        title: "HVAC Installation",
+        title: "HVAC & Ventilation",
         description:
-          "Installation, service and maintenance of HVAC systems tailored to project needs.",
+          "Air-conditioning installation and modifications, ductwork, diffusers, grilles, condensate drainage, equipment connections and maintenance.",
       },
       {
-        title: "Plumbing and Drainage Installation",
+        title: "Water Supply & Drainage",
         description:
-          "In-house design, installation and maintenance of plumbing and drainage systems.",
+          "PPR/PEX water distribution, uPVC drainage, sanitary connections, valves, water heaters and associated pipework.",
+      },
+      {
+        title: "Water Filtration",
+        description:
+          "Installation of multi-stage water filtration systems, connection of equipment, testing and maintenance support.",
+      },
+      {
+        title: "Pumping Systems",
+        description:
+          "Transfer and circulation pumps, pressure tanks, control panels, associated pipework and system troubleshooting.",
+      },
+      {
+        title: "Solar Water Heating",
+        description:
+          "Solar water heater installation, relocation, pipework modifications, circulation pumps and associated controls.",
       },
     ],
     howWeWork: [
-      "Survey and brief",
-      "Design coordination",
-      "Installation and protection of finishes",
-      "Testing and handover",
+      "Review site requirements",
+      "Coordinate the installation scope",
+      "Execute the works",
+      "Undertake applicable testing",
+      "Provide relevant handover documentation",
     ],
-    sectors: ["Residential", "Hospitality", "Healthcare", "Commercial", "F&B"],
-    faqs: [
-      {
-        question: "Which pages sit under Mechanical and Plumbing?",
-        answer:
-          "HVAC Installation and Plumbing and Drainage Installation.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential"],
+    faqs: [],
     heroImage: "/images/pages/mechanical-factory-floor.jpg",
     heroAlt: "Mechanical plant and plumbing services installation",
+    ctaTitle: "Discuss Your Mechanical or Plumbing Requirements",
   },
   {
     slug: "hvac-installation",
@@ -141,60 +160,51 @@ Mechanical and Plumbing Services covers HVAC installation and plumbing and drain
     bucket: "mechanical-plumbing",
     parentHref: "/solutions/mechanical-plumbing",
     intro:
-      "At Electech, we recognize that different projects demand a multi-specialist provider for HVAC installation, service, and maintenance.",
+      "Air-conditioning installation and modifications, ductwork, diffusers, grilles, condensate drainage, equipment connections and maintenance.",
     overview: `
-At Electech, we recognize that different projects demand a multi-specialist provider for HVAC installation, service, and maintenance. Our team of trained and certified HVAC technicians brings expertise, speed, and reliability to every project, ensuring high-quality HVAC services tailored to your specific needs.
+Electech provides HVAC and ventilation installation and maintenance for commercial and residential properties.
 
-Trust Electech for all your HVAC needs, and experience the assurance of top-notch service and performance.
+Our HVAC works include air-conditioning installation and modifications, ductwork, diffusers, grilles, condensate drainage, equipment connections and maintenance. Works are coordinated with architectural layouts, equipment requirements, existing services and site conditions.
 `.trim(),
     keyServices: [
       {
-        title: "Installation",
+        title: "Ductwork",
         description:
-          "Expert installation of HVAC systems to ensure optimal performance and efficiency.",
+          "Installation and modification of ductwork coordinated with site layouts and finishes.",
       },
       {
-        title: "Service and Maintenance",
+        title: "AC equipment",
         description:
-          "Regular maintenance and prompt service to keep your HVAC systems in top condition, ensuring maximum comfort and reliability.",
+          "Air-conditioning equipment installation, connections and modifications.",
       },
       {
-        title: "Expert Technicians",
+        title: "Diffusers and grilles",
         description:
-          "Our certified technicians are skilled in handling a wide range of HVAC systems, providing solutions that meet the highest standards of performance and service.",
+          "Supply and install of diffusers and grilles as specified for the project.",
       },
       {
-        title: "Customized Solutions",
+        title: "Condensate drainage",
         description:
-          "We work within your budget to deliver HVAC services that are dependable and tailored to your needs.",
+          "Condensate drainage installation and checks to support reliable AC operation.",
       },
       {
-        title: "Commitment to Quality",
+        title: "Installation modifications and maintenance",
         description:
-          "We maintain your HVAC system to ensure it operates efficiently, providing you with comfort and peace of mind.",
+          "HVAC modifications and maintenance support according to the agreed scope.",
       },
     ],
     howWeWork: [
-      "Survey and capacity confirmation",
-      "Material approval",
-      "Installation and protection of finishes",
-      "Commissioning and demonstration",
+      "Review site requirements",
+      "Coordinate installation scope",
+      "Execute HVAC works",
+      "Applicable testing",
+      "Handover documentation",
     ],
-    sectors: ["Villas", "Apartments", "Offices", "Hospitality", "Healthcare"],
-    faqs: [
-      {
-        question: "Do you both install and maintain HVAC systems?",
-        answer:
-          "Yes. Our offering covers HVAC installation, service and maintenance.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential"],
+    faqs: [],
     heroImage: "/images/pages/hvac-equipment-detail.jpg",
-    heroAlt: "HVAC ductwork and air-conditioning installation in Dubai",
+    heroAlt: "HVAC ductwork and air-conditioning installation",
+    ctaTitle: "Discuss Your Mechanical or Plumbing Requirements",
   },
   {
     slug: "plumbing-drainage-installation",
@@ -202,98 +212,106 @@ Trust Electech for all your HVAC needs, and experience the assurance of top-notc
     bucket: "mechanical-plumbing",
     parentHref: "/solutions/mechanical-plumbing",
     intro:
-      "At Electech, we specialize in the in-house design, installation, and maintenance of comprehensive plumbing and drainage systems.",
+      "Water supply, drainage, sanitary installations, water filtration, pumping systems and solar water heating.",
     overview: `
-At Electech, we specialize in the in-house design, installation, and maintenance of comprehensive plumbing and drainage systems. Our expertise ensures a reliable water supply to kitchen and toilet outlets through meticulously designed pipe distribution systems. Additionally, our drainage solutions efficiently manage waste removal via a well-arranged network of drainage pipes.
+Electech provides plumbing, drainage and water-system installation and maintenance for commercial and residential properties.
 
-Our team of skilled engineers collaborates closely with clients to deliver tailored solutions that meet the highest standards of functionality and safety. By providing accurate assessments and recommending optimal alternatives, we create environments that are not only highly functional but also aesthetically pleasing. Trust Electech for all your plumbing and drainage needs, ensuring seamless and efficient water management for your projects.
+Our plumbing works include PPR/PEX water distribution, uPVC drainage, sanitary connections, valves, water heaters and associated pipework, together with water filtration, pumping systems, pressure tanks, hot-water circulation and solar water heating where specified.
 `.trim(),
     keyServices: [
       {
-        title: "Plumbing systems",
+        title: "Water Supply & Drainage",
         description:
-          "Reliable water supply to kitchen and toilet outlets through meticulously designed pipe distribution systems.",
+          "PPR/PEX water distribution, uPVC drainage, sanitary connections, valves, water heaters and associated pipework.",
       },
       {
-        title: "Drainage systems",
+        title: "Water Filtration",
         description:
-          "Drainage solutions that manage waste removal via a well-arranged network of drainage pipes.",
+          "Installation of multi-stage water filtration systems, connection of equipment, testing and maintenance support.",
       },
       {
-        title: "Design and collaboration",
+        title: "Pumping Systems",
         description:
-          "Skilled engineers collaborate with clients to deliver tailored solutions for functionality and safety.",
+          "Transfer and circulation pumps, pressure tanks, control panels, associated pipework and system troubleshooting.",
+      },
+      {
+        title: "Hot-water circulation",
+        description:
+          "Hot-water circulation pipework and associated controls as specified for the project.",
+      },
+      {
+        title: "Solar Water Heating",
+        description:
+          "Solar water heater installation, relocation, pipework modifications, circulation pumps and associated controls.",
       },
     ],
     howWeWork: [
-      "Route survey",
-      "Assessments and alternatives",
-      "Installation and protection",
-      "Test and handover",
+      "Review site requirements",
+      "Coordinate installation scope",
+      "Execute plumbing and drainage works",
+      "Applicable testing",
+      "Handover documentation",
     ],
-    sectors: ["Residential", "Commercial", "Hospitality", "Healthcare"],
-    faqs: [
-      {
-        question: "Do you design as well as install plumbing and drainage?",
-        answer:
-          "Yes. We specialize in in-house design, installation and maintenance of plumbing and drainage systems.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential"],
+    faqs: [],
     heroImage: "/images/pages/plumbing-finished-bathroom.jpg",
-    heroAlt: "Plumbing and drainage pipework installation",
+    heroAlt: "Plumbing and drainage installation",
+    ctaTitle: "Discuss Your Mechanical or Plumbing Requirements",
   },
   {
     slug: "electrical",
     title: "Electrical Services",
     bucket: "electrical",
     intro:
-      "Electrical Installation, Extra Low Voltage Installation and Solar Power Plant Installation for organisations and projects across the UAE.",
+      "Safe, Practical & Reliable Electrical Installations",
     overview: `
-Electrical Services covers electrical installation, extra low voltage installation and solar power plant installation. Our teams focus on systems that support reliable operation and informed decisions on strategy and cost.
+Electech undertakes electrical installation, modifications, power distribution, lighting and associated low-current infrastructure works for commercial offices, residential villas, retail premises and hospitality projects.
+
+Our electrical services include new installations, circuit modifications, equipment power provisions, electrical containment, testing and documentation.
+
+Our Approach
+
+We coordinate electrical installations with architectural layouts, equipment requirements and other building services to achieve safe and maintainable systems.
 `.trim(),
     keyServices: [
       {
-        title: "Electrical Installation",
+        title: "Power Distribution",
         description:
-          "Comprehensive electrical systems from design through installation and maintenance.",
+          "Distribution boards, sub-main distribution boards, circuit modifications, breakers, isolators, cabling and electrical load coordination.",
       },
       {
-        title: "Extra Low Voltage Installation",
+        title: "Lighting Systems",
         description:
-          "In-house design, installation and maintenance of low current systems.",
+          "Architectural lighting, LED strips, concealed lighting, landscape lighting, decorative fixtures and lighting-control provisions.",
       },
       {
-        title: "Solar Power Plant Installation",
+        title: "Power & Equipment Connections",
         description:
-          "Solar photovoltaic energy systems with design, installation, maintenance and monitoring.",
+          "Socket outlets, dedicated equipment supplies, AC power provisions, water-heater connections, pump power and EV charging infrastructure.",
+      },
+      {
+        title: "ELV Infrastructure",
+        description:
+          "Conduits, containment, cabling provisions and associated infrastructure for CCTV, data, Wi-Fi, access control and intercom systems.",
+      },
+      {
+        title: "Testing & Documentation",
+        description:
+          "Applicable electrical inspections, circuit identification, load schedules, testing records and handover documentation.",
       },
     ],
     howWeWork: [
-      "Load assessment and design coordination",
-      "Approved materials",
-      "Installation and termination",
-      "Testing and documentation",
+      "Coordinate with architectural layouts and equipment requirements",
+      "Install power distribution and lighting systems",
+      "Provide equipment connections and ELV infrastructure",
+      "Complete applicable testing and documentation",
+      "Hand over maintainable systems",
     ],
-    sectors: ["Offices", "Retail", "Logistics", "Residential", "Education"],
-    faqs: [
-      {
-        question: "Which pages sit under Electrical Services?",
-        answer:
-          "Electrical Installation, Extra Low Voltage Installation and Solar Power Plant Installation.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
-      },
-    ],
+    sectors: ["Commercial offices", "Residential villas", "Retail premises", "Hospitality"],
+    faqs: [],
     heroImage: "/images/pages/electrical-power-infrastructure.jpg",
     heroAlt: "Electrical installation and switchgear works",
+    ctaTitle: "Request an Electrical Works Quotation",
   },
   {
     slug: "electrical-installation",
@@ -301,50 +319,51 @@ Electrical Services covers electrical installation, extra low voltage installati
     bucket: "electrical",
     parentHref: "/solutions/electrical",
     intro:
-      "At Electech, we offer comprehensive electrical services that cover a full range of electrical systems, designed to provide lower operating costs for organizations and electrical projects.",
+      "Power distribution, lighting, load schedules, cabling, isolators, EV infrastructure and testing.",
     overview: `
-At Electech, we offer comprehensive electrical services that cover a full range of electrical systems, designed to provide lower operating costs for organizations and electrical projects. Our expertise ensures that every project is executed with precision and efficiency, delivering optimal performance and cost savings.
+Electech undertakes electrical installation and modifications for commercial offices, residential villas, retail premises and hospitality projects.
 
-By working closely with our clients, we ensure that each electrical system is tailored to meet their unique requirements, delivering both functionality and value. Trust Electech to provide innovative electrical solutions that drive efficiency and cost-effectiveness for your projects.
+Our electrical installation works emphasise distribution boards and sub-main distribution boards, lighting, load schedules, cabling, isolators, EV charging infrastructure and applicable testing with handover documentation.
 `.trim(),
     keyServices: [
       {
-        title: "Full Range of Electrical Systems",
+        title: "DB / SMDB",
         description:
-          "From design to installation and maintenance, we handle all aspects of electrical systems to ensure seamless operation and reliability.",
+          "Distribution boards, sub-main distribution boards, circuit modifications, breakers and isolators.",
       },
       {
-        title: "Cost-Effective Solutions",
+        title: "Lighting",
         description:
-          "Our systems are engineered to reduce operating costs, providing long-term savings and enhanced efficiency for our clients.",
+          "Architectural lighting, LED strips, concealed lighting, landscape lighting and decorative fixtures.",
       },
       {
-        title: "Consultation and Strategy",
+        title: "Cabling and load schedules",
         description:
-          "Beyond project execution, we offer expert consultation on various strategies and associated costs for specific electrical systems. Our goal is to help clients make informed decisions that align with their budget and operational needs.",
+          "Cabling works with circuit identification and electrical load coordination.",
+      },
+      {
+        title: "EV infrastructure",
+        description:
+          "EV charging infrastructure provisions as specified for the project.",
+      },
+      {
+        title: "Testing",
+        description:
+          "Applicable electrical inspections, testing records and handover documentation.",
       },
     ],
     howWeWork: [
-      "Survey and coordination",
-      "Material submittals",
-      "Installation",
-      "Testing and energisation support",
+      "Coordinate layouts and load requirements",
+      "Install distribution and lighting systems",
+      "Complete cabling and equipment connections",
+      "Applicable testing and documentation",
+      "Handover",
     ],
-    sectors: ["Commercial", "Retail", "Residential", "Hospitality"],
-    faqs: [
-      {
-        question: "Do you consult on electrical strategies as well as install?",
-        answer:
-          "Yes. Beyond project execution, we offer consultation on strategies and associated costs for specific electrical systems.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential", "Retail", "Hospitality"],
+    faqs: [],
     heroImage: "/images/pages/electrical-installation-work.jpg",
     heroAlt: "Electrical installation on a commercial project",
+    ctaTitle: "Request an Electrical Works Quotation",
   },
   {
     slug: "extra-low-voltage-installation",
@@ -352,45 +371,46 @@ By working closely with our clients, we ensure that each electrical system is ta
     bucket: "electrical",
     parentHref: "/solutions/electrical",
     intro:
-      "At Electech, we excel in the in-house design, installation, and maintenance of low current systems.",
+      "Conduits, containment, cabling provisions and associated infrastructure for CCTV, data, Wi-Fi, access control and intercom systems.",
     overview: `
-At Electech, we excel in the in-house design, installation, and maintenance of low current systems. Our engineers bring extensive expertise in providing designer services for electrical distribution and lighting systems across a variety of projects. This deep knowledge base allows us to deliver highly functional, safe, and aesthetically pleasing environments.
+Electech provides ELV infrastructure for commercial offices, residential villas, retail premises and hospitality projects.
 
-We work closely with our clients to provide accurate assessments and recommend the best alternatives. Our collaborative approach ensures that every project meets the highest standards of functionality and safety while enhancing the overall aesthetic appeal. Trust Electech to deliver comprehensive low current system solutions tailored to your specific needs.
+Our ELV scope covers conduits, containment, cabling provisions and associated infrastructure for CCTV, data, Wi-Fi, access control and intercom systems. Electech provides containment and installation provisions; full specialist system design and commissioning are undertaken by the responsible specialist parties as applicable.
 `.trim(),
     keyServices: [
       {
-        title: "Low current systems",
+        title: "Containment and conduits",
         description:
-          "In-house design, installation and maintenance of low current systems.",
+          "Conduits, containment and pathways for low-current systems.",
       },
       {
-        title: "Distribution and lighting design support",
+        title: "Cabling provisions",
         description:
-          "Designer services for electrical distribution and lighting systems across a variety of projects.",
+          "Cabling provisions for CCTV, data, Wi-Fi, access control and intercom systems.",
       },
       {
-        title: "Client collaboration",
+        title: "Associated infrastructure",
         description:
-          "Accurate assessments and recommended alternatives to meet functionality and safety standards.",
+          "Associated ELV infrastructure within the agreed installation scope.",
+      },
+      {
+        title: "Coordination with specialists",
+        description:
+          "Coordination with specialist parties responsible for full system design and commissioning where applicable.",
       },
     ],
     howWeWork: [
-      "Brief and assessment",
-      "Recommended alternatives",
-      "Installation",
-      "Testing with stakeholders",
+      "Review ELV infrastructure requirements",
+      "Install containment and cabling provisions",
+      "Coordinate with specialist parties",
+      "Document installation within Electech scope",
+      "Handover to responsible parties",
     ],
-    sectors: ["Offices", "Education", "Healthcare", "Hospitality"],
-    faqs: [
-      {
-        question: "Which ELV systems do you cover?",
-        answer:
-          "[CLIENT TO PROVIDE: definitive ELV system list for marketing pages.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential", "Retail", "Hospitality"],
+    faqs: [],
     heroImage: "/images/pages/elv-server-racks.jpg",
-    heroAlt: "Extra low voltage / low-current system installation",
+    heroAlt: "Extra low voltage infrastructure installation",
+    ctaTitle: "Request an Electrical Works Quotation",
   },
   {
     slug: "solar-power-plant-installation",
@@ -433,110 +453,124 @@ Our services include customized system design, seamless installation, comprehens
       "Maintenance pathway",
     ],
     sectors: ["Commercial", "Industrial", "Education", "Hospitality"],
-    faqs: [
-      {
-        question: "Do you handle authority approvals for solar?",
-        answer:
-          "[CLIENT TO PROVIDE: exact approvals scope for solar projects.]",
-      },
-    ],
+    faqs: [],
     heroImage: "/images/pages/solar-rooftop-array.jpg",
     heroAlt: "Solar power plant installation in Dubai and Sharjah",
   },
   {
     slug: "fire-protection",
-    title: "Fire Protection and Safety Services",
+    title: "Fire Protection Support",
     bucket: "fire-protection",
     intro:
-      "Fire Fighting and Fire Alarm Installation and Fire Stopping Sealant Application for building safety.",
+      "Fire Alarm & Firefighting Installation Support",
     overview: `
-Fire Protection and Safety Services covers fire fighting and fire alarm installation, and fire stopping sealant application. These packages support early detection, suppression readiness and compartment integrity as specified for each project.
+Coordinated Installation Works for Building Fire Protection Systems
+
+Electech supports fire alarm and firefighting installation activities as part of commercial, residential and refurbishment projects, working in coordination with building management, main contractors and the responsible approved fire-protection specialists.
+
+Scope and Responsibility
+
+Electech undertakes the installation activities included in its agreed contract scope. System isolation, final integrated testing, commissioning, certification and authority approvals are coordinated with and undertaken by the responsible authorized parties, as applicable.
+
+Our objective is to support accurate installation, clear interface management and smooth handover to the parties responsible for final system acceptance.
 `.trim(),
     keyServices: [
       {
-        title: "Fire Fighting and Fire Alarm Installation",
+        title: "Fire alarm conduiting and containment",
         description:
-          "Detection and suppression components working together for building safety.",
+          "Installation of fire alarm conduiting and containment within the agreed project scope.",
       },
       {
-        title: "Fire Stopping Sealant Application",
+        title: "Fire alarm cabling and associated works",
         description:
-          "Sealing and protecting penetrations through fire compartment walls and floors.",
+          "Fire alarm cabling and associated installation works.",
+      },
+      {
+        title: "Detection and alarm equipment",
+        description:
+          "Installation of specified detection and alarm equipment.",
+      },
+      {
+        title: "Firefighting pipework",
+        description:
+          "Firefighting pipework installation and modifications.",
+      },
+      {
+        title: "Firefighting components",
+        description:
+          "Installation and repositioning of specified firefighting components.",
+      },
+      {
+        title: "Installation records and coordination",
+        description:
+          "Preparation of relevant installation records and supporting documentation, coordination of system isolation requests and work permits, and assistance during inspections and final specialist commissioning.",
       },
     ],
     howWeWork: [
-      "Drawing and risk review",
-      "Material and system alignment",
-      "Installation and interface testing",
-      "Handover and maintenance options",
+      "Scope review with project stakeholders",
+      "Coordination with approved fire-protection specialists",
+      "Supervised installation within contract scope",
+      "Installation records and supporting documentation",
+      "Handover to parties responsible for final system acceptance",
     ],
-    sectors: ["Government", "Healthcare", "Commercial", "Hospitality", "Residential"],
-    faqs: [
-      {
-        question: "Which pages sit under Fire Protection and Safety?",
-        answer:
-          "Fire Fighting and Fire Alarm Installation, and Fire Stopping Sealant Application.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential", "Refurbishment"],
+    faqs: [],
     heroImage: "/images/pages/fire-services-corridor.jpg",
-    heroAlt: "Fire protection and fire alarm system installation",
+    heroAlt: "Fire protection installation support works",
+    ctaTitle: "Enquire About Fire Protection Installation Support",
   },
   {
     slug: "fire-fighting-fire-alarm-installation",
-    title: "Fire Fighting and Fire Alarm Installation",
+    title: "Fire Alarm & Firefighting Installation Support",
     bucket: "fire-protection",
     parentHref: "/solutions/fire-protection",
     intro:
-      "At Electech, we understand that a firefighting system is one of the most critical building services, prioritizing human life first and property second.",
+      "Coordinated Installation Works for Building Fire Protection Systems",
     overview: `
-At Electech, we understand that a firefighting system is one of the most critical building services, prioritizing human life first and property second. Our expertly designed solutions swiftly detect and suppress fires, ensuring occupant safety and minimizing damage.
+Electech supports fire alarm and firefighting installation activities as part of commercial, residential and refurbishment projects, working in coordination with building management, main contractors and the responsible approved fire-protection specialists.
 
-We provide regular maintenance and conduct drills to ensure the system’s effectiveness, making our firefighting systems indispensable for any building’s safety infrastructure. Trust Electech to safeguard your property and lives with our comprehensive firefighting solutions.
+Our scope may include fire alarm conduiting and containment; fire alarm cabling and associated installation works; installation of specified detection and alarm equipment; firefighting pipework installation and modifications; installation and repositioning of specified firefighting components; preparation of relevant installation records and supporting documentation; coordination of system isolation requests and work permits; and assistance during inspections and final specialist commissioning.
+
+Scope and Responsibility
+
+Electech undertakes the installation activities included in its agreed contract scope. System isolation, final integrated testing, commissioning, certification and authority approvals are coordinated with and undertaken by the responsible authorized parties, as applicable.
+
+Our objective is to support accurate installation, clear interface management and smooth handover to the parties responsible for final system acceptance.
 `.trim(),
     keyServices: [
       {
-        title: "Fire Alarms",
-        description: "Early detection and alert systems.",
+        title: "Fire alarm conduiting and containment",
+        description:
+          "Installation of fire alarm conduiting and containment within the agreed project scope.",
       },
       {
-        title: "Sprinkler Systems",
-        description: "Automated fire suppression.",
+        title: "Fire alarm cabling",
+        description:
+          "Fire alarm cabling and associated installation works.",
       },
       {
-        title: "Fire Extinguishers",
-        description: "Accessible and effective fire control.",
+        title: "Detection and alarm equipment",
+        description:
+          "Installation of specified detection and alarm equipment.",
       },
       {
-        title: "Smoke Detectors",
-        description: "Continuous monitoring for smoke and fire.",
+        title: "Firefighting pipework and components",
+        description:
+          "Firefighting pipework installation and modifications, and installation or repositioning of specified firefighting components.",
       },
     ],
     howWeWork: [
-      "Drawing and matrix review",
-      "Installation of detection and suppression components",
-      "Integrated testing",
-      "Maintenance and drills support",
+      "Agree installation scope with project stakeholders",
+      "Coordinate with approved fire-protection specialists",
+      "Execute supervised installation works",
+      "Prepare installation records and supporting documentation",
+      "Support handover to parties responsible for final acceptance",
     ],
-    sectors: ["Commercial", "Government", "Healthcare", "Hospitality"],
-    faqs: [
-      {
-        question: "Do you support maintenance after fire system installation?",
-        answer:
-          "Yes. We provide regular maintenance and conduct drills to support system effectiveness.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: Civil Defence / approvals wording for marketing pages.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential", "Refurbishment"],
+    faqs: [],
     heroImage: "/images/pages/fire-control-panels.jpg",
-    heroAlt: "Fire fighting and fire alarm installation in the UAE",
+    heroAlt: "Fire alarm and firefighting installation support",
+    ctaTitle: "Enquire About Fire Protection Installation Support",
   },
   {
     slug: "fire-stopping-sealant-application",
@@ -544,96 +578,101 @@ We provide regular maintenance and conduct drills to ensure the system’s effec
     bucket: "fire-protection",
     parentHref: "/solutions/fire-protection",
     intro:
-      "Our fire stopping services include sealing and protecting penetrations through fire compartment walls and floors.",
+      "Installation of specified fire-rated sealant systems and coordination with the responsible approval parties.",
     overview: `
-Our fire stopping services include sealing and protecting penetrations through fire compartment walls and floors. We also install fire barriers around combinations of penetrations in fire zones and apply fire-rated solutions to ducts, various types of pipes, joints, electrical conduits, and gaps. Additionally, we offer a range of acoustic and non-fire-rated sealant applications. Our work adheres to specifications, safety guidelines, and local authority regulations, with periodic inspections conducted to ensure quality and a risk-free environment.
+Electech undertakes installation of specified fire-rated sealant systems as part of commercial, residential and refurbishment projects.
+
+Our fire-stopping works are carried out according to the project specifications and coordinated with the responsible approval parties. System isolation, final integrated testing, commissioning, certification and authority approvals are coordinated with and undertaken by the responsible authorized parties, as applicable.
 `.trim(),
     keyServices: [
       {
-        title: "Penetration seals",
+        title: "Specified fire-rated sealant systems",
         description:
-          "Sealing and protecting penetrations through fire compartment walls and floors.",
+          "Installation of specified fire-rated sealant systems within the agreed contract scope.",
       },
       {
-        title: "Fire barriers",
+        title: "Penetration sealing",
         description:
-          "Fire barriers around combinations of penetrations in fire zones.",
+          "Sealing of penetrations through fire compartment walls and floors as specified.",
       },
       {
-        title: "Fire-rated applications",
+        title: "Coordination with approval parties",
         description:
-          "Fire-rated solutions to ducts, pipes, joints, electrical conduits and gaps.",
-      },
-      {
-        title: "Acoustic and non-fire-rated sealants",
-        description:
-          "A range of acoustic and non-fire-rated sealant applications where specified.",
+          "Coordination with the responsible approval parties for inspections and acceptance as applicable.",
       },
     ],
     howWeWork: [
-      "Survey of openings",
-      "Approved system selection",
-      "Application and labelling",
-      "Periodic inspection support",
+      "Review specified fire-stopping systems",
+      "Install sealants within agreed scope",
+      "Coordinate with responsible approval parties",
+      "Prepare supporting installation records",
+      "Handover within Electech scope",
     ],
-    sectors: ["Commercial", "Healthcare", "Government", "Hospitality"],
-    faqs: [
-      {
-        question: "Do you work to local authority regulations?",
-        answer:
-          "Yes. Our work adheres to specifications, safety guidelines and local authority regulations.",
-      },
-      {
-        question: "[CLIENT TO PROVIDE]",
-        answer:
-          "[CLIENT TO PROVIDE: additional FAQs approved for publication.]",
-      },
-    ],
+    sectors: ["Commercial", "Residential", "Refurbishment"],
+    faqs: [],
     heroImage: "/images/pages/fire-stopping-interior.jpg",
     heroAlt: "Fire stopping and fire-rated sealing works",
+    ctaTitle: "Enquire About Fire Protection Installation Support",
   },
   {
     slug: "maintenance",
-    title: "Maintenance Contract",
+    title: "MEP Maintenance & Annual Maintenance Contracts",
     bucket: "maintenance",
     intro:
-      "Maintenance includes a wide variety of tasks depending on the particular business or organization.",
+      "Keeping Your Building Services Reliable",
     overview: `
-Maintenance includes a wide variety of tasks depending on the particular business or organization. It encompasses a great deal of ‘behind the scenes’ work to ensure that facilities or buildings remain functional and comfortable for their users. Our experienced team works together to coordinate the intricate layout of all your civil, mechanical, electrical, plumbing, and IT systems without the delay of waiting on other businesses for information. This not only speeds up the estimating of requirements but also leads to a far better service for your building amenities.
+Electech provides planned and corrective MEP maintenance services for residential villas, commercial offices and selected properties across Dubai.
+
+We help property owners, tenants and facility managers maintain essential electrical, air-conditioning and plumbing systems through scheduled inspections, troubleshooting, repair and replacement works.
+
+Annual Maintenance Contracts
+
+Our AMC arrangements can be tailored to the property type, equipment inventory, required visit frequency and agreed response provisions.
 `.trim(),
     keyServices: [
       {
-        title: "Multi-discipline coordination",
+        title: "Electrical Maintenance",
         description:
-          "Coordination across civil, mechanical, electrical, plumbing and IT systems.",
+          "Distribution boards, lighting, socket outlets, isolators, circuit faults and electrical accessories.",
       },
       {
-        title: "Facility readiness",
+        title: "Air-Conditioning Maintenance",
         description:
-          "Behind-the-scenes work that helps facilities remain functional and comfortable for users.",
+          "AC inspections, routine servicing, filter cleaning, condensate drainage checks and fault investigation.",
       },
       {
-        title: "Faster estimating",
+        title: "Plumbing Maintenance",
         description:
-          "One experienced team reduces delay from waiting on multiple vendors for basic information.",
+          "Water supply and drainage issues, leaks, sanitary connections, valves, water heaters and associated pipework.",
+      },
+      {
+        title: "Pumps & Water Systems",
+        description:
+          "Pump troubleshooting, pressure systems, filtration equipment and associated control components.",
+      },
+      {
+        title: "Preventive Maintenance",
+        description:
+          "Planned service visits, condition checks and recommendations for corrective action.",
+      },
+      {
+        title: "Corrective Maintenance",
+        description:
+          "Fault diagnosis, repairs, replacements and system restoration within the agreed service scope.",
       },
     ],
     howWeWork: [
-      "Asset and criticality review",
-      "Agreed visit plan",
-      "Scheduled service and call-out response",
-      "Status reporting as agreed",
+      "Review property type and equipment inventory",
+      "Agree visit frequency and response provisions",
+      "Scheduled inspections and preventive service",
+      "Corrective diagnosis, repair and restoration",
+      "Reporting within the agreed service scope",
     ],
-    sectors: ["Commercial", "Hospitality", "Healthcare", "Retail", "Government"],
-    faqs: [
-      {
-        question: "What does a maintenance contract typically cover?",
-        answer:
-          "[CLIENT TO PROVIDE: standard maintenance contract scope for marketing pages.]",
-      },
-    ],
+    sectors: ["Residential villas", "Commercial offices", "Selected properties"],
+    faqs: [],
     heroImage: "/images/pages/maintenance-workshop.jpg",
-    heroAlt: "Planned MEP maintenance on building services",
+    heroAlt: "MEP maintenance and annual maintenance contracts",
+    ctaTitle: "Request an AMC Proposal",
   },
 ];
 

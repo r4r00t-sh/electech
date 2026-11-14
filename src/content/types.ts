@@ -3,25 +3,32 @@ import type { BucketId } from "@/lib/buckets";
 export type Story = {
   title: string;
   slug: string;
+  /** Optional client subtitle under the title */
+  subtitle?: string;
   heroImage: string;
   heroAlt: string;
+  /** When false/undefined and no mapped works photo, show navy tile (no stock). */
+  hasVerifiedPhoto?: boolean;
   primaryBucket: BucketId;
   secondaryBuckets: BucketId[];
   client: string;
   location: string;
   sector: string;
   scope: string;
-  year: string;
+  status: string;
+  year?: string;
   summary: string;
+  /** Short accurate scope text; no filler padding. */
   body: string;
+  highlights?: string[];
   gallery: { src: string; alt: string }[];
-  testimonial: {
+  testimonial?: {
     quote: string;
     author: string;
     role: string;
     company: string;
+    verified: boolean;
   };
-  results: { label: string; value: string }[];
   featured?: boolean;
 };
 
@@ -34,6 +41,7 @@ export type Testimonial = {
   buckets: BucketId[];
   featured?: boolean;
   storySlug?: string;
+  verified: boolean;
 };
 
 export type BlogPost = {

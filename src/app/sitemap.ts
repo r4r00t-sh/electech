@@ -19,7 +19,7 @@ const staticRoutes = [
   "/solutions/electrical",
   "/solutions/electrical/electrical-installation",
   "/solutions/electrical/extra-low-voltage-installation",
-  "/solutions/electrical/solar-power-plant-installation",
+  // Solar Power Plant held pending client confirmation — excluded from sitemap
   "/solutions/fire-protection",
   "/solutions/fire-protection/fire-fighting-fire-alarm-installation",
   "/solutions/fire-protection/fire-stopping-sealant-application",

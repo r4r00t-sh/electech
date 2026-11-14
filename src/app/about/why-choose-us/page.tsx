@@ -6,9 +6,9 @@ import { pageMetadata } from "@/lib/seo";
 import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
-  title: "Why Choose Us",
+  title: "Why Choose Electech?",
   description:
-    "Why fit-out firms, developers and facility managers choose ElecTech MEP in Dubai.",
+    "Practical engineering, reliable delivery and accountable service from Electech Electromechanical Works LLC.",
   image: "/images/pages/why-choose-workshop.jpg",
   path: "/about/why-choose-us",
 });
@@ -20,14 +20,17 @@ export default function WhyChooseUsPage() {
       <PageHero
         media={pageHeroes.whyChoose}
         title={content.title}
-        intro={content.intro}
+        intro={content.subtitle}
         crumbs={[
           { label: "About Us", href: "/about" },
           { label: "Why Choose Us" },
         ]}
       />
       <Section>
-        <SectionHeading title="What sets us apart" />
+        <p className="prose-mep max-w-3xl text-slate-dark">{content.intro}</p>
+        <div className="mt-10">
+          <SectionHeading title="What sets us apart" />
+        </div>
         <div className="grid gap-5 md:grid-cols-2">
           {content.points.map((point) => (
             <div
@@ -41,12 +44,13 @@ export default function WhyChooseUsPage() {
             </div>
           ))}
         </div>
-        <p className="prose-mep mt-10 text-lg font-medium text-navy">
-          {content.closing}
-        </p>
       </Section>
       <Section tone="mist">
-        <CtaBanner />
+        <CtaBanner
+          title={content.closing}
+          description="Share your project requirements and our team will respond with the appropriate next steps."
+          buttonLabel="Request a Quotation"
+        />
       </Section>
     </>
   );

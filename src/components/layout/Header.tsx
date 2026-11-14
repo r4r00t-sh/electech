@@ -52,10 +52,6 @@ const solutionChildren = [
         label: "Extra Low Voltage",
         href: "/solutions/electrical/extra-low-voltage-installation",
       },
-      {
-        label: "Solar Power Plant",
-        href: "/solutions/electrical/solar-power-plant-installation",
-      },
     ],
   },
   {
@@ -63,7 +59,7 @@ const solutionChildren = [
     pages: [
       { label: "Overview", href: "/solutions/fire-protection" },
       {
-        label: "Fire Fighting & Fire Alarm",
+        label: "Fire Alarm & Firefighting Support",
         href: "/solutions/fire-protection/fire-fighting-fire-alarm-installation",
       },
       {

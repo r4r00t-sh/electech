@@ -44,14 +44,10 @@ const CHILD_LINKS: Record<string, { label: string; href: string }[]> = {
       label: "Extra Low Voltage Installation",
       href: "/solutions/electrical/extra-low-voltage-installation",
     },
-    {
-      label: "Solar Power Plant Installation",
-      href: "/solutions/electrical/solar-power-plant-installation",
-    },
   ],
   "fire-protection": [
     {
-      label: "Fire Fighting and Fire Alarm Installation",
+      label: "Fire Alarm & Firefighting Installation Support",
       href: "/solutions/fire-protection/fire-fighting-fire-alarm-installation",
     },
     {
@@ -166,10 +162,12 @@ export function ServicePageView({
         </ul>
       </Section>
 
-      <Section tone="mist">
-        <SectionHeading title="Frequently asked questions" />
-        <Accordion items={service.faqs} />
-      </Section>
+      {service.faqs.length ? (
+        <Section tone="mist">
+          <SectionHeading title="Frequently asked questions" />
+          <Accordion items={service.faqs} />
+        </Section>
+      ) : null}
 
       <Section>
         <ClientSuccessStories
@@ -178,12 +176,17 @@ export function ServicePageView({
         />
       </Section>
 
-      <Section tone="mist">
-        <TestimonialsBanner items={testimonials} />
-      </Section>
+      {testimonials.length ? (
+        <Section tone="mist">
+          <TestimonialsBanner items={testimonials} />
+        </Section>
+      ) : null}
 
       <Section>
-        <CtaBanner />
+        <CtaBanner
+          title={service.ctaTitle ?? "Request a Quotation"}
+          buttonLabel={service.ctaTitle ?? "Request a Quotation"}
+        />
       </Section>
     </>
   );

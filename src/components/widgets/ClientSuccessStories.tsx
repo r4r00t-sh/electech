@@ -2,11 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Story } from "@/content/types";
 import { bucketLabel } from "@/lib/buckets";
-import {
-  getStoryDisplayImage,
-  stockImageForBucket,
-  type MediaRef,
-} from "@/lib/media";
+import { getStoryDisplayImage, type MediaRef } from "@/lib/media";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 
@@ -15,14 +11,19 @@ function resolveCardImage(story: Story): MediaRef {
   if (mapped.src) {
     return { ...mapped, alt: mapped.alt || story.heroAlt || story.title };
   }
-  if (story.heroImage) {
+  if (story.hasVerifiedPhoto && story.heroImage) {
     return {
       src: story.heroImage,
       alt: story.heroAlt || story.title,
       objectPosition: "center",
     };
   }
-  return stockImageForBucket(story.primaryBucket, story.title);
+  return {
+    src: "",
+    alt: story.heroAlt || story.title,
+    placeholder: true,
+    bucket: story.primaryBucket,
+  };
 }
 
 export function ClientSuccessStories({

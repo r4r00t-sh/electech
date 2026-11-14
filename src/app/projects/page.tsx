@@ -7,9 +7,9 @@ import { pageMetadata } from "@/lib/seo";
 import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
-  title: "Projects / Client Success Stories",
+  title: "Projects",
   description:
-    "Client success stories from ElecTech MEP — villa, hospitality, healthcare, retail, government and commercial projects across the UAE.",
+    "Selected MEP projects by Electech Electromechanical Works LLC across residential, commercial, retail and hospitality properties in the UAE.",
   image: "/images/pages/projects-office-interior.jpg",
   path: "/projects",
 });
@@ -19,8 +19,8 @@ export default function ProjectsPage() {
     <>
       <PageHero
         media={pageHeroes.projects}
-        title="Projects / Client Success Stories"
-        intro="Real programmes across our five solutions buckets — filter by capability to find relevant work."
+        title="Selected MEP Projects"
+        intro="Electech's MEP contribution across residential, commercial, retail and hospitality projects — filter by capability to find relevant work."
         crumbs={[{ label: "Projects" }]}
       />
       <Section>

@@ -6,16 +6,20 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-oaks-02.jpeg",
     "order": 1,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
-    "name": "M\u00f6venpick",
+    "name": "Mövenpick",
     "slug": "movenpick",
     "logo": "/images/clients/client-movenpick.jpg",
     "sector": "Hospitality",
     "sourceFile": "clients/client-movenpick-02.jpeg",
     "order": 2,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Mall of the Emirates",
@@ -24,7 +28,9 @@
     "sector": "Retail",
     "sourceFile": "clients/client-mall-of-the-emirates-02.jpeg",
     "order": 3,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Circle Mall",
@@ -33,7 +39,9 @@
     "sector": "Retail",
     "sourceFile": "clients/client-circle-mall-02.jpeg",
     "order": 4,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Sofitel",
@@ -43,7 +51,9 @@
     "sourceFile": "clients/client-sofitel-02.jpeg",
     "order": 5,
     "featured": true,
-    "storySlug": "hospitality-sector-excellence-sofitel"
+    "storySlug": "mep-works-sofitel-hotel",
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Dubai Mall",
@@ -52,7 +62,9 @@
     "sector": "Retail",
     "sourceFile": "clients/client-dubai-mall-02.jpeg",
     "order": 6,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Imdaad",
@@ -62,7 +74,9 @@
     "sourceFile": "clients/client-imdaad-02.jpeg",
     "order": 7,
     "featured": true,
-    "storySlug": "innovative-food-outlet-and-park-imdaad"
+    "storySlug": "mep-works-innovative-food-outlet-imdaad",
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "DAMAC",
@@ -71,7 +85,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-damac-02.jpeg",
     "order": 8,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "wasl properties",
@@ -80,7 +96,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-wasl-02.jpeg",
     "order": 9,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "A&T Group Interiors",
@@ -89,7 +107,9 @@
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-at-group-02.jpeg",
     "order": 10,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Nakheel",
@@ -98,7 +118,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-nakheel-02.jpeg",
     "order": 11,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Amazon",
@@ -108,7 +130,9 @@
     "sourceFile": "clients/client-amazon-02.jpeg",
     "order": 12,
     "featured": true,
-    "storySlug": "amazon-ecommerce-office"
+    "storySlug": "mep-works-amazon-ecommerce-office",
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Summertown Interiors",
@@ -117,7 +141,9 @@
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-summertown-02.jpeg",
     "order": 13,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Emaar",
@@ -126,7 +152,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-emaar-02.jpeg",
     "order": 14,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Multiline",
@@ -135,7 +163,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-multiline-02.jpeg",
     "order": 15,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "VAA",
@@ -144,7 +174,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-vaa-02.jpeg",
     "order": 16,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Al Barari",
@@ -153,7 +185,9 @@
     "sector": "Residential",
     "sourceFile": "clients/client-al-barari-02.jpeg",
     "order": 17,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Arco Interiors",
@@ -162,7 +196,9 @@
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-arco-02.jpeg",
     "order": 18,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Etisalat",
@@ -172,7 +208,9 @@
     "sourceFile": "clients/client-etisalat-02.jpeg",
     "order": 19,
     "featured": true,
-    "storySlug": "etisalat-office-kifaf"
+    "storySlug": "mep-works-etisalat-kifaf",
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Dubai Hills Estate",
@@ -181,7 +219,9 @@
     "sector": "Residential",
     "sourceFile": "clients/client-dubai-hills-02.jpeg",
     "order": 20,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Ibn Battuta Mall",
@@ -190,7 +230,9 @@
     "sector": "Retail",
     "sourceFile": "clients/client-ibn-battuta-02.jpeg",
     "order": 21,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "KG Interiors",
@@ -199,7 +241,9 @@
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-kg-interiors-02.jpeg",
     "order": 22,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Liva Insurance",
@@ -208,7 +252,9 @@
     "sector": "Commercial",
     "sourceFile": "clients/client-liva-02.jpeg",
     "order": 23,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "JLL",
@@ -217,7 +263,9 @@
     "sector": "Commercial",
     "sourceFile": "clients/client-jll-02.jpeg",
     "order": 24,
-    "featured": true
+    "featured": true,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Visualize Interior Decoration LLC",
@@ -226,7 +274,9 @@
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-visualize-02.jpeg",
     "order": 25,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Axis Communications",
@@ -235,7 +285,9 @@
     "sector": "Commercial",
     "sourceFile": "clients/client-axis-02.jpeg",
     "order": 26,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Emirates National Facilities Management",
@@ -244,7 +296,9 @@
     "sector": "Facility Management",
     "sourceFile": "clients/client-enfm-02.jpeg",
     "order": 27,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Real Image",
@@ -254,7 +308,9 @@
     "sourceFile": "clients/client-real-image-02.jpeg",
     "order": 28,
     "featured": false,
-    "storySlug": "corporate-headquarters-upgrade-real-image"
+    "storySlug": "mep-works-real-image-headquarters",
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Ascentia",
@@ -264,7 +320,9 @@
     "sourceFile": "clients/client-ascentia-02.jpeg",
     "order": 29,
     "featured": false,
-    "storySlug": "commercial-office-revamp-ascentia"
+    "storySlug": "mep-works-ascentia-office",
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Grand Hyatt",
@@ -273,7 +331,9 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-grand-hyatt-02.jpeg",
     "order": 30,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Barr + Wray",
@@ -282,7 +342,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-barr-wray-02.jpeg",
     "order": 31,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "AEW Technik",
@@ -291,7 +353,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-aew-technik-02.jpeg",
     "order": 32,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Royal Classic Contracting",
@@ -300,7 +364,9 @@
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-royal-classic-02.jpeg",
     "order": 33,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "CRI",
@@ -309,7 +375,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-cri-02.jpeg",
     "order": 34,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Kalandoor Group",
@@ -318,7 +386,9 @@
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-kalandoor-03.jpeg",
     "order": 35,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Vogo Grand Hotel",
@@ -327,7 +397,9 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-vogo-grand-02.jpeg",
     "order": 36,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "MEBS Facility Services",
@@ -336,7 +408,9 @@
     "sector": "Facility Management",
     "sourceFile": "clients/client-mebs-02.jpeg",
     "order": 37,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "Marriott",
@@ -345,7 +419,9 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-marriott-02.jpeg",
     "order": 38,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   },
   {
     "name": "The Ritz-Carlton",
@@ -354,6 +430,8 @@
     "sector": "Hospitality",
     "sourceFile": "clients/client-ritz-carlton-02.jpeg",
     "order": 39,
-    "featured": false
+    "featured": false,
+    "approved": false,
+    "relationship": "unknown"
   }
 ]

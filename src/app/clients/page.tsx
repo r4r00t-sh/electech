@@ -3,7 +3,12 @@ import { Section } from "@/components/ui/Section";
 import { ClientsLogoWall } from "@/components/clients/ClientsLogoWall";
 import { TestimonialsBanner } from "@/components/widgets/TestimonialsBanner";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
-import { getClientsSorted } from "@/content/clients";
+import {
+  getClientsByRelationship,
+  getHiddenClientCount,
+  getHiddenClientSectors,
+  getVisibleClients,
+} from "@/content/clients";
 import { getFeaturedTestimonials } from "@/content/testimonials";
 import {
   breadcrumbSchema,
@@ -13,20 +18,35 @@ import {
 import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
-  title: "Our Clients",
+  title: "Our Clients & Project Relationships",
   description:
-    "Organisations that trust Electech Electromechanical Works LLC across hospitality, retail, commercial and facility management projects in the UAE.",
+    "Electech Electromechanical Works LLC has contributed MEP services to projects involving developers, property owners, main contractors, fit-out companies, hospitality operators and facility management organizations across the UAE.",
   image: "/images/pages/clients-corporate-office.jpg",
   path: "/clients",
 });
 
+const RELATIONSHIP_LABELS = {
+  "direct customer": "Direct customers",
+  "main contractor": "Main contractors",
+  "project-associated": "Project-associated organizations",
+  unknown: "Project relationships",
+} as const;
+
 export default function ClientsPage() {
-  const clients = getClientsSorted();
+  const clients = getVisibleClients();
+  const grouped = getClientsByRelationship();
+  const hiddenCount = getHiddenClientCount();
+  const hiddenSectors = getHiddenClientSectors();
   const testimonials = getFeaturedTestimonials();
 
-  const jsonLd = [organizationSchema(), breadcrumbSchema([
-    { name: "Our Clients", path: "/clients" },
-  ])];
+  const jsonLd = [
+    organizationSchema(),
+    breadcrumbSchema([{ name: "Our Clients", path: "/clients" }]),
+  ];
+
+  const knownGroups = (
+    ["direct customer", "main contractor", "project-associated", "unknown"] as const
+  ).filter((key) => grouped[key].length > 0);
 
   return (
     <>
@@ -36,24 +56,64 @@ export default function ClientsPage() {
       />
       <PageHero
         media={pageHeroes.clients}
-        title="Our Clients"
-        intro="Trusted by leading organisations across the UAE."
+        title="Our Clients & Project Relationships"
+        intro="Trusted Relationships Across the UAE"
         crumbs={[{ label: "Our Clients" }]}
       />
 
       <Section>
-        <p className="text-[15px] text-slate-dark">
-          {clients.length} organisations represented below. Filter by sector or
-          open a linked project story where available.
-        </p>
-        <div className="mt-8">
-          <ClientsLogoWall clients={clients} />
+        <div className="prose-mep max-w-3xl space-y-4 text-slate-dark">
+          <p>
+            Electech has contributed MEP services to projects involving
+            recognized developers, property owners, main contractors, interior
+            fit-out companies, hospitality operators and facility management
+            organizations.
+          </p>
+          <p>
+            Our experience includes both direct appointments and subcontracted
+            MEP packages delivered through established project teams.
+          </p>
+          <p>
+            We value these relationships and remain committed to reliable
+            execution, responsive communication and long-term collaboration.
+          </p>
+        </div>
+
+        {hiddenCount > 0 ? (
+          <p className="mt-8 text-[15px] text-slate-dark">
+            Project relationships across the UAE
+            {hiddenSectors.length
+              ? ` — sectors include ${hiddenSectors.join(", ")}`
+              : ""}
+            .
+          </p>
+        ) : null}
+
+        <div className="mt-10 space-y-12">
+          {knownGroups.map((key) => (
+            <div key={key}>
+              <h2 className="font-display text-xl font-bold text-navy">
+                {RELATIONSHIP_LABELS[key]}
+              </h2>
+              <div className="mt-6">
+                <ClientsLogoWall clients={grouped[key]} />
+              </div>
+            </div>
+          ))}
+          {!clients.length ? (
+            <p className="text-slate-dark">
+              Client logos will appear here once publication permissions are
+              confirmed.
+            </p>
+          ) : null}
         </div>
       </Section>
 
-      <Section tone="mist">
-        <TestimonialsBanner items={testimonials} />
-      </Section>
+      {testimonials.length ? (
+        <Section tone="mist">
+          <TestimonialsBanner items={testimonials} />
+        </Section>
+      ) : null}
 
       <Section>
         <CtaBanner />

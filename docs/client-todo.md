@@ -1,57 +1,83 @@
-# Client logo TODO
+# Client to-do / open confirmations
 
-## Logo usage permission (required)
+Items marked during the content revision against `docs/client-revision.md`.
+Nothing listed here should appear as a visitor-facing placeholder on the live site.
 
-**Confirm written permission to display every client logo** on electechmep.com (and marketing materials). Do not publish until clearance is documented for each mark below. Prefer vector / high-resolution assets when available.
+## Solar Power Plant (ON HOLD)
 
-## Copy confirmations (keep as written until confirmed)
+- [ ] Confirm Electech's actual solar PV delivery and approval capabilities before republishing `/solutions/electrical/solar-power-plant-installation`.
+- [ ] Keep page unpublished: remove from nav / mega-menu / footer / Solutions cards / Electrical links / sitemap (Batch 2).
 
-| Item | Current site text | Notes |
-|------|-------------------|-------|
-| Food outlet attribution | `Last Exist 11 – Innovative Food Outlet` | Appears verbatim in docx testimonial — confirm spelling (“Last Exit”?) |
-| Government office attribution | `Anex Building1st Floor – Hamariya Free Zone, Sharjah` | Appears in docx without space before “1st” — confirm legal building name |
+## Projects
 
-## Name correction applied
+- [ ] Client to share two additional office project descriptions.
+- [ ] Supply approved Electech project photographs for:
+  - Dubai Hills Villa 256
+  - Dubai Hills Villa 39
+  - DAMAC Hills Villa F307F
+  - Legacy cards currently showing navy tiles (no verified photo)
+- [ ] Confirm exact Electech MEP scope wording for legacy cards where only client name/location is verified (Sofitel, Real Image, Smart Salem, GTZ, Anex, Ascentia, two-bedroom flat, Al Zahiya).
+- [ ] Verify every testimonial for publication (`verified: true`). All current testimonials default to `verified: false`.
 
-| Was | Now | Reason |
-|-----|-----|--------|
-| Visualize Interior Decsheets | **Visualize Interior Decoration LLC** | Matches logo wordmark (“Interior Decoration LLC”) |
+## Clients / logos
 
-## Fit-out and Contractors sector
+- [ ] Confirm logo publication permission per client (`approved: true`) and relationship type (direct customer / main contractor / project-associated / unknown). Batch 2.
 
-Moved from “Other” / unknown:
+Clients currently `approved: false` (all):
+- OAKS Hotels & Resorts (Hospitality)
+- Mövenpick (Hospitality)
+- Mall of the Emirates (Retail)
+- Circle Mall (Retail)
+- Sofitel (Hospitality)
+- Dubai Mall (Retail)
+- Imdaad (Facility Management)
+- DAMAC ([CLIENT TO PROVIDE])
+- wasl properties ([CLIENT TO PROVIDE])
+- A&T Group Interiors (Fit-out and Contractors)
+- Nakheel ([CLIENT TO PROVIDE])
+- Amazon (Commercial)
+- Summertown Interiors (Fit-out and Contractors)
+- Emaar ([CLIENT TO PROVIDE])
+- Multiline ([CLIENT TO PROVIDE])
+- VAA ([CLIENT TO PROVIDE])
+- Al Barari (Residential)
+- Arco Interiors (Fit-out and Contractors)
+- Etisalat (Commercial)
+- Dubai Hills Estate (Residential)
+- Ibn Battuta Mall (Retail)
+- KG Interiors (Fit-out and Contractors)
+- Liva Insurance (Commercial)
+- JLL (Commercial)
+- Visualize Interior Decoration LLC (Fit-out and Contractors)
+- Axis Communications (Commercial)
+- Emirates National Facilities Management (Facility Management)
+- Real Image (Commercial)
+- Ascentia (Commercial)
+- Grand Hyatt (Hospitality)
+- Barr + Wray ([CLIENT TO PROVIDE])
+- AEW Technik ([CLIENT TO PROVIDE])
+- Royal Classic Contracting (Fit-out and Contractors)
+- CRI ([CLIENT TO PROVIDE])
+- Kalandoor Group ([CLIENT TO PROVIDE])
+- Vogo Grand Hotel (Hospitality)
+- MEBS Facility Services (Facility Management)
+- Marriott (Hospitality)
+- The Ritz-Carlton (Hospitality)
 
-- A&T Group Interiors
-- Summertown Interiors
-- Arco Interiors
-- KG Interiors
-- Visualize Interior Decoration LLC
-- Royal Classic Contracting
 
-## Quality / replacement needed
+## Contact / address
 
-| Logo | File | Issue |
-|------|------|-------|
-| OAKS Hotels & Resorts | `clients/client-oaks.jpg` | Very low resolution (~135×48) |
-| Mövenpick | `clients/client-movenpick.jpg` | Very low resolution (~128×88) |
-| Mall of the Emirates | `clients/client-mall-of-the-emirates.jpg` | Very low resolution (~133×69) |
-| Circle Mall | `clients/client-circle-mall.jpg` | Low resolution (~204×76) |
-| Dubai Mall | `clients/client-dubai-mall.jpg` | Very low resolution (~250×42) |
-| Circle Mall (colour) | `clients/client-circle-mall-03.jpeg` | Checkerboard + Lens UI overlay — **unused** |
-| Visualize | `clients/client-visualize.jpg` | Crop includes Google Lens UI chrome — replace with clean logo |
+- [ ] Confirm map pin for **Hamsah-A Building, Al Karama, Dubai, UAE, P.O. Box 87556** (Batch 2 address rollout).
 
-## Duplicate files (kept, unused by UI)
+## Certifications
 
-Multiple `client-<name>-02` / `-03` copies exist from WhatsApp originals. Canonical site logos are the unsuffixed `client-<name>.jpg` paths in `/data/clients.json`.
+- [ ] Provide ISO certificate numbers, validity dates and issuing bodies for ISO 9001, 14001 and 45001.
 
-## Missing logos for known story clients
+## Insights
 
-| Client / story | Notes |
-|----------------|-------|
-| GTZ Shipping (`logistics-office-development-gtz`) | Only `client-gtz.svg` placeholder |
-| Smart Salem (`healthcare-facility-upgrade-smart-salem`) | Only `client-smart-salem.svg` placeholder |
-| Atelier DIFC (`retail-space-innovation-atelier-difc`) | No logo file |
+- [CLIENT TO REVIEW] Rewrite or replace the weekly MEP progress-report blog post; remove unsupported regulatory / commissioning / drill claims (Batch 2).
 
-## Unknown sectors (still under “Other”)
+## Other
 
-Confirm sector for: DAMAC, wasl properties, Nakheel, Emaar, Multiline, VAA, Barr + Wray, AEW Technik, CRI, Kalandoor Group.
+- [ ] Confirm whether homepage process step labels (Understand → Support) should also appear on service pages that still use delivery-process wording.
+- [ ] Confirm EV Charging Infrastructure as a menu replacement for Solar, or leave Solar removed until ready.

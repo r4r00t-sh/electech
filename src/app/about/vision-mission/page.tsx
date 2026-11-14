@@ -6,9 +6,9 @@ import { pageMetadata } from "@/lib/seo";
 import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
-  title: "Vision and Mission",
+  title: "Vision, Mission & Values",
   description:
-    "ElecTech MEP vision, mission, values, expertise and delivery process.",
+    "Electech Electromechanical Works LLC vision, mission, core values and delivery process.",
   image: "/images/pages/vision-site-plans.jpg",
   path: "/about/vision-mission",
 });
@@ -20,7 +20,7 @@ export default function VisionMissionPage() {
       <PageHero
         media={pageHeroes.vision}
         title={content.title}
-        intro="The principles and process that guide every ElecTech MEP engagement."
+        intro="Dependable engineering solutions, professional accountability and long-term client relationships."
         crumbs={[
           { label: "About Us", href: "/about" },
           { label: "Vision and Mission" },
@@ -29,17 +29,21 @@ export default function VisionMissionPage() {
       <Section>
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6">
-            <h2 className="font-display text-2xl font-bold text-navy">Vision</h2>
+            <h2 className="font-display text-2xl font-bold text-navy">
+              Our Vision
+            </h2>
             <p className="mt-3 text-slate">{content.vision}</p>
           </div>
           <div className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6">
-            <h2 className="font-display text-2xl font-bold text-navy">Mission</h2>
+            <h2 className="font-display text-2xl font-bold text-navy">
+              Our Mission
+            </h2>
             <p className="mt-3 text-slate">{content.mission}</p>
           </div>
         </div>
       </Section>
       <Section tone="mist">
-        <SectionHeading title="Our values" />
+        <SectionHeading title="Our Core Values" />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {content.values.map((value) => (
             <div
@@ -55,7 +59,7 @@ export default function VisionMissionPage() {
         </div>
       </Section>
       <Section>
-        <SectionHeading title="Our expertise" />
+        <SectionHeading title="Our Expertise" />
         <div className="prose-mep space-y-4 text-slate">
           {content.expertise.map((paragraph) => (
             <p key={paragraph.slice(0, 48)}>{paragraph}</p>
@@ -63,14 +67,14 @@ export default function VisionMissionPage() {
         </div>
       </Section>
       <Section tone="mist">
-        <SectionHeading title="Our process" />
+        <SectionHeading title="How We Deliver" />
         <ol className="grid gap-4 md:grid-cols-5">
           {content.process.map((step, i) => (
             <li
               key={step.title}
               className="rounded-[var(--radius-card)] border border-navy/8 bg-white p-5"
             >
-              <span className="text-xs font-semibold text-amber">
+              <span className="text-xs font-semibold text-green">
                 0{i + 1}
               </span>
               <h3 className="mt-2 font-display text-lg font-bold text-navy">
@@ -80,19 +84,18 @@ export default function VisionMissionPage() {
             </li>
           ))}
         </ol>
-        <div className="mt-10 space-y-8">
-          {content.processNarrative.map((block) => (
-            <div key={block.heading}>
-              <h3 className="font-display text-xl font-bold text-navy">
-                {block.heading}
-              </h3>
-              <p className="prose-mep mt-3 text-slate">{block.body}</p>
-            </div>
-          ))}
-        </div>
       </Section>
       <Section>
-        <CtaBanner />
+        <SectionHeading title="Our Commitment" />
+        <p className="prose-mep max-w-3xl text-slate-dark">
+          {content.commitment}
+        </p>
+      </Section>
+      <Section tone="mist">
+        <CtaBanner
+          title="Work With a Dependable MEP Partner"
+          buttonLabel="Request a Quotation"
+        />
       </Section>
     </>
   );

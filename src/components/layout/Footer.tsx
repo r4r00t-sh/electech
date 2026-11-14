@@ -22,8 +22,7 @@ export function Footer() {
         <div>
           <Logo light />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
-            One-stop MEP and fire safety contractor in Dubai since 2012.
-            Precision delivery, quality materials and weekly progress reporting.
+            {siteConfig.footerTagline}
           </p>
         </div>
 

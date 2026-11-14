@@ -1,166 +1,197 @@
 export const aboutContent = {
-  whoWeAre: {
-    title: "About ElecTech MEP",
+  landing: {
+    title: "Engineering Confidence. Built on Trust.",
     intro:
-      "Since our inception in 2012, Electech has built a solid reputation for quality and unwavering dedication to our clients.",
+      "Electech Electromechanical Works LLC is a Dubai-based electromechanical contractor delivering mechanical, electrical, plumbing and associated building services across the UAE.",
+    paragraphs: [
+      "With more than 14 years of operational experience, we support main contractors, consultants, commercial property owners, residential villa owners and facility management teams through reliable engineering installations, system upgrades and maintenance services.",
+      "Our approach combines practical technical knowledge, coordinated execution, transparent communication and accountability.",
+    ],
+  },
+  whoWeAre: {
+    title: "Who We Are",
+    intro:
+      "Electech Electromechanical Works LLC is an established Dubai-based MEP contractor with more than 14 years of UAE operations, delivering mechanical, electrical, plumbing and associated building services for residential, commercial, retail and hospitality projects.",
     sections: [
+      {
+        heading: "Engineering Solutions That Create Lasting Value",
+        paragraphs: [
+          "We work closely with main contractors, interior fit-out companies, consultants, property owners and facility managers to deliver reliable installations, practical engineering solutions and responsive maintenance support.",
+        ],
+      },
       {
         heading: "Our Story",
         paragraphs: [
-          "Since our inception in 2012, Electech has built a solid reputation for quality and unwavering dedication to our clients. Our talented team operates with integrity, seamlessly integrating innovation and sustainability into every electromechanical project. What sets us apart is our unique ability to design spaces that transition effortlessly from concept to reality. Contractors and suppliers value our foresight, resulting in consistently on-time, high-quality project delivery across a diverse portfolio. Our commitment to excellence remains the cornerstone of our success.",
+          "Electech was built on a passion for construction, engineering and the satisfaction of delivering successful projects.",
+          "Over the years, our business has grown through technical involvement, problem-solving and relationships built on trust. We believe that completing an installation is only one part of our responsibility. How we communicate, respond to challenges and support our clients is equally important.",
+          "Our ambition is to be a company clients are confident appointing again and recommending to others.",
         ],
       },
       {
         heading: "What We Do",
-        paragraphs: [
-          "Electech is a leader in delivering comprehensive Electromechanical Works across the UAE. Renowned for our commitment to excellence, we serve a diverse clientele, including interior fit-out, construction, facility management, villa developers, healthcare, the hospitality sector, and private owners of commercial and residential properties.",
-          "As a leading Electromechanical company in Dubai for over 14 years, we have been breaking creative boundaries and redefining Electromechanical services. We provide beautiful living spaces and create purposeful masterpieces enriched with comfort, convenience, and flamboyance. We have transformed homes, palaces, offices, restaurants, and hotels into environments as unique as our clients themselves. Serving those who desire only the best for their properties, we offer innovative designs built to your personalized preferences.",
+        paragraphs: [],
+        bullets: [
+          {
+            title: "Mechanical",
+            description:
+              "HVAC installation, ventilation, air-conditioning upgrades, associated mechanical works and maintenance.",
+          },
+          {
+            title: "Electrical",
+            description:
+              "Power distribution, DB and SMDB works, lighting installations, electrical modifications, EV charging provisions and ELV infrastructure.",
+          },
+          {
+            title: "Plumbing",
+            description:
+              "Water supply, drainage, sanitary installations, water filtration, pumping systems and solar water heating.",
+          },
+          {
+            title: "Fire Protection Support",
+            description:
+              "Fire alarm and firefighting containment, cabling, piping, equipment installation and coordination with responsible approved specialists.",
+          },
+          {
+            title: "MEP Maintenance",
+            description:
+              "Preventive maintenance, corrective maintenance, troubleshooting and annual maintenance contracts for residential and commercial properties.",
+          },
         ],
       },
       {
-        heading: "Precision and Quality",
+        heading: "Our Commitment to Clients",
         paragraphs: [
-          "With a dedication to precision and quality, Electech ensures that every project is executed seamlessly from start to finish. Our meticulous attention to detail guarantees a hassle-free experience, allowing our clients to focus on their core objectives while we bring their vision to life.",
-          "With a heritage of extraordinary creativity, unmatched craftsmanship, and an impeccable standard of service, we empower you to enjoy stylish adornments with modern amenities. We have proven to be one of the region's most trusted Electromechanical companies by delivering world-class outcomes with aesthetically superior durability.",
+          "We believe that strong client relationships are built through actions rather than promises.",
+          "When an issue arises, we respond promptly, investigate its cause and communicate our findings. Where responsibility lies with Electech, we take ownership and work towards resolution. Where another interface or party is involved, we explain the technical findings and support coordination.",
+          "This practical and accountable approach is central to the way we operate.",
         ],
       },
       {
-        heading: "Why Industry Leaders Choose Us",
+        heading: "Our Team and Working Approach",
         paragraphs: [
-          "At Electech, we pride ourselves on delivering exceptional results, making us the preferred choice for industry leaders seeking reliability and expertise in the dynamic UAE market. Experience the Electech difference – where your aspirations meet unparalleled technical proficiency and service.",
+          "Our engineering, supervision and site teams work together to coordinate installations with architectural finishes, project schedules, material requirements and other building services.",
+          "We focus on clear scope definition, practical execution planning, workmanship, inspections, testing and organized handover documentation.",
         ],
       },
       {
-        heading: "Our Team",
+        heading: "Looking Ahead",
         paragraphs: [
-          "Since 2012, we have gathered a remarkable in-house team of highly talented industry professionals, project managers, designers, and other specialists. Throughout this journey, we have completed numerous projects, covering all aspects of design and execution from start to finish. We deliver high-class Electromechanical projects at competitive prices, regardless of project size.",
-        ],
-      },
-      {
-        heading: "Our Approach",
-        paragraphs: [
-          "Leveraging the latest technologies, a highly trained workforce, and over 14 years of expertise, we handle all types of complex and bespoke projects. Our emphasis is on creating a balanced living environment, and all other aspects of the atmosphere are beautifully coordinated to complement your taste and personality. We work with you to make your living spaces the ideal homes where architectural excellence and design finesse integrate seamlessly. When our team takes up a project, we prioritize creating the perfect blend of aesthetics, luxury, and comfortable living.",
+          "Electech continues to strengthen its capabilities in building services, energy-efficient solutions, water treatment, pumping systems, smart electrical infrastructure and long-term MEP maintenance.",
+          "Our focus remains on delivering dependable engineering services and building lasting relationships with the clients and contractors who place their trust in us.",
         ],
       },
     ],
+    ctaTitle: "Discuss Your MEP Requirements With Electech",
   },
   visionMission: {
-    title: "Our Vision and Mission",
+    title: "Our Vision, Mission & Values",
     vision:
-      "Remain at the forefront of delivering innovative solutions. Empower society with a unique competitive advantage to overcome critical challenges and create lasting value.",
+      "To be a trusted MEP partner in the UAE, recognized for dependable engineering solutions, professional accountability and long-term client relationships.",
     mission:
-      "Develop the best strategies to enhance awareness and expertise in society regarding Electromechanical Solutions and leverage our solutions to achieve profitability and transform them into valuable benefits for our clients.",
+      "To deliver mechanical, electrical and plumbing solutions that create lasting value through technical competence, safe working practices, coordinated execution, transparent communication and responsive service.",
     values: [
       {
-        title: "Pride in service",
+        title: "Accountability",
         description:
-          "We take pride in what we do and enjoy providing service to our clients.",
+          "We take responsibility for our commitments, investigate problems and work towards practical solutions.",
       },
       {
-        title: "Creative and nimble",
+        title: "Technical Excellence",
         description:
-          "We are creative and nimble in adapting to the ever-changing demands of our work.",
+          "We focus on sound engineering practices, suitable materials, quality workmanship and reliable system performance.",
       },
       {
-        title: "Proactive improvement",
+        title: "Integrity",
         description:
-          "We are proactive in finding effective solutions and continuously improving our processes.",
+          "We communicate openly about scope, responsibilities, progress and technical challenges.",
+      },
+      {
+        title: "Client Commitment",
+        description:
+          "We value repeat business and long-term relationships over short-term promises.",
+      },
+      {
+        title: "Safety and Quality",
+        description:
+          "We integrate safe working practices, inspections and quality checks into project execution.",
+      },
+      {
+        title: "Continuous Improvement",
+        description:
+          "We learn from project experience and seek better methods of installation, coordination and service delivery.",
       },
     ],
     expertise: [
-      "At Electech, we specialize in transforming vacant spaces into dynamic and practical environments tailored to commercial, residential, and retail needs. Our sharp design sensibility and unwavering commitment to quality infuse vitality into each project, consistently surpassing expectations.",
-      "From inception to completion, our team focuses on maximizing space utility while enhancing aesthetic appeal. Whether it's a commercial office, a luxurious residence, or a dynamic retail setting, we deliver bespoke solutions that turn empty canvases into lively and purposeful spaces. Experience the difference with us, where innovation meets excellence in every project.",
-      "We are dedicated to delivering innovative design, meticulous project management, and outstanding craftsmanship. Our comprehensive services ensure that every detail, from the grandest concepts to the smallest elements, is executed to perfection, balancing functionality and aesthetics.",
-      "True excellence lies in the details. Our team of skilled professionals works tirelessly to ensure that each aspect of your project meets the highest standards of quality and precision. Whether it's a residential villa, a commercial property, or a large-scale real estate development, Electech's commitment to excellence guarantees a seamless and satisfying experience.",
-      "Discover how our expertise can transform your vision into reality, ensuring that every component of your project is flawlessly executed for both utility and visual appeal. Experience the Electech difference, where innovation meets impeccable craftsmanship.",
+      "Our expertise covers electrical distribution and lighting, HVAC and ventilation, plumbing and drainage, water filtration, pumps, solar water heating, ELV infrastructure and MEP maintenance.",
+      "We serve commercial offices, residential villas, retail environments, hospitality facilities and other properties requiring dependable building services.",
     ],
     process: [
       {
-        title: "Consult",
+        title: "Understand",
         description:
-          "Skilled engineers and technicians collaborate with clients from inception, aligning schematic designs and budgets.",
+          "Review the project brief, drawings, existing site conditions and scope.",
       },
       {
-        title: "Design",
+        title: "Coordinate",
         description:
-          "Tailored solutions streamline decisions and reduce cost while protecting quality and constructability.",
+          "Identify technical interfaces, material requirements and execution priorities.",
       },
       {
-        title: "Install",
+        title: "Execute",
         description:
-          "High-quality materials and superior workmanship underpin every installation package.",
+          "Carry out installations through supervised site teams and coordinated work sequences.",
       },
       {
-        title: "Report weekly",
+        title: "Verify",
         description:
-          "Weekly progress reports keep stakeholders informed so issues can be addressed promptly.",
+          "Conduct applicable inspections, testing and documentation within our contractual scope.",
       },
       {
-        title: "Maintain",
+        title: "Support",
         description:
-          "Safety, sustainability and long-term reliability remain priorities after handover.",
+          "Assist with handover, troubleshooting, corrective work and maintenance requirements.",
       },
     ],
-    processNarrative: [
-      {
-        heading: "Collaboration from inception",
-        body: "At Electech, our team of highly skilled engineers and technicians collaborates closely with clients and industry professionals from the inception of a project through to its completion. This collaborative approach ensures that we fully understand and meet our clients' needs, tailoring schematic designs and budgets accordingly. By doing so, we streamline decision-making processes and effectively reduce costs, providing a seamless and efficient project experience.",
-      },
-      {
-        heading: "Weekly progress reports",
-        body: "Our commitment to transparency and proactive communication is demonstrated through our weekly progress reports. These reports keep all stakeholders informed of the project's status and any developments, fostering a collaborative environment where issues can be promptly addressed and resolved. This proactive approach to issue resolution is a cornerstone of our project management strategy, ensuring that potential problems are identified and mitigated before they can impact the project's timeline or budget.",
-      },
-      {
-        heading: "Quality at the heart",
-        body: "Quality is at the heart of everything we do at Electech. We place a strong emphasis on using high-quality materials and employing superior workmanship in all our projects. This focus on quality not only guarantees client satisfaction but also ensures the longevity and reliability of the solutions we provide. Our dedication to excellence is reflected in the meticulous attention to detail that our team brings to every project, from the smallest components to the most complex systems.",
-      },
-      {
-        heading: "Stakeholder well-being, safety and sustainability",
-        body: "Furthermore, we prioritize the well-being of all stakeholders involved in our projects. This includes not only our clients but also our employees, suppliers, subcontractors, and the communities in which we operate. We adhere to stringent safety standards and best practices to create a safe and healthy working environment. Our commitment to sustainability and environmental responsibility is also integral to our operations, as we strive to minimize our environmental footprint and contribute positively to the communities we serve.",
-      },
-      {
-        heading: "In summary",
-        body: "In summary, Electech's approach to project management is characterized by close collaboration, tailored solutions, proactive communication, and a steadfast commitment to quality and stakeholder well-being. Our skilled team of engineers and technicians ensures that every project is executed with precision and excellence, delivering results that exceed expectations. By focusing on these core principles, we not only meet but often surpass our clients' needs, establishing Electech as a trusted partner in the industry. Experience the Electech difference, where innovation, quality, and client satisfaction are at the forefront of every project we undertake.",
-      },
-    ],
+    commitment:
+      "Every project should leave the client confident in Electech's technical capability, satisfied with our response and comfortable recommending us for future work.",
   },
   whyChooseUs: {
-    title: "Why Choose Us",
+    title: "Why Choose Electech?",
     intro:
-      "At Electech, we offer comprehensive solutions as your one-stop provider for MEP services. Our expert team leverages extensive industry experience and an innovative approach to deliver exceptional results. We prioritize quality assurance, ensuring superior outcomes through meticulous materials selection and craftsmanship. Our customer-focused approach means we provide personalized solutions designed to exceed your expectations. Additionally, our efficient project management guarantees timely delivery, ensuring projects are completed on time and within budget.",
-    closing:
-      "Choose us for a seamless, professional experience that meets all your MEP needs.",
+      "Electech combines established UAE project experience with direct technical involvement, responsive communication and a solution-oriented approach.",
+    subtitle: "Practical Engineering. Reliable Delivery. Accountable Service.",
     points: [
       {
-        title: "One-stop MEP provider",
+        title: "Integrated MEP Capabilities",
         description:
-          "Comprehensive solutions across mechanical, electrical, plumbing, fire protection and maintenance.",
+          "Coordinated mechanical, electrical and plumbing services help reduce interface gaps between trades and support efficient project execution.",
       },
       {
-        title: "Industry experience",
+        title: "Practical Technical Experience",
         description:
-          "An expert team with extensive UAE experience and an innovative delivery approach.",
+          "Our team understands the challenges of working in operational buildings, commercial fit-outs and premium residential properties, where access, sequencing and protection of existing finishes are important.",
       },
       {
-        title: "Quality assurance",
+        title: "Quality-Focused Execution",
         description:
-          "Superior outcomes through meticulous materials selection and craftsmanship.",
+          "We emphasize appropriate material selection, installation workmanship, inspections and testing to support reliable building services.",
       },
       {
-        title: "Customer-focused",
+        title: "Responsive Problem-Solving",
         description:
-          "Personalised solutions designed to meet the brief and exceed expectations.",
+          "We investigate technical issues, communicate findings and coordinate corrective actions rather than allowing problems to remain unresolved.",
       },
       {
-        title: "Efficient project management",
+        title: "Transparent Communication",
         description:
-          "Timely delivery supported by weekly reporting and clear stakeholder communication.",
+          "We keep clients informed of progress, constraints, technical decisions and matters requiring their attention.",
       },
       {
-        title: "14+ years in the UAE",
+        title: "Long-Term Client Relationships",
         description:
-          "Operating since 2012 across fit-out, hospitality, healthcare, government and residential work.",
+          "We aim to earn repeat appointments and referrals by remaining accountable during execution, handover and subsequent service support.",
       },
     ],
+    closing: "Work With a Dependable MEP Partner",
   },
 };

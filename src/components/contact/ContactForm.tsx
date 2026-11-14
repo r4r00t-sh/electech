@@ -144,8 +144,8 @@ export function ContactForm() {
         </p>
       ) : null}
 
-      <Button type="submit" className="mt-6" >
-        {status === "loading" ? "Sending…" : "Send enquiry"}
+      <Button type="submit" className="mt-6">
+        {status === "loading" ? "Sending…" : "Submit Your Enquiry"}
       </Button>
     </form>
   );

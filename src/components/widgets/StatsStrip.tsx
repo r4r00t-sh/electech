@@ -34,6 +34,7 @@ function StatItem({
   suffix,
   prefix,
   placeholder,
+  textValue,
   active,
 }: {
   value: number;
@@ -41,13 +42,18 @@ function StatItem({
   suffix: string;
   prefix: string;
   placeholder?: string;
+  textValue?: string;
   active: boolean;
 }) {
   const counted = useCountUp(value, active);
   return (
     <div className="text-center md:text-left">
       <p className="font-display text-3xl font-bold text-navy md:text-4xl">
-        {placeholder && value === 0 ? (
+        {textValue ? (
+          <span className="block text-base font-semibold leading-snug text-navy">
+            {textValue}
+          </span>
+        ) : placeholder && value === 0 ? (
           <span className="text-base font-semibold text-slate">{placeholder}</span>
         ) : (
           <>

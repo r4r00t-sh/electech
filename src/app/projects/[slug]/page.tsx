@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Fragment } from "react";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
@@ -48,6 +47,13 @@ function attribution(role: string, company: string) {
   return [r, c].filter(Boolean).join(", ");
 }
 
+function showUnverifiedTestimonials() {
+  const env = process.env.SHOW_UNVERIFIED_TESTIMONIALS;
+  if (env === "true") return true;
+  if (env === "false") return false;
+  return process.env.NODE_ENV !== "production";
+}
+
 export default async function StoryPage({
   params,
 }: {
@@ -76,8 +82,17 @@ export default async function StoryPage({
     publisher: { "@type": "Organization", name: siteConfig.legalName },
   };
 
-  const bodyLines = story.body.split("\n");
-  let galleryInserted = false;
+  const showTestimonial =
+    story.testimonial &&
+    (story.testimonial.verified || showUnverifiedTestimonials());
+
+  const facts = [
+    ["Location", story.location],
+    ["Sector", story.sector],
+    ["Electech scope", story.scope],
+    ["Status", story.status],
+    story.client ? ["Client", story.client] : null,
+  ].filter(Boolean) as [string, string][];
 
   return (
     <>
@@ -111,53 +126,39 @@ export default async function StoryPage({
           <h1 className="mt-3 max-w-4xl text-[2.75rem] font-bold !text-white md:text-5xl">
             {story.title}
           </h1>
-          <p className="mt-4 max-w-2xl text-[17px] text-white/90">{story.summary}</p>
+          {story.subtitle ? (
+            <p className="mt-3 max-w-3xl text-[17px] font-medium text-white/90">
+              {story.subtitle}
+            </p>
+          ) : null}
+          <p className="mt-4 max-w-2xl text-[17px] text-white/90">
+            {story.summary}
+          </p>
         </div>
       </div>
 
       <Section>
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
           <article className="prose-mep whitespace-pre-line text-slate">
-            {bodyLines.map((line, i) => {
-              if (line.startsWith("## ")) {
-                const heading = (
-                  <h2 key={`h-${i}`} className="font-display text-navy">
-                    {line.replace("## ", "")}
-                  </h2>
-                );
-                // Insert inline gallery after the first major section body
-                if (!galleryInserted && i > 0) {
-                  galleryInserted = true;
-                  return (
-                    <Fragment key={`sec-${i}`}>
-                      {heading}
-                      <div className="my-8 grid gap-4 not-prose md:grid-cols-2">
-                        {gallery.map((img) => (
-                          <div
-                            key={`${img.src}-${img.objectPosition ?? ""}-${img.alt}`}
-                            className="relative aspect-[4/3] overflow-hidden rounded-md"
-                          >
-                            <PhotoMedia image={img} sizes="50vw" />
-                          </div>
-                        ))}
-                      </div>
-                    </Fragment>
-                  );
-                }
-                return heading;
-              }
-              if (line.startsWith("### ")) {
-                return (
-                  <h3 key={i} className="font-display text-navy">
-                    {line.replace("### ", "")}
-                  </h3>
-                );
-              }
+            {story.body.split("\n").map((line, i) => {
               if (!line.trim()) return <br key={i} />;
               return <p key={i}>{line}</p>;
             })}
 
-            {!galleryInserted && gallery.length ? (
+            {story.highlights?.length ? (
+              <div className="not-prose mt-8">
+                <h2 className="font-display text-2xl font-bold text-navy">
+                  Key Project Highlights
+                </h2>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-dark">
+                  {story.highlights.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+
+            {gallery.length ? (
               <div className="my-8 grid gap-4 not-prose md:grid-cols-2">
                 {gallery.map((img) => (
                   <div
@@ -170,18 +171,20 @@ export default async function StoryPage({
               </div>
             ) : null}
 
-            <figure className="my-10 rounded-md border border-navy/10 bg-mist p-6 md:p-8">
-              <Quote className="h-8 w-8 text-green" aria-hidden />
-              <blockquote className="mt-4 text-xl font-medium text-navy">
-                “{story.testimonial.quote}”
-              </blockquote>
-              <figcaption className="mt-4 text-[15px] text-slate-dark">
-                {attribution(
-                  story.testimonial.role,
-                  story.testimonial.company,
-                )}
-              </figcaption>
-            </figure>
+            {showTestimonial && story.testimonial ? (
+              <figure className="my-10 rounded-md border border-navy/10 bg-mist p-6 md:p-8">
+                <Quote className="h-8 w-8 text-green" aria-hidden />
+                <blockquote className="mt-4 text-xl font-medium text-navy">
+                  “{story.testimonial.quote}”
+                </blockquote>
+                <figcaption className="mt-4 text-[15px] text-slate-dark">
+                  {attribution(
+                    story.testimonial.role,
+                    story.testimonial.company,
+                  )}
+                </figcaption>
+              </figure>
+            ) : null}
           </article>
 
           <aside className="h-fit rounded-md border border-navy/10 bg-mist p-6 lg:sticky lg:top-24">
@@ -189,13 +192,7 @@ export default async function StoryPage({
               Project facts
             </h2>
             <dl className="mt-4 space-y-4 text-[15px]">
-              {[
-                ["Client", story.client],
-                ["Location", story.location],
-                ["Sector", story.sector],
-                ["Scope", story.scope],
-                ["Year", story.year],
-              ].map(([label, value]) => (
+              {facts.map(([label, value]) => (
                 <div key={label}>
                   <dt className="text-slate">{label}</dt>
                   <dd className="mt-1 font-medium text-navy">{value}</dd>
@@ -203,25 +200,6 @@ export default async function StoryPage({
               ))}
             </dl>
           </aside>
-        </div>
-      </Section>
-
-      <Section tone="mist">
-        <h2 className="mb-6 font-display text-2xl font-bold text-navy">
-          Results & outcomes
-        </h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {story.results.map((result) => (
-            <div
-              key={result.label}
-              className="rounded-md border border-navy/10 bg-white p-5"
-            >
-              <p className="text-[15px] text-slate">{result.label}</p>
-              <p className="mt-1 font-display text-xl font-bold text-navy">
-                {result.value}
-              </p>
-            </div>
-          ))}
         </div>
       </Section>
 
@@ -248,13 +226,15 @@ export default async function StoryPage({
         </div>
       </Section>
 
-      <Section tone="mist">
-        <ClientSuccessStories
-          stories={related}
-          title="Related stories"
-          description="More work from the same solutions bucket."
-        />
-      </Section>
+      {related.length ? (
+        <Section tone="mist">
+          <ClientSuccessStories
+            stories={related}
+            title="Related projects"
+            description="More MEP works from the same solutions bucket."
+          />
+        </Section>
+      ) : null}
 
       <Section>
         <CtaBanner />

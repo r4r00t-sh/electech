@@ -51,7 +51,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Full-bleed photo hero */}
       <section className="relative overflow-hidden bg-[#0a1428]">
         <div className="relative min-h-[70vh]">
           <HeroSlider slides={heroSlides} />
@@ -60,20 +59,23 @@ export default function HomePage() {
             <h1 className="max-w-3xl text-[2.75rem] font-bold leading-[1.08] !text-white md:text-[3.5rem] lg:text-[4rem]">
               {siteConfig.tagline}
             </h1>
+            <p className="mt-4 text-[15px] font-semibold uppercase tracking-wide text-green md:text-base">
+              {siteConfig.taglineSupport}
+            </p>
             <p className="mt-5 max-w-xl text-[17px] text-white/90 md:text-lg">
-              One-stop mechanical, electrical, plumbing and fire safety
-              contractor with 14+ years in the UAE delivering precision work.
+              Electech delivers dependable MEP installation, system upgrades and
+              maintenance services for commercial offices, residential villas,
+              retail and hospitality projects across the UAE.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/solutions">Explore Our Solutions</Button>
+              <Button href="/solutions">Explore Our Services</Button>
               <Button href="/contact" variant="outline">
-                Get a Quote
+                Request a Quotation
               </Button>
             </div>
           </div>
         </div>
 
-        {/* Full-width navy stats strip */}
         <div className="relative z-[2] bg-navy">
           <div className="container-site grid grid-cols-2 md:grid-cols-4">
             {siteConfig.stats.map((stat, i) => (
@@ -88,9 +90,9 @@ export default function HomePage() {
                 }`}
               >
                 <p className="font-display text-4xl font-bold !text-white md:text-5xl">
-                  {"placeholder" in stat && stat.value === 0 ? (
-                    <span className="text-[15px] font-semibold text-white/70">
-                      {stat.placeholder}
+                  {"textValue" in stat && stat.textValue ? (
+                    <span className="block text-[15px] font-semibold leading-snug text-white md:text-base">
+                      {stat.textValue}
                     </span>
                   ) : (
                     <>
@@ -107,17 +109,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Asymmetric solutions — MEP spans both rows */}
       <Section>
         <div className="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <h2 className="max-w-xl text-[2.5rem] font-bold text-navy md:text-[2.75rem]">
-            Five capabilities. One accountable team.
+            Five Capabilities. One Coordinated Team.
           </h2>
           <Link
             href="/solutions"
             className="inline-flex items-center gap-2 text-[15px] font-semibold text-navy hover:text-green"
           >
-            All solutions <ArrowRight className="h-4 w-4" />
+            All services <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
 
@@ -136,7 +137,7 @@ export default function HomePage() {
                 <div className="pointer-events-none absolute inset-0 photo-scrim" />
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                   <h3 className="font-display text-2xl font-bold !text-white md:text-3xl">
-                    {featuredBucket.label}
+                    Integrated MEP
                   </h3>
                   <p className="mt-2 max-w-md text-[15px] text-white/90">
                     {featuredBucket.summary}
@@ -168,7 +169,9 @@ export default function HomePage() {
                 </div>
                 <div className="flex flex-1 flex-col p-4">
                   <h3 className="font-display text-lg font-bold text-navy">
-                    {bucket.short}
+                    {bucket.id === "fire-protection"
+                      ? "Fire Protection Support"
+                      : bucket.short}
                   </h3>
                   <p className="mt-1 flex-1 text-[15px] text-slate-dark">
                     {bucket.summary}
@@ -183,7 +186,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Split image / text — natural photo, no tint */}
       <section className="bg-mist">
         <div className="grid lg:grid-cols-2">
           <div className="relative min-h-[320px] lg:min-h-[520px]">
@@ -191,11 +193,13 @@ export default function HomePage() {
           </div>
           <div className="section-pad px-6 md:px-10 lg:px-14">
             <h2 className="text-[2.5rem] font-bold text-navy md:text-[2.75rem]">
-              Confidence built into every programme
+              Why Clients Work With Electech
             </h2>
             <p className="mt-4 max-w-xl text-[17px] text-slate-dark">
-              Precision, on-time delivery, quality materials, transparent weekly
-              reporting, safety and sustainability.
+              We combine practical engineering experience with responsive
+              communication, quality-focused execution and accountability. Our
+              goal is to resolve challenges, deliver dependable installations
+              and build relationships that continue beyond project handover.
             </p>
             <ul className="mt-8 space-y-4">
               {aboutContent.whyChooseUs.points.slice(0, 4).map((point) => (
@@ -210,17 +214,16 @@ export default function HomePage() {
               ))}
             </ul>
             <Button href="/about/why-choose-us" className="mt-8" variant="ghost">
-              Why choose ElecTech
+              Why choose Electech
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Process — stronger presence */}
       <section className="bg-mist">
         <div className="container-site section-pad">
           <h2 className="mb-10 max-w-xl text-[2.5rem] font-bold text-navy md:text-[2.75rem]">
-            From consult to maintain
+            How We Deliver
           </h2>
           <ol className="relative grid gap-8 md:grid-cols-5 md:gap-5">
             <div
@@ -254,9 +257,10 @@ export default function HomePage() {
         <ClientSuccessStories stories={stories} />
       </Section>
 
-      <TestimonialsBanner items={testimonials} />
+      {testimonials.length ? (
+        <TestimonialsBanner items={testimonials} />
+      ) : null}
 
-      {/* Sectors — 8 image tiles */}
       <Section>
         <h2 className="mb-8 text-[2.5rem] font-bold text-navy md:text-[2.75rem]">
           Sectors we serve across the UAE
@@ -290,7 +294,7 @@ export default function HomePage() {
             ISO 9001, ISO 14001 and ISO 45001 — quality, environmental and
             occupational health &amp; safety management systems.
           </p>
-          <div className="relative mx-auto mt-6 aspect-[806/372] max-w-3xl overflow-hidden rounded-md border border-navy/10 bg-white">
+          <div className="relative mx-auto mt-6 aspect-[797/372] max-w-3xl overflow-hidden rounded-md border border-navy/10 bg-white">
             <PhotoMedia
               image={{
                 src: "/images/certs/iso-board.jpg",
@@ -347,7 +351,11 @@ export default function HomePage() {
       </Section>
 
       <Section tone="mist">
-        <CtaBanner />
+        <CtaBanner
+          title="Planning an MEP Project?"
+          description="From a villa water-system upgrade to a commercial office MEP installation, our team can review your requirements and propose a practical scope of work."
+          buttonLabel="Request a Quotation"
+        />
       </Section>
     </>
   );

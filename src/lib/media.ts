@@ -191,9 +191,9 @@ export const pageHeroes = {
     objectPosition: "center right",
   },
   whoWeAre: {
-    src: "/images/pages/who-we-are-construction.jpg",
-    alt: "Active construction site with tower cranes and structural works.",
-    objectPosition: "center 40%",
+    src: "/images/pages/electrical-installation-work.jpg",
+    alt: "Organised electrical distribution board and installation work.",
+    objectPosition: "center center",
   },
   vision: {
     src: "/images/pages/vision-site-plans.jpg",
@@ -252,30 +252,20 @@ export const homeBucketImages: Record<BucketId, MediaRef> = {
 
 /** Why-choose panel on home — craftsmanship / delivery, not ELV racks */
 export const homeWhyImage: MediaRef = {
-  src: "/images/pages/why-choose-workshop.jpg",
-  alt: "Industrial fabricator welding steel with precision on the shop floor",
-  objectPosition: "center right",
+  ...works.commercialOffice,
+  alt: "Electech commercial office MEP installation with ceiling services",
+  objectPosition: "center center",
 };
 
-/**
- * Homepage sectors — all 8 matched to a subject-appropriate photo.
- * Government uses a civic-style glazed office (never the Etisalat photo).
- */
+/** Homepage sectors — aligned with client-listed sectors served. */
 export const homeSectorImages: { label: string; image: MediaRef }[] = [
-  { label: "Interior fit-out", image: works.artGallery },
-  {
-    label: "Villa developers",
-    image: {
-      src: "/images/pages/who-we-are-construction.jpg",
-      alt: "High-rise construction for villa and residential programmes",
-    },
-  },
-  { label: "Hospitality", image: works.restaurantDining },
-  { label: "Healthcare", image: media.cleanInterior },
-  { label: "Commercial", image: works.commercialOffice },
-  { label: "Government", image: media.corporateOffice },
-  { label: "Facility management", image: media.electricalSmall },
   { label: "Residential", image: media.residentialTower },
+  { label: "Commercial", image: works.commercialOffice },
+  { label: "Retail", image: works.artGallery },
+  { label: "Hospitality", image: works.restaurantDining },
+  { label: "F&B", image: works.restaurantBar },
+  { label: "Industrial", image: media.mepPlant },
+  { label: "Building Maintenance", image: media.hvacSquare },
 ];
 
 /**
@@ -283,120 +273,32 @@ export const homeSectorImages: { label: string; image: MediaRef }[] = [
  * repeats a photo. Hotel uses the dining interior (not the bar); healthcare
  * uses a clean clinical-style interior (not fire-alarm hardware).
  */
+/** Verified Electech works photos only. Missing slugs → navy tile (no stock). */
 export const storyImages: Record<string, MediaRef> = {
-  "luxurious-villa-transformation": {
-    ...media.plumbingWide,
-    objectPosition: "center center",
-    alt: "Finished luxury bathroom in a private villa",
-  },
-  "hospitality-sector-excellence-sofitel": {
-    ...works.restaurantDining,
-    objectPosition: "center 40%",
-    alt: "Hospitality dining and lounge interior",
-  },
-  "amazon-ecommerce-office": {
+  "mep-works-amazon-ecommerce-office": {
     ...works.commercialOffice,
     objectPosition: "center center",
-    alt: "Open-plan commercial office with ceiling services",
+    alt: "Commercial office MEP fit-out",
   },
-  "corporate-headquarters-upgrade-real-image": {
-    ...media.hvacWide,
+  "mep-works-innovative-food-outlet-imdaad": {
+    ...works.restaurantDining,
     objectPosition: "center 40%",
-    alt: "Corporate headquarters interior with glazing and meeting area",
+    alt: "Food outlet project photography",
   },
-  "healthcare-facility-upgrade-smart-salem": {
-    ...media.cleanInterior,
-    objectPosition: "center center",
-    alt: "Clean, bright facility interior with glass partitions",
-  },
-  "innovative-food-outlet-and-park-imdaad": {
-    ...works.restaurantBar,
-    objectPosition: "center center",
-    alt: "Food outlet bar and lounge with decorative lighting",
-  },
-  "two-bedroom-flat-dhiraj-kumar": {
-    ...media.residentialTower,
-    objectPosition: "center center",
-    alt: "Modern apartment building exterior",
-  },
-  "retail-space-innovation-atelier-difc": {
+  "mep-works-atelier-difc": {
     ...works.artGallery,
     objectPosition: "center center",
-    alt: "Contemporary retail gallery interior with feature lighting",
+    alt: "Retail MEP works photography",
   },
-  "etisalat-office-kifaf": {
+  "mep-works-etisalat-kifaf": {
     ...works.etisalatOffice,
     objectPosition: "center center",
-    alt: "Etisalat open-plan office floor with ceiling services",
-  },
-  "logistics-office-development-gtz": {
-    ...media.elv,
-    objectPosition: "center center",
-    alt: "Server racks and low-current cabling for a logistics operations hub",
-  },
-  "government-office-modernization-anex": {
-    ...media.corporateOffice,
-    objectPosition: "center center",
-    alt: "Modernised office corridor and glazed workspace",
-  },
-  "commercial-office-revamp-ascentia": {
-    ...media.hvacSquare,
-    objectPosition: "center right",
-    alt: "Technician servicing building air-conditioning plant",
+    alt: "Etisalat office MEP works",
   },
 };
 
-/** Inline gallery per story (2 each; never the story's own hero src). */
-export const storyGalleryImages: Record<string, MediaRef[]> = {
-  "luxurious-villa-transformation": [
-    { ...media.electricalWide, alt: "Villa-style distribution board with labelled circuits" },
-    { ...media.hvacWide, objectPosition: "center 40%", alt: "Finished interior with exposed ceiling air-conditioning services" },
-  ],
-  "hospitality-sector-excellence-sofitel": [
-    { ...media.hvacWide, objectPosition: "center 40%", alt: "Hospitality-grade interior with ceiling air-conditioning services" },
-    { ...media.elv, alt: "Low-current racks supporting smart building controls" },
-  ],
-  "amazon-ecommerce-office": [
-    { ...media.elv, alt: "Data and low-current cabling for an office floor" },
-    { ...media.electricalWide, alt: "Office electrical distribution board" },
-  ],
-  "corporate-headquarters-upgrade-real-image": [
-    { ...media.corporateOffice, alt: "Corporate office corridor with glazed meeting rooms" },
-    { ...media.electricalWide, alt: "Headquarters electrical distribution board" },
-  ],
-  "healthcare-facility-upgrade-smart-salem": [
-    { ...media.plumbingSmall, alt: "Pipework, valves and gauges for domestic water services" },
-    { ...media.hvacSquare, objectPosition: "center right", alt: "Technician servicing air-conditioning plant" },
-  ],
-  "innovative-food-outlet-and-park-imdaad": [
-    { ...works.restaurantDining, alt: "Restaurant dining area with ambient lighting" },
-    { ...media.plumbingSmall, alt: "Pipework and valves for water supply and drainage" },
-  ],
-  "two-bedroom-flat-dhiraj-kumar": [
-    { ...media.plumbingWide, alt: "Finished bathroom with modern plumbing fixtures" },
-    { ...media.electricalWide, alt: "Apartment-style distribution board with labelled circuits" },
-  ],
-  "retail-space-innovation-atelier-difc": [
-    { ...media.electricalWide, alt: "Retail distribution board and lighting circuits" },
-    { ...media.elv, alt: "Low-current racks for security and audio-visual systems" },
-  ],
-  "etisalat-office-kifaf": [
-    { ...media.electricalWide, alt: "Office distribution board with labelled circuits" },
-    { ...media.elv, alt: "Data racks and organised low-current cabling" },
-  ],
-  "logistics-office-development-gtz": [
-    { ...media.electricalSmall, alt: "Switchgear corridor for a large facility" },
-    { ...media.mepPlant, alt: "Integrated switchgear and plant corridor" },
-  ],
-  "government-office-modernization-anex": [
-    { ...media.fireSmall, objectPosition: "center 25%", alt: "Fire sprinkler riser with alarm bell and control valves" },
-    { ...media.fireStopping, alt: "Cable pathways that require fire-stopping" },
-  ],
-  "commercial-office-revamp-ascentia": [
-    { ...media.hvacWide, objectPosition: "center 40%", alt: "Office interior with exposed ceiling services" },
-    { ...media.electricalWide, alt: "Office electrical distribution board" },
-  ],
-};
+/** Inline gallery — only verified Electech works photos. Empty = no gallery. */
+export const storyGalleryImages: Record<string, MediaRef[]> = {};
 
 export const serviceHeroImages: Record<string, MediaRef> = {
   mep: {
@@ -487,19 +389,18 @@ export const homeBlogImages: MediaRef[] = [
 ];
 
 export function getStoryDisplayImage(slug: string): MediaRef {
-  return (
-    storyImages[slug] ?? {
-      ...media.mepPlant,
-      alt: "ElecTech project photography",
-    }
-  );
+  const mapped = storyImages[slug];
+  if (mapped?.src) return mapped;
+  return {
+    src: "",
+    alt: "Electech project photography pending",
+    placeholder: true,
+    bucket: "mep",
+  };
 }
 
 export function getStoryGallery(slug: string): MediaRef[] {
-  return storyGalleryImages[slug] ?? [
-    { ...media.electricalWide, alt: "Electromechanical installation detail" },
-    { ...media.plumbingSmall, alt: "Building services installation detail" },
-  ];
+  return storyGalleryImages[slug] ?? [];
 }
 
 export function getServiceDisplayImage(slug: string): MediaRef {
