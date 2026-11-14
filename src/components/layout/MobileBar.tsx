@@ -18,7 +18,7 @@ export function MobileBar() {
         <a
           href={whatsappLink(
             siteConfig.whatsappTel,
-            "Hello ElecTech MEP — I would like to discuss a project.",
+            "Hello Electech — I would like to discuss a project.",
           )}
           target="_blank"
           rel="noopener noreferrer"

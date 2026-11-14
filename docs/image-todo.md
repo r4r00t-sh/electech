@@ -1,65 +1,45 @@
-# Image TODO — ElecTech MEP
+# Image TODO — Electech
 
-Slots still waiting for dedicated photography. Until then the site uses client-uploaded works, topic images from `/public/images/pages` (matched by subject), or silent navy tiles — **never** visitor-facing “[CLIENT TO PROVIDE photo]” text.
+Slots still waiting for dedicated photography. Until then the site uses client-uploaded works, topic images from `/public/images/pages` (matched by subject), or silent navy tiles — **never** visitor-facing “[CLIENT TO PROVIDE photo]” text and **never** a stock photo of a different project.
 
-## Wired from latest uploads
+## Wired from uploads
 
 | Asset | Path | Used for |
 |-------|------|----------|
-| Restaurant / F&B works | `projects/works/restaurant-dining-interior-01.jpg`, `restaurant-2.jpg` | Imdaad / Sofitel stories; Hospitality sector |
+| Restaurant / F&B works | `projects/works/restaurant-dining-interior-01.jpg`, `restaurant-bar-lounge-01.jpg` | Imdaad / hospitality / F&B sectors |
 | Commercial office | `projects/works/office-commercial-fitout-01.jpg` | Amazon story; Commercial sector |
-| Art gallery / retail | `projects/works/retail-art-gallery-interior-01.jpg` | Atelier DIFC story; Interior fit-out sector |
-| Government / Etisalat office | `projects/works/office-etisalat-open-plan-01.jpg` | Etisalat story; Government sector |
-| Client logos | `clients/client-*.jpg` (39 named) | Homepage logo strip + `/clients` |
-| ISO board | `certs/iso-board.jpg` | Homepage certifications |
+| Art gallery / retail | `projects/works/retail-art-gallery-interior-01.jpg` | Atelier DIFC; Retail sector |
+| Government / Etisalat office | `projects/works/office-etisalat-open-plan-01.jpg` | Etisalat story |
+| Client logos | `clients/client-*.jpg` | Homepage logo strip + `/clients` (when approved) |
+| ISO board | `certs/iso-board.jpg` | Homepage + Certifications (`object-contain`) |
 
-## Homepage hero
+## Villa / featured projects (priority)
 
-| Slot | Suggested file | Notes |
-|------|----------------|-------|
-| Hero 1–3 | `/public/images/hero-1.jpg` … `hero-3.jpg` | Prefer Dubai skyline / construction. Currently `images/heroes/home-*.jpg`. |
+| Project | Status | Notes |
+|---------|--------|-------|
+| Dubai Hills Villa 256 | Navy tile | Need Electech villa / installation photo matched by filename |
+| Dubai Hills Villa 39 | Navy tile | Need Electech villa / installation photo |
+| DAMAC Hills Villa F307F | Navy tile | Need Electech villa / installation photo |
 
-## Homepage sectors still silent
+## Legacy stories still on navy tiles
 
-| Sector | Status | Suggested file |
-|--------|--------|----------------|
-| Villa developers | Silent navy | `/public/images/sectors/villa-developers.jpg` |
-| Healthcare | Silent navy | `/public/images/sectors/healthcare.jpg` |
-| Facility management | Silent navy | `/public/images/sectors/facility-management.jpg` |
-| Residential | Silent navy | `/public/images/sectors/residential.jpg` |
+Al Zahiya, Sofitel, Real Image, Smart Salem, two-bedroom flat, GTZ, Anex, Ascentia — supply verified Electech works photos or keep navy tiles.
 
-## Client success stories still needing dedicated shots
+## Older brief sector labels (not on homepage)
 
-| Story | Status | Suggested file |
-|-------|--------|----------------|
-| luxurious-villa-transformation | Service stand-in | `/public/images/projects/al-zahiya-villa.jpg` |
-| corporate-headquarters-upgrade-real-image | Service stand-in | `/public/images/projects/real-image-hq.jpg` |
-| healthcare-facility-upgrade-smart-salem | Service stand-in | `/public/images/projects/smart-salem.jpg` |
-| two-bedroom-flat-dhiraj-kumar | Service stand-in | `/public/images/projects/two-bed-flat.jpg` |
-| logistics-office-development-gtz | Service stand-in | `/public/images/projects/gtz-warehouse.jpg` |
-| government-office-modernization-anex | Service stand-in | `/public/images/projects/anex-sharjah.jpg` |
-| commercial-office-revamp-ascentia | Service stand-in | `/public/images/projects/ascentia-office.jpg` |
+Client-revision sector list is used on the homepage (Residential, Commercial, Retail, Hospitality, F&B, Industrial, Building Maintenance). If Healthcare / Government / Facility management / Villa developers tiles are required later:
 
-Stories with works photos mapped: Sofitel, Amazon, Imdaad, Atelier DIFC, Etisalat.
+| Sector | Status | Suggested |
+|--------|--------|-----------|
+| Healthcare | No medical interior in library | `/public/images/sectors/healthcare.jpg` |
+| Government | Can reuse Etisalat civic/office | already have office open-plan |
+| Facility management | Can reuse plant/technician | `maintenance-workshop.jpg` |
+| Villa developers | No villa exterior | `/public/images/sectors/villa-developers.jpg` |
 
-## Insights / blog covers
+## Insights covers
 
-| Post | Suggested file |
-|------|----------------|
-| weekly-mep-progress-reports | `/public/images/insights/weekly-mep-reports.jpg` |
-| hvac-installation-checklist-dubai | `/public/images/insights/hvac-checklist.jpg` |
-| fire-alarm-fire-fighting-interfaces | `/public/images/insights/fire-interfaces.jpg` |
-
-## Remaining client gaps
-
-| Slot | Notes |
-|------|-------|
-| Civil Defence badge | Still `[CLIENT TO PROVIDE]` under ISO board on homepage |
-| Stats numbers | Projects delivered / sectors served placeholders |
-
-## Stats numbers
-
-| Stat | Status |
+| Post | Status |
 |------|--------|
-| Projects delivered | `[CLIENT TO PROVIDE]` |
-| Sectors served | `[CLIENT TO PROVIDE]` |
+| mep-handover-package | Using certifications/documents desk photo |
+| hvac-installation-checklist-dubai | Using HVAC topic photo |
+| electrical-distribution-boards-fit-outs | Using electrical installation photo |

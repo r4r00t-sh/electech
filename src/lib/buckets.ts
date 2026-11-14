@@ -55,3 +55,16 @@ export function getBucket(id: BucketId) {
 export function bucketLabel(id: BucketId) {
   return getBucket(id).label;
 }
+
+/** Prefer a specific secondary bucket tag when primary is the generic MEP bucket. */
+export function storyBucketLabel(story: {
+  primaryBucket: BucketId;
+  secondaryBuckets: BucketId[];
+}) {
+  if (story.primaryBucket === "mep" && story.secondaryBuckets.length) {
+    return story.secondaryBuckets
+      .map((id) => getBucket(id).short)
+      .join(" · ");
+  }
+  return getBucket(story.primaryBucket).short;
+}

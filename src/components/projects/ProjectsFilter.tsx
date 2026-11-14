@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Story } from "@/content/types";
-import { BUCKETS, type BucketId, bucketLabel } from "@/lib/buckets";
+import { BUCKETS, type BucketId, storyBucketLabel } from "@/lib/buckets";
 import { getStoryDisplayImage } from "@/lib/media";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { cn } from "@/lib/utils";
@@ -71,7 +71,7 @@ export function ProjectsFilter({ stories }: { stories: Story[] }) {
                 </div>
                 <div className="p-5">
                   <p className="text-[14px] font-semibold text-green">
-                    {bucketLabel(story.primaryBucket)}
+                    {storyBucketLabel(story)}
                   </p>
                   <h2 className="mt-2 font-display text-xl font-bold text-navy transition-colors group-hover:text-green">
                     {story.title}

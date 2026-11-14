@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Story } from "@/content/types";
-import { bucketLabel } from "@/lib/buckets";
+import { storyBucketLabel } from "@/lib/buckets";
 import { getStoryDisplayImage, type MediaRef } from "@/lib/media";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
@@ -77,7 +77,7 @@ export function ClientSuccessStories({
                   </div>
                   <div className="p-5">
                     <p className="text-[14px] font-semibold text-green">
-                      {bucketLabel(story.primaryBucket)}
+                      {storyBucketLabel(story)}
                     </p>
                     <h3 className="mt-2 font-display text-xl font-bold text-navy transition-colors group-hover:text-green">
                       {story.title}

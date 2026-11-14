@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "ElecTech MEP",
+  name: "Electech",
   legalName: "Electech Electromechanical Works LLC",
   tagline: "Engineering Confidence. Built on Trust.",
   taglineSupport: "Mechanical • Electrical • Plumbing • Maintenance",
@@ -7,9 +7,19 @@ export const siteConfig = {
     "Electech Electromechanical Works LLC delivers dependable MEP installation, system upgrades and maintenance services for commercial offices, residential villas, retail and hospitality projects across the UAE. More than 14 years of operational experience.",
   footerTagline:
     "Electech Electromechanical Works LLC - Delivering reliable MEP solutions through technical expertise, accountability and trusted relationships.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-    "https://www.electechmep.com",
+  // Until the real domain DNS is ready, never emit electechmep.com in canonical/OG/sitemap.
+  url: (() => {
+    const fallback = "https://electech-black.vercel.app";
+    const configured = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+    if (!configured) return fallback;
+    try {
+      const host = new URL(configured).hostname.replace(/^www\./, "");
+      if (host === "electechmep.com") return fallback;
+    } catch {
+      return fallback;
+    }
+    return configured;
+  })(),
   email: "info@electechmep.com",
   phone: "+971 4 880 6332",
   phoneTel: "+97148806332",

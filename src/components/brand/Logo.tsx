@@ -15,11 +15,11 @@ export function Logo({
     <Link
       href="/"
       className={cn("inline-flex items-center", className)}
-      aria-label="ElecTech MEP home"
+      aria-label="Electech home"
     >
       <Image
         src="/images/brand/electech-logo.png"
-        alt="ElecTech Electromechanical Works LLC"
+        alt="Electech Electromechanical Works LLC"
         width={156}
         height={115}
         priority={priority}

@@ -11,7 +11,8 @@ export type Story = {
   hasVerifiedPhoto?: boolean;
   primaryBucket: BucketId;
   secondaryBuckets: BucketId[];
-  client: string;
+  /** Omit when the client has not supplied a publishable client name. */
+  client?: string;
   location: string;
   sector: string;
   scope: string;

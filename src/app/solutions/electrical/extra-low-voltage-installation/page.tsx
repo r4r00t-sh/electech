@@ -7,7 +7,8 @@ const slug = "extra-low-voltage-installation";
 
 export const metadata = pageMetadata({
   title: "Extra Low Voltage Installation",
-  description: "ELV installation Dubai by ElecTech MEP.",
+  description:
+    "Electech provides ELV infrastructure including conduits, containment and cabling provisions for CCTV, data, Wi-Fi, access control and intercom systems.",
   image: "/images/pages/elv-server-racks.jpg",
   path: "/solutions/electrical/extra-low-voltage-installation",
 });

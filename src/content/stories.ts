@@ -23,7 +23,6 @@ export const stories: Story[] = [
     hasVerifiedPhoto: false,
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "mechanical-plumbing"],
-    client: "Villa Owner",
     location: "Golf Place 2, Dubai Hills Estate, Dubai",
     sector: "Residential",
     scope:
@@ -55,7 +54,6 @@ The works were completed with careful coordination of existing architectural fin
     hasVerifiedPhoto: false,
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "mechanical-plumbing"],
-    client: "Villa Owner",
     location: "Fairway, Dubai Hills Estate, Dubai",
     sector: "Residential",
     scope:
@@ -86,7 +84,6 @@ The project was executed through coordinated site installation, testing, commiss
     hasVerifiedPhoto: false,
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "mechanical-plumbing"],
-    client: "Villa Owner",
     location: "DAMAC Hills, Dubai",
     sector: "Residential",
     scope:

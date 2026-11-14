@@ -10,7 +10,7 @@ import { pageHeroes } from "@/lib/media";
 export const metadata = pageMetadata({
   title: "Our Solutions",
   description:
-    "MEP, mechanical and plumbing, electrical, fire protection and maintenance services from ElecTech MEP Dubai.",
+    "MEP, mechanical and plumbing, electrical, fire protection support and maintenance services from Electech in Dubai.",
   image: "/images/pages/solutions-fabrication.jpg",
   path: "/solutions",
 });

@@ -7,7 +7,8 @@ const slug = "mep";
 
 export const metadata = pageMetadata({
   title: "MEP Solutions",
-  description: "Integrated MEP contractor Dubai — mechanical, electrical and plumbing delivery by ElecTech MEP.",
+  description:
+    "Electech delivers integrated MEP installation, modification, testing and maintenance for commercial offices, residential villas, retail and hospitality projects in Dubai.",
   image: "/images/pages/mep-industrial-systems.jpg",
   path: "/solutions/mep",
 });

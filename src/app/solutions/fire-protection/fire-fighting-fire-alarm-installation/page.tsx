@@ -6,8 +6,9 @@ import { pageMetadata } from "@/lib/seo";
 const slug = "fire-fighting-fire-alarm-installation";
 
 export const metadata = pageMetadata({
-  title: "Fire Fighting and Fire Alarm Installation",
-  description: "Fire alarm installation Dubai and fire fighting systems by ElecTech MEP.",
+  title: "Fire Alarm & Firefighting Installation Support",
+  description:
+    "Electech provides fire alarm and firefighting installation support for commercial, residential and refurbishment projects in Dubai.",
   image: "/images/pages/fire-control-panels.jpg",
   path: "/solutions/fire-protection/fire-fighting-fire-alarm-installation",
 });
@@ -18,7 +19,14 @@ export default function Page() {
   return (
     <ServicePageView
       service={service}
-      crumbs={[{ label: "Our Solutions", href: "/solutions" },{ label: "Fire Protection", href: "/solutions/fire-protection" },{ label: "Fire Fighting and Fire Alarm" }]}
+      crumbs={[
+        { label: "Our Solutions", href: "/solutions" },
+        {
+          label: "Fire Protection Support",
+          href: "/solutions/fire-protection",
+        },
+        { label: "Fire Alarm & Firefighting Installation Support" },
+      ]}
     />
   );
 }

@@ -201,9 +201,9 @@ export const pageHeroes = {
     objectPosition: "left center",
   },
   whyChoose: {
-    src: "/images/pages/why-choose-workshop.jpg",
-    alt: "Industrial fabricator welding steel with sparks on the shop floor.",
-    objectPosition: "center right",
+    src: "/images/pages/electrical-installation-work.jpg",
+    alt: "Electech electrical installation — organised distribution board work.",
+    objectPosition: "center center",
   },
   certifications: {
     src: "/images/pages/certifications-documents.jpg",
@@ -211,9 +211,9 @@ export const pageHeroes = {
     objectPosition: "center center",
   },
   solutions: {
-    src: "/images/pages/solutions-fabrication.jpg",
-    alt: "Live-site metalwork with sparks from cutting steel on site.",
-    objectPosition: "center right",
+    src: "/images/pages/mep-industrial-systems.jpg",
+    alt: "Electech MEP installation — coordinated building-services infrastructure.",
+    objectPosition: "center center",
   },
   projects: {
     src: "/images/pages/projects-office-interior.jpg",
@@ -257,15 +257,56 @@ export const homeWhyImage: MediaRef = {
   objectPosition: "center center",
 };
 
-/** Homepage sectors — aligned with client-listed sectors served. */
+/**
+ * Homepage sectors — client-revision sector list with subject-matched photos.
+ * Healthcare / Government / Facility management / Villa developers from the
+ * older brief are not shown (client counters use this list); gaps noted in
+ * /docs/image-todo.md.
+ */
 export const homeSectorImages: { label: string; image: MediaRef }[] = [
-  { label: "Residential", image: media.residentialTower },
-  { label: "Commercial", image: works.commercialOffice },
-  { label: "Retail", image: works.artGallery },
-  { label: "Hospitality", image: works.restaurantDining },
-  { label: "F&B", image: works.restaurantBar },
-  { label: "Industrial", image: media.mepPlant },
-  { label: "Building Maintenance", image: media.hvacSquare },
+  {
+    label: "Residential",
+    image: {
+      ...media.residentialTower,
+      alt: "Residential building exterior",
+    },
+  },
+  {
+    label: "Commercial",
+    image: {
+      ...works.commercialOffice,
+      alt: "Commercial office MEP fit-out",
+    },
+  },
+  {
+    label: "Retail",
+    image: { ...works.artGallery, alt: "Retail interior MEP works" },
+  },
+  {
+    label: "Hospitality",
+    image: {
+      ...works.restaurantDining,
+      alt: "Hospitality dining interior",
+    },
+  },
+  {
+    label: "F&B",
+    image: { ...works.restaurantBar, alt: "F&B lounge interior" },
+  },
+  {
+    label: "Industrial",
+    image: {
+      ...media.mepPlant,
+      alt: "Industrial building-services plant corridor",
+    },
+  },
+  {
+    label: "Building Maintenance",
+    image: {
+      ...media.hvacSquare,
+      alt: "Technician servicing plant for building maintenance",
+    },
+  },
 ];
 
 /**
@@ -364,7 +405,7 @@ export const serviceHeroImages: Record<string, MediaRef> = {
 };
 
 export const blogImages: Record<string, MediaRef> = {
-  "weekly-mep-progress-reports": {
+  "mep-handover-package": {
     ...media.reportsDesk,
     objectPosition: "center 40%",
   },
@@ -373,9 +414,9 @@ export const blogImages: Record<string, MediaRef> = {
     objectPosition: "center 40%",
     alt: "Interior with exposed ceiling ductwork and diffusers",
   },
-  "fire-alarm-fire-fighting-interfaces": {
-    ...media.fireSmall,
-    objectPosition: "center 25%",
+  "electrical-distribution-boards-fit-outs": {
+    ...media.electricalWide,
+    objectPosition: "center center",
   },
 };
 

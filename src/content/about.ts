@@ -10,12 +10,12 @@ export const aboutContent = {
   },
   whoWeAre: {
     title: "Who We Are",
-    intro:
-      "Electech Electromechanical Works LLC is an established Dubai-based MEP contractor with more than 14 years of UAE operations, delivering mechanical, electrical, plumbing and associated building services for residential, commercial, retail and hospitality projects.",
+    intro: "",
     sections: [
       {
         heading: "Engineering Solutions That Create Lasting Value",
         paragraphs: [
+          "Electech Electromechanical Works LLC is an established Dubai-based MEP contractor with more than 14 years of UAE operations, delivering mechanical, electrical, plumbing and associated building services for residential, commercial, retail and hospitality projects.",
           "We work closely with main contractors, interior fit-out companies, consultants, property owners and facility managers to deliver reliable installations, practical engineering solutions and responsive maintenance support.",
         ],
       },

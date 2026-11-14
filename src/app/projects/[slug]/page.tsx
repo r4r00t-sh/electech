@@ -12,7 +12,7 @@ import {
   getStoryBySlug,
   stories,
 } from "@/content/stories";
-import { bucketLabel } from "@/lib/buckets";
+import { storyBucketLabel } from "@/lib/buckets";
 import { getStoryDisplayImage, getStoryGallery } from "@/lib/media";
 import { pageMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -121,7 +121,7 @@ export default async function StoryPage({
         <div className="pointer-events-none absolute inset-0 photo-scrim" />
         <div className="container-site relative z-[1] flex min-h-[52vh] flex-col justify-end py-14">
           <p className="text-[14px] font-semibold text-green">
-            {bucketLabel(story.primaryBucket)}
+            {storyBucketLabel(story)}
           </p>
           <h1 className="mt-3 max-w-4xl text-[2.75rem] font-bold !text-white md:text-5xl">
             {story.title}
@@ -131,9 +131,6 @@ export default async function StoryPage({
               {story.subtitle}
             </p>
           ) : null}
-          <p className="mt-4 max-w-2xl text-[17px] text-white/90">
-            {story.summary}
-          </p>
         </div>
       </div>
 
@@ -208,9 +205,12 @@ export default async function StoryPage({
           {prev ? (
             <Link
               href={`/projects/${prev.slug}`}
-              className="inline-flex items-center gap-2 text-[15px] font-semibold text-navy hover:text-green"
+              className="group inline-flex max-w-sm flex-col gap-1 text-[15px] font-semibold text-navy hover:text-green"
             >
-              <ArrowLeft className="h-4 w-4" /> {prev.title}
+              <span className="inline-flex items-center gap-2 text-[13px] font-medium text-slate">
+                <ArrowLeft className="h-4 w-4" /> Previous project
+              </span>
+              <span>{prev.title}</span>
             </Link>
           ) : (
             <span />
@@ -218,9 +218,12 @@ export default async function StoryPage({
           {next ? (
             <Link
               href={`/projects/${next.slug}`}
-              className="inline-flex items-center gap-2 text-[15px] font-semibold text-navy hover:text-green"
+              className="group inline-flex max-w-sm flex-col gap-1 text-right text-[15px] font-semibold text-navy hover:text-green sm:items-end"
             >
-              {next.title} <ArrowRight className="h-4 w-4" />
+              <span className="inline-flex items-center justify-end gap-2 text-[13px] font-medium text-slate">
+                Next project <ArrowRight className="h-4 w-4" />
+              </span>
+              <span>{next.title}</span>
             </Link>
           ) : null}
         </div>

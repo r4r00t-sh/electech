@@ -2,10 +2,11 @@ import { Button } from "@/components/ui/Button";
 
 export function CtaBanner({
   title = "Planning an MEP Project?",
-  description = "From a villa water-system upgrade to a commercial office MEP installation, our team can review your requirements and propose a practical scope of work.",
+  description,
   buttonLabel = "Request a Quotation",
 }: {
   title?: string;
+  /** Omit or leave empty to show only the heading + button. */
   description?: string;
   buttonLabel?: string;
 }) {
@@ -16,7 +17,9 @@ export function CtaBanner({
           <h2 className="font-display text-2xl font-bold !text-white md:text-3xl">
             {title}
           </h2>
-          <p className="mt-3 text-white/75">{description}</p>
+          {description?.trim() ? (
+            <p className="mt-3 text-white/75">{description}</p>
+          ) : null}
         </div>
         <Button href="/contact" className="shrink-0">
           {buttonLabel}

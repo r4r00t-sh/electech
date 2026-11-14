@@ -4,21 +4,12 @@ import type { BlogPost } from "./types";
  * Insights posts — [CLIENT TO REVIEW] technical accuracy before treating as final.
  * Removed weekly-reporting, drill, and unsupported regulatory claims.
  */
-export const posts: BlogPost[] = [
-  {
-    // [CLIENT TO REVIEW] Replaced former "weekly MEP progress report" topic
-    title: "What a typical MEP handover package includes",
-    slug: "weekly-mep-progress-reports",
-    excerpt:
-      "A practical overview of documents and records commonly gathered at MEP handover for commercial and residential projects in the UAE.",
-    category: "Project Delivery",
-    author: "Electech Engineering Team",
-    publishedAt: "2025-09-12",
-    readingTime: 7,
-    ogImage: "/images/pages/certifications-documents.jpg",
-    ogAlt: "Professional reviewing project documents and charts at a desk",
-    featured: true,
-    body: `
+function readingTimeMinutes(body: string) {
+  const words = body.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+const handoverBody = `
 ## Why handover documentation matters
 
 When MEP installation work is complete, the receiving team needs a clear record of what was installed, how it was tested within the contractual scope, and where key equipment and isolators are located. Organised handover documentation supports operation, maintenance and later modifications.
@@ -38,7 +29,23 @@ Handover works best when drawings, test records and equipment information are co
 ## Closing thought
 
 Clear documentation is part of dependable MEP delivery. A practical handover package helps clients and facilities teams operate the systems Electech installed with confidence.
-`.trim(),
+`.trim();
+
+export const posts: BlogPost[] = [
+  {
+    // [CLIENT TO CONFIRM] publish date — slug renamed from weekly-mep-progress-reports
+    title: "What a typical MEP handover package includes",
+    slug: "mep-handover-package",
+    excerpt:
+      "A practical overview of documents and records commonly gathered at MEP handover for commercial and residential projects in the UAE.",
+    category: "Project Delivery",
+    author: "Electech Engineering Team",
+    publishedAt: "2025-09-12",
+    readingTime: readingTimeMinutes(handoverBody),
+    ogImage: "/images/pages/certifications-documents.jpg",
+    ogAlt: "Professional reviewing project documents and charts at a desk",
+    featured: true,
+    body: handoverBody,
   },
   {
     // [CLIENT TO REVIEW]
@@ -49,7 +56,7 @@ Clear documentation is part of dependable MEP delivery. A practical handover pac
     category: "Mechanical",
     author: "Electech Engineering Team",
     publishedAt: "2025-10-03",
-    readingTime: 8,
+    readingTime: 0,
     ogImage: "/images/pages/hvac-equipment-detail.jpg",
     ogAlt: "Modern interior with exposed ceiling services and glazing",
     body: `
@@ -83,7 +90,7 @@ Late furniture layouts can move thermostat positions into ineffective locations.
     category: "Electrical",
     author: "Electech Engineering Team",
     publishedAt: "2025-11-01",
-    readingTime: 7,
+    readingTime: 0,
     ogImage: "/images/pages/electrical-installation-work.jpg",
     ogAlt: "Organised circuit-breaker panel with colour-coded wiring",
     body: `
@@ -106,7 +113,13 @@ Applicable electrical inspections and testing records belong with the handover p
 Cable routes, containment and board locations need to stay coordinated with mechanical and plumbing packages sharing the same voids. Early agreement on access panels and clearances reduces rework when ceilings close.
 `.trim(),
   },
-];
+].map((post) => ({
+  ...post,
+  readingTime:
+    post.readingTime > 0
+      ? post.readingTime
+      : readingTimeMinutes(post.body),
+}));
 
 export function getPostBySlug(slug: string) {
   return posts.find((p) => p.slug === slug);

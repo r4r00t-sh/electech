@@ -24,6 +24,46 @@ import type { Crumb } from "@/components/layout/Breadcrumbs";
 
 const icons = [Wrench, ClipboardCheck, ShieldCheck, Building2];
 
+/** Client overview sub-headings that must render as real headings, not body text. */
+const OVERVIEW_HEADINGS = new Set([
+  "Our Approach",
+  "How We Work",
+  "Scope and Responsibility",
+  "Coordinated Installation Works for Building Fire Protection Systems",
+  "Annual Maintenance Contracts",
+  "Keeping Your Building Services Reliable",
+  "Our Maintenance Services",
+]);
+
+function OverviewBody({ text }: { text: string }) {
+  const blocks = text
+    .split(/\n\n+/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  return (
+    <div className="prose-mep space-y-4 text-slate">
+      {blocks.map((block, i) => {
+        if (OVERVIEW_HEADINGS.has(block)) {
+          return (
+            <h2
+              key={`${block}-${i}`}
+              className="!mt-8 font-display text-2xl font-bold text-navy first:!mt-0"
+            >
+              {block}
+            </h2>
+          );
+        }
+        return (
+          <p key={`${block.slice(0, 32)}-${i}`} className="whitespace-pre-line">
+            {block}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
 const CHILD_LINKS: Record<string, { label: string; href: string }[]> = {
   "mechanical-plumbing": [
     {
@@ -68,6 +108,9 @@ export function ServicePageView({
   const testimonials = getTestimonialsByBucket(service.bucket, 3);
   const children = CHILD_LINKS[service.slug];
   const heroMedia = getServiceDisplayImage(service.slug);
+  const showHowWeWorkAside =
+    service.howWeWork.length > 0 &&
+    !service.overview.includes("How We Work");
 
   return (
     <>
@@ -99,28 +142,34 @@ export function ServicePageView({
       ) : null}
 
       <Section>
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <div
+          className={
+            showHowWeWorkAside
+              ? "grid gap-10 lg:grid-cols-[1.2fr_0.8fr]"
+              : undefined
+          }
+        >
           <div>
             <SectionHeading title="Overview" />
-            <div className="prose-mep whitespace-pre-line text-slate">
-              {service.overview}
-            </div>
+            <OverviewBody text={service.overview} />
           </div>
-          <aside className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6">
-            <h3 className="font-display text-lg font-bold text-navy">
-              How we work
-            </h3>
-            <ol className="mt-4 space-y-3">
-              {service.howWeWork.map((step, i) => (
-                <li key={step} className="flex gap-3 text-sm text-slate-dark">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-bold text-amber">
-                    {i + 1}
-                  </span>
-                  {step}
-                </li>
-              ))}
-            </ol>
-          </aside>
+          {showHowWeWorkAside ? (
+            <aside className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6">
+              <h3 className="font-display text-lg font-bold text-navy">
+                How we work
+              </h3>
+              <ol className="mt-4 space-y-3">
+                {service.howWeWork.map((step, i) => (
+                  <li key={step} className="flex gap-3 text-sm text-slate-dark">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-bold text-amber">
+                      {i + 1}
+                    </span>
+                    {step}
+                  </li>
+                ))}
+              </ol>
+            </aside>
+          ) : null}
         </div>
       </Section>
 
@@ -185,6 +234,7 @@ export function ServicePageView({
       <Section>
         <CtaBanner
           title={service.ctaTitle ?? "Request a Quotation"}
+          description={service.ctaDescription}
           buttonLabel={service.ctaTitle ?? "Request a Quotation"}
         />
       </Section>

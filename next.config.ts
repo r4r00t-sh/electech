@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
       { source: "/contact-us", destination: "/contact", permanent: true },
       { source: "/blog", destination: "/insights", permanent: true },
       { source: "/blog/:slug", destination: "/insights/:slug", permanent: true },
+      {
+        source: "/insights/weekly-mep-progress-reports",
+        destination: "/insights/mep-handover-package",
+        permanent: true,
+      },
       { source: "/projects-2", destination: "/projects", permanent: true },
       { source: "/hvac-installation", destination: "/solutions/mechanical-plumbing/hvac-installation", permanent: true },
       { source: "/electrical-installation", destination: "/solutions/electrical/electrical-installation", permanent: true },

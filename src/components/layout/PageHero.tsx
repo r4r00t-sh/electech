@@ -11,7 +11,7 @@ export function PageHero({
   media,
 }: {
   title: string;
-  intro: string;
+  intro?: string;
   image?: string;
   imageAlt?: string;
   crumbs: Crumb[];
@@ -19,7 +19,7 @@ export function PageHero({
 }) {
   const resolved: MediaRef = media ?? {
     src: image ?? "/images/pages/mep-industrial-systems.jpg",
-    alt: imageAlt ?? "ElecTech MEP project photography",
+    alt: imageAlt ?? "Electech project photography",
   };
 
   return (
@@ -42,9 +42,11 @@ export function PageHero({
           <h1 className="max-w-3xl text-[2.5rem] font-bold leading-tight !text-white md:text-5xl lg:text-[3.5rem]">
             {title}
           </h1>
-          <p className="mt-4 max-w-2xl text-[17px] text-white/90 md:text-lg">
-            {intro}
-          </p>
+          {intro?.trim() ? (
+            <p className="mt-4 max-w-2xl text-[17px] text-white/90 md:text-lg">
+              {intro}
+            </p>
+          ) : null}
         </div>
       </div>
     </div>

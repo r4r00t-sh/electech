@@ -17,6 +17,8 @@ export type ServicePage = {
   heroImage: string;
   heroAlt: string;
   ctaTitle?: string;
+  /** Short page-specific supporting line; omit to show heading + button only. */
+  ctaDescription?: string;
 };
 
 /**
@@ -98,6 +100,8 @@ We coordinate with main contractors, consultants and other trades to address tec
     heroImage: "/images/pages/mep-industrial-systems.jpg",
     heroAlt: "Coordinated MEP installation including HVAC plant and services",
     ctaTitle: "Request an MEP Quotation",
+    ctaDescription:
+      "Share your project location, drawings or MEP package requirements for a practical quotation.",
   },
   {
     slug: "mechanical-plumbing",
@@ -153,6 +157,8 @@ We review site requirements, coordinate the installation scope, execute the work
     heroImage: "/images/pages/mechanical-factory-floor.jpg",
     heroAlt: "Mechanical plant and plumbing services installation",
     ctaTitle: "Discuss Your Mechanical or Plumbing Requirements",
+    ctaDescription:
+      "Tell us about the HVAC, plumbing or water-system works you need on site.",
   },
   {
     slug: "hvac-installation",
@@ -205,6 +211,8 @@ Our HVAC works include air-conditioning installation and modifications, ductwork
     heroImage: "/images/pages/hvac-equipment-detail.jpg",
     heroAlt: "HVAC ductwork and air-conditioning installation",
     ctaTitle: "Discuss Your Mechanical or Plumbing Requirements",
+    ctaDescription:
+      "Share your air-conditioning or ventilation installation requirements.",
   },
   {
     slug: "plumbing-drainage-installation",
@@ -257,6 +265,8 @@ Our plumbing works include PPR/PEX water distribution, uPVC drainage, sanitary c
     heroImage: "/images/pages/plumbing-finished-bathroom.jpg",
     heroAlt: "Plumbing and drainage installation",
     ctaTitle: "Discuss Your Mechanical or Plumbing Requirements",
+    ctaDescription:
+      "Share your water supply, drainage or sanitary installation requirements.",
   },
   {
     slug: "electrical",
@@ -312,6 +322,8 @@ We coordinate electrical installations with architectural layouts, equipment req
     heroImage: "/images/pages/electrical-power-infrastructure.jpg",
     heroAlt: "Electrical installation and switchgear works",
     ctaTitle: "Request an Electrical Works Quotation",
+    ctaDescription:
+      "Share drawings or a brief for power, lighting or ELV infrastructure works.",
   },
   {
     slug: "electrical-installation",
@@ -364,6 +376,8 @@ Our electrical installation works emphasise distribution boards and sub-main dis
     heroImage: "/images/pages/electrical-installation-work.jpg",
     heroAlt: "Electrical installation on a commercial project",
     ctaTitle: "Request an Electrical Works Quotation",
+    ctaDescription:
+      "Share your distribution board, lighting or power installation requirements.",
   },
   {
     slug: "extra-low-voltage-installation",
@@ -411,6 +425,8 @@ Our ELV scope covers conduits, containment, cabling provisions and associated in
     heroImage: "/images/pages/elv-server-racks.jpg",
     heroAlt: "Extra low voltage infrastructure installation",
     ctaTitle: "Request an Electrical Works Quotation",
+    ctaDescription:
+      "Share your ELV containment, cabling or infrastructure requirements.",
   },
   {
     slug: "solar-power-plant-installation",
@@ -518,6 +534,8 @@ Our objective is to support accurate installation, clear interface management an
     heroImage: "/images/pages/fire-services-corridor.jpg",
     heroAlt: "Fire protection installation support works",
     ctaTitle: "Enquire About Fire Protection Installation Support",
+    ctaDescription:
+      "Share the fire alarm or firefighting installation support scope Electech should undertake.",
   },
   {
     slug: "fire-fighting-fire-alarm-installation",
@@ -571,6 +589,8 @@ Our objective is to support accurate installation, clear interface management an
     heroImage: "/images/pages/fire-control-panels.jpg",
     heroAlt: "Fire alarm and firefighting installation support",
     ctaTitle: "Enquire About Fire Protection Installation Support",
+    ctaDescription:
+      "Share the fire alarm or firefighting installation support scope Electech should undertake.",
   },
   {
     slug: "fire-stopping-sealant-application",
@@ -613,6 +633,8 @@ Our fire-stopping works are carried out according to the project specifications 
     heroImage: "/images/pages/fire-stopping-interior.jpg",
     heroAlt: "Fire stopping and fire-rated sealing works",
     ctaTitle: "Enquire About Fire Protection Installation Support",
+    ctaDescription:
+      "Share your fire-stopping sealant application requirements for the project.",
   },
   {
     slug: "maintenance",
@@ -673,6 +695,8 @@ Our AMC arrangements can be tailored to the property type, equipment inventory, 
     heroImage: "/images/pages/maintenance-workshop.jpg",
     heroAlt: "MEP maintenance and annual maintenance contracts",
     ctaTitle: "Request an AMC Proposal",
+    ctaDescription:
+      "Share your property type, equipment list and preferred visit frequency.",
   },
 ];
 

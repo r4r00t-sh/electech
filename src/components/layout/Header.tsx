@@ -243,7 +243,7 @@ export function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button href="/contact">Get a Quote</Button>
+            <Button href="/contact">Request a Quotation</Button>
           </div>
 
           <button
@@ -376,7 +376,7 @@ export function Header() {
             );
           })}
           <Button href="/contact" className="mt-4 w-full" onClick={closeMobile}>
-            Get a Quote
+            Request a Quotation
           </Button>
         </nav>
       </div>

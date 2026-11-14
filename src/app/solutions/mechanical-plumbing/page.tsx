@@ -7,7 +7,8 @@ const slug = "mechanical-plumbing";
 
 export const metadata = pageMetadata({
   title: "Mechanical and Plumbing Services",
-  description: "HVAC and plumbing installation Dubai from ElecTech MEP.",
+  description:
+    "Electech provides HVAC, ventilation, plumbing, drainage and water-system installation and maintenance for commercial and residential properties in Dubai.",
   image: "/images/pages/mechanical-factory-floor.jpg",
   path: "/solutions/mechanical-plumbing",
 });

@@ -3,9 +3,6 @@ import { siteConfig } from "@/content/site";
 
 /** Absolute production site origin — never use preview-deployment hosts. */
 export function getSiteUrl() {
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
-  }
   return siteConfig.url.replace(/\/$/, "");
 }
 
@@ -22,7 +19,7 @@ export function pageMetadata({
 }): Metadata {
   const origin = getSiteUrl();
   const url = `${origin}${path}`;
-  // Root layout already applies `template: "%s | ElecTech MEP"` — pass bare title.
+  // Root layout already applies `template: "%s | Electech"` — pass bare title.
   const absoluteImage = image.startsWith("http") ? image : `${origin}${image}`;
 
   return {
