@@ -52,7 +52,8 @@ export type BlogPost = {
   body: string;
   category: string;
   author: string;
-  publishedAt: string;
+  /** ISO date (YYYY-MM-DD). Omit until a real publish date is set. */
+  publishedAt?: string;
   readingTime: number;
   ogImage: string;
   ogAlt: string;

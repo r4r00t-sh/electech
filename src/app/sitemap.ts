@@ -48,7 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...posts.map((post) => ({
       url: `${origin}/insights/${post.slug}`,
-      lastModified: new Date(post.publishedAt),
+      lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
       changeFrequency: "monthly" as const,
       priority: 0.5,
     })),

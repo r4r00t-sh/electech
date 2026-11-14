@@ -4,7 +4,12 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
-import { getLatestPosts, getPostBySlug, posts } from "@/content/posts";
+import {
+  formatReadingTime,
+  getLatestPosts,
+  getPostBySlug,
+  posts,
+} from "@/content/posts";
 import { getBlogDisplayImage } from "@/lib/media";
 import { pageMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -53,7 +58,9 @@ export default async function BlogPostPage({
             "@type": "Article",
             headline: post.title,
             description: post.excerpt,
-            datePublished: post.publishedAt,
+            ...(post.publishedAt
+              ? { datePublished: post.publishedAt }
+              : {}),
             author: { "@type": "Person", name: post.author },
             image: cover.src ? `${siteConfig.url}${cover.src}` : undefined,
           },
@@ -78,8 +85,8 @@ export default async function BlogPostPage({
             {post.category}
           </span>
           <span>{post.author}</span>
-          <span>{post.publishedAt}</span>
-          <span>{post.readingTime} min read</span>
+          {post.publishedAt ? <span>{post.publishedAt}</span> : null}
+          <span>{formatReadingTime(post.readingTime)}</span>
         </div>
         <article className="prose-mep whitespace-pre-line text-slate">
           {post.body.split("\n").map((line, i) => {

@@ -1,13 +1,11 @@
 import type { BlogPost } from "./types";
+import { readingTime } from "@/lib/utils";
 
 /**
  * Insights posts — [CLIENT TO REVIEW] technical accuracy before treating as final.
- * Removed weekly-reporting, drill, and unsupported regulatory claims.
+ * Do not invent publishedAt; set a real date in this file when confirmed.
+ * readingTime is always computed from body word count (~200 wpm, rounded up).
  */
-function readingTimeMinutes(body: string) {
-  const words = body.trim().split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.round(words / 200));
-}
 
 const handoverBody = `
 ## Why handover documentation matters
@@ -31,35 +29,7 @@ Handover works best when drawings, test records and equipment information are co
 Clear documentation is part of dependable MEP delivery. A practical handover package helps clients and facilities teams operate the systems Electech installed with confidence.
 `.trim();
 
-export const posts: BlogPost[] = [
-  {
-    // [CLIENT TO CONFIRM] publish date — slug renamed from weekly-mep-progress-reports
-    title: "What a typical MEP handover package includes",
-    slug: "mep-handover-package",
-    excerpt:
-      "A practical overview of documents and records commonly gathered at MEP handover for commercial and residential projects in the UAE.",
-    category: "Project Delivery",
-    author: "Electech Engineering Team",
-    publishedAt: "2025-09-12",
-    readingTime: readingTimeMinutes(handoverBody),
-    ogImage: "/images/pages/certifications-documents.jpg",
-    ogAlt: "Professional reviewing project documents and charts at a desk",
-    featured: true,
-    body: handoverBody,
-  },
-  {
-    // [CLIENT TO REVIEW]
-    title: "HVAC installation checklist for Dubai fit-outs",
-    slug: "hvac-installation-checklist-dubai",
-    excerpt:
-      "A practical checklist for HVAC installation on commercial and residential fit-outs — from survey through applicable testing.",
-    category: "Mechanical",
-    author: "Electech Engineering Team",
-    publishedAt: "2025-10-03",
-    readingTime: 0,
-    ogImage: "/images/pages/hvac-equipment-detail.jpg",
-    ogAlt: "Modern interior with exposed ceiling services and glazing",
-    body: `
+const hvacBody = `
 ## Start with the survey
 
 Confirm loads, outdoor unit positions, condensate routes and acoustic constraints before ordering equipment. Early coordination with interiors avoids rework when ceilings, bulkheads and joinery are already fixed. In Dubai fit-outs, rooftop and balcony plant locations often compete with architectural screening — agreeing access and structural support early saves programme time.
@@ -79,21 +49,9 @@ Balance airflows where required, verify controls and record readings within the 
 ## Common coordination pitfalls
 
 Late furniture layouts can move thermostat positions into ineffective locations. Late lighting packages can clash with diffusers. Kitchen extract and dining comfort systems need make-up air considered together, not as separate afterthoughts. Flagging these interfaces early keeps them visible until closed.
-`.trim(),
-  },
-  {
-    // [CLIENT TO REVIEW]
-    title: "Electrical distribution boards on live fit-outs",
-    slug: "electrical-distribution-boards-fit-outs",
-    excerpt:
-      "Practical notes on DB and SMDB works during occupied or finishing-stage fit-outs — sequencing, labelling and testing records.",
-    category: "Electrical",
-    author: "Electech Engineering Team",
-    publishedAt: "2025-11-01",
-    readingTime: 0,
-    ogImage: "/images/pages/electrical-installation-work.jpg",
-    ogAlt: "Organised circuit-breaker panel with colour-coded wiring",
-    body: `
+`.trim();
+
+const electricalBody = `
 ## Plan isolations carefully
 
 On live or finishing-stage sites, distribution board works need clear isolation planning with the main contractor and building management. Agree which circuits can be taken offline, for how long, and who authorises energisation afterwards.
@@ -111,15 +69,57 @@ Applicable electrical inspections and testing records belong with the handover p
 ## Coordination with other services
 
 Cable routes, containment and board locations need to stay coordinated with mechanical and plumbing packages sharing the same voids. Early agreement on access panels and clearances reduces rework when ceilings close.
-`.trim(),
+`.trim();
+
+const postDefs: Omit<BlogPost, "readingTime">[] = [
+  {
+    // [CLIENT TO REVIEW] — set publishedAt when confirmed
+    title: "What a typical MEP handover package includes",
+    slug: "mep-handover-package",
+    excerpt:
+      "A practical overview of documents and records commonly gathered at MEP handover for commercial and residential projects in the UAE.",
+    category: "Project Delivery",
+    author: "Electech Engineering Team",
+    ogImage: "/images/pages/certifications-documents.jpg",
+    ogAlt: "Professional reviewing project documents and charts at a desk",
+    featured: true,
+    body: handoverBody,
   },
-].map((post) => ({
+  {
+    // [CLIENT TO REVIEW]
+    title: "HVAC installation checklist for Dubai fit-outs",
+    slug: "hvac-installation-checklist-dubai",
+    excerpt:
+      "A practical checklist for HVAC installation on commercial and residential fit-outs — from survey through applicable testing.",
+    category: "Mechanical",
+    author: "Electech Engineering Team",
+    ogImage: "/images/pages/hvac-equipment-detail.jpg",
+    ogAlt: "Modern interior with exposed ceiling services and glazing",
+    body: hvacBody,
+  },
+  {
+    // [CLIENT TO REVIEW]
+    title: "Electrical distribution boards on live fit-outs",
+    slug: "electrical-distribution-boards-fit-outs",
+    excerpt:
+      "Practical notes on DB and SMDB works during occupied or finishing-stage fit-outs — sequencing, labelling and testing records.",
+    category: "Electrical",
+    author: "Electech Engineering Team",
+    ogImage: "/images/pages/electrical-installation-work.jpg",
+    ogAlt: "Organised circuit-breaker panel with colour-coded wiring",
+    body: electricalBody,
+  },
+];
+
+export const posts: BlogPost[] = postDefs.map((post) => ({
   ...post,
-  readingTime:
-    post.readingTime > 0
-      ? post.readingTime
-      : readingTimeMinutes(post.body),
+  readingTime: readingTime(post.body),
 }));
+
+/** Consistent reading-time label, e.g. "2 min read". */
+export function formatReadingTime(minutes: number) {
+  return `${minutes} min read`;
+}
 
 export function getPostBySlug(slug: string) {
   return posts.find((p) => p.slug === slug);
@@ -127,6 +127,15 @@ export function getPostBySlug(slug: string) {
 
 export function getLatestPosts(limit = 3) {
   return [...posts]
-    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+    .sort((a, b) => {
+      const aDate = a.publishedAt ?? "";
+      const bDate = b.publishedAt ?? "";
+      if (aDate && bDate) return bDate.localeCompare(aDate);
+      if (aDate) return -1;
+      if (bDate) return 1;
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      return a.title.localeCompare(b.title);
+    })
     .slice(0, limit);
 }

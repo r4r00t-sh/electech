@@ -3,7 +3,7 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
-import { posts } from "@/content/posts";
+import { formatReadingTime, getLatestPosts, posts } from "@/content/posts";
 import { getBlogDisplayImage, pageHeroes } from "@/lib/media";
 import { pageMetadata } from "@/lib/seo";
 
@@ -16,9 +16,7 @@ export const metadata = pageMetadata({
 });
 
 export default function InsightsPage() {
-  const sorted = [...posts].sort((a, b) =>
-    b.publishedAt.localeCompare(a.publishedAt),
-  );
+  const sorted = getLatestPosts(posts.length);
   const [featured, ...rest] = sorted;
 
   return (
@@ -44,14 +42,15 @@ export default function InsightsPage() {
             </div>
             <div className="flex flex-col justify-center p-6 md:p-10">
               <p className="text-[14px] font-semibold text-green">
-                {featured.category} · {featured.readingTime} min read
+                {featured.category} · {formatReadingTime(featured.readingTime)}
               </p>
               <h2 className="mt-3 font-display text-3xl font-bold text-navy transition-colors duration-200 group-hover:text-green">
                 {featured.title}
               </h2>
               <p className="mt-3 text-[17px] text-slate-dark">{featured.excerpt}</p>
               <p className="mt-4 text-[15px] text-slate">
-                {featured.author} · {featured.publishedAt}
+                {featured.author}
+                {featured.publishedAt ? ` · ${featured.publishedAt}` : null}
               </p>
             </div>
           </Link>
@@ -72,7 +71,7 @@ export default function InsightsPage() {
               </div>
               <div className="p-5">
                 <p className="text-[14px] font-semibold text-green">
-                  {post.category} · {post.readingTime} min
+                  {post.category} · {formatReadingTime(post.readingTime)}
                 </p>
                 <h2 className="mt-2 font-display text-xl font-bold text-navy transition-colors duration-200 group-hover:text-green">
                   {post.title}

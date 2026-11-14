@@ -15,7 +15,7 @@ Nothing listed here should appear as a visitor-facing placeholder on the live si
   - Dubai Hills Villa 256
   - Dubai Hills Villa 39
   - DAMAC Hills Villa F307F
-- [ ] Confirm publish date for insights post `/insights/mep-handover-package` (currently `2025-09-12` — `[CLIENT TO CONFIRM]`).
+- [ ] Set real `publishedAt` dates in `src/content/posts.ts` for each insights post (none shown until set).
 
 ## Projects — legacy cards (MEP-format; gaps)
 
@@ -94,7 +94,7 @@ Clients currently `approved: false` (all):
 ## Insights
 
 - [ ] Confirm technical accuracy of the three published posts (handover package, HVAC checklist, electrical DBs). Claims about weekly reporting / drills / unsupported regulations removed.
-- [ ] Confirm publish dates for all three posts.
+- [ ] Confirm and set `publishedAt` for all three posts in `src/content/posts.ts` (UI hides the date until set).
 
 ## Domain
 
