@@ -1,17 +1,13 @@
 import type { Story } from "./types";
+import type { BucketId } from "@/lib/buckets";
 
 /**
  * Projects — client-revision.md is source of truth.
- * Featured: three verified villa projects. Legacy cards converted to MEP-scope
- * format; missing verified fields listed in /docs/client-todo.md.
- *
- * Data-entry template for future projects (office x2 pending from client):
- * {
- *   title, slug, subtitle?, location, sector, client,
- *   primaryBucket, secondaryBuckets, scope, status, summary, body,
- *   highlights?, hasVerifiedPhoto?, featured?, testimonial?
- * }
+ * Featured: three verified villa projects (highlights present; photos pending).
+ * Legacy cards without highlights AND without a verified photo are `draft: true`
+ * and hidden from /projects, related lists and sitemap.
  */
+
 export const stories: Story[] = [
   {
     title: "Dubai Hills Villa 256",
@@ -106,7 +102,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
     featured: true,
   },
 
-  // --- Legacy portfolio cards (MEP-scope format; details pending client confirmation) ---
+  // --- Legacy portfolio (draft unless highlights and/or verified photo exist) ---
   {
     title: "MEP works for Al Zahiya Villa",
     slug: "mep-works-al-zahiya-villa",
@@ -115,7 +111,6 @@ All works were coordinated with the Main Contractor's approved designs, client s
     hasVerifiedPhoto: false,
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "mechanical-plumbing"],
-    client: "Property Owner",
     location: "Al Zahiya Villa 5-SPA-46, Sharjah",
     sector: "Residential",
     scope: "Electromechanical package for a residential villa",
@@ -124,6 +119,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical works for a residential villa project in Al Zahiya, Sharjah.",
     body: "Electech provided electromechanical works for a residential villa project in Al Zahiya, Sharjah.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "Electech exceeded our expectations in every way. Their attention to detail and dedication to quality were evident throughout the project. We now have a beautiful home that perfectly blends modern amenities with traditional charm.",
@@ -150,6 +146,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical renovation support for a Sofitel Hotel property in Dubai.",
     body: "Electech provided electromechanical renovation support for a Sofitel Hotel property in Dubai.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "The renovation of our flagship property has been a tremendous success. Electech’s dedication to excellence and innovative approach have elevated our guest experience to new heights.",
@@ -202,6 +199,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical upgrade works for the Real Image corporate headquarters in Dubai.",
     body: "Electech provided electromechanical upgrade works for the Real Image corporate headquarters in Dubai.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "Electech’s expertise and attention to detail have transformed our headquarters into a modern, efficient workspace. The feedback from our employees has been overwhelmingly positive.",
@@ -228,6 +226,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical upgrade works for Smart Salem Medical Fitness Centre at City Walk, Dubai.",
     body: "Electech provided electromechanical upgrade works for Smart Salem Medical Fitness Centre at City Walk, Dubai.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "Electech’s professionalism and expertise were evident throughout the project. The upgraded facilities have greatly improved our patient care and operational efficiency. We highly recommend their services.",
@@ -280,6 +279,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided MEP works for a two-bedroom flat project in Dubai.",
     body: "Electech provided MEP works for a two-bedroom flat project in Dubai.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "Electech turned our flat into a dream home. Their innovative design solutions and attention to detail have made our space both beautiful and functional. We couldn’t be happier with the outcome.",
@@ -358,6 +358,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical works for a GTZ Shipping LLC logistics hub in Dubai.",
     body: "Electech provided electromechanical works for a GTZ Shipping LLC logistics hub in Dubai.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "Electech’s innovative solutions and meticulous execution have transformed our logistics hub into a highly efficient and sustainable facility. Their expertise has been invaluable to our operations.",
@@ -375,15 +376,16 @@ All works were coordinated with the Main Contractor's approved designs, client s
     hasVerifiedPhoto: false,
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "fire-protection"],
-    client: "Anex Building",
-    location: "1st Floor, Hamariya Free Zone, Sharjah",
-    sector: "Commercial",
+    // Anex Building is a location, not a client name
+    location: "1st Floor, Anex Building, Hamariya Free Zone, Sharjah",
+    // Sector unconfirmed (government office floor vs commercial) — omit until client confirms
     scope: "Electromechanical modernization works for a government office floor",
     status: "Completed",
     summary:
       "Electech provided electromechanical modernization works for Anex Building 1st Floor, Hamariya Free Zone, Sharjah.",
     body: "Electech provided electromechanical modernization works for Anex Building 1st Floor, Hamariya Free Zone, Sharjah.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "Electech’s professionalism and expertise were evident throughout the project. The modernization of our office has greatly improved our operational efficiency and the overall environment. We highly recommend their services.",
@@ -410,6 +412,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical works for the Ascentia office project in Dubai.",
     body: "Electech provided electromechanical works for the Ascentia office project in Dubai.",
     gallery: [],
+    draft: true,
     testimonial: {
       quote:
         "The transformation of our office space has been remarkable. Electech’s innovative design and efficient project management have created an environment that truly enhances our team’s productivity and collaboration.",
@@ -421,29 +424,77 @@ All works were coordinated with the Main Contractor's approved designs, client s
   },
 ];
 
+function hasBucket(story: Story, bucket: BucketId) {
+  return (
+    story.primaryBucket === bucket || story.secondaryBuckets.includes(bucket)
+  );
+}
+
+/** Published projects only (excludes draft stubs). */
+export function getPublishedStories() {
+  return stories.filter((s) => !s.draft);
+}
+
 export function getStoryBySlug(slug: string) {
   return stories.find((s) => s.slug === slug);
 }
 
-export function getStoriesByBucket(
-  bucket: Story["primaryBucket"],
-  limit?: number,
-) {
-  const filtered = stories.filter(
-    (s) => s.primaryBucket === bucket || s.secondaryBuckets.includes(bucket),
-  );
+export function getStoriesByBucket(bucket: BucketId, limit?: number) {
+  const filtered = getPublishedStories().filter((s) => hasBucket(s, bucket));
   return typeof limit === "number" ? filtered.slice(0, limit) : filtered;
 }
 
 export function getFeaturedStories(limit = 3) {
-  const featured = stories.filter((s) => s.featured);
-  return (featured.length ? featured : stories).slice(0, limit);
+  const published = getPublishedStories();
+  const featured = published.filter((s) => s.featured);
+  return (featured.length ? featured : published).slice(0, limit);
+}
+
+/**
+ * Related projects: same sector first, then same solution bucket.
+ * Avoids unrelated residential villas on commercial/office pages (and vice versa).
+ */
+export function getRelatedStories(story: Story, limit = 3) {
+  const pool = getPublishedStories().filter((s) => s.slug !== story.slug);
+
+  const score = (candidate: Story) => {
+    let n = 0;
+    if (story.sector && candidate.sector === story.sector) n += 20;
+    if (hasBucket(candidate, story.primaryBucket)) n += 5;
+    for (const b of story.secondaryBuckets) {
+      if (hasBucket(candidate, b)) n += 2;
+    }
+    if (
+      story.sector &&
+      story.sector !== "Residential" &&
+      candidate.sector === "Residential"
+    ) {
+      n -= 50;
+    }
+    if (
+      story.sector === "Residential" &&
+      candidate.sector &&
+      candidate.sector !== "Residential"
+    ) {
+      n -= 10;
+    }
+    return n;
+  };
+
+  return [...pool]
+    .map((s) => ({ s, score: score(s) }))
+    .filter(({ score: n }) => n > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ s }) => s);
 }
 
 export function getAdjacentStories(slug: string) {
-  const index = stories.findIndex((s) => s.slug === slug);
+  const published = getPublishedStories();
+  const index = published.findIndex((s) => s.slug === slug);
+  if (index < 0) return { prev: undefined, next: undefined };
   return {
-    prev: stories[index - 1],
-    next: stories[index + 1],
+    prev: published[index - 1],
+    next: published[index + 1],
   };
 }

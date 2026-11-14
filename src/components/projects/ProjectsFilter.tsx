@@ -51,7 +51,7 @@ export function ProjectsFilter({ stories }: { stories: Story[] }) {
 
       <div className="columns-1 gap-6 md:columns-2 xl:columns-3">
         {filtered.map((story) => {
-          const image = getStoryDisplayImage(story.slug);
+          const image = getStoryDisplayImage(story);
           return (
             <article
               key={story.slug}

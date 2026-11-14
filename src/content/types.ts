@@ -14,7 +14,8 @@ export type Story = {
   /** Omit when the client has not supplied a publishable client name. */
   client?: string;
   location: string;
-  sector: string;
+  /** Omit when sector is unconfirmed (e.g. government vs commercial). */
+  sector?: string;
   scope: string;
   status: string;
   year?: string;
@@ -31,6 +32,11 @@ export type Story = {
     verified: boolean;
   };
   featured?: boolean;
+  /**
+   * Hidden from /projects, related lists and sitemap until highlights and/or
+   * a verified photo exist. Direct URLs 404 while draft.
+   */
+  draft?: boolean;
 };
 
 export type Testimonial = {

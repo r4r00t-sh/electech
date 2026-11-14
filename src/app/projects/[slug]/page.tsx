@@ -8,18 +8,22 @@ import { ClientSuccessStories } from "@/components/widgets/ClientSuccessStories"
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import {
   getAdjacentStories,
-  getStoriesByBucket,
+  getPublishedStories,
+  getRelatedStories,
   getStoryBySlug,
-  stories,
 } from "@/content/stories";
 import { storyBucketLabel } from "@/lib/buckets";
-import { getStoryDisplayImage, getStoryGallery } from "@/lib/media";
+import {
+  getStoryDisplayImage,
+  getStoryGallery,
+  getStoryOgImage,
+} from "@/lib/media";
 import { pageMetadata, breadcrumbSchema } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/content/site";
 
 export function generateStaticParams() {
-  return stories.map((s) => ({ slug: s.slug }));
+  return getPublishedStories().map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
@@ -29,13 +33,12 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const story = getStoryBySlug(slug);
-  if (!story) return {};
-  const display = getStoryDisplayImage(story.slug);
+  if (!story || story.draft) return {};
   return pageMetadata({
     title: story.title,
     description: story.summary,
     path: `/projects/${story.slug}`,
-    image: display.src || undefined,
+    image: getStoryOgImage(story),
   });
 }
 
@@ -61,23 +64,20 @@ export default async function StoryPage({
 }) {
   const { slug } = await params;
   const story = getStoryBySlug(slug);
-  if (!story) notFound();
+  if (!story || story.draft) notFound();
 
   const { prev, next } = getAdjacentStories(slug);
-  const related = getStoriesByBucket(story.primaryBucket, 4)
-    .filter((s) => s.slug !== story.slug)
-    .slice(0, 3);
+  const related = getRelatedStories(story, 3);
 
-  const displayImage = getStoryDisplayImage(story.slug);
+  const displayImage = getStoryDisplayImage(story);
   const gallery = getStoryGallery(story.slug);
+  const ogSrc = getStoryOgImage(story);
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: story.title,
     description: story.summary,
-    image: displayImage.src
-      ? `${siteConfig.url}${displayImage.src}`
-      : undefined,
+    image: `${siteConfig.url}${ogSrc}`,
     author: { "@type": "Organization", name: siteConfig.legalName },
     publisher: { "@type": "Organization", name: siteConfig.legalName },
   };
@@ -88,7 +88,7 @@ export default async function StoryPage({
 
   const facts = [
     ["Location", story.location],
-    ["Sector", story.sector],
+    story.sector ? ["Sector", story.sector] : null,
     ["Electech scope", story.scope],
     ["Status", story.status],
     story.client ? ["Client", story.client] : null,
@@ -234,7 +234,7 @@ export default async function StoryPage({
           <ClientSuccessStories
             stories={related}
             title="Related projects"
-            description="More MEP works from the same solutions bucket."
+            description="More Electech projects in related sectors and solution areas."
           />
         </Section>
       ) : null}

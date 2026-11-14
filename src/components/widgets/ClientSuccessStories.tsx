@@ -7,23 +7,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 
 function resolveCardImage(story: Story): MediaRef {
-  const mapped = getStoryDisplayImage(story.slug);
-  if (mapped.src) {
-    return { ...mapped, alt: mapped.alt || story.heroAlt || story.title };
-  }
-  if (story.hasVerifiedPhoto && story.heroImage) {
-    return {
-      src: story.heroImage,
-      alt: story.heroAlt || story.title,
-      objectPosition: "center",
-    };
-  }
-  return {
-    src: "",
-    alt: story.heroAlt || story.title,
-    placeholder: true,
-    bucket: story.primaryBucket,
-  };
+  return getStoryDisplayImage(story);
 }
 
 export function ClientSuccessStories({

@@ -9,9 +9,9 @@ function showUnverifiedTestimonials() {
   return process.env.NODE_ENV !== "production";
 }
 
-/** Derived from story testimonials */
+/** Derived from published story testimonials (draft projects excluded). */
 export const testimonials: Testimonial[] = stories
-  .filter((s) => s.testimonial)
+  .filter((s) => s.testimonial && !s.draft)
   .map((s, i) => ({
     id: `story-${s.slug}`,
     quote: s.testimonial!.quote,

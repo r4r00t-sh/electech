@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { stories } from "@/content/stories";
+import { getPublishedStories } from "@/content/stories";
 import { posts } from "@/content/posts";
 import { getSiteUrl } from "@/lib/seo";
 
@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: path === "" ? 1 : 0.7,
     })),
-    ...stories.map((story) => ({
+    ...getPublishedStories().map((story) => ({
       url: `${origin}/projects/${story.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,

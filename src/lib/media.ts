@@ -429,15 +429,42 @@ export const homeBlogImages: MediaRef[] = [
   { ...media.fireSmall, objectPosition: "center 25%" },
 ];
 
-export function getStoryDisplayImage(slug: string): MediaRef {
+/** Hero / card image for a project — matched works photo or navy bucket tile (never mismatched stock). */
+export function getStoryDisplayImage(
+  storyOrSlug: { slug: string; heroImage?: string; heroAlt?: string; hasVerifiedPhoto?: boolean; primaryBucket?: BucketId } | string,
+): MediaRef {
+  const slug = typeof storyOrSlug === "string" ? storyOrSlug : storyOrSlug.slug;
+  const story = typeof storyOrSlug === "string" ? undefined : storyOrSlug;
   const mapped = storyImages[slug];
   if (mapped?.src) return mapped;
+  if (story?.hasVerifiedPhoto && story.heroImage) {
+    return {
+      src: story.heroImage,
+      alt: story.heroAlt || "Electech project photography",
+      objectPosition: "center center",
+    };
+  }
   return {
     src: "",
-    alt: "Electech project photography pending",
+    alt: story?.heroAlt || "Electech project photography pending",
     placeholder: true,
-    bucket: "mep",
+    bucket: story?.primaryBucket ?? "mep",
   };
+}
+
+/** OG image for a project page — own hero when available; never mep-industrial stand-in. */
+export function getStoryOgImage(
+  story: {
+    slug: string;
+    heroImage?: string;
+    hasVerifiedPhoto?: boolean;
+    primaryBucket?: BucketId;
+    heroAlt?: string;
+  },
+): string {
+  const display = getStoryDisplayImage(story);
+  if (display.src) return display.src;
+  return "/images/og-default.svg";
 }
 
 export function getStoryGallery(slug: string): MediaRef[] {

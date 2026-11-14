@@ -17,24 +17,32 @@ Nothing listed here should appear as a visitor-facing placeholder on the live si
   - DAMAC Hills Villa F307F
 - [ ] Set real `publishedAt` dates in `src/content/posts.ts` for each insights post (none shown until set).
 
-## Projects — legacy cards (MEP-format; gaps)
+## Projects — published (need photo and/or scope confirm)
 
-Shown in client card format with navy tiles where no verified Electech photo exists. Confirm exact scope wording / photos / status before treating as final:
+| Slug | Status | Gaps |
+| --- | --- | --- |
+| `dubai-hills-villa-256` | Published (highlights) | Matched villa photo (navy tile until supplied) |
+| `dubai-hills-villa-39` | Published (highlights) | Matched villa photo |
+| `damac-hills-villa-f307f` | Published (highlights) | Matched villa photo |
+| `mep-works-amazon-ecommerce-office` | Published (photo) | Confirm scope wording; Technical highlights |
+| `mep-works-innovative-food-outlet-imdaad` | Published (photo) | Confirm scope wording; Technical highlights |
+| `mep-works-atelier-difc` | Published (photo) | Confirm scope wording; Technical highlights |
+| `mep-works-etisalat-kifaf` | Published (photo) | Confirm scope wording; Technical highlights |
 
-| Slug | Gaps |
+## Projects — draft (hidden until highlights and/or verified photo)
+
+Summary-only legacy cards with no Technical highlights and no matched photo are `draft: true` (404, excluded from `/projects`, related lists, sitemap).
+
+| Slug | Gaps to un-draft |
 | --- | --- |
-| `mep-works-al-zahiya-villa` | Verified photo; exact MEP package scope; status wording |
-| `mep-works-sofitel-hotel` | Verified Electech-scope photo; exact package vs whole-hotel claim |
-| `mep-works-amazon-ecommerce-office` | Confirm scope wording (photo mapped) |
-| `mep-works-real-image-headquarters` | Verified photo; exact MEP scope |
-| `mep-works-smart-salem-city-walk` | Verified photo; exact MEP scope |
-| `mep-works-innovative-food-outlet-imdaad` | Confirm scope wording (photo mapped) |
-| `mep-works-two-bedroom-flat` | Verified photo; exact MEP scope |
-| `mep-works-atelier-difc` | Confirm scope wording (photo mapped) |
-| `mep-works-etisalat-kifaf` | Confirm scope wording (photo mapped) |
-| `mep-works-gtz-shipping` | Verified photo; exact MEP scope |
-| `mep-works-anex-building-hamariya` | Verified photo; exact MEP scope |
-| `mep-works-ascentia-office` | Verified photo; exact MEP scope |
+| `mep-works-al-zahiya-villa` | Verified photo; Technical highlights; exact MEP scope; client name (not “Property Owner”) |
+| `mep-works-sofitel-hotel` | Verified Electech-scope photo; Technical highlights; exact package vs whole-hotel claim |
+| `mep-works-real-image-headquarters` | Verified photo; Technical highlights; exact MEP scope |
+| `mep-works-smart-salem-city-walk` | Verified photo; Technical highlights; exact MEP scope |
+| `mep-works-two-bedroom-flat` | Verified photo; Technical highlights; exact MEP scope |
+| `mep-works-gtz-shipping` | Verified photo; Technical highlights; exact MEP scope |
+| `mep-works-anex-building-hamariya` | Verified photo; Technical highlights; exact MEP scope; **client name** (Anex Building is the location); **sector** (government office floor — confirm Commercial / Government / other before showing Sector) |
+| `mep-works-ascentia-office` | Verified photo; Technical highlights; exact MEP scope |
 
 - [ ] Verify every testimonial for publication (`verified: true`). All current testimonials default to `verified: false`.
 

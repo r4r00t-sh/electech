@@ -602,7 +602,7 @@ Our objective is to support accurate installation, clear interface management an
     overview: `
 Electech undertakes installation of specified fire-rated sealant systems as part of commercial, residential and refurbishment projects.
 
-Our fire-stopping works are carried out according to the project specifications and coordinated with the responsible approval parties. System isolation, final integrated testing, commissioning, certification and authority approvals are coordinated with and undertaken by the responsible authorized parties, as applicable.
+Our fire-stopping works are carried out according to the project specifications and coordinated with the responsible approval parties.
 `.trim(),
     keyServices: [
       {
