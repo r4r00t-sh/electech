@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 const slug = "fire-protection";
 
 export const metadata = pageMetadata({
-  title: "Fire Protection and Safety Services",
+  title: "Fire Protection Support",
   description:
     "Electech provides fire alarm and firefighting installation support for commercial, residential and refurbishment projects in Dubai.",
   image: "/images/pages/fire-services-corridor.jpg",
@@ -19,7 +19,10 @@ export default function Page() {
   return (
     <ServicePageView
       service={service}
-      crumbs={[{ label: "Our Solutions", href: "/solutions" },{ label: "Fire Protection and Safety" }]}
+      crumbs={[
+        { label: "Our Solutions", href: "/solutions" },
+        { label: "Fire Protection Support" },
+      ]}
     />
   );
 }

@@ -45,16 +45,20 @@ Not found on live HTML: drills, expertly designed, one-stop, Luxurious Villa Tra
 - Project OG images use each story’s display photo.
 - Cleared `.next` and rebuilt; all listed routes static/SSG (solar builds but `notFound()` at runtime). Sitemap `changefreq` no longer `weekly`.
 
-## 2. Post-deploy verification checklist
+## 2. Post-deploy verification (commit `86a0ef3`+)
 
-Re-crawl every route on https://electech-black.vercel.app after this commit deploys and confirm zero hits for:
+Recrawled https://electech-black.vercel.app after Production redeploy:
 
-`weekly` (except accidental substrings), `drills`, `expertly designed`, `one-stop`, `Luxurious Villa Transformation`, `Oud Metha`, `Report weekly`, `12+`, visible `[CLIENT TO PROVIDE`, `Confidence built into every programme`, `Get a Quote`, `www.electechmep.com`.
-
-Also confirm:
-- `/insights/weekly-mep-progress-reports` → 301 → `/insights/mep-handover-package`
-- Solar URL → 404
-- Villa project pages have no Client row and labelled Previous/Next project
+| Check | Result |
+| --- | --- |
+| Canonical / sitemap host | `https://electech-black.vercel.app` (no `www.electechmep.com`) |
+| Header CTA | Request a Quotation |
+| Insights slug | `/insights/mep-handover-package`; old slug → **308** permanent redirect (Next.js permanent) |
+| Solar | **404** |
+| Villa Owner fact row | Removed |
+| Banned phrase list | Clear (false positive only: client copy “villa owners” on About) |
+| Thin pages (&lt;150 words) | None among crawled HTML routes |
+| Overview headings | Electrical `Our Approach`, Mechanical `How We Work`, Fire `Scope and Responsibility` as `<h2>` |
 
 ## 3. Still blocked on client input
 
@@ -62,4 +66,17 @@ See `docs/client-todo.md` and `docs/image-todo.md` (villa photos, legacy project
 
 ## 4. Responsive
 
-Build is layout-static; spot-check at 1440 / 1024 / 768 / 360 after deploy (Header mobile accordion, sector grid, project masonry, CTA wrap).
+Layout is static CSS; Header mobile accordion, sector grid, project masonry and CTA wrap are unchanged from prior pass. Spot-check at 1440 / 1024 / 768 / 360 after any further visual change.
+
+## 5. Updated live URLs (this pass)
+
+- https://electech-black.vercel.app/
+- https://electech-black.vercel.app/about/who-we-are
+- https://electech-black.vercel.app/solutions/electrical
+- https://electech-black.vercel.app/solutions/mechanical-plumbing
+- https://electech-black.vercel.app/solutions/fire-protection
+- https://electech-black.vercel.app/solutions/fire-protection/fire-fighting-fire-alarm-installation
+- https://electech-black.vercel.app/projects
+- https://electech-black.vercel.app/projects/dubai-hills-villa-256
+- https://electech-black.vercel.app/insights/mep-handover-package
+- https://electech-black.vercel.app/sitemap.xml
