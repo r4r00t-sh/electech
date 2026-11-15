@@ -326,8 +326,29 @@ export const homeSectorImages: { label: string; image: MediaRef }[] = [
  * repeats a photo. Hotel uses the dining interior (not the bar); healthcare
  * uses a clean clinical-style interior (not fire-alarm hardware).
  */
-/** Verified Electech works photos only. Missing slugs → navy tile (no stock). */
+/**
+ * Project heroes — Electech works photos first; otherwise subject-matched stock
+ * (unique src per published villa so the Projects index does not repeat).
+ */
 export const storyImages: Record<string, MediaRef> = {
+  "dubai-hills-villa-256": {
+    src: "/images/pages/electrical-installation-work.jpg",
+    alt: "Organised distribution-board installation representing Dubai Hills Villa 256 electrical works.",
+    caption: "Distribution board and circuit installation",
+    objectPosition: "center center",
+  },
+  "dubai-hills-villa-39": {
+    src: "/images/pages/plumbing-finished-bathroom.jpg",
+    alt: "Finished bathroom plumbing and sanitary installation representing Dubai Hills Villa 39 MEP works.",
+    caption: "Sanitaryware and plumbing fit-out",
+    objectPosition: "center center",
+  },
+  "damac-hills-villa-f307f": {
+    src: "/images/pages/hvac-equipment-detail.jpg",
+    alt: "Exposed HVAC ductwork and diffusers representing DAMAC Hills Villa F307F MEP renovation.",
+    caption: "HVAC ductwork and air distribution",
+    objectPosition: "center 30%",
+  },
   "mep-works-amazon-ecommerce-office": {
     ...works.commercialOffice,
     objectPosition: "center center",
@@ -351,16 +372,109 @@ export const storyImages: Record<string, MediaRef> = {
 };
 
 /**
- * Inline gallery — only verified Electech installation photos matched to that project.
- * Villa case studies: no dedicated villa installation uploads yet → empty (navy hero tile).
+ * Project galleries — subject-matched stock until villa-specific Electech photos arrive.
+ * No image repeated within a single project page (hero + gallery).
  */
 export const storyGalleryImages: Record<string, MediaRef[]> = {
-  "dubai-hills-villa-256": [],
-  "dubai-hills-villa-39": [],
-  "damac-hills-villa-f307f": [],
+  "dubai-hills-villa-256": [
+    {
+      src: "/images/pages/electrical-power-infrastructure.jpg",
+      alt: "Electrical switchgear and power distribution panels.",
+      caption: "Power distribution and switchgear",
+    },
+    {
+      src: "/images/pages/elv-server-racks.jpg",
+      alt: "Organised low-current cabling and containment.",
+      caption: "ELV containment and cabling pathways",
+    },
+    {
+      src: "/images/heroes/hero-03-plant-room-pipework.jpg",
+      alt: "Plant-room pipework, pumps and stainless vessels.",
+      caption: "Pump and water-system pipework",
+    },
+    {
+      src: "/images/pages/mechanical-factory-floor.jpg",
+      alt: "Mechanical pipework, valves and gauges on a plant wall.",
+      caption: "Mechanical pipework and controls",
+    },
+    {
+      src: "/images/pages/mep-industrial-systems.jpg",
+      alt: "Coordinated electrical plant corridor with building services.",
+      caption: "Coordinated MEP plant services",
+    },
+    {
+      src: "/images/services/electrical-installation.jpg",
+      alt: "Electrician working on a distribution panel.",
+      caption: "Electrical panel installation",
+    },
+  ],
+  "dubai-hills-villa-39": [
+    {
+      src: "/images/pages/electrical-installation-work.jpg",
+      alt: "Circuit-breaker panel with colour-coded wiring.",
+      caption: "Distribution modifications",
+    },
+    {
+      src: "/images/pages/electrical-power-infrastructure.jpg",
+      alt: "Electrical control room with switchgear lineup.",
+      caption: "Power infrastructure",
+    },
+    {
+      src: "/images/pages/elv-server-racks.jpg",
+      alt: "ELV rack and cable management.",
+      caption: "ELV / DALI / automation containment",
+    },
+    {
+      src: "/images/heroes/hero-03-plant-room-pipework.jpg",
+      alt: "Stainless plant-room pumps and pipework.",
+      caption: "Pump system enhancements",
+    },
+    {
+      src: "/images/services/plumbing.jpg",
+      alt: "Plumber working on chrome pipe fittings.",
+      caption: "Plumbing and sanitary connections",
+    },
+    {
+      src: "/images/heroes/hero-02-electrical-installation.jpg",
+      alt: "Technician installing an outdoor electrical enclosure.",
+      caption: "On-site electrical installation",
+    },
+  ],
+  "damac-hills-villa-f307f": [
+    {
+      src: "/images/services/hvac-installation.jpg",
+      alt: "Technician servicing an outdoor air-conditioning unit.",
+      caption: "HVAC equipment connections",
+    },
+    {
+      src: "/images/pages/electrical-installation-work.jpg",
+      alt: "Organised distribution-board wiring.",
+      caption: "Electrical and lighting circuits",
+    },
+    {
+      src: "/images/pages/plumbing-finished-bathroom.jpg",
+      alt: "Finished bathroom with modern sanitary fixtures.",
+      caption: "Sanitaryware and drainage",
+    },
+    {
+      src: "/images/pages/mechanical-factory-floor.jpg",
+      alt: "Mechanical pipework installation.",
+      caption: "Plumbing and pipework modifications",
+    },
+    {
+      src: "/images/pages/electrical-power-infrastructure.jpg",
+      alt: "Electrical switchgear room.",
+      caption: "Power and equipment provisions",
+    },
+    {
+      src: "/images/pages/mep-industrial-systems.jpg",
+      alt: "Integrated electrical plant corridor.",
+      caption: "Coordinated MEP renovation services",
+    },
+  ],
 };
 
-/** Per-project OG JPEG (1200×630) — used when the page hero is a navy tile. */
+/** Fallback OG JPEG (1200×630) when a project still has no raster hero. */
 export const storyOgImages: Record<string, string> = {
   "dubai-hills-villa-256":
     "/images/projects/og/dubai-hills-villa-256-og.jpg",
@@ -457,7 +571,7 @@ export const homeBlogImages: MediaRef[] = [
   { ...media.fireSmall, objectPosition: "center 25%" },
 ];
 
-/** Hero / card image for a project — matched works photo or navy bucket tile (never mismatched stock). */
+/** Hero / card image for a project — mapped photo, verified hero, or navy tile. */
 export function getStoryDisplayImage(
   storyOrSlug: { slug: string; heroImage?: string; heroAlt?: string; hasVerifiedPhoto?: boolean; primaryBucket?: BucketId } | string,
 ): MediaRef {
@@ -466,6 +580,13 @@ export function getStoryDisplayImage(
   const mapped = storyImages[slug];
   if (mapped?.src) return mapped;
   if (story?.hasVerifiedPhoto && story.heroImage) {
+    return {
+      src: story.heroImage,
+      alt: story.heroAlt || "Electech project photography",
+      objectPosition: "center center",
+    };
+  }
+  if (story?.heroImage) {
     return {
       src: story.heroImage,
       alt: story.heroAlt || "Electech project photography",

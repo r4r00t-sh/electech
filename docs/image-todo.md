@@ -1,40 +1,28 @@
 # Image TODO — Electech
 
-Slots still waiting for dedicated photography. Until then the site uses client-uploaded works, topic images from `/public/images/pages` (matched by subject), or silent navy tiles — **never** visitor-facing “[CLIENT TO PROVIDE photo]” text and **never** a photo of a different project.
+Slots still waiting for dedicated Electech photography. Until then the site uses client-uploaded works where available, or **subject-matched stock** from `/public/images/pages`, `/heroes` and `/services`. Never show visitor-facing “[CLIENT TO PROVIDE photo]” text. Never reuse the same image twice on one page.
 
-## Wired from uploads
+## Villa projects (stock stand-ins live)
 
-| Asset | Path | Used for |
-|-------|------|----------|
-| Restaurant / F&B works | `projects/works/restaurant-dining-interior-01.jpg`, `restaurant-bar-lounge-01.jpg` | Hospitality industry card; legacy hospitality stories |
-| Commercial office | `projects/works/office-commercial-fitout-01.jpg` | Industries hero + Commercial Offices card |
-| Art gallery / retail | `projects/works/retail-art-gallery-interior-01.jpg` | Retail & F&B industry card |
-| Government / Etisalat office | `projects/works/office-etisalat-open-plan-01.jpg` | Etisalat legacy story only |
-| Client logos | `clients/client-*.jpg` | `/clients` (when approved) |
-| ISO board | `certs/iso-board.jpg` | Certifications |
-| Project OG placeholders | `projects/og/*-og.jpg` (1200×630 navy JPG) | Villa project `og:image` until heroes exist |
+| Project | Hero (stock) | Gallery themes |
+|---------|--------------|----------------|
+| Dubai Hills Villa 256 | `pages/electrical-installation-work.jpg` | Power distribution, ELV, pumps, mechanical, MEP plant, panel work |
+| Dubai Hills Villa 39 | `pages/plumbing-finished-bathroom.jpg` | Distribution, power, ELV, pumps, plumbing, site electrical |
+| DAMAC Hills Villa F307F | `pages/hvac-equipment-detail.jpg` | HVAC service, electrical, sanitary, pipework, power, MEP plant |
 
-## Villa / featured projects (priority)
-
-No villa-specific installation uploads are in `/public/images` yet (works folder is offices/restaurants/retail only; `/pages` are stock). Heroes therefore stay **navy tiles with icons**; galleries stay empty until matched Electech photos arrive.
-
-| Project | Status | Needed (matched by system, captioned) |
-|---------|--------|----------------------------------------|
-| Dubai Hills Villa 256 | Navy hero + empty gallery | Façade/landscape lighting, garage floor LEDs, DB/SMDB, pump/filtration, jacuzzi/sauna/BBQ/pergola provisions |
-| Dubai Hills Villa 39 | Navy hero + empty gallery | Architectural/concealed lighting, sanitaryware, pumping/plumbing |
-| DAMAC Hills Villa F307F | Navy hero + empty gallery | HVAC mods, electrical/lighting, sanitary/drainage; filtration only if confirmed installed |
+Replace with real Electech villa installation photos when available (façade/landscape lighting, garage LEDs, DB/SMDB, filtration only if confirmed for F307F).
 
 ## Industry cards
 
-| Card | Status |
+| Card | Image |
 |------|--------|
-| Commercial Offices | Real photo (office fit-out) |
-| Premium Residential Villas | Navy tile + Home icon |
-| Retail & F&B | Real photo (retail gallery) |
-| Hospitality | Real photo (dining interior) |
-| Other Facilities | Navy tile + Warehouse icon |
+| Commercial Offices | Electech works — office fit-out |
+| Premium Residential Villas | Stock — finished bathroom / plumbing |
+| Retail & F&B | Electech works — retail gallery |
+| Hospitality | Electech works — dining interior |
+| Other Facilities | Stock — MEP plant corridor |
 
-## Page heroes (must stay distinct)
+## Page heroes (distinct)
 
 | Page | Asset |
 |------|--------|
@@ -42,9 +30,7 @@ No villa-specific installation uploads are in `/public/images` yet (works folder
 | Careers | `pages/who-we-are-construction.jpg` |
 | Industries | `projects/works/office-commercial-fitout-01.jpg` |
 
-## Do not reuse for villa galleries
+## Do not use for villa galleries
 
-- Stock Unsplash/Pexels under `pages/` and `heroes/`
-- Legacy `services/` stock
-- Other-project works (Etisalat / restaurant / retail) attributed to villas
-- Welding / fabrication stock (`why-choose-workshop.jpg` — orphaned on disk)
+- Welding / fabrication stock (`why-choose-workshop.jpg`)
+- Other-project interiors attributed as that villa’s exterior or lifestyle spaces unless captioned as system detail only

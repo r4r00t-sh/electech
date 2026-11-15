@@ -3,7 +3,7 @@ import type { BucketId } from "@/lib/buckets";
 
 /**
  * Projects — final master (15 Nov 2026).
- * Published: three villa case studies. Photos pending → navy tiles.
+ * Published: three villa case studies (subject-matched stock heroes/galleries until Electech villa photos arrive).
  * Commercial office projects: add with sector "Commercial Offices" in the same shape.
  * Legacy stories stay published:false (301 → /projects).
  */

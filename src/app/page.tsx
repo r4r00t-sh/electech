@@ -5,7 +5,11 @@ import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { BUCKETS } from "@/lib/buckets";
-import { homeBucketImages, homeWhyImage } from "@/lib/media";
+import {
+  getStoryDisplayImage,
+  homeBucketImages,
+  homeWhyImage,
+} from "@/lib/media";
 import { resolveHeroSlides } from "@/lib/hero-slides";
 import { siteConfig } from "@/content/site";
 import { aboutContent } from "@/content/about";
@@ -199,12 +203,7 @@ export default function HomePage() {
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-navy">
                 <PhotoMedia
-                  image={{
-                    src: story.heroImage || "",
-                    alt: story.heroAlt,
-                    placeholder: !story.hasVerifiedPhoto,
-                    bucket: story.primaryBucket,
-                  }}
+                  image={getStoryDisplayImage(story)}
                   sizes="33vw"
                 />
               </div>

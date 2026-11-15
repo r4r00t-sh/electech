@@ -55,6 +55,10 @@ const industries: {
       { label: "Electrical", href: "/solutions/electrical" },
       { label: "Maintenance", href: "/solutions/maintenance" },
     ],
+    image: {
+      src: "/images/pages/plumbing-finished-bathroom.jpg",
+      alt: "Residential bathroom plumbing and sanitary fit-out for premium villas.",
+    },
     Icon: Home,
   },
   {
@@ -93,6 +97,10 @@ const industries: {
       { label: "Integrated MEP", href: "/solutions/mep" },
       { label: "Fire Protection Support", href: "/solutions/fire-protection" },
     ],
+    image: {
+      src: "/images/pages/mep-industrial-systems.jpg",
+      alt: "Building-services plant corridor for commercial facilities.",
+    },
     Icon: Warehouse,
   },
 ];
