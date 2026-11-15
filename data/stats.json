@@ -9,26 +9,19 @@
     "animate": true
   },
   {
-    "id": "iso",
+    "id": "projects",
     "show": true,
-    "textValue": "ISO 9001 | ISO 14001 | ISO 45001",
-    "label": "Company-confirmed certifications",
-    "animate": false
-  },
-  {
-    "id": "services",
-    "show": true,
-    "value": 5,
-    "suffix": "",
+    "value": 500,
+    "suffix": "+",
     "prefix": "",
-    "label": "Service areas: Integrated MEP, Mechanical & Plumbing, Electrical, Fire Protection Support, Maintenance",
+    "label": "Projects delivered",
     "animate": true
   },
   {
-    "id": "property-types",
+    "id": "sectors",
     "show": true,
-    "textValue": "Offices | Premium villas | Retail & F&B | Hospitality",
-    "label": "Property types served",
+    "textValue": "Residential, Commercial, Retail, Hospitality, F&B, Industrial & Building Maintenance",
+    "label": "Sectors served",
     "animate": false
   }
 ]

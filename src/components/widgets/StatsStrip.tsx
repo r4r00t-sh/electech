@@ -52,38 +52,18 @@ function useCountUp(
   return value;
 }
 
-/** Split "A | B | C" into whole items so labels never orphan mid-token (e.g. "ISO"). */
-function TextValueItems({ text }: { text: string }) {
-  const parts = text.split(/\s*\|\s*/).filter(Boolean);
-  if (parts.length <= 1) {
-    return <span className="whitespace-nowrap">{text}</span>;
-  }
-  return (
-    <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
-      {parts.map((part, i) => (
-        <span key={`${part}-${i}`} className="inline-flex items-center gap-2">
-          {i > 0 ? (
-            <span className="text-white/40" aria-hidden>
-              |
-            </span>
-          ) : null}
-          <span className="whitespace-nowrap">{part}</span>
-        </span>
-      ))}
-    </span>
-  );
-}
-
 function StatItem({
   cell,
   active,
   index,
   total,
+  wide,
 }: {
   cell: StatCell;
   active: boolean;
   index: number;
   total: number;
+  wide?: boolean;
 }) {
   const shouldAnimate =
     Boolean(cell.animate) &&
@@ -95,27 +75,21 @@ function StatItem({
   return (
     <div
       className={cn(
-        "px-4 py-8 text-left md:px-6",
-        // Mobile: stacked with bottom dividers
-        index < total - 1 && "border-b border-white/15 sm:border-b-0",
-        // Tablet (2 cols)
-        index % 2 === 0 && "sm:border-r sm:border-white/15",
-        index < 2 && "sm:border-b sm:border-white/15 md:border-b-0",
-        // Desktop (4 cols): clear tablet right borders, use sequential
-        "md:border-r-0",
-        index < total - 1 && "md:border-r md:border-white/15",
+        "flex flex-col justify-start px-4 py-8 text-left md:px-6",
+        wide && "md:col-span-2",
+        index < total - 1 && "border-b border-white/15 md:border-b-0 md:border-r md:border-white/15",
       )}
     >
       <p
         className={cn(
           "font-display font-bold !text-white",
           isTextFigure
-            ? "text-[22px] leading-snug md:text-2xl"
-            : "text-4xl md:text-5xl",
+            ? "text-[20px] leading-snug md:text-[20px]"
+            : "text-4xl leading-none md:text-5xl",
         )}
       >
         {cell.textValue ? (
-          <TextValueItems text={cell.textValue} />
+          cell.textValue
         ) : (
           <>
             {cell.prefix ?? ""}
@@ -124,14 +98,7 @@ function StatItem({
           </>
         )}
       </p>
-      <p
-        className={cn(
-          "mt-2 text-[15px] text-white/70",
-          cell.id === "services" ? "leading-[1.4]" : "leading-snug",
-        )}
-      >
-        {cell.label}
-      </p>
+      <p className="mt-2 text-[15px] leading-snug text-white/70">{cell.label}</p>
     </div>
   );
 }
@@ -162,7 +129,7 @@ export function StatsStrip() {
       aria-label="Electech at a glance"
       className="relative z-[2] bg-navy"
     >
-      <div className="container-site grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+      <div className="container-site grid grid-cols-1 md:grid-cols-4">
         {cells.map((cell, i) => (
           <StatItem
             key={cell.id}
@@ -170,6 +137,7 @@ export function StatsStrip() {
             active={active}
             index={i}
             total={cells.length}
+            wide={cell.id === "sectors" || Boolean(cell.textValue)}
           />
         ))}
       </div>
