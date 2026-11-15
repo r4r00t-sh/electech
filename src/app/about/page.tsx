@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
   title: "About Electech | Trusted MEP Contractor in Dubai",
   description:
     "Learn about Electech's UAE MEP experience, accountable delivery and practical engineering approach.",
-  image: "/images/pages/electrical-installation-work.jpg",
+  image: "/images/pages/about-glass-tower.jpg",
   path: "/about",
   absoluteTitle: true,
 });

@@ -41,6 +41,7 @@ export async function generateMetadata({
       story.scope.slice(0, 157).replace(/\s+\S*$/, "") + "…",
     path: `/projects/${story.slug}`,
     image: getStoryOgImage(story),
+    absoluteTitle: true,
   });
 }
 
