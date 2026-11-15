@@ -16,26 +16,39 @@ export type StatCell = {
   animate?: boolean;
 };
 
-function useCountUp(target: number, active: boolean, duration = 1200) {
-  const [value, setValue] = useState(0);
+function useCountUp(
+  target: number,
+  active: boolean,
+  enabled: boolean,
+  duration = 1200,
+) {
+  // Start at the final value for SSR / screen readers; animate once in view.
+  const [value, setValue] = useState(target);
+  const [done, setDone] = useState(false);
   const reduce = useReducedMotion();
 
   useEffect(() => {
-    if (!active) return;
+    if (!enabled || !active || done) return;
     if (reduce || target <= 0) {
       setValue(target);
+      setDone(true);
       return;
     }
+    setValue(0);
     let frame = 0;
     const start = performance.now();
     const tick = (now: number) => {
       const progress = Math.min(1, (now - start) / duration);
       setValue(Math.round(target * progress));
-      if (progress < 1) frame = requestAnimationFrame(tick);
+      if (progress < 1) {
+        frame = requestAnimationFrame(tick);
+      } else {
+        setDone(true);
+      }
     };
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
-  }, [active, target, duration, reduce]);
+  }, [active, target, duration, reduce, enabled, done]);
 
   return value;
 }
@@ -53,8 +66,11 @@ function StatItem({
     Boolean(cell.animate) &&
     typeof cell.value === "number" &&
     !cell.textValue;
-  const counted = useCountUp(cell.value ?? 0, active && shouldAnimate);
-  const displayNumber = shouldAnimate ? counted : (cell.value ?? 0);
+  const displayNumber = useCountUp(
+    cell.value ?? 0,
+    active,
+    shouldAnimate,
+  );
 
   return (
     <div className={cn("px-4 py-6 text-center md:px-6 md:text-left", className)}>
