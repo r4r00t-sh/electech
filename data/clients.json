@@ -7,7 +7,7 @@
     "sourceFile": "clients/client-oaks-02.jpeg",
     "order": 1,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -18,7 +18,7 @@
     "sourceFile": "clients/client-movenpick-02.jpeg",
     "order": 2,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -29,7 +29,7 @@
     "sourceFile": "clients/client-mall-of-the-emirates-02.jpeg",
     "order": 3,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -40,7 +40,7 @@
     "sourceFile": "clients/client-circle-mall-02.jpeg",
     "order": 4,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -52,7 +52,7 @@
     "order": 5,
     "featured": true,
     "storySlug": "mep-works-sofitel-hotel",
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -63,7 +63,7 @@
     "sourceFile": "clients/client-dubai-mall-02.jpeg",
     "order": 6,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -75,7 +75,7 @@
     "order": 7,
     "featured": true,
     "storySlug": "mep-works-innovative-food-outlet-imdaad",
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -86,7 +86,7 @@
     "sourceFile": "clients/client-damac-02.jpeg",
     "order": 8,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -97,7 +97,7 @@
     "sourceFile": "clients/client-wasl-02.jpeg",
     "order": 9,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -108,7 +108,7 @@
     "sourceFile": "clients/client-at-group-02.jpeg",
     "order": 10,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -119,7 +119,7 @@
     "sourceFile": "clients/client-nakheel-02.jpeg",
     "order": 11,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -131,7 +131,7 @@
     "order": 12,
     "featured": true,
     "storySlug": "mep-works-amazon-ecommerce-office",
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -142,7 +142,7 @@
     "sourceFile": "clients/client-summertown-02.jpeg",
     "order": 13,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -153,7 +153,7 @@
     "sourceFile": "clients/client-emaar-02.jpeg",
     "order": 14,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -164,7 +164,7 @@
     "sourceFile": "clients/client-multiline-02.jpeg",
     "order": 15,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -175,7 +175,7 @@
     "sourceFile": "clients/client-vaa-02.jpeg",
     "order": 16,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -186,7 +186,7 @@
     "sourceFile": "clients/client-al-barari-02.jpeg",
     "order": 17,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -197,7 +197,7 @@
     "sourceFile": "clients/client-arco-02.jpeg",
     "order": 18,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -209,7 +209,7 @@
     "order": 19,
     "featured": true,
     "storySlug": "mep-works-etisalat-kifaf",
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -220,7 +220,7 @@
     "sourceFile": "clients/client-dubai-hills-02.jpeg",
     "order": 20,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -231,7 +231,7 @@
     "sourceFile": "clients/client-ibn-battuta-02.jpeg",
     "order": 21,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -242,7 +242,7 @@
     "sourceFile": "clients/client-kg-interiors-02.jpeg",
     "order": 22,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -253,7 +253,7 @@
     "sourceFile": "clients/client-liva-02.jpeg",
     "order": 23,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -264,7 +264,7 @@
     "sourceFile": "clients/client-jll-02.jpeg",
     "order": 24,
     "featured": true,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -275,7 +275,7 @@
     "sourceFile": "clients/client-visualize-02.jpeg",
     "order": 25,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -286,7 +286,7 @@
     "sourceFile": "clients/client-axis-02.jpeg",
     "order": 26,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -297,7 +297,7 @@
     "sourceFile": "clients/client-enfm-02.jpeg",
     "order": 27,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -309,7 +309,7 @@
     "order": 28,
     "featured": false,
     "storySlug": "mep-works-real-image-headquarters",
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -321,7 +321,7 @@
     "order": 29,
     "featured": false,
     "storySlug": "mep-works-ascentia-office",
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -332,7 +332,7 @@
     "sourceFile": "clients/client-grand-hyatt-02.jpeg",
     "order": 30,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -343,7 +343,7 @@
     "sourceFile": "clients/client-barr-wray-02.jpeg",
     "order": 31,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -354,7 +354,7 @@
     "sourceFile": "clients/client-aew-technik-02.jpeg",
     "order": 32,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -365,7 +365,7 @@
     "sourceFile": "clients/client-royal-classic-02.jpeg",
     "order": 33,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -376,7 +376,7 @@
     "sourceFile": "clients/client-cri-02.jpeg",
     "order": 34,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -387,7 +387,7 @@
     "sourceFile": "clients/client-kalandoor-03.jpeg",
     "order": 35,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -398,7 +398,7 @@
     "sourceFile": "clients/client-vogo-grand-02.jpeg",
     "order": 36,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -409,7 +409,7 @@
     "sourceFile": "clients/client-mebs-02.jpeg",
     "order": 37,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -420,7 +420,7 @@
     "sourceFile": "clients/client-marriott-02.jpeg",
     "order": 38,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   },
   {
@@ -431,7 +431,7 @@
     "sourceFile": "clients/client-ritz-carlton-02.jpeg",
     "order": 39,
     "featured": false,
-    "approved": false,
+    "approved": true,
     "relationship": "unknown"
   }
 ]
