@@ -1,0 +1,34 @@
+[
+  {
+    "id": "years",
+    "show": true,
+    "value": 14,
+    "suffix": "+",
+    "prefix": "",
+    "label": "Years of UAE operations",
+    "animate": true
+  },
+  {
+    "id": "iso",
+    "show": true,
+    "textValue": "ISO 9001 | ISO 14001 | ISO 45001",
+    "label": "Company-confirmed certifications",
+    "animate": false
+  },
+  {
+    "id": "services",
+    "show": true,
+    "value": 5,
+    "suffix": "",
+    "prefix": "",
+    "label": "Service areas: Integrated MEP, Mechanical & Plumbing, Electrical, Fire Protection Support, Maintenance",
+    "animate": true
+  },
+  {
+    "id": "property-types",
+    "show": true,
+    "textValue": "Offices | Premium villas | Retail & F&B | Hospitality",
+    "label": "Property types served",
+    "animate": false
+  }
+]

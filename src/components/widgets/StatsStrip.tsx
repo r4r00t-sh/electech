@@ -2,7 +2,19 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
-import { siteConfig } from "@/content/site";
+import statsData from "../../../data/stats.json";
+import { cn } from "@/lib/utils";
+
+export type StatCell = {
+  id: string;
+  show: boolean;
+  value?: number;
+  suffix?: string;
+  prefix?: string;
+  textValue?: string;
+  label: string;
+  animate?: boolean;
+};
 
 function useCountUp(target: number, active: boolean, duration = 1200) {
   const [value, setValue] = useState(0);
@@ -29,48 +41,47 @@ function useCountUp(target: number, active: boolean, duration = 1200) {
 }
 
 function StatItem({
-  value,
-  label,
-  suffix,
-  prefix,
-  placeholder,
-  textValue,
+  cell,
   active,
+  className,
 }: {
-  value: number;
-  label: string;
-  suffix: string;
-  prefix: string;
-  placeholder?: string;
-  textValue?: string;
+  cell: StatCell;
   active: boolean;
+  className?: string;
 }) {
-  const counted = useCountUp(value, active);
+  const shouldAnimate =
+    Boolean(cell.animate) &&
+    typeof cell.value === "number" &&
+    !cell.textValue;
+  const counted = useCountUp(cell.value ?? 0, active && shouldAnimate);
+  const displayNumber = shouldAnimate ? counted : (cell.value ?? 0);
+
   return (
-    <div className="text-center md:text-left">
+    <div className={cn("px-4 py-6 text-center md:px-6 md:text-left", className)}>
       <p className="font-display text-3xl font-bold text-navy md:text-4xl">
-        {textValue ? (
-          <span className="block text-base font-semibold leading-snug text-navy">
-            {textValue}
+        {cell.textValue ? (
+          <span className="block text-lg font-semibold leading-snug text-navy md:text-xl">
+            {cell.textValue}
           </span>
-        ) : placeholder && value === 0 ? (
-          <span className="text-base font-semibold text-slate">{placeholder}</span>
         ) : (
           <>
-            {prefix}
-            {counted}
-            {suffix}
+            {cell.prefix ?? ""}
+            <span>{displayNumber}</span>
+            {cell.suffix ?? ""}
           </>
         )}
       </p>
-      <p className="mt-1 text-sm text-slate">{label}</p>
+      <p className="mt-2 text-[14px] leading-snug text-slate md:text-[15px]">
+        {cell.label}
+      </p>
     </div>
   );
 }
 
 export function StatsStrip() {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [active, setActive] = useState(false);
+  const cells = (statsData as StatCell[]).filter((c) => c.show);
 
   useEffect(() => {
     const el = ref.current;
@@ -85,14 +96,38 @@ export function StatsStrip() {
     return () => observer.disconnect();
   }, []);
 
+  if (!cells.length) return null;
+
   return (
-    <div
+    <section
       ref={ref}
-      className="grid gap-8 rounded-[var(--radius-card)] border border-navy/8 bg-white p-6 shadow-[var(--shadow-card)] sm:grid-cols-2 lg:grid-cols-4 lg:p-8"
+      aria-label="Electech at a glance"
+      className="border-y border-navy/10 bg-mist"
     >
-      {siteConfig.stats.map((stat) => (
-        <StatItem key={stat.label} {...stat} active={active} />
-      ))}
-    </div>
+      <div className="container-site">
+        <div
+          className={cn(
+            "grid grid-cols-1 divide-y divide-navy/10 sm:grid-cols-2 sm:divide-y-0",
+            cells.length >= 4
+              ? "lg:grid-cols-4 lg:divide-x lg:divide-navy/10"
+              : cells.length === 3
+                ? "lg:grid-cols-3 lg:divide-x lg:divide-navy/10"
+                : "lg:grid-cols-2 lg:divide-x lg:divide-navy/10",
+          )}
+        >
+          {cells.map((cell, i) => (
+            <StatItem
+              key={cell.id}
+              cell={cell}
+              active={active}
+              className={cn(
+                // tablet: vertical divider between columns in each row
+                i % 2 === 1 && "sm:border-l sm:border-navy/10 lg:border-l-0",
+              )}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

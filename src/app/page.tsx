@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
+import { StatsStrip } from "@/components/widgets/StatsStrip";
 import { BUCKETS } from "@/lib/buckets";
 import {
   getStoryDisplayImage,
@@ -64,6 +65,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <StatsStrip />
 
       <Section>
         <h2 className="mb-8 text-[2.5rem] font-bold text-navy md:text-[2.75rem]">
