@@ -9,7 +9,7 @@ export const metadata = pageMetadata({
   title: "Careers at Electech Dubai",
   description:
     "Explore careers and opportunities in mechanical, electrical and plumbing services.",
-  image: "/images/heroes/hero-02-electrical-installation.jpg",
+  image: "/images/pages/who-we-are-construction.jpg",
   path: "/careers",
   absoluteTitle: true,
 });
@@ -18,7 +18,7 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
-        media={pageHeroes.whoWeAre}
+        media={pageHeroes.careers}
         title="Build Your Career with Electech"
         intro="We welcome applications from professionals who value workmanship, safety, teamwork and accountability in MEP delivery. Current vacancies will be published here when available."
         crumbs={[{ label: "Careers" }]}
@@ -49,7 +49,10 @@ export default function CareersPage() {
       </Section>
 
       <Section tone="mist">
-        <CtaBanner title="Explore Opportunities" buttonLabel="Contact Electech" />
+        <CtaBanner
+          title="Contact Electech"
+          buttonLabel="Contact Electech"
+        />
       </Section>
     </>
   );

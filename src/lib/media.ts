@@ -16,6 +16,8 @@ import type { BucketId } from "@/lib/buckets";
 export type MediaRef = {
   src: string;
   alt: string;
+  /** One-line system caption for project galleries */
+  caption?: string;
   lowRes?: boolean;
   /** Silent navy fallback — never shows visitor-facing placeholder copy */
   placeholder?: boolean;
@@ -220,6 +222,16 @@ export const pageHeroes = {
     alt: "Electech electrical installation works on site.",
     objectPosition: "center center",
   },
+  careers: {
+    src: "/images/pages/who-we-are-construction.jpg",
+    alt: "Construction and building-services site activity.",
+    objectPosition: "center 40%",
+  },
+  industries: {
+    src: "/images/projects/works/office-commercial-fitout-01.jpg",
+    alt: "Commercial office fit-out with exposed MEP ceiling services.",
+    objectPosition: "center center",
+  },
   insights: {
     src: "/images/pages/insights-technical-desk.jpg",
     alt: "Architectural drawings and technical plans on a study desk.",
@@ -338,8 +350,24 @@ export const storyImages: Record<string, MediaRef> = {
   },
 };
 
-/** Inline gallery — only verified Electech works photos. Empty = no gallery. */
-export const storyGalleryImages: Record<string, MediaRef[]> = {};
+/**
+ * Inline gallery — only verified Electech installation photos matched to that project.
+ * Villa case studies: no dedicated villa installation uploads yet → empty (navy hero tile).
+ */
+export const storyGalleryImages: Record<string, MediaRef[]> = {
+  "dubai-hills-villa-256": [],
+  "dubai-hills-villa-39": [],
+  "damac-hills-villa-f307f": [],
+};
+
+/** Per-project OG JPEG (1200×630) — used when the page hero is a navy tile. */
+export const storyOgImages: Record<string, string> = {
+  "dubai-hills-villa-256":
+    "/images/projects/og/dubai-hills-villa-256-og.jpg",
+  "dubai-hills-villa-39": "/images/projects/og/dubai-hills-villa-39-og.jpg",
+  "damac-hills-villa-f307f":
+    "/images/projects/og/damac-hills-villa-f307f-og.jpg",
+};
 
 export const serviceHeroImages: Record<string, MediaRef> = {
   mep: {
@@ -452,7 +480,7 @@ export function getStoryDisplayImage(
   };
 }
 
-/** OG image for a project page — own hero when available; never mep-industrial stand-in. */
+/** OG image for a project page — own hero JPG/PNG when available; never og-default.svg. */
 export function getStoryOgImage(
   story: {
     slug: string;
@@ -463,8 +491,9 @@ export function getStoryOgImage(
   },
 ): string {
   const display = getStoryDisplayImage(story);
-  if (display.src) return display.src;
-  return "/images/og-default.svg";
+  if (display.src && !display.src.endsWith(".svg")) return display.src;
+  if (storyOgImages[story.slug]) return storyOgImages[story.slug]!;
+  return "/images/projects/og/dubai-hills-villa-256-og.jpg";
 }
 
 export function getStoryGallery(slug: string): MediaRef[] {

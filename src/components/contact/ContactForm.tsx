@@ -188,17 +188,16 @@ export function ContactForm() {
       ) : null}
 
       <div
-        className="absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+        className="pointer-events-none absolute -left-[9999px] top-auto h-px w-px overflow-hidden opacity-0"
         aria-hidden="true"
       >
-        <label>
-          Website
-          <input
-            {...register("website")}
-            tabIndex={-1}
-            autoComplete="off"
-          />
-        </label>
+        <label htmlFor="contact-website-hp">Website</label>
+        <input
+          id="contact-website-hp"
+          {...register("website")}
+          tabIndex={-1}
+          autoComplete="off"
+        />
       </div>
 
       {status === "error" ? (

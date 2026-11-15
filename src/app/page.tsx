@@ -216,8 +216,11 @@ export default function HomePage() {
                   {story.title}
                 </h3>
                 <p className="mt-2 line-clamp-3 text-[15px] text-slate-dark">
-                  {story.summary}
+                  {story.scope}
                 </p>
+                <span className="mt-4 inline-flex text-[15px] font-semibold text-navy group-hover:text-green">
+                  View Project
+                </span>
               </div>
             </Link>
           ))}

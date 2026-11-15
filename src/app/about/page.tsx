@@ -50,7 +50,7 @@ export default function AboutLandingPage() {
   return (
     <>
       <PageHero
-        media={pageHeroes.whoWeAre}
+        media={pageHeroes.about}
         title={landing.title}
         intro={landing.intro}
         crumbs={[{ label: "About Us" }]}

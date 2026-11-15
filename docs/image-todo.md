@@ -1,45 +1,50 @@
 # Image TODO — Electech
 
-Slots still waiting for dedicated photography. Until then the site uses client-uploaded works, topic images from `/public/images/pages` (matched by subject), or silent navy tiles — **never** visitor-facing “[CLIENT TO PROVIDE photo]” text and **never** a stock photo of a different project.
+Slots still waiting for dedicated photography. Until then the site uses client-uploaded works, topic images from `/public/images/pages` (matched by subject), or silent navy tiles — **never** visitor-facing “[CLIENT TO PROVIDE photo]” text and **never** a photo of a different project.
 
 ## Wired from uploads
 
 | Asset | Path | Used for |
 |-------|------|----------|
-| Restaurant / F&B works | `projects/works/restaurant-dining-interior-01.jpg`, `restaurant-bar-lounge-01.jpg` | Imdaad / hospitality / F&B sectors |
-| Commercial office | `projects/works/office-commercial-fitout-01.jpg` | Amazon story; Commercial sector |
-| Art gallery / retail | `projects/works/retail-art-gallery-interior-01.jpg` | Atelier DIFC; Retail sector |
-| Government / Etisalat office | `projects/works/office-etisalat-open-plan-01.jpg` | Etisalat story |
-| Client logos | `clients/client-*.jpg` | Homepage logo strip + `/clients` (when approved) |
-| ISO board | `certs/iso-board.jpg` | Homepage + Certifications (`object-contain`) |
+| Restaurant / F&B works | `projects/works/restaurant-dining-interior-01.jpg`, `restaurant-bar-lounge-01.jpg` | Hospitality industry card; legacy hospitality stories |
+| Commercial office | `projects/works/office-commercial-fitout-01.jpg` | Industries hero + Commercial Offices card |
+| Art gallery / retail | `projects/works/retail-art-gallery-interior-01.jpg` | Retail & F&B industry card |
+| Government / Etisalat office | `projects/works/office-etisalat-open-plan-01.jpg` | Etisalat legacy story only |
+| Client logos | `clients/client-*.jpg` | `/clients` (when approved) |
+| ISO board | `certs/iso-board.jpg` | Certifications |
+| Project OG placeholders | `projects/og/*-og.jpg` (1200×630 navy JPG) | Villa project `og:image` until heroes exist |
 
 ## Villa / featured projects (priority)
 
-| Project | Status | Notes |
-|---------|--------|-------|
-| Dubai Hills Villa 256 | Navy tile | Need Electech installation photos: façade/landscape lighting, garage floor LEDs, DB/SMDB, pump/filtration, jacuzzi/sauna/BBQ/pergola provisions |
-| Dubai Hills Villa 39 | Navy tile | Need Electech photos: architectural/concealed lighting, sanitaryware, pumping/plumbing |
-| DAMAC Hills Villa F307F | Navy tile | Need Electech photos: HVAC mods, electrical/lighting, sanitary/drainage; filtration only if confirmed installed |
+No villa-specific installation uploads are in `/public/images` yet (works folder is offices/restaurants/retail only; `/pages` are stock). Heroes therefore stay **navy tiles with icons**; galleries stay empty until matched Electech photos arrive.
 
-## Legacy stories still on navy tiles
+| Project | Status | Needed (matched by system, captioned) |
+|---------|--------|----------------------------------------|
+| Dubai Hills Villa 256 | Navy hero + empty gallery | Façade/landscape lighting, garage floor LEDs, DB/SMDB, pump/filtration, jacuzzi/sauna/BBQ/pergola provisions |
+| Dubai Hills Villa 39 | Navy hero + empty gallery | Architectural/concealed lighting, sanitaryware, pumping/plumbing |
+| DAMAC Hills Villa F307F | Navy hero + empty gallery | HVAC mods, electrical/lighting, sanitary/drainage; filtration only if confirmed installed |
 
-Al Zahiya, Sofitel, Real Image, Smart Salem, two-bedroom flat, GTZ, Anex, Ascentia — supply verified Electech works photos or keep navy tiles.
+## Industry cards
 
-## Older brief sector labels (not on homepage)
-
-Client-revision sector list is used on the homepage (Residential, Commercial, Retail, Hospitality, F&B, Industrial, Building Maintenance). If Healthcare / Government / Facility management / Villa developers tiles are required later:
-
-| Sector | Status | Suggested |
-|--------|--------|-----------|
-| Healthcare | No medical interior in library | `/public/images/sectors/healthcare.jpg` |
-| Government | Can reuse Etisalat civic/office | already have office open-plan |
-| Facility management | Can reuse plant/technician | `maintenance-workshop.jpg` |
-| Villa developers | No villa exterior | `/public/images/sectors/villa-developers.jpg` |
-
-## Insights covers
-
-| Post | Status |
+| Card | Status |
 |------|--------|
-| mep-handover-package | Using certifications/documents desk photo |
-| hvac-installation-checklist-dubai | Using HVAC topic photo |
-| electrical-distribution-boards-fit-outs | Using electrical installation photo |
+| Commercial Offices | Real photo (office fit-out) |
+| Premium Residential Villas | Navy tile + Home icon |
+| Retail & F&B | Real photo (retail gallery) |
+| Hospitality | Real photo (dining interior) |
+| Other Facilities | Navy tile + Warehouse icon |
+
+## Page heroes (must stay distinct)
+
+| Page | Asset |
+|------|--------|
+| About | `pages/about-glass-tower.jpg` |
+| Careers | `pages/who-we-are-construction.jpg` |
+| Industries | `projects/works/office-commercial-fitout-01.jpg` |
+
+## Do not reuse for villa galleries
+
+- Stock Unsplash/Pexels under `pages/` and `heroes/`
+- Legacy `services/` stock
+- Other-project works (Etisalat / restaurant / retail) attributed to villas
+- Welding / fabrication stock (`why-choose-workshop.jpg` — orphaned on disk)

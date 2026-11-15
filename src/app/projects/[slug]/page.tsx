@@ -35,8 +35,10 @@ export async function generateMetadata({
   const story = getStoryBySlug(slug);
   if (!story || story.published === false) return {};
   return pageMetadata({
-    title: story.title,
-    description: story.summary,
+    title: `${story.title} | Electech MEP Project`,
+    description:
+      story.metaDescription ??
+      story.scope.slice(0, 157).replace(/\s+\S*$/, "") + "…",
     path: `/projects/${story.slug}`,
     image: getStoryOgImage(story),
   });
@@ -138,12 +140,19 @@ export default async function StoryPage({
             {gallery.length ? (
               <div className="my-8 grid gap-4 not-prose md:grid-cols-2">
                 {gallery.map((img) => (
-                  <div
+                  <figure
                     key={`${img.src}-${img.alt}`}
-                    className="relative aspect-[4/3] overflow-hidden rounded-md"
+                    className="overflow-hidden rounded-md"
                   >
-                    <PhotoMedia image={img} sizes="50vw" />
-                  </div>
+                    <div className="relative aspect-[4/3]">
+                      <PhotoMedia image={img} sizes="50vw" />
+                    </div>
+                    {img.caption ? (
+                      <figcaption className="mt-2 text-[14px] text-slate">
+                        {img.caption}
+                      </figcaption>
+                    ) : null}
+                  </figure>
                 ))}
               </div>
             ) : null}

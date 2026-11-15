@@ -118,13 +118,22 @@ export function ServicePageView({
     service.howWeWork.length > 0 &&
     !service.overview.includes("How We Work") &&
     !service.overview.includes("Delivery Sequence");
-  const featuredProjects =
-    service.bucket === "mep" ||
-    service.bucket === "fire-protection" ||
-    service.bucket === "mechanical-plumbing" ||
-    service.bucket === "electrical"
-      ? getFeaturedStories(3)
-      : [];
+  const featuredProjects = (() => {
+    if (service.slug === "extra-low-voltage-installation") {
+      return getFeaturedStories(10).filter((s) =>
+        ["dubai-hills-villa-256", "dubai-hills-villa-39"].includes(s.slug),
+      );
+    }
+    if (
+      service.bucket === "mep" ||
+      service.bucket === "fire-protection" ||
+      service.bucket === "mechanical-plumbing" ||
+      service.bucket === "electrical"
+    ) {
+      return getFeaturedStories(3);
+    }
+    return [];
+  })();
   const sectorsHeading =
     service.slug === "mechanical-plumbing"
       ? "Use cases"

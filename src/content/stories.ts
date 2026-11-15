@@ -24,6 +24,8 @@ export const stories: Story[] = [
     scope:
       "Electech delivered an extensive package of electrical, plumbing and specialist MEP works for a premium villa, integrating distribution upgrades, architectural lighting, water systems and dedicated provisions for lifestyle facilities.",
     status: "Completed - MEP handover.",
+    metaDescription:
+      "Electech delivered electrical, plumbing and specialist MEP works for Dubai Hills Villa 256: distribution, lighting, water systems and lifestyle provisions.",
     summary:
       "Electech delivered extensive electrical, plumbing and specialist MEP installations for a premium residential villa, integrating lighting, power distribution, water systems and lifestyle facilities within the property's architectural design.",
     body: `Electech delivered extensive electrical, plumbing and specialist MEP installations for a premium residential villa, integrating lighting, power distribution, water systems and lifestyle facilities within the property's architectural design.
@@ -55,6 +57,8 @@ Works were coordinated with existing architectural finishes, followed by applica
     scope:
       "Electech delivered comprehensive electrical and plumbing enhancements integrated with the villa's architectural finishes and specialist service requirements.",
     status: "Completed.",
+    metaDescription:
+      "Electech delivered electrical and plumbing upgrades for Dubai Hills Villa 39, coordinated with architectural finishes and specialist service requirements.",
     summary:
       "Electech successfully delivered comprehensive electrical and plumbing works, including distribution modifications, architectural and landscape lighting, concealed LED lighting, power provisions, ELV/DALI/automation containment, pump system enhancements and premium sanitaryware installations.",
     body: `Electech successfully delivered comprehensive electrical and plumbing works, including distribution modifications, architectural and landscape lighting, concealed LED lighting, power provisions, ELV/DALI/automation containment, pump system enhancements and premium sanitaryware installations.
@@ -87,6 +91,8 @@ The project was executed with careful coordination of architectural finishes, fo
     scope:
       "Electech undertook MEP renovation and modification works to accommodate updated electrical, HVAC, plumbing and interior service requirements, coordinating with the main contractor's approved designs.",
     status: "MEP handover completed.",
+    metaDescription:
+      "Electech completed MEP renovation works at DAMAC Hills Villa F307F: electrical, HVAC, plumbing and lighting coordinated with the main contractor's designs.",
     summary:
       "Complete MEP renovation and modification works covering electrical and lighting systems, HVAC duct modifications, AC grilles and exhaust ventilation, plumbing, drainage, water filtration provisions, rainwater adjustments and sanitaryware installation. The scope includes the supply and installation of LED lighting, drivers, profiles, motion sensors, decorative fixtures and electrical provisions for smart home and client-selected equipment.",
     body: `Complete MEP renovation and modification works covering electrical and lighting systems, HVAC duct modifications, AC grilles and exhaust ventilation, plumbing, drainage, water filtration provisions, rainwater adjustments and sanitaryware installation. The scope includes the supply and installation of LED lighting, drivers, profiles, motion sensors, decorative fixtures and electrical provisions for smart home and client-selected equipment.

@@ -66,11 +66,11 @@ export function ClientSuccessStories({
                     <h3 className="mt-2 font-display text-xl font-bold text-navy transition-colors group-hover:text-green">
                       {story.title}
                     </h3>
-                    <p className="mt-2 line-clamp-2 text-[15px] text-slate-dark">
-                      {story.summary}
+                    <p className="mt-2 line-clamp-3 text-[15px] text-slate-dark">
+                      {story.scope}
                     </p>
                     <span className="mt-4 inline-flex items-center gap-2 text-[15px] font-semibold text-navy group-hover:text-green">
-                      Read story <ArrowRight className="h-4 w-4" />
+                      View Project <ArrowRight className="h-4 w-4" />
                     </span>
                   </div>
                 </Link>

@@ -20,6 +20,8 @@ export type Story = {
   status: string;
   year?: string;
   summary: string;
+  /** Unique meta description (150–160 chars) derived from overview — not the full summary. */
+  metaDescription?: string;
   /** Short accurate scope text; no filler padding. */
   body: string;
   highlights?: string[];
