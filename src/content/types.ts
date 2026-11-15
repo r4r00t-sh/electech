@@ -32,11 +32,8 @@ export type Story = {
     verified: boolean;
   };
   featured?: boolean;
-  /**
-   * Hidden from /projects, related lists and sitemap until highlights and/or
-   * a verified photo exist. Direct URLs 404 while draft.
-   */
-  draft?: boolean;
+  /** When false, excluded from lists/sitemap and redirected to /projects. Default true for new entries. */
+  published?: boolean;
 };
 
 export type Testimonial = {
@@ -64,6 +61,8 @@ export type BlogPost = {
   ogImage: string;
   ogAlt: string;
   featured?: boolean;
+  /** Unreviewed insights stay unpublished until client review. */
+  published?: boolean;
 };
 
 export type Certification = {

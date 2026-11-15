@@ -1,16 +1,17 @@
 import { PageHero } from "@/components/layout/PageHero";
-import { Section, SectionHeading } from "@/components/ui/Section";
+import { Section } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { aboutContent } from "@/content/about";
 import { pageMetadata } from "@/lib/seo";
 import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
-  title: "Why Choose Electech?",
+  title: "Why Choose Electech | Practical MEP Delivery",
   description:
-    "Practical engineering, reliable delivery and accountable service from Electech Electromechanical Works LLC.",
-  image: "/images/pages/why-choose-workshop.jpg",
+    "Electech combines UAE project experience with direct technical involvement, responsive communication and accountable delivery.",
+  image: "/images/pages/electrical-installation-work.jpg",
   path: "/about/why-choose-us",
+  absoluteTitle: true,
 });
 
 export default function WhyChooseUsPage() {
@@ -20,27 +21,23 @@ export default function WhyChooseUsPage() {
       <PageHero
         media={pageHeroes.whyChoose}
         title={content.title}
-        intro={content.subtitle}
+        intro={content.intro}
         crumbs={[
           { label: "About Us", href: "/about" },
           { label: "Why Choose Us" },
         ]}
       />
       <Section>
-        <p className="prose-mep max-w-3xl text-slate-dark">{content.intro}</p>
-        <div className="mt-10">
-          <SectionHeading title="What sets us apart" />
-        </div>
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {content.points.map((point) => (
             <div
               key={point.title}
-              className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6"
+              className="rounded-md border border-navy/10 bg-mist p-6"
             >
-              <h2 className="font-display text-xl font-bold text-navy">
+              <h2 className="font-display text-lg font-bold text-navy">
                 {point.title}
               </h2>
-              <p className="mt-2 text-slate">{point.description}</p>
+              <p className="mt-2 text-sm text-slate">{point.description}</p>
             </div>
           ))}
         </div>
@@ -48,7 +45,6 @@ export default function WhyChooseUsPage() {
       <Section tone="mist">
         <CtaBanner
           title={content.closing}
-          description="Share your project requirements and our team will respond with the appropriate next steps."
           buttonLabel="Request a Quotation"
         />
       </Section>

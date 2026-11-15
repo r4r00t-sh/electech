@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Section } from "@/components/ui/Section";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
@@ -33,28 +33,13 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const story = getStoryBySlug(slug);
-  if (!story || story.draft) return {};
+  if (!story || story.published === false) return {};
   return pageMetadata({
     title: story.title,
     description: story.summary,
     path: `/projects/${story.slug}`,
     image: getStoryOgImage(story),
   });
-}
-
-function attribution(role: string, company: string) {
-  const r = role?.trim() ?? "";
-  const c = company?.trim() ?? "";
-  if (!c) return r;
-  if (r.includes(c)) return r;
-  return [r, c].filter(Boolean).join(", ");
-}
-
-function showUnverifiedTestimonials() {
-  const env = process.env.SHOW_UNVERIFIED_TESTIMONIALS;
-  if (env === "true") return true;
-  if (env === "false") return false;
-  return process.env.NODE_ENV !== "production";
 }
 
 export default async function StoryPage({
@@ -64,7 +49,7 @@ export default async function StoryPage({
 }) {
   const { slug } = await params;
   const story = getStoryBySlug(slug);
-  if (!story || story.draft) notFound();
+  if (!story || story.published === false) notFound();
 
   const { prev, next } = getAdjacentStories(slug);
   const related = getRelatedStories(story, 3);
@@ -82,16 +67,11 @@ export default async function StoryPage({
     publisher: { "@type": "Organization", name: siteConfig.legalName },
   };
 
-  const showTestimonial =
-    story.testimonial &&
-    (story.testimonial.verified || showUnverifiedTestimonials());
-
   const facts = [
     ["Location", story.location],
     story.sector ? ["Sector", story.sector] : null,
     ["Electech scope", story.scope],
     ["Status", story.status],
-    story.client ? ["Client", story.client] : null,
   ].filter(Boolean) as [string, string][];
 
   return (
@@ -168,20 +148,6 @@ export default async function StoryPage({
               </div>
             ) : null}
 
-            {showTestimonial && story.testimonial ? (
-              <figure className="my-10 rounded-md border border-navy/10 bg-mist p-6 md:p-8">
-                <Quote className="h-8 w-8 text-green" aria-hidden />
-                <blockquote className="mt-4 text-xl font-medium text-navy">
-                  “{story.testimonial.quote}”
-                </blockquote>
-                <figcaption className="mt-4 text-[15px] text-slate-dark">
-                  {attribution(
-                    story.testimonial.role,
-                    story.testimonial.company,
-                  )}
-                </figcaption>
-              </figure>
-            ) : null}
           </article>
 
           <aside className="h-fit rounded-md border border-navy/10 bg-mist p-6 lg:sticky lg:top-24">

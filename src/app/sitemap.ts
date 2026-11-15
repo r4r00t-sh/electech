@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { getPublishedStories } from "@/content/stories";
-import { posts } from "@/content/posts";
 import { getSiteUrl } from "@/lib/seo";
 
 const staticRoutes = [
@@ -25,8 +24,9 @@ const staticRoutes = [
   "/solutions/fire-protection/fire-stopping-sealant-application",
   "/solutions/maintenance",
   "/projects",
-  "/insights",
+  "/industries",
   "/contact",
+  // /insights unpublished until reviewed articles exist
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -46,11 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
-    ...posts.map((post) => ({
-      url: `${origin}/insights/${post.slug}`,
-      lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
-      changeFrequency: "monthly" as const,
-      priority: 0.5,
-    })),
+    // Insights posts excluded while unpublished
   ];
 }

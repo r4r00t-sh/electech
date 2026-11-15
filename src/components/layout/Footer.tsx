@@ -1,18 +1,18 @@
 import Link from "next/link";
-import { Phone, Mail, MessageCircle } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { BUCKETS } from "@/lib/buckets";
 import { siteConfig } from "@/content/site";
 import { whatsappLink } from "@/lib/utils";
 
-const quickLinks = [
-  { label: "About Us", href: "/about" },
-  { label: "Who We Are", href: "/about/who-we-are" },
-  { label: "Why Choose Us", href: "/about/why-choose-us" },
-  { label: "Our Clients", href: "/clients" },
+const companyLinks = [
+  { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
-  { label: "Insights", href: "/insights" },
+  { label: "Industries", href: "/industries" },
+  { label: "Clients", href: "/clients" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
+  { label: "Privacy notice", href: "/privacy" },
 ];
 
 export function Footer() {
@@ -24,14 +24,15 @@ export function Footer() {
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
             {siteConfig.footerTagline}
           </p>
+          <p className="mt-3 text-sm font-medium text-white/85">
+            {siteConfig.legalName}
+          </p>
         </div>
 
         <div>
-          <h3 className="font-display text-sm font-bold text-white">
-            Quick links
-          </h3>
+          <h3 className="font-display text-sm font-bold text-white">Company</h3>
           <ul className="mt-4 space-y-2">
-            {quickLinks.map((link) => (
+            {companyLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -45,9 +46,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="font-display text-sm font-bold text-white">
-            Our Solutions
-          </h3>
+          <h3 className="font-display text-sm font-bold text-white">Services</h3>
           <ul className="mt-4 space-y-2">
             {BUCKETS.map((bucket) => (
               <li key={bucket.id}>
@@ -71,6 +70,17 @@ export function Footer() {
                   {line}
                 </span>
               ))}
+            </li>
+            <li>
+              <a
+                href={siteConfig.address.mapSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 hover:text-green"
+              >
+                <MapPin className="h-4 w-4 text-green" />
+                View on map
+              </a>
             </li>
             <li>
               <a
@@ -101,6 +111,16 @@ export function Footer() {
                 {siteConfig.email}
               </a>
             </li>
+            <li>
+              <a
+                href={`mailto:${siteConfig.projectsEmail}`}
+                className="inline-flex items-center gap-2 hover:text-green"
+              >
+                <Mail className="h-4 w-4 text-green" />
+                {siteConfig.projectsEmail}
+              </a>
+            </li>
+            <li className="text-white/55">{siteConfig.websiteDisplay}</li>
           </ul>
         </div>
       </div>

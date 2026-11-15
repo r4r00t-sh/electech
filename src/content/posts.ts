@@ -1,11 +1,15 @@
 import type { BlogPost } from "./types";
-import { readingTime } from "@/lib/utils";
 
 /**
- * Insights posts — [CLIENT TO REVIEW] technical accuracy before treating as final.
+ * Insights posts — unpublished until technically reviewed.
  * Do not invent publishedAt; set a real date in this file when confirmed.
  * readingTime is always computed from body word count (~200 wpm, rounded up).
  */
+
+function readingTime(text: string): number {
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
 
 const handoverBody = `
 ## Why handover documentation matters
@@ -114,7 +118,12 @@ const postDefs: Omit<BlogPost, "readingTime">[] = [
 export const posts: BlogPost[] = postDefs.map((post) => ({
   ...post,
   readingTime: readingTime(post.body),
+  published: false,
 }));
+
+export function getPublishedPosts() {
+  return posts.filter((p) => p.published !== false);
+}
 
 /** Consistent reading-time label, e.g. "2 min read". */
 export function formatReadingTime(minutes: number) {

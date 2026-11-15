@@ -39,6 +39,7 @@ The works were completed with careful coordination of existing architectural fin
     ],
     gallery: [],
     featured: true,
+    published: true,
   },
   {
     title: "Dubai Hills Villa 39",
@@ -69,6 +70,7 @@ The project was executed through coordinated site installation, testing, commiss
     ],
     gallery: [],
     featured: true,
+    published: true,
   },
   {
     title: "DAMAC Hills Villa F307F",
@@ -100,6 +102,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
     ],
     gallery: [],
     featured: true,
+    published: true,
   },
 
   // --- Legacy portfolio (draft unless highlights and/or verified photo exist) ---
@@ -119,7 +122,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical works for a residential villa project in Al Zahiya, Sharjah.",
     body: "Electech provided electromechanical works for a residential villa project in Al Zahiya, Sharjah.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "Electech exceeded our expectations in every way. Their attention to detail and dedication to quality were evident throughout the project. We now have a beautiful home that perfectly blends modern amenities with traditional charm.",
@@ -146,7 +149,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical renovation support for a Sofitel Hotel property in Dubai.",
     body: "Electech provided electromechanical renovation support for a Sofitel Hotel property in Dubai.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "The renovation of our flagship property has been a tremendous success. Electech’s dedication to excellence and innovative approach have elevated our guest experience to new heights.",
@@ -159,6 +162,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
   {
     title: "MEP works for Amazon e-commerce office",
     slug: "mep-works-amazon-ecommerce-office",
+    published: false,
     heroImage: "/images/projects/works/office-commercial-fitout-01.jpg",
     heroAlt: "Commercial office MEP fit-out",
     hasVerifiedPhoto: true,
@@ -199,7 +203,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical upgrade works for the Real Image corporate headquarters in Dubai.",
     body: "Electech provided electromechanical upgrade works for the Real Image corporate headquarters in Dubai.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "Electech’s expertise and attention to detail have transformed our headquarters into a modern, efficient workspace. The feedback from our employees has been overwhelmingly positive.",
@@ -226,7 +230,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical upgrade works for Smart Salem Medical Fitness Centre at City Walk, Dubai.",
     body: "Electech provided electromechanical upgrade works for Smart Salem Medical Fitness Centre at City Walk, Dubai.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "Electech’s professionalism and expertise were evident throughout the project. The upgraded facilities have greatly improved our patient care and operational efficiency. We highly recommend their services.",
@@ -239,6 +243,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
   {
     title: "MEP works for Innovative Food Outlet",
     slug: "mep-works-innovative-food-outlet-imdaad",
+    published: false,
     heroImage: "/images/projects/works/restaurant-dining-interior-01.jpg",
     heroAlt: "Food outlet project photography",
     hasVerifiedPhoto: true,
@@ -279,7 +284,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided MEP works for a two-bedroom flat project in Dubai.",
     body: "Electech provided MEP works for a two-bedroom flat project in Dubai.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "Electech turned our flat into a dream home. Their innovative design solutions and attention to detail have made our space both beautiful and functional. We couldn’t be happier with the outcome.",
@@ -292,6 +297,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
   {
     title: "MEP works for Atelier retail store",
     slug: "mep-works-atelier-difc",
+    published: false,
     heroImage: "/images/projects/works/retail-art-gallery-interior-01.jpg",
     heroAlt: "Retail MEP works photography",
     hasVerifiedPhoto: true,
@@ -318,6 +324,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
   {
     title: "MEP works for Etisalat Office, Kifaf",
     slug: "mep-works-etisalat-kifaf",
+    published: false,
     heroImage: "/images/projects/works/office-etisalat-open-plan-01.jpg",
     heroAlt: "Etisalat office MEP works",
     hasVerifiedPhoto: true,
@@ -358,7 +365,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical works for a GTZ Shipping LLC logistics hub in Dubai.",
     body: "Electech provided electromechanical works for a GTZ Shipping LLC logistics hub in Dubai.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "Electech’s innovative solutions and meticulous execution have transformed our logistics hub into a highly efficient and sustainable facility. Their expertise has been invaluable to our operations.",
@@ -385,7 +392,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical modernization works for Anex Building 1st Floor, Hamariya Free Zone, Sharjah.",
     body: "Electech provided electromechanical modernization works for Anex Building 1st Floor, Hamariya Free Zone, Sharjah.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "Electech’s professionalism and expertise were evident throughout the project. The modernization of our office has greatly improved our operational efficiency and the overall environment. We highly recommend their services.",
@@ -412,7 +419,7 @@ All works were coordinated with the Main Contractor's approved designs, client s
       "Electech provided electromechanical works for the Ascentia office project in Dubai.",
     body: "Electech provided electromechanical works for the Ascentia office project in Dubai.",
     gallery: [],
-    draft: true,
+    published: false,
     testimonial: {
       quote:
         "The transformation of our office space has been remarkable. Electech’s innovative design and efficient project management have created an environment that truly enhances our team’s productivity and collaboration.",
@@ -430,9 +437,9 @@ function hasBucket(story: Story, bucket: BucketId) {
   );
 }
 
-/** Published projects only (excludes draft stubs). */
+/** Published projects only (excludes unpublished legacy stories). */
 export function getPublishedStories() {
-  return stories.filter((s) => !s.draft);
+  return stories.filter((s) => s.published !== false);
 }
 
 export function getStoryBySlug(slug: string) {

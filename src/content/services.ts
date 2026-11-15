@@ -28,50 +28,48 @@ export type ServicePage = {
 export const servicePages: ServicePage[] = [
   {
     slug: "mep",
-    title: "Integrated MEP Solutions",
+    title: "Integrated Mechanical, Electrical & Plumbing Solutions",
     bucket: "mep",
     intro:
-      "Coordinated Mechanical, Electrical & Plumbing Services",
+      "Electech delivers coordinated MEP installation, modification, testing and maintenance for offices, villas, retail and hospitality properties. We work with contractors, consultants and owners to manage technical interfaces, site constraints, installation sequencing and handover.",
     overview: `
-Electech delivers integrated MEP installation, modification, testing and maintenance services for commercial offices, residential villas, retail premises, hospitality properties and other building environments.
+Delivery Sequence
 
-Our work covers HVAC and ventilation, electrical distribution, lighting, water supply, drainage, pumping systems and associated building-services infrastructure.
-
-We coordinate with main contractors, consultants and other trades to address technical interfaces, site conditions, installation sequencing and handover requirements.
+Scope review → technical coordination → supervised installation → applicable testing/documentation → handover/support.
 `.trim(),
     keyServices: [
       {
-        title: "Mechanical Services",
+        title: "Mechanical",
         description:
           "Air-conditioning installation and modifications, ventilation, ductwork, equipment connections and maintenance.",
       },
       {
-        title: "Electrical Services",
+        title: "Electrical",
         description:
-          "Power distribution, DB/SMDB installation and modifications, lighting, cabling, containment, EV charging provisions and ELV infrastructure.",
+          "DB/SMDB, cabling, containment, architectural lighting, equipment power, EV provisions and ELV infrastructure.",
       },
       {
-        title: "Plumbing Services",
+        title: "Plumbing",
         description:
-          "Water supply, drainage, sanitary installations, water filtration, pumping systems, pressure controls and solar water heating.",
+          "Water supply, drainage, sanitary installations, filtration, pumps, pressure controls and solar water heating.",
       },
       {
-        title: "Fire Protection Installation Support",
+        title: "Fire Protection Support",
         description:
-          "Fire alarm and firefighting containment, cabling, piping and equipment installation within the approved project scope.",
+          "Defined containment, cabling, piping and equipment installation under the approved project scope.",
       },
       {
-        title: "MEP Maintenance",
+        title: "Maintenance",
         description:
-          "Preventive and corrective maintenance, troubleshooting, system upgrades and annual maintenance contracts.",
+          "Planned and corrective servicing, fault diagnosis, system upgrades and annual maintenance contracts.",
       },
     ],
     howWeWork: [
-      "Scope review and site assessment",
-      "Technical coordination and material planning",
+      "Scope review",
+      "Technical coordination",
       "Supervised installation",
-      "Inspection, applicable testing and documentation",
-      "Handover and maintenance support",
+      "Applicable testing/documentation",
+      "Handover/support",
     ],
     sectors: [
       "Commercial offices",
@@ -81,27 +79,25 @@ We coordinate with main contractors, consultants and other trades to address tec
     ],
     faqs: [
       {
-        question: "Do you undertake both new installations and modifications?",
+        question: "Do you handle both new installations and modifications?",
         answer:
-          "Yes. Electech undertakes MEP installation, alteration, refurbishment and system-upgrade works according to project requirements.",
+          "Yes. Electech undertakes installation, alteration, refurbishment and system-upgrade works according to the agreed project scope.",
       },
       {
-        question:
-          "Do you support occupied commercial offices and residential villas?",
+        question: "Do you work in occupied offices and villas?",
         answer:
-          "Yes. We plan work around access requirements, existing services, operational constraints and protection of completed finishes.",
+          "Yes. Work planning considers access, existing services, operational constraints and protection of finished surfaces.",
       },
       {
-        question: "Can Electech provide maintenance after installation?",
+        question: "Can you provide maintenance after installation?",
         answer:
-          "Yes. Preventive maintenance, corrective works and annual maintenance arrangements can be provided according to the agreed scope.",
+          "Yes. Preventive and corrective services and AMC arrangements are available according to the agreed scope.",
       },
     ],
     heroImage: "/images/pages/mep-industrial-systems.jpg",
     heroAlt: "Coordinated MEP installation including HVAC plant and services",
     ctaTitle: "Request an MEP Quotation",
-    ctaDescription:
-      "Share your project location, drawings or MEP package requirements for a practical quotation.",
+    ctaDescription: "Request MEP Quote",
   },
   {
     slug: "mechanical-plumbing",
@@ -475,96 +471,28 @@ Our services include customized system design, seamless installation, comprehens
   },
   {
     slug: "fire-protection",
-    title: "Fire Protection Support",
-    bucket: "fire-protection",
-    intro:
-      "Fire Alarm & Firefighting Installation Support",
-    overview: `
-Coordinated Installation Works for Building Fire Protection Systems
-
-Electech supports fire alarm and firefighting installation activities as part of commercial, residential and refurbishment projects, working in coordination with building management, main contractors and the responsible approved fire-protection specialists.
-
-Scope and Responsibility
-
-Electech undertakes the installation activities included in its agreed contract scope. System isolation, final integrated testing, commissioning, certification and authority approvals are coordinated with and undertaken by the responsible authorized parties, as applicable.
-
-Our objective is to support accurate installation, clear interface management and smooth handover to the parties responsible for final system acceptance.
-`.trim(),
-    keyServices: [
-      {
-        title: "Fire alarm conduiting and containment",
-        description:
-          "Installation of fire alarm conduiting and containment within the agreed project scope.",
-      },
-      {
-        title: "Fire alarm cabling and associated works",
-        description:
-          "Fire alarm cabling and associated installation works.",
-      },
-      {
-        title: "Detection and alarm equipment",
-        description:
-          "Installation of specified detection and alarm equipment.",
-      },
-      {
-        title: "Firefighting pipework",
-        description:
-          "Firefighting pipework installation and modifications.",
-      },
-      {
-        title: "Firefighting components",
-        description:
-          "Installation and repositioning of specified firefighting components.",
-      },
-      {
-        title: "Installation records and coordination",
-        description:
-          "Preparation of relevant installation records and supporting documentation, coordination of system isolation requests and work permits, and assistance during inspections and final specialist commissioning.",
-      },
-    ],
-    howWeWork: [
-      "Scope review with project stakeholders",
-      "Coordination with approved fire-protection specialists",
-      "Supervised installation within contract scope",
-      "Installation records and supporting documentation",
-      "Handover to parties responsible for final system acceptance",
-    ],
-    sectors: ["Commercial", "Residential", "Refurbishment"],
-    faqs: [],
-    heroImage: "/images/pages/fire-services-corridor.jpg",
-    heroAlt: "Fire protection installation support works",
-    ctaTitle: "Enquire About Fire Protection Installation Support",
-    ctaDescription:
-      "Share the fire alarm or firefighting installation support scope Electech should undertake.",
-  },
-  {
-    slug: "fire-fighting-fire-alarm-installation",
     title: "Fire Alarm & Firefighting Installation Support",
     bucket: "fire-protection",
-    parentHref: "/solutions/fire-protection",
     intro:
-      "Coordinated Installation Works for Building Fire Protection Systems",
+      "Electech supports fire-protection installation activities in coordination with main contractors, building management and responsible approved specialists.",
     overview: `
-Electech supports fire alarm and firefighting installation activities as part of commercial, residential and refurbishment projects, working in coordination with building management, main contractors and the responsible approved fire-protection specialists.
+Our agreed scope may include:
 
-Our scope may include fire alarm conduiting and containment; fire alarm cabling and associated installation works; installation of specified detection and alarm equipment; firefighting pipework installation and modifications; installation and repositioning of specified firefighting components; preparation of relevant installation records and supporting documentation; coordination of system isolation requests and work permits; and assistance during inspections and final specialist commissioning.
+- Fire-alarm conduiting, containment and cabling
+- Installation of specified detection and alarm equipment
+- Firefighting pipework and component modifications
+- Preparation of supporting installation records
+- Coordination of isolation requests and permits
 
-Scope and Responsibility
+Scope Boundary
 
-Electech undertakes the installation activities included in its agreed contract scope. System isolation, final integrated testing, commissioning, certification and authority approvals are coordinated with and undertaken by the responsible authorized parties, as applicable.
-
-Our objective is to support accurate installation, clear interface management and smooth handover to the parties responsible for final system acceptance.
+Electech undertakes preliminary installation activities within its contract. Isolation, final integrated testing, commissioning, certification and authority approvals remain with the responsible authorized parties, as applicable.
 `.trim(),
     keyServices: [
       {
-        title: "Fire alarm conduiting and containment",
+        title: "Fire-alarm conduiting, containment and cabling",
         description:
-          "Installation of fire alarm conduiting and containment within the agreed project scope.",
-      },
-      {
-        title: "Fire alarm cabling",
-        description:
-          "Fire alarm cabling and associated installation works.",
+          "Installation of fire-alarm conduiting, containment and cabling within the agreed project scope.",
       },
       {
         title: "Detection and alarm equipment",
@@ -574,23 +502,83 @@ Our objective is to support accurate installation, clear interface management an
       {
         title: "Firefighting pipework and components",
         description:
-          "Firefighting pipework installation and modifications, and installation or repositioning of specified firefighting components.",
+          "Firefighting pipework and component modifications within the agreed scope.",
+      },
+      {
+        title: "Installation records and permits",
+        description:
+          "Preparation of supporting installation records and coordination of isolation requests and permits.",
       },
     ],
-    howWeWork: [
-      "Agree installation scope with project stakeholders",
-      "Coordinate with approved fire-protection specialists",
-      "Execute supervised installation works",
-      "Prepare installation records and supporting documentation",
-      "Support handover to parties responsible for final acceptance",
-    ],
+    howWeWork: [],
     sectors: ["Commercial", "Residential", "Refurbishment"],
-    faqs: [],
+    faqs: [
+      {
+        question: "Do you provide full fire-system commissioning?",
+        answer:
+          "Electech supports defined preliminary installation works. Final commissioning and certification are handled by the responsible authorized parties.",
+      },
+    ],
+    heroImage: "/images/pages/fire-services-corridor.jpg",
+    heroAlt: "Fire alarm and firefighting installation support",
+    ctaTitle: "Enquire About Fire Protection Installation Support",
+    ctaDescription: "Discuss Fire Installation Package",
+  },
+  {
+    slug: "fire-fighting-fire-alarm-installation",
+    title: "Fire Alarm & Firefighting Installation Support",
+    bucket: "fire-protection",
+    parentHref: "/solutions/fire-protection",
+    intro:
+      "Electech supports fire-protection installation activities in coordination with main contractors, building management and responsible approved specialists.",
+    overview: `
+Our agreed scope may include:
+
+- Fire-alarm conduiting, containment and cabling
+- Installation of specified detection and alarm equipment
+- Firefighting pipework and component modifications
+- Preparation of supporting installation records
+- Coordination of isolation requests and permits
+
+Scope Boundary
+
+Electech undertakes preliminary installation activities within its contract. Isolation, final integrated testing, commissioning, certification and authority approvals remain with the responsible authorized parties, as applicable.
+`.trim(),
+    keyServices: [
+      {
+        title: "Fire-alarm conduiting, containment and cabling",
+        description:
+          "Installation of fire-alarm conduiting, containment and cabling within the agreed project scope.",
+      },
+      {
+        title: "Detection and alarm equipment",
+        description:
+          "Installation of specified detection and alarm equipment.",
+      },
+      {
+        title: "Firefighting pipework and components",
+        description:
+          "Firefighting pipework and component modifications within the agreed scope.",
+      },
+      {
+        title: "Installation records and permits",
+        description:
+          "Preparation of supporting installation records and coordination of isolation requests and permits.",
+      },
+    ],
+    howWeWork: [],
+    sectors: ["Commercial", "Residential", "Refurbishment"],
+    faqs: [
+      {
+        question: "Do you provide full fire-system commissioning?",
+        answer:
+          "Electech supports defined preliminary installation works. Final commissioning and certification are handled by the responsible authorized parties.",
+      },
+    ],
     heroImage: "/images/pages/fire-control-panels.jpg",
     heroAlt: "Fire alarm and firefighting installation support",
     ctaTitle: "Enquire About Fire Protection Installation Support",
-    ctaDescription:
-      "Share the fire alarm or firefighting installation support scope Electech should undertake.",
+    ctaDescription: "Discuss Fire Installation Package",
   },
   {
     slug: "fire-stopping-sealant-application",

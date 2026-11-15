@@ -6,11 +6,12 @@ import { pageMetadata } from "@/lib/seo";
 const slug = "mep";
 
 export const metadata = pageMetadata({
-  title: "MEP Solutions",
+  title: "MEP Services Dubai | Electech",
   description:
-    "Electech delivers integrated MEP installation, modification, testing and maintenance for commercial offices, residential villas, retail and hospitality projects in Dubai.",
+    "Coordinated mechanical, electrical and plumbing installations, upgrades and maintenance.",
   image: "/images/pages/mep-industrial-systems.jpg",
   path: "/solutions/mep",
+  absoluteTitle: true,
 });
 
 export default function Page() {
@@ -19,7 +20,10 @@ export default function Page() {
   return (
     <ServicePageView
       service={service}
-      crumbs={[{ label: "Our Solutions", href: "/solutions" },{ label: "MEP Solutions" }]}
+      crumbs={[
+        { label: "Services", href: "/solutions" },
+        { label: "Integrated MEP" },
+      ]}
     />
   );
 }

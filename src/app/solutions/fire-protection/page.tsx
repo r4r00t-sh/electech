@@ -6,11 +6,12 @@ import { pageMetadata } from "@/lib/seo";
 const slug = "fire-protection";
 
 export const metadata = pageMetadata({
-  title: "Fire Protection Support",
+  title: "Fire Alarm & Firefighting Installation Support | Electech",
   description:
-    "Electech provides fire alarm and firefighting installation support for commercial, residential and refurbishment projects in Dubai.",
+    "Preliminary fire alarm and firefighting installation support with approved specialists.",
   image: "/images/pages/fire-services-corridor.jpg",
   path: "/solutions/fire-protection",
+  absoluteTitle: true,
 });
 
 export default function Page() {

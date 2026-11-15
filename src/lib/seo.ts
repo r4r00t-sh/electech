@@ -11,19 +11,21 @@ export function pageMetadata({
   description,
   path = "",
   image = "/images/pages/mep-industrial-systems.jpg",
+  absoluteTitle = false,
 }: {
   title: string;
   description: string;
   path?: string;
   image?: string;
+  /** When true, use the title as-is (no "| Electech" template append). */
+  absoluteTitle?: boolean;
 }): Metadata {
   const origin = getSiteUrl();
   const url = `${origin}${path}`;
-  // Root layout already applies `template: "%s | Electech"` — pass bare title.
   const absoluteImage = image.startsWith("http") ? image : `${origin}${image}`;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -54,18 +56,16 @@ export function organizationSchema() {
     url: origin,
     email: siteConfig.email,
     telephone: siteConfig.phone,
-    foundingDate: "2012",
     logo: `${origin}/images/brand/electech-logo.png`,
     image: `${origin}/images/brand/electech-logo.png`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Hamsah-A Building, Al Karama",
+      streetAddress: "Hamsah-A Building, Oud Metha",
       addressLocality: "Dubai",
       addressRegion: "Dubai",
       addressCountry: "AE",
       postalCode: "87556",
     },
-    sameAs: [siteConfig.social.linkedin].filter(Boolean),
   };
 }
 

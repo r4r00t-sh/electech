@@ -1,5 +1,28 @@
 import type { NextConfig } from "next";
 
+const legacyProjectSlugs = [
+  "mep-works-al-zahiya-villa",
+  "mep-works-sofitel-hotel",
+  "mep-works-amazon-ecommerce-office",
+  "mep-works-real-image-headquarters",
+  "mep-works-smart-salem-city-walk",
+  "mep-works-innovative-food-outlet-imdaad",
+  "mep-works-two-bedroom-flat",
+  "mep-works-atelier-difc",
+  "mep-works-etisalat-kifaf",
+  "mep-works-gtz-shipping",
+  "mep-works-anex-building-hamariya",
+  "mep-works-ascentia-office",
+  // older legacy titles if any remain bookmarked
+  "luxurious-villa-transformation",
+  "corporate-headquarters-upgrade-real-image",
+  "healthcare-facility-upgrade-smart-salem",
+  "two-bedroom-flat-dhiraj-kumar",
+  "logistics-office-development-gtz",
+  "government-office-modernization-anex",
+  "commercial-office-revamp-ascentia",
+];
+
 const nextConfig: NextConfig = {
   images: {
     dangerouslyAllowSVG: true,
@@ -27,6 +50,11 @@ const nextConfig: NextConfig = {
       { source: "/plumbing-and-drainage-installation", destination: "/solutions/mechanical-plumbing/plumbing-drainage-installation", permanent: true },
       { source: "/fire-fighting", destination: "/solutions/fire-protection/fire-fighting-fire-alarm-installation", permanent: true },
       { source: "/solar-power-plant-installation", destination: "/solutions/electrical/solar-power-plant-installation", permanent: true },
+      ...legacyProjectSlugs.map((slug) => ({
+        source: `/projects/${slug}`,
+        destination: "/projects",
+        permanent: true,
+      })),
     ];
   },
 };

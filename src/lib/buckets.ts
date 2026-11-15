@@ -6,7 +6,7 @@ export const BUCKETS = [
     href: "/solutions/mep",
     accent: "mechanical" as const,
     summary:
-      "Coordinated mechanical, electrical and plumbing installations for new projects, renovations and system upgrades.",
+      "Coordinated mechanical, electrical and plumbing works for new projects, renovations and system upgrades.",
   },
   {
     id: "mechanical-plumbing",
@@ -15,7 +15,7 @@ export const BUCKETS = [
     href: "/solutions/mechanical-plumbing",
     accent: "mechanical" as const,
     summary:
-      "HVAC, ventilation, water supply, drainage, water filtration, pumps and solar water heating.",
+      "HVAC, ventilation, water supply, drainage, filtration, pumping systems and solar water heating.",
   },
   {
     id: "electrical",
@@ -33,7 +33,7 @@ export const BUCKETS = [
     href: "/solutions/fire-protection",
     accent: "fire" as const,
     summary:
-      "Fire alarm and firefighting installation works, containment, piping and coordination with approved specialists.",
+      "Fire alarm and firefighting installation activities, piping, containment and coordination with approved specialists.",
   },
   {
     id: "maintenance",
@@ -42,7 +42,7 @@ export const BUCKETS = [
     href: "/solutions/maintenance",
     accent: "maintenance" as const,
     summary:
-      "Preventive and corrective MEP maintenance for commercial offices, residential villas and other properties.",
+      "Preventive and corrective MEP maintenance for villas, offices and other properties.",
   },
 ] as const;
 

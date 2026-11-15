@@ -11,7 +11,7 @@ function showUnverifiedTestimonials() {
 
 /** Derived from published story testimonials (draft projects excluded). */
 export const testimonials: Testimonial[] = stories
-  .filter((s) => s.testimonial && !s.draft)
+  .filter((s) => s.testimonial && s.published !== false)
   .map((s, i) => ({
     id: `story-${s.slug}`,
     quote: s.testimonial!.quote,

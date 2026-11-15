@@ -11,28 +11,25 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Accordion } from "@/components/ui/Accordion";
 import { ClientSuccessStories } from "@/components/widgets/ClientSuccessStories";
-import { TestimonialsBanner } from "@/components/widgets/TestimonialsBanner";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import type { ServicePage } from "@/content/services";
-import {
-  getStoriesByBucket,
-} from "@/content/stories";
-import { getTestimonialsByBucket } from "@/content/testimonials";
+import { getFeaturedStories } from "@/content/stories";
 import { getServiceDisplayImage } from "@/lib/media";
 import { FadeIn } from "@/components/ui/FadeIn";
 import type { Crumb } from "@/components/layout/Breadcrumbs";
 
 const icons = [Wrench, ClipboardCheck, ShieldCheck, Building2];
 
-/** Client overview sub-headings that must render as real headings, not body text. */
 const OVERVIEW_HEADINGS = new Set([
   "Our Approach",
   "How We Work",
   "Scope and Responsibility",
+  "Scope Boundary",
   "Coordinated Installation Works for Building Fire Protection Systems",
   "Annual Maintenance Contracts",
   "Keeping Your Building Services Reliable",
   "Our Maintenance Services",
+  "Delivery Sequence",
 ]);
 
 function OverviewBody({ text }: { text: string }) {
@@ -52,6 +49,16 @@ function OverviewBody({ text }: { text: string }) {
             >
               {block}
             </h2>
+          );
+        }
+        const lines = block.split("\n").map((l) => l.trim());
+        if (lines.every((l) => l.startsWith("- "))) {
+          return (
+            <ul key={`list-${i}`} className="list-disc space-y-2 pl-5">
+              {lines.map((l) => (
+                <li key={l}>{l.replace(/^- /, "")}</li>
+              ))}
+            </ul>
           );
         }
         return (
@@ -104,13 +111,16 @@ export function ServicePageView({
   service: ServicePage;
   crumbs: Crumb[];
 }) {
-  const stories = getStoriesByBucket(service.bucket, 3);
-  const testimonials = getTestimonialsByBucket(service.bucket, 3);
   const children = CHILD_LINKS[service.slug];
   const heroMedia = getServiceDisplayImage(service.slug);
   const showHowWeWorkAside =
     service.howWeWork.length > 0 &&
-    !service.overview.includes("How We Work");
+    !service.overview.includes("How We Work") &&
+    !service.overview.includes("Delivery Sequence");
+  const featuredProjects =
+    service.bucket === "mep" || service.bucket === "fire-protection"
+      ? getFeaturedStories(3)
+      : [];
 
   return (
     <>
@@ -156,7 +166,7 @@ export function ServicePageView({
           {showHowWeWorkAside ? (
             <aside className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6">
               <h3 className="font-display text-lg font-bold text-navy">
-                How we work
+                Delivery Sequence
               </h3>
               <ol className="mt-4 space-y-3">
                 {service.howWeWork.map((step, i) => (
@@ -174,10 +184,7 @@ export function ServicePageView({
       </Section>
 
       <Section tone="mist">
-        <SectionHeading
-          title="Key services"
-          description="Practical capabilities delivered by our site and engineering teams."
-        />
+        <SectionHeading title="Key services" />
         <div className="grid gap-5 md:grid-cols-2">
           {service.keyServices.map((item, i) => {
             const Icon = icons[i % icons.length]!;
@@ -196,20 +203,22 @@ export function ServicePageView({
         </div>
       </Section>
 
-      <Section>
-        <SectionHeading title="Relevant sectors" />
-        <ul className="flex flex-wrap gap-3">
-          {service.sectors.map((sector) => (
-            <li
-              key={sector}
-              className="inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-4 py-2 text-sm text-navy"
-            >
-              <CheckCircle2 className="h-4 w-4 text-amber" aria-hidden />
-              {sector}
-            </li>
-          ))}
-        </ul>
-      </Section>
+      {service.sectors.length ? (
+        <Section>
+          <SectionHeading title="Relevant sectors" />
+          <ul className="flex flex-wrap gap-3">
+            {service.sectors.map((sector) => (
+              <li
+                key={sector}
+                className="inline-flex items-center gap-2 rounded-full border border-navy/10 bg-white px-4 py-2 text-sm text-navy"
+              >
+                <CheckCircle2 className="h-4 w-4 text-amber" aria-hidden />
+                {sector}
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
 
       {service.faqs.length ? (
         <Section tone="mist">
@@ -218,16 +227,13 @@ export function ServicePageView({
         </Section>
       ) : null}
 
-      <Section>
-        <ClientSuccessStories
-          stories={stories}
-          description="Related projects from this solutions bucket."
-        />
-      </Section>
-
-      {testimonials.length ? (
-        <Section tone="mist">
-          <TestimonialsBanner items={testimonials} />
+      {featuredProjects.length ? (
+        <Section>
+          <ClientSuccessStories
+            stories={featuredProjects}
+            title="Relevant projects"
+            description="Selected villa MEP packages demonstrating coordinated Electech scope."
+          />
         </Section>
       ) : null}
 
