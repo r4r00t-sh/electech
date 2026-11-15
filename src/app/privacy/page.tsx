@@ -9,6 +9,7 @@ export const metadata = {
     description:
       "How Electech Electromechanical Works LLC handles enquiry and careers form data.",
     path: "/privacy",
+    absoluteTitle: true,
   }),
   robots: {
     index: false,
