@@ -3,14 +3,27 @@ import { z } from "zod";
 
 const schema = z.object({
   name: z.string().min(2),
-  company: z.string().min(2),
+  company: z.string().optional(),
   email: z.string().email(),
   phone: z.string().min(7),
+  projectLocation: z.string().min(2),
+  propertyType: z.string().min(1),
   service: z.string().min(1),
-  projectType: z.string().min(2),
   message: z.string().min(10),
+  privacy: z.boolean().refine((v) => v === true),
   website: z.string().optional(),
 });
+
+function formRecipients(): string[] {
+  const primary =
+    process.env.FORM_TO_EMAIL ??
+    process.env.CONTACT_TO_EMAIL ??
+    "info@electechmep.com";
+  const secondary = process.env.FORM_CC_EMAIL;
+  const list = [primary];
+  if (secondary && secondary !== primary) list.push(secondary);
+  return list;
+}
 
 export async function POST(request: Request) {
   try {
@@ -20,19 +33,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Invalid input" }, { status: 400 });
     }
 
-    // Honeypot — silently accept bots
     if (parsed.data.website) {
       return NextResponse.json({ ok: true });
     }
 
-    const to = process.env.CONTACT_TO_EMAIL ?? "info@electechmep.com";
+    const to = formRecipients();
     const payload = {
       ...parsed.data,
       receivedAt: new Date().toISOString(),
       to,
     };
 
-    // Prefer Resend when configured; otherwise log for local/dev handover.
     if (process.env.RESEND_API_KEY) {
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -42,15 +53,16 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           from: process.env.CONTACT_FROM_EMAIL ?? "website@electechmep.com",
-          to: [to],
+          to,
           subject: `Website enquiry — ${parsed.data.service}`,
           text: [
             `Name: ${parsed.data.name}`,
-            `Company: ${parsed.data.company}`,
+            `Company: ${parsed.data.company || "—"}`,
             `Email: ${parsed.data.email}`,
             `Phone: ${parsed.data.phone}`,
+            `Project location: ${parsed.data.projectLocation}`,
+            `Property type: ${parsed.data.propertyType}`,
             `Service: ${parsed.data.service}`,
-            `Project type: ${parsed.data.projectType}`,
             "",
             parsed.data.message,
           ].join("\n"),

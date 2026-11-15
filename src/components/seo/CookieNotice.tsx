@@ -26,8 +26,11 @@ export function CookieNotice() {
     >
       <p className="text-sm text-slate-dark">
         We use cookies for essential site functions and, with your consent,
-        analytics to improve the experience. See our privacy practices before
-        accepting.
+        analytics to improve the experience. See our{" "}
+        <a href="/privacy" className="font-semibold text-navy underline">
+          privacy notice
+        </a>{" "}
+        before accepting.
       </p>
       <div className="mt-3 flex gap-2">
         <Button

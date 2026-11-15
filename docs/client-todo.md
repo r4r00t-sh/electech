@@ -6,9 +6,10 @@ Final master prompt (15 November 2026). Nothing listed here should appear as a v
 
 - [ ] Confirm exact legal establishment year (do not publish “Since 2012” / “Established 2012” / schema `foundingDate` until confirmed).
 - [ ] Confirm careers / recruitment inbox (default form recipient `info@electechmep.com`).
-- [ ] Confirm enquiry form recipients (`FORM_TO_EMAIL`; optional `projects@electechmep.com`).
+- [ ] Confirm enquiry form recipients (`FORM_TO_EMAIL`; optional `FORM_CC_EMAIL` / `projects@electechmep.com`).
 - [ ] Confirm working hours (not shown until confirmed).
 - [ ] Privacy notice legal review and retention period (`/privacy` is noindex until approved).
+- [ ] Secure drawing upload (optional): until then Contact asks users to email `projects@electechmep.com` (no public file store).
 - [ ] Confirm when real domain goes live so `NEXT_PUBLIC_SITE_URL` can point at `electechmep.com`.
 
 ## Address

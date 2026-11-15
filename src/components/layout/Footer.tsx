@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
+import { TrackedAnchor } from "@/components/analytics/TrackedLink";
 import { BUCKETS } from "@/lib/buckets";
 import { siteConfig } from "@/content/site";
 import { whatsappLink } from "@/lib/utils";
@@ -83,42 +84,50 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a
+              <TrackedAnchor
                 href={`tel:${siteConfig.phoneTel}`}
+                event="click_to_call"
+                context="footer"
                 className="inline-flex items-center gap-2 hover:text-green"
               >
                 <Phone className="h-4 w-4 text-green" />
                 {siteConfig.phone}
-              </a>
+              </TrackedAnchor>
             </li>
             <li>
-              <a
+              <TrackedAnchor
                 href={whatsappLink(siteConfig.whatsappTel)}
+                event="whatsapp_click"
+                context="footer"
                 className="inline-flex items-center gap-2 hover:text-green"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="h-4 w-4 text-green" />
                 WhatsApp {siteConfig.whatsapp}
-              </a>
+              </TrackedAnchor>
             </li>
             <li>
-              <a
+              <TrackedAnchor
                 href={`mailto:${siteConfig.email}`}
+                event="email_click"
+                context="footer"
                 className="inline-flex items-center gap-2 hover:text-green"
               >
                 <Mail className="h-4 w-4 text-green" />
                 {siteConfig.email}
-              </a>
+              </TrackedAnchor>
             </li>
             <li>
-              <a
+              <TrackedAnchor
                 href={`mailto:${siteConfig.projectsEmail}`}
+                event="email_click"
+                context="footer_projects"
                 className="inline-flex items-center gap-2 hover:text-green"
               >
                 <Mail className="h-4 w-4 text-green" />
                 {siteConfig.projectsEmail}
-              </a>
+              </TrackedAnchor>
             </li>
             <li className="text-white/55">{siteConfig.websiteDisplay}</li>
           </ul>

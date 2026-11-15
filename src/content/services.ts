@@ -155,25 +155,23 @@ Scope review → technical coordination → supervised installation → applicab
     intro:
       "Air-conditioning installation and modifications, ductwork, diffusers, grilles, condensate drainage, equipment connections and maintenance.",
     overview: `
-Electech provides HVAC and ventilation installation and maintenance for commercial and residential properties.
-
-Our HVAC works include air-conditioning installation and modifications, ductwork, diffusers, grilles, condensate drainage, equipment connections and maintenance. Works are coordinated with architectural layouts, equipment requirements, existing services and site conditions.
+Electech provides duct modifications, AC equipment connections, diffusers/grilles, condensate drainage and maintenance. Works are coordinated with architectural layouts, equipment requirements and existing services. Electech does not claim full HVAC engineering design.
 `.trim(),
     keyServices: [
       {
-        title: "Ductwork",
+        title: "Duct modifications",
         description:
-          "Installation and modification of ductwork coordinated with site layouts and finishes.",
+          "Duct modifications coordinated with site layouts and finishes.",
       },
       {
-        title: "AC equipment",
+        title: "AC equipment connections",
         description:
-          "Air-conditioning equipment installation, connections and modifications.",
+          "Air-conditioning equipment connections and modifications.",
       },
       {
         title: "Diffusers and grilles",
         description:
-          "Supply and install of diffusers and grilles as specified for the project.",
+          "Diffusers and grilles as specified for the project.",
       },
       {
         title: "Condensate drainage",
@@ -181,9 +179,9 @@ Our HVAC works include air-conditioning installation and modifications, ductwork
           "Condensate drainage installation and checks to support reliable AC operation.",
       },
       {
-        title: "Installation modifications and maintenance",
+        title: "Maintenance",
         description:
-          "HVAC modifications and maintenance support according to the agreed scope.",
+          "HVAC maintenance support according to the agreed scope.",
       },
     ],
     howWeWork: [
@@ -207,11 +205,9 @@ Our HVAC works include air-conditioning installation and modifications, ductwork
     bucket: "mechanical-plumbing",
     parentHref: "/solutions/mechanical-plumbing",
     intro:
-      "Water supply, drainage, sanitary installations, water filtration, pumping systems and solar water heating.",
+      "Water distribution, sanitary, drainage, water heaters, filtration and pumping — for upgrades and new installations within the agreed scope.",
     overview: `
-Electech provides plumbing, drainage and water-system installation and maintenance for commercial and residential properties.
-
-Our plumbing works include PPR/PEX water distribution, uPVC drainage, sanitary connections, valves, water heaters and associated pipework, together with water filtration, pumping systems, pressure tanks, hot-water circulation and solar water heating where specified.
+Electech undertakes plumbing and drainage works covering water distribution, sanitary connections, drainage, water heaters, filtration and pumping. Scope may cover upgrades to existing services or new installations, according to the agreed project requirements.
 `.trim(),
     keyServices: [
       {
@@ -357,11 +353,9 @@ Our electrical installation works emphasise distribution boards and sub-main dis
     bucket: "electrical",
     parentHref: "/solutions/electrical",
     intro:
-      "Conduits, containment, cabling provisions and associated infrastructure for CCTV, data, Wi-Fi, access control and intercom systems.",
+      "Conduits, containment and power provisions for CCTV, data, Wi-Fi, access control and intercom systems.",
     overview: `
-Electech provides ELV infrastructure for commercial offices, residential villas, retail premises and hospitality projects.
-
-Our ELV scope covers conduits, containment, cabling provisions and associated infrastructure for CCTV, data, Wi-Fi, access control and intercom systems. Electech provides containment and installation provisions; full specialist system design and commissioning are undertaken by the responsible specialist parties as applicable.
+Electech provides ELV conduits, containment and power provisions only. Complete active-system design and commissioning are undertaken by the responsible specialist parties as applicable.
 `.trim(),
     keyServices: [
       {
@@ -370,19 +364,14 @@ Our ELV scope covers conduits, containment, cabling provisions and associated in
           "Conduits, containment and pathways for low-current systems.",
       },
       {
-        title: "Cabling provisions",
+        title: "Power provisions",
         description:
-          "Cabling provisions for CCTV, data, Wi-Fi, access control and intercom systems.",
-      },
-      {
-        title: "Associated infrastructure",
-        description:
-          "Associated ELV infrastructure within the agreed installation scope.",
+          "Power provisions for CCTV, data, Wi-Fi, access control and intercom systems within the agreed scope.",
       },
       {
         title: "Coordination with specialists",
         description:
-          "Coordination with specialist parties responsible for full system design and commissioning where applicable.",
+          "Coordination with specialist parties responsible for complete active-system design and commissioning where applicable.",
       },
     ],
     howWeWork: [
@@ -562,11 +551,9 @@ Electech undertakes preliminary installation activities within its contract. Iso
     bucket: "fire-protection",
     parentHref: "/solutions/fire-protection",
     intro:
-      "Installation of specified fire-rated sealant systems and coordination with the responsible approval parties.",
+      "Installation of specified fire-rated sealant systems and coordination with the responsible approval parties, within agreed scope.",
     overview: `
-Electech undertakes installation of specified fire-rated sealant systems as part of commercial, residential and refurbishment projects.
-
-Our fire-stopping works are carried out according to the project specifications and coordinated with the responsible approval parties.
+Electech undertakes installation of specified fire-rated sealant systems and coordination with the responsible approval parties, within the agreed project scope. Electech does not provide independent fire-system certification.
 `.trim(),
     keyServices: [
       {

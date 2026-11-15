@@ -25,7 +25,9 @@ const staticRoutes = [
   "/solutions/maintenance",
   "/projects",
   "/industries",
+  "/careers",
   "/contact",
+  // /privacy is noindex — excluded from sitemap
   // /insights unpublished until reviewed articles exist
 ];
 

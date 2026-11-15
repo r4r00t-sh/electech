@@ -1,21 +1,43 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/Button";
-import { BUCKETS } from "@/lib/buckets";
+import { trackEvent } from "@/lib/analytics";
+
+const PROPERTY_TYPES = [
+  "Commercial office",
+  "Premium villa",
+  "Retail & F&B",
+  "Hospitality",
+  "Other",
+] as const;
+
+const SERVICES = [
+  "Integrated MEP",
+  "Mechanical & Plumbing",
+  "Electrical",
+  "Fire Protection Support",
+  "Maintenance / AMC",
+  "Other",
+] as const;
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
-  company: z.string().min(2, "Please enter your company"),
+  company: z.string().optional(),
   email: z.string().email("Enter a valid email"),
   phone: z.string().min(7, "Enter a valid phone number"),
+  projectLocation: z.string().min(2, "Enter the project location"),
+  propertyType: z.string().min(1, "Select a property type"),
   service: z.string().min(1, "Select a service"),
-  projectType: z.string().min(2, "Describe the project type"),
-  message: z.string().min(10, "Please add a short message"),
-  website: z.string().optional(), // honeypot
+  message: z.string().min(10, "Please add short scope / project details"),
+  privacy: z
+    .boolean()
+    .refine((v) => v === true, "Please accept the privacy notice"),
+  website: z.string().optional(),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -31,7 +53,7 @@ export function ContactForm() {
     formState: { errors },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { website: "" },
+    defaultValues: { website: "", company: "" },
   });
 
   const onSubmit = handleSubmit(async (values) => {
@@ -43,6 +65,7 @@ export function ContactForm() {
         body: JSON.stringify(values),
       });
       if (!res.ok) throw new Error("Failed");
+      trackEvent("quote_submit", { service: values.service });
       setStatus("success");
       reset();
     } catch {
@@ -57,14 +80,10 @@ export function ContactForm() {
         role="status"
       >
         <h3 className="font-display text-2xl font-bold text-navy">
-          Thank you — message received
+          Thank you. Your enquiry has been received.
         </h3>
-        <p className="mt-3 text-slate">
-          Our engineers will review your enquiry and respond shortly. For urgent
-          matters, call or WhatsApp us using the details on this page.
-        </p>
         <Button className="mt-6" onClick={() => setStatus("idle")}>
-          Send another message
+          Send another enquiry
         </Button>
       </div>
     );
@@ -80,7 +99,7 @@ export function ContactForm() {
         <Field label="Name" error={errors.name?.message}>
           <input {...register("name")} className={inputClass} autoComplete="name" />
         </Field>
-        <Field label="Company" error={errors.company?.message}>
+        <Field label="Company (optional)" error={errors.company?.message}>
           <input
             {...register("company")}
             className={inputClass}
@@ -103,38 +122,82 @@ export function ContactForm() {
             autoComplete="tel"
           />
         </Field>
-        <Field label="Service interested in" error={errors.service?.message}>
+        <Field label="Project location" error={errors.projectLocation?.message}>
+          <input {...register("projectLocation")} className={inputClass} />
+        </Field>
+        <Field label="Property type" error={errors.propertyType?.message}>
+          <select {...register("propertyType")} className={inputClass} defaultValue="">
+            <option value="" disabled>
+              Select property type
+            </option>
+            {PROPERTY_TYPES.map((t) => (
+              <option key={t} value={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+        </Field>
+        <Field label="Service required" error={errors.service?.message}>
           <select {...register("service")} className={inputClass} defaultValue="">
             <option value="" disabled>
               Select a service
             </option>
-            {BUCKETS.map((b) => (
-              <option key={b.id} value={b.label}>
-                {b.label}
+            {SERVICES.map((s) => (
+              <option key={s} value={s}>
+                {s}
               </option>
             ))}
-            <option value="General enquiry">General enquiry</option>
           </select>
-        </Field>
-        <Field label="Project type" error={errors.projectType?.message}>
-          <input
-            {...register("projectType")}
-            className={inputClass}
-            placeholder="MEP or maintenance"
-          />
         </Field>
       </div>
       <div className="mt-5">
-        <Field label="Message" error={errors.message?.message}>
+        <Field label="Short scope / project details" error={errors.message?.message}>
           <textarea {...register("message")} className={inputClass} rows={5} />
         </Field>
       </div>
 
-      {/* Honeypot */}
-      <div className="absolute -left-[9999px] opacity-0" aria-hidden>
+      <p className="mt-4 text-[14px] text-slate-dark">
+        Prefer to send drawings? Email{" "}
+        <a
+          href="mailto:projects@electechmep.com"
+          className="font-semibold text-navy hover:text-green"
+          onClick={() => trackEvent("email_click", { context: "contact_drawings" })}
+        >
+          projects@electechmep.com
+        </a>
+      </p>
+
+      <label className="mt-5 flex items-start gap-3 text-[14px] text-slate-dark">
+        <input
+          type="checkbox"
+          {...register("privacy")}
+          className="mt-1 h-4 w-4 shrink-0 rounded border-navy/30"
+        />
+        <span>
+          I agree to the{" "}
+          <Link href="/privacy" className="font-semibold text-navy hover:text-green">
+            privacy notice
+          </Link>
+          .
+        </span>
+      </label>
+      {errors.privacy?.message ? (
+        <p className="mt-1 text-xs text-fire" role="alert">
+          {errors.privacy.message}
+        </p>
+      ) : null}
+
+      <div
+        className="absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+        aria-hidden="true"
+      >
         <label>
           Website
-          <input {...register("website")} tabIndex={-1} autoComplete="off" />
+          <input
+            {...register("website")}
+            tabIndex={-1}
+            autoComplete="off"
+          />
         </label>
       </div>
 

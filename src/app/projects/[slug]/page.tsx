@@ -209,6 +209,7 @@ export default async function StoryPage({
         <CtaBanner
           title="Discuss a Similar MEP Project"
           buttonLabel="Discuss a Similar MEP Project"
+          trackProjectToContact
         />
       </Section>
     </>

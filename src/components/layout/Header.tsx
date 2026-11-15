@@ -7,6 +7,7 @@ import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/Button";
 import { BUCKETS } from "@/lib/buckets";
 import { siteConfig } from "@/content/site";
+import { trackEvent } from "@/lib/analytics";
 import { cn, whatsappLink } from "@/lib/utils";
 
 const nav = [
@@ -67,6 +68,7 @@ export function Header() {
         <div className="container-site flex h-9 items-center justify-end gap-5 text-xs text-slate-dark">
           <a
             href={`tel:${siteConfig.phoneTel}`}
+            onClick={() => trackEvent("click_to_call", { context: "header" })}
             className="inline-flex items-center gap-1.5 hover:text-green"
           >
             <Phone className="h-3.5 w-3.5 text-green" />
@@ -76,6 +78,7 @@ export function Header() {
             href={whatsappLink(siteConfig.whatsappTel)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { context: "header" })}
             className="inline-flex items-center gap-1.5 hover:text-green"
           >
             <MessageCircle className="h-3.5 w-3.5 text-green" />

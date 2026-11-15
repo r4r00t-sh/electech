@@ -2,6 +2,7 @@
 
 import { Phone, MessageCircle } from "lucide-react";
 import { siteConfig } from "@/content/site";
+import { trackEvent } from "@/lib/analytics";
 import { whatsappLink } from "@/lib/utils";
 
 export function MobileBar() {
@@ -10,6 +11,7 @@ export function MobileBar() {
       <div className="grid grid-cols-2 gap-2 p-2">
         <a
           href={`tel:${siteConfig.phoneTel}`}
+          onClick={() => trackEvent("click_to_call", { context: "mobile_bar" })}
           className="inline-flex items-center justify-center gap-2 rounded-md bg-navy px-3 py-3 text-sm font-semibold text-white"
         >
           <Phone className="h-4 w-4 text-green" />
@@ -22,6 +24,7 @@ export function MobileBar() {
           )}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackEvent("whatsapp_click", { context: "mobile_bar" })}
           className="inline-flex items-center justify-center gap-2 rounded-md bg-green px-3 py-3 text-sm font-semibold text-white"
         >
           <MessageCircle className="h-4 w-4" />
