@@ -332,22 +332,22 @@ export const homeSectorImages: { label: string; image: MediaRef }[] = [
  */
 export const storyImages: Record<string, MediaRef> = {
   "dubai-hills-villa-256": {
-    src: "/images/pages/electrical-installation-work.jpg",
-    alt: "Organised distribution-board installation representing Dubai Hills Villa 256 electrical works.",
-    caption: "Distribution board and circuit installation",
+    src: "/images/projects/villas/villa-256-exterior.jpg",
+    alt: "Modern premium villa exterior representing Dubai Hills Villa 256 MEP project.",
+    caption: "Premium residential villa",
     objectPosition: "center center",
   },
   "dubai-hills-villa-39": {
-    src: "/images/pages/plumbing-finished-bathroom.jpg",
-    alt: "Finished bathroom plumbing and sanitary installation representing Dubai Hills Villa 39 MEP works.",
-    caption: "Sanitaryware and plumbing fit-out",
+    src: "/images/projects/villas/villa-39-exterior.jpg",
+    alt: "Modern premium villa with pool representing Dubai Hills Villa 39 MEP project.",
+    caption: "Premium residential villa",
     objectPosition: "center center",
   },
   "damac-hills-villa-f307f": {
-    src: "/images/pages/hvac-equipment-detail.jpg",
-    alt: "Exposed HVAC ductwork and diffusers representing DAMAC Hills Villa F307F MEP renovation.",
-    caption: "HVAC ductwork and air distribution",
-    objectPosition: "center 30%",
+    src: "/images/projects/villas/villa-f307f-exterior.jpg",
+    alt: "Modern villa exterior at dusk representing DAMAC Hills Villa F307F MEP renovation.",
+    caption: "Premium residential villa",
+    objectPosition: "center 40%",
   },
   "mep-works-amazon-ecommerce-office": {
     ...works.commercialOffice,
@@ -378,14 +378,19 @@ export const storyImages: Record<string, MediaRef> = {
 export const storyGalleryImages: Record<string, MediaRef[]> = {
   "dubai-hills-villa-256": [
     {
+      src: "/images/pages/electrical-installation-work.jpg",
+      alt: "Organised distribution-board installation.",
+      caption: "DB / SMDB and distribution upgrades",
+    },
+    {
       src: "/images/pages/electrical-power-infrastructure.jpg",
       alt: "Electrical switchgear and power distribution panels.",
-      caption: "Power distribution and switchgear",
+      caption: "Power distribution infrastructure",
     },
     {
       src: "/images/pages/elv-server-racks.jpg",
       alt: "Organised low-current cabling and containment.",
-      caption: "ELV containment and cabling pathways",
+      caption: "ELV / DALI containment",
     },
     {
       src: "/images/heroes/hero-03-plant-room-pipework.jpg",
@@ -398,14 +403,9 @@ export const storyGalleryImages: Record<string, MediaRef[]> = {
       caption: "Mechanical pipework and controls",
     },
     {
-      src: "/images/pages/mep-industrial-systems.jpg",
-      alt: "Coordinated electrical plant corridor with building services.",
-      caption: "Coordinated MEP plant services",
-    },
-    {
       src: "/images/services/electrical-installation.jpg",
       alt: "Electrician working on a distribution panel.",
-      caption: "Electrical panel installation",
+      caption: "Electrical installation works",
     },
   ],
   "dubai-hills-villa-39": [
@@ -415,9 +415,9 @@ export const storyGalleryImages: Record<string, MediaRef[]> = {
       caption: "Distribution modifications",
     },
     {
-      src: "/images/pages/electrical-power-infrastructure.jpg",
-      alt: "Electrical control room with switchgear lineup.",
-      caption: "Power infrastructure",
+      src: "/images/pages/plumbing-finished-bathroom.jpg",
+      alt: "Finished bathroom with modern sanitary fixtures.",
+      caption: "Premium sanitaryware installations",
     },
     {
       src: "/images/pages/elv-server-racks.jpg",
@@ -432,7 +432,7 @@ export const storyGalleryImages: Record<string, MediaRef[]> = {
     {
       src: "/images/services/plumbing.jpg",
       alt: "Plumber working on chrome pipe fittings.",
-      caption: "Plumbing and sanitary connections",
+      caption: "Plumbing connections",
     },
     {
       src: "/images/heroes/hero-02-electrical-installation.jpg",
@@ -442,9 +442,14 @@ export const storyGalleryImages: Record<string, MediaRef[]> = {
   ],
   "damac-hills-villa-f307f": [
     {
+      src: "/images/pages/hvac-equipment-detail.jpg",
+      alt: "Exposed HVAC ductwork and air diffusers.",
+      caption: "HVAC duct modifications",
+    },
+    {
       src: "/images/services/hvac-installation.jpg",
       alt: "Technician servicing an outdoor air-conditioning unit.",
-      caption: "HVAC equipment connections",
+      caption: "AC equipment connections",
     },
     {
       src: "/images/pages/electrical-installation-work.jpg",
@@ -460,11 +465,6 @@ export const storyGalleryImages: Record<string, MediaRef[]> = {
       src: "/images/pages/mechanical-factory-floor.jpg",
       alt: "Mechanical pipework installation.",
       caption: "Plumbing and pipework modifications",
-    },
-    {
-      src: "/images/pages/electrical-power-infrastructure.jpg",
-      alt: "Electrical switchgear room.",
-      caption: "Power and equipment provisions",
     },
     {
       src: "/images/pages/mep-industrial-systems.jpg",

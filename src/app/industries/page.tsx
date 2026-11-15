@@ -56,8 +56,8 @@ const industries: {
       { label: "Maintenance", href: "/solutions/maintenance" },
     ],
     image: {
-      src: "/images/pages/plumbing-finished-bathroom.jpg",
-      alt: "Residential bathroom plumbing and sanitary fit-out for premium villas.",
+      src: "/images/projects/villas/villa-39-exterior.jpg",
+      alt: "Premium residential villa exterior for villa MEP services.",
     },
     Icon: Home,
   },
