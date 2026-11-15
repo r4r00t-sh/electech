@@ -26,7 +26,7 @@ Final master prompt (15 November 2026). Nothing listed here should appear as a v
 - [ ] Confirm renamed logo “Visualize Interior Decorations LLC” (was “Decstations” in source).
 - [ ] Fit-out firms moved into “Fit-out and Contractors” where obvious (A&T, Summertown, Arco, KG, Visualize, Royal Classic, Multiline, Kalandoor); confirm remaining Other / `[CLIENT TO PROVIDE]` sectors.
 
-All current logos remain `approved: false` (production grid empty until permissions land). Every entry in `data/clients.json` needs logo permission + relationship type.
+All 39 logos are currently `approved: true` on the live site (flipped at client request). Still confirm each logo’s publication permission and set accurate `relationship` (`direct customer` | `main contractor` | `project-associated`).
 
 ## Projects
 
