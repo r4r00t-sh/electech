@@ -216,8 +216,8 @@ export const pageHeroes = {
     objectPosition: "center center",
   },
   projects: {
-    src: "/images/pages/projects-office-interior.jpg",
-    alt: "Bright modern office interior ready for fit-out handover.",
+    src: "/images/heroes/hero-02-electrical-installation.jpg",
+    alt: "Electech electrical installation works on site.",
     objectPosition: "center center",
   },
   insights: {

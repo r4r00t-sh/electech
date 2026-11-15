@@ -11,7 +11,7 @@
     "relationship": "unknown"
   },
   {
-    "name": "Mövenpick",
+    "name": "M\u00f6venpick",
     "slug": "movenpick",
     "logo": "/images/clients/client-movenpick.jpg",
     "sector": "Hospitality",
@@ -160,7 +160,7 @@
     "name": "Multiline",
     "slug": "multiline",
     "logo": "/images/clients/client-multiline.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-multiline-02.jpeg",
     "order": 15,
     "featured": false,
@@ -268,7 +268,7 @@
     "relationship": "unknown"
   },
   {
-    "name": "Visualize Interior Decoration LLC",
+    "name": "Visualize Interior Decorations LLC",
     "slug": "visualize",
     "logo": "/images/clients/client-visualize.jpg",
     "sector": "Fit-out and Contractors",
@@ -383,7 +383,7 @@
     "name": "Kalandoor Group",
     "slug": "kalandoor",
     "logo": "/images/clients/client-kalandoor.jpg",
-    "sector": "[CLIENT TO PROVIDE]",
+    "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-kalandoor-03.jpeg",
     "order": 35,
     "featured": false,

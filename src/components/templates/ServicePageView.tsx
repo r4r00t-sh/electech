@@ -27,6 +27,7 @@ const OVERVIEW_HEADINGS = new Set([
   "Scope Boundary",
   "Coordinated Installation Works for Building Fire Protection Systems",
   "Annual Maintenance Contracts",
+  "AMC Packages",
   "Keeping Your Building Services Reliable",
   "Our Maintenance Services",
   "Delivery Sequence",
@@ -118,9 +119,18 @@ export function ServicePageView({
     !service.overview.includes("How We Work") &&
     !service.overview.includes("Delivery Sequence");
   const featuredProjects =
-    service.bucket === "mep" || service.bucket === "fire-protection"
+    service.bucket === "mep" ||
+    service.bucket === "fire-protection" ||
+    service.bucket === "mechanical-plumbing" ||
+    service.bucket === "electrical"
       ? getFeaturedStories(3)
       : [];
+  const sectorsHeading =
+    service.slug === "mechanical-plumbing"
+      ? "Use cases"
+      : service.slug === "maintenance"
+        ? "Property types"
+        : "Relevant sectors";
 
   return (
     <>
@@ -151,37 +161,41 @@ export function ServicePageView({
         </Section>
       ) : null}
 
-      <Section>
-        <div
-          className={
-            showHowWeWorkAside
-              ? "grid gap-10 lg:grid-cols-[1.2fr_0.8fr]"
-              : undefined
-          }
-        >
-          <div>
-            <SectionHeading title="Overview" />
-            <OverviewBody text={service.overview} />
+      {service.overview.trim() || showHowWeWorkAside ? (
+        <Section>
+          <div
+            className={
+              showHowWeWorkAside && service.overview.trim()
+                ? "grid gap-10 lg:grid-cols-[1.2fr_0.8fr]"
+                : undefined
+            }
+          >
+            {service.overview.trim() ? (
+              <div>
+                <SectionHeading title="Overview" />
+                <OverviewBody text={service.overview} />
+              </div>
+            ) : null}
+            {showHowWeWorkAside ? (
+              <aside className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6">
+                <h3 className="font-display text-lg font-bold text-navy">
+                  Delivery Sequence
+                </h3>
+                <ol className="mt-4 space-y-3">
+                  {service.howWeWork.map((step, i) => (
+                    <li key={step} className="flex gap-3 text-sm text-slate-dark">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-bold text-amber">
+                        {i + 1}
+                      </span>
+                      {step}
+                    </li>
+                  ))}
+                </ol>
+              </aside>
+            ) : null}
           </div>
-          {showHowWeWorkAside ? (
-            <aside className="rounded-[var(--radius-card)] border border-navy/8 bg-mist p-6">
-              <h3 className="font-display text-lg font-bold text-navy">
-                Delivery Sequence
-              </h3>
-              <ol className="mt-4 space-y-3">
-                {service.howWeWork.map((step, i) => (
-                  <li key={step} className="flex gap-3 text-sm text-slate-dark">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-navy text-xs font-bold text-amber">
-                      {i + 1}
-                    </span>
-                    {step}
-                  </li>
-                ))}
-              </ol>
-            </aside>
-          ) : null}
-        </div>
-      </Section>
+        </Section>
+      ) : null}
 
       <Section tone="mist">
         <SectionHeading title="Key services" />
@@ -205,7 +219,7 @@ export function ServicePageView({
 
       {service.sectors.length ? (
         <Section>
-          <SectionHeading title="Relevant sectors" />
+          <SectionHeading title={sectorsHeading} />
           <ul className="flex flex-wrap gap-3">
             {service.sectors.map((sector) => (
               <li

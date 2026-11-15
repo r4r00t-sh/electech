@@ -2,10 +2,10 @@ import type { Story } from "./types";
 import type { BucketId } from "@/lib/buckets";
 
 /**
- * Projects — client-revision.md is source of truth.
- * Featured: three verified villa projects (highlights present; photos pending).
- * Legacy cards without highlights AND without a verified photo are `draft: true`
- * and hidden from /projects, related lists and sitemap.
+ * Projects — final master (15 Nov 2026).
+ * Published: three villa case studies. Photos pending → navy tiles.
+ * Commercial office projects: add with sector "Commercial Offices" in the same shape.
+ * Legacy stories stay published:false (301 → /projects).
  */
 
 export const stories: Story[] = [
@@ -20,22 +20,22 @@ export const stories: Story[] = [
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "mechanical-plumbing"],
     location: "Golf Place 2, Dubai Hills Estate, Dubai",
-    sector: "Residential",
+    sector: "Residential Villas",
     scope:
-      "Extensive electrical, plumbing and specialist MEP installations for a premium residential villa",
-    status: "Completed | MEP Handover",
+      "Electech delivered an extensive package of electrical, plumbing and specialist MEP works for a premium villa, integrating distribution upgrades, architectural lighting, water systems and dedicated provisions for lifestyle facilities.",
+    status: "Completed - MEP handover.",
     summary:
-      "Electech delivered extensive electrical, plumbing and specialist MEP installations for a premium residential villa, integrating modern lighting, power distribution, water systems and lifestyle facilities within the property's architectural design.",
-    body: `Electech delivered extensive electrical, plumbing and specialist MEP installations for a premium residential villa, integrating modern lighting, power distribution, water systems and lifestyle facilities within the property's architectural design.
+      "Electech delivered extensive electrical, plumbing and specialist MEP installations for a premium residential villa, integrating lighting, power distribution, water systems and lifestyle facilities within the property's architectural design.",
+    body: `Electech delivered extensive electrical, plumbing and specialist MEP installations for a premium residential villa, integrating lighting, power distribution, water systems and lifestyle facilities within the property's architectural design.
 
-The works were completed with careful coordination of existing architectural finishes, followed by testing, commissioning and comprehensive MEP handover documentation.`,
+Works were coordinated with existing architectural finishes, followed by applicable testing, commissioning and final MEP handover documentation.`,
     highlights: [
-      "Electrical distribution upgrades, DB/SMDB modifications and EV charging infrastructure.",
-      "Architectural, façade, landscape, staircase and garage floor LED lighting.",
-      "ELV, DALI lighting-control and automation containment.",
-      "Electrical and plumbing provisions for jacuzzi, sauna, outdoor BBQ and rooftop pergola.",
-      "Power provisions for lift and garage shutter, including lift lighting installation.",
-      "Water filtration, pumping system enhancements, outdoor service sockets and water supply points.",
+      "DB/SMDB modifications, distribution upgrades and EV charging infrastructure.",
+      "Architectural and façade lighting enhancements, landscape lighting, staircase lighting and garage floor LED lighting.",
+      "Containment for ELV systems, DALI lighting control and automation infrastructure.",
+      "Power and plumbing provisions for jacuzzi and sauna; power and lighting for outdoor BBQ and rooftop pergola.",
+      "Power allowances for garage shutter and lift, including installation of lift lighting.",
+      "Water filtration, pump and control-system enhancements, service sockets and outdoor water supply taps.",
     ],
     gallery: [],
     featured: true,
@@ -44,29 +44,30 @@ The works were completed with careful coordination of existing architectural fin
   {
     title: "Dubai Hills Villa 39",
     slug: "dubai-hills-villa-39",
-    subtitle:
-      "Premium Residential Villa - Electrical & Plumbing Enhancements",
+    subtitle: "Premium Residential Villa MEP Works",
     heroImage: "",
     heroAlt: "Dubai Hills Villa 39 MEP works",
     hasVerifiedPhoto: false,
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "mechanical-plumbing"],
     location: "Fairway, Dubai Hills Estate, Dubai",
-    sector: "Residential",
+    sector: "Residential Villas",
     scope:
-      "Comprehensive electrical and plumbing enhancements for a premium residential villa",
-    status: "Completed",
+      "Electech delivered comprehensive electrical and plumbing enhancements integrated with the villa's architectural finishes and specialist service requirements.",
+    status: "Completed.",
     summary:
-      "Electech delivered comprehensive electrical and plumbing enhancements for a premium residential villa, combining architectural lighting solutions, power infrastructure and upgraded water services with careful integration into the property's finishes.",
-    body: `Electech delivered comprehensive electrical and plumbing enhancements for a premium residential villa, combining architectural lighting solutions, power infrastructure and upgraded water services with careful integration into the property's finishes.
+      "Electech successfully delivered comprehensive electrical and plumbing works, including distribution modifications, architectural and landscape lighting, concealed LED lighting, power provisions, ELV/DALI/automation containment, pump system enhancements and premium sanitaryware installations.",
+    body: `Electech successfully delivered comprehensive electrical and plumbing works, including distribution modifications, architectural and landscape lighting, concealed LED lighting, power provisions, ELV/DALI/automation containment, pump system enhancements and premium sanitaryware installations.
 
-The project was executed through coordinated site installation, testing, commissioning and final MEP handover.`,
+The project was executed with careful coordination of architectural finishes, followed by testing, commissioning and final MEP handover.`,
     highlights: [
-      "Electrical distribution modifications and dedicated power provisions.",
-      "Architectural, landscape and concealed LED lighting installations.",
-      "ELV, DALI and automation containment infrastructure.",
-      "Pumping system enhancements and associated plumbing modifications.",
-      "Premium sanitaryware installation and service connections.",
+      "Distribution modifications.",
+      "Architectural and landscape lighting.",
+      "Concealed LED lighting.",
+      "Equipment power provisions.",
+      "ELV/DALI/automation containment.",
+      "Pump system enhancements.",
+      "Premium sanitaryware installations.",
     ],
     gallery: [],
     featured: true,
@@ -75,37 +76,57 @@ The project was executed through coordinated site installation, testing, commiss
   {
     title: "DAMAC Hills Villa F307F",
     slug: "damac-hills-villa-f307f",
-    subtitle:
-      "Premium Villa - Comprehensive MEP Renovation & Modernization",
+    subtitle: "Comprehensive MEP Renovation Works",
     heroImage: "",
     heroAlt: "DAMAC Hills Villa F307F MEP works",
     hasVerifiedPhoto: false,
     primaryBucket: "mep",
     secondaryBuckets: ["electrical", "mechanical-plumbing"],
     location: "DAMAC Hills, Dubai",
-    sector: "Residential",
+    sector: "Residential Villas",
     scope:
-      "Comprehensive MEP renovation and modification works for a premium residential villa",
-    status: "MEP Handover Completed",
+      "Electech undertook MEP renovation and modification works to accommodate updated electrical, HVAC, plumbing and interior service requirements, coordinating with the main contractor's approved designs.",
+    status: "MEP handover completed.",
     summary:
-      "Electech undertook comprehensive MEP renovation and modification works for a premium residential villa, upgrading electrical, HVAC and plumbing infrastructure to accommodate contemporary lighting, smart-home provisions and revised architectural requirements.",
-    body: `Electech undertook comprehensive MEP renovation and modification works for a premium residential villa, upgrading electrical, HVAC and plumbing infrastructure to accommodate contemporary lighting, smart-home provisions and revised architectural requirements.
+      "Complete MEP renovation and modification works covering electrical and lighting systems, HVAC duct modifications, AC grilles and exhaust ventilation, plumbing, drainage, water filtration provisions, rainwater adjustments and sanitaryware installation. The scope includes the supply and installation of LED lighting, drivers, profiles, motion sensors, decorative fixtures and electrical provisions for smart home and client-selected equipment.",
+    body: `Complete MEP renovation and modification works covering electrical and lighting systems, HVAC duct modifications, AC grilles and exhaust ventilation, plumbing, drainage, water filtration provisions, rainwater adjustments and sanitaryware installation. The scope includes the supply and installation of LED lighting, drivers, profiles, motion sensors, decorative fixtures and electrical provisions for smart home and client-selected equipment.
 
-All works were coordinated with the Main Contractor's approved designs, client specifications and site requirements.`,
+All works are coordinated with the Main Contractor's approved designs, client specifications and site requirements, including coordination of electrical, plumbing and specialist service provisions with the villa's architectural and interior requirements.`,
     highlights: [
-      "Electrical distribution modifications, LED lighting, drivers, profiles and decorative fixtures.",
-      "HVAC ductwork modifications, AC grilles and exhaust ventilation.",
-      "Plumbing, drainage, rainwater modifications and sanitaryware installations.",
-      "Water filtration provisions and associated service connections.",
-      "Motion sensors, smart-home electrical provisions and ELV infrastructure.",
-      "Coordinated MEP services for client-selected equipment and architectural features.",
+      "Lighting systems, LED drivers/profiles, motion sensors and decorative fixtures.",
+      "HVAC duct modifications, AC grilles and exhaust ventilation.",
+      "Plumbing, drainage, rainwater adjustments and sanitaryware.",
+      "Smart-home and client-equipment power provisions.",
+      "Water filtration provisions.",
     ],
     gallery: [],
     featured: true,
     published: true,
   },
 
-  // --- Legacy portfolio (draft unless highlights and/or verified photo exist) ---
+  // --- Template for upcoming commercial-office projects (sector: "Commercial Offices") ---
+  // {
+  //   title: "[Office project name]",
+  //   slug: "office-project-slug",
+  //   subtitle: "...",
+  //   heroImage: "",
+  //   heroAlt: "...",
+  //   hasVerifiedPhoto: false,
+  //   primaryBucket: "mep",
+  //   secondaryBuckets: ["electrical", "mechanical-plumbing"],
+  //   location: "Dubai",
+  //   sector: "Commercial Offices",
+  //   scope: "One-sentence Electech MEP scope overview.",
+  //   status: "...",
+  //   summary: "40–60 word summary of Electech scope only.",
+  //   body: `Summary paragraph.\n\nHandover / coordination statement.`,
+  //   highlights: ["..."],
+  //   gallery: [],
+  //   featured: false,
+  //   published: false,
+  // },
+
+  // --- Legacy portfolio (published:false → 301 to /projects) ---
   {
     title: "MEP works for Al Zahiya Villa",
     slug: "mep-works-al-zahiya-villa",

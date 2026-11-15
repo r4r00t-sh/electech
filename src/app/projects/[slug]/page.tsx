@@ -206,7 +206,10 @@ export default async function StoryPage({
       ) : null}
 
       <Section>
-        <CtaBanner />
+        <CtaBanner
+          title="Discuss a Similar MEP Project"
+          buttonLabel="Discuss a Similar MEP Project"
+        />
       </Section>
     </>
   );

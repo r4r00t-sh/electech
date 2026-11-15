@@ -3,24 +3,65 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import type { Story } from "@/content/types";
-import { BUCKETS, type BucketId, storyBucketLabel } from "@/lib/buckets";
 import { getStoryDisplayImage } from "@/lib/media";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { cn } from "@/lib/utils";
 
-const filters: { id: "all" | BucketId; label: string }[] = [
-  { id: "all", label: "All" },
-  ...BUCKETS.map((b) => ({ id: b.id, label: b.short })),
+type FilterId =
+  | "all"
+  | "residential-villas"
+  | "commercial-offices"
+  | "electrical"
+  | "mechanical-plumbing";
+
+const FILTER_DEFS: {
+  id: FilterId;
+  label: string;
+  match: (s: Story) => boolean;
+}[] = [
+  { id: "all", label: "All", match: () => true },
+  {
+    id: "residential-villas",
+    label: "Residential Villas",
+    match: (s) =>
+      s.sector === "Residential Villas" || s.sector === "Residential",
+  },
+  {
+    id: "commercial-offices",
+    label: "Commercial Offices",
+    match: (s) =>
+      s.sector === "Commercial Offices" || s.sector === "Commercial",
+  },
+  {
+    id: "electrical",
+    label: "Electrical",
+    match: (s) =>
+      s.primaryBucket === "electrical" ||
+      s.secondaryBuckets.includes("electrical"),
+  },
+  {
+    id: "mechanical-plumbing",
+    label: "Mechanical & Plumbing",
+    match: (s) =>
+      s.primaryBucket === "mechanical-plumbing" ||
+      s.secondaryBuckets.includes("mechanical-plumbing"),
+  },
 ];
 
 export function ProjectsFilter({ stories }: { stories: Story[] }) {
-  const [active, setActive] = useState<"all" | BucketId>("all");
+  const [active, setActive] = useState<FilterId>("all");
+
+  const visibleFilters = useMemo(
+    () =>
+      FILTER_DEFS.filter(
+        (f) => f.id === "all" || stories.some((s) => f.match(s)),
+      ),
+    [stories],
+  );
 
   const filtered = useMemo(() => {
-    if (active === "all") return stories;
-    return stories.filter(
-      (s) => s.primaryBucket === active || s.secondaryBuckets.includes(active),
-    );
+    const def = FILTER_DEFS.find((f) => f.id === active) ?? FILTER_DEFS[0]!;
+    return stories.filter((s) => def.match(s));
   }, [active, stories]);
 
   return (
@@ -28,9 +69,9 @@ export function ProjectsFilter({ stories }: { stories: Story[] }) {
       <div
         className="mb-8 flex flex-wrap gap-2"
         role="tablist"
-        aria-label="Filter projects by solution"
+        aria-label="Filter projects"
       >
-        {filters.map((filter) => (
+        {visibleFilters.map((filter) => (
           <button
             key={filter.id}
             type="button"
@@ -70,15 +111,21 @@ export function ProjectsFilter({ stories }: { stories: Story[] }) {
                   />
                 </div>
                 <div className="p-5">
-                  <p className="text-[14px] font-semibold text-green">
-                    {storyBucketLabel(story)}
-                  </p>
-                  <h2 className="mt-2 font-display text-xl font-bold text-navy transition-colors group-hover:text-green">
+                  <h2 className="font-display text-xl font-bold text-navy transition-colors group-hover:text-green">
                     {story.title}
                   </h2>
-                  <p className="mt-2 line-clamp-3 text-[15px] text-slate-dark">
-                    {story.summary}
+                  <p className="mt-1 text-[14px] font-medium text-slate">
+                    {story.location}
                   </p>
+                  <p className="mt-3 text-[15px] text-slate-dark">
+                    {story.scope}
+                  </p>
+                  <p className="mt-3 text-[13px] font-semibold text-green">
+                    {story.status}
+                  </p>
+                  <span className="mt-4 inline-flex text-[15px] font-semibold text-navy group-hover:text-green">
+                    View Project
+                  </span>
                 </div>
               </Link>
             </article>
@@ -87,7 +134,7 @@ export function ProjectsFilter({ stories }: { stories: Story[] }) {
       </div>
 
       {!filtered.length ? (
-        <p className="text-slate-dark">No stories in this bucket yet.</p>
+        <p className="text-slate-dark">No projects match this filter yet.</p>
       ) : null}
     </div>
   );

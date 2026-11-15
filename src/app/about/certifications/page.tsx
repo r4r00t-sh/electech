@@ -10,10 +10,10 @@ import { pageHeroes } from "@/lib/media";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Certifications",
+  title: "Commitment to Quality, Environment & Safety | Electech",
   description:
-    "Electech Electromechanical Works LLC certifications — ISO 9001, ISO 14001 and ISO 45001.",
-  image: "/images/pages/certifications-documents.jpg",
+    "Electech confirms ISO 9001, ISO 14001 and ISO 45001 certifications.",
+  image: "/images/certs/iso-board.jpg",
   path: "/about/certifications",
 });
 
@@ -23,8 +23,8 @@ export default function CertificationsPage() {
   return (
     <>
       <PageHero
-        title="Certifications"
-        intro="Quality, safety and environmental management credentials that support our delivery across the UAE."
+        title="Commitment to Quality, Environment & Safety"
+        intro="Electech confirms ISO 9001, ISO 14001 and ISO 45001 certifications."
         media={pageHeroes.certifications}
         crumbs={[
           { label: "About Us", href: "/about" },
@@ -32,13 +32,7 @@ export default function CertificationsPage() {
         ]}
       />
       <Section>
-        <h2 className="font-display text-2xl font-bold text-navy">
-          Certificate library
-        </h2>
-        <p className="mt-3 max-w-2xl text-slate-dark">
-          International Organization for Standardization management systems.
-        </p>
-        <div className="relative mx-auto mt-8 aspect-[797/372] max-w-3xl overflow-hidden rounded-md border border-navy/10 bg-white">
+        <div className="relative mx-auto aspect-[797/372] max-w-3xl overflow-hidden rounded-md border border-navy/10 bg-white">
           <PhotoMedia
             image={certificationsBoard}
             sizes="(max-width: 768px) 100vw, 720px"
@@ -51,9 +45,9 @@ export default function CertificationsPage() {
               key={cert.id}
               className="rounded-md border border-navy/10 bg-mist p-5"
             >
-              <h3 className="font-display text-lg font-bold text-navy">
+              <h2 className="font-display text-lg font-bold text-navy">
                 {cert.name}
-              </h3>
+              </h2>
               <p className="mt-2 text-[15px] text-slate-dark">
                 {cert.description}
               </p>

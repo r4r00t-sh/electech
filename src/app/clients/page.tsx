@@ -1,15 +1,16 @@
+import Link from "next/link";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section } from "@/components/ui/Section";
 import { ClientsLogoWall } from "@/components/clients/ClientsLogoWall";
-import { TestimonialsBanner } from "@/components/widgets/TestimonialsBanner";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import {
   getClientsByRelationship,
   getHiddenClientCount,
-  getHiddenClientSectors,
   getVisibleClients,
+  filterClientsBySector,
 } from "@/content/clients";
 import { getFeaturedTestimonials } from "@/content/testimonials";
+import { TestimonialsBanner } from "@/components/widgets/TestimonialsBanner";
 import {
   breadcrumbSchema,
   organizationSchema,
@@ -18,9 +19,9 @@ import {
 import { pageHeroes } from "@/lib/media";
 
 export const metadata = pageMetadata({
-  title: "Our Clients & Project Relationships",
+  title: "Our Clients & Project Relationships | Electech",
   description:
-    "Electech Electromechanical Works LLC has contributed MEP services to projects involving developers, property owners, main contractors, fit-out companies, hospitality operators and facility management organizations across the UAE.",
+    "Electech MEP project relationships across developers, main contractors, fit-out companies and property owners in the UAE.",
   image: "/images/pages/clients-corporate-office.jpg",
   path: "/clients",
 });
@@ -35,8 +36,8 @@ const RELATIONSHIP_LABELS = {
 export default function ClientsPage() {
   const clients = getVisibleClients();
   const grouped = getClientsByRelationship();
+  const fitOut = filterClientsBySector("Fit-out and Contractors");
   const hiddenCount = getHiddenClientCount();
-  const hiddenSectors = getHiddenClientSectors();
   const testimonials = getFeaturedTestimonials();
 
   const jsonLd = [
@@ -57,7 +58,7 @@ export default function ClientsPage() {
       <PageHero
         media={pageHeroes.clients}
         title="Our Clients & Project Relationships"
-        intro="Trusted Relationships Across the UAE"
+        intro="Trusted Relationships Across the UAE."
         crumbs={[{ label: "Our Clients" }]}
       />
 
@@ -66,26 +67,27 @@ export default function ClientsPage() {
           <p>
             Electech has contributed MEP services to projects involving
             recognized developers, property owners, main contractors, interior
-            fit-out companies, hospitality operators and facility management
-            organizations.
+            fit-out companies, hospitality operators and facilities
+            organizations. Our experience includes both direct appointments and
+            subcontracted MEP packages delivered through established project
+            teams. We value repeat business and long-term collaboration.
           </p>
-          <p>
-            Our experience includes both direct appointments and subcontracted
-            MEP packages delivered through established project teams.
+          <p className="text-[15px] font-medium text-navy">
+            Projects delivered directly and through main contractors.
           </p>
-          <p>
-            We value these relationships and remain committed to reliable
-            execution, responsive communication and long-term collaboration.
+          <p className="text-[15px] text-slate-dark">
+            <Link
+              href="/about/certifications"
+              className="font-semibold text-navy hover:text-green"
+            >
+              ISO 9001, ISO 14001 and ISO 45001
+            </Link>
           </p>
         </div>
 
         {hiddenCount > 0 ? (
           <p className="mt-8 text-[15px] text-slate-dark">
-            Project relationships across the UAE
-            {hiddenSectors.length
-              ? ` — sectors include ${hiddenSectors.join(", ")}`
-              : ""}
-            .
+            Client logos appear here once publication permissions are confirmed.
           </p>
         ) : null}
 
@@ -100,6 +102,21 @@ export default function ClientsPage() {
               </div>
             </div>
           ))}
+
+          {fitOut.length &&
+          !knownGroups.some((k) =>
+            grouped[k].some((c) => c.sector === "Fit-out and Contractors"),
+          ) ? (
+            <div>
+              <h2 className="font-display text-xl font-bold text-navy">
+                Fit-out and Contractors
+              </h2>
+              <div className="mt-6">
+                <ClientsLogoWall clients={fitOut} />
+              </div>
+            </div>
+          ) : null}
+
           {!clients.length ? (
             <p className="text-slate-dark">
               Client logos will appear here once publication permissions are
@@ -116,7 +133,18 @@ export default function ClientsPage() {
       ) : null}
 
       <Section>
-        <CtaBanner />
+        <div className="mb-6">
+          <Link
+            href="/projects"
+            className="text-[15px] font-semibold text-navy hover:text-green"
+          >
+            View Projects
+          </Link>
+        </div>
+        <CtaBanner
+          title="Discuss a Requirement"
+          buttonLabel="Discuss a Requirement"
+        />
       </Section>
     </>
   );

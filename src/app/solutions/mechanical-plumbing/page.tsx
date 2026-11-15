@@ -6,11 +6,12 @@ import { pageMetadata } from "@/lib/seo";
 const slug = "mechanical-plumbing";
 
 export const metadata = pageMetadata({
-  title: "Mechanical and Plumbing Services",
+  title: "HVAC, Plumbing, Pumps & Filtration Dubai | Electech",
   description:
-    "Electech provides HVAC, ventilation, plumbing, drainage and water-system installation and maintenance for commercial and residential properties in Dubai.",
+    "HVAC, ventilation, drainage, water filtration, pumping systems and solar water heating.",
   image: "/images/pages/mechanical-factory-floor.jpg",
   path: "/solutions/mechanical-plumbing",
+  absoluteTitle: true,
 });
 
 export default function Page() {

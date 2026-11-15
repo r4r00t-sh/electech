@@ -22,10 +22,10 @@ Final master prompt (15 November 2026). Nothing listed here should appear as a v
 ## Clients / logos
 
 - [ ] For every logo in `data/clients.json`: set `approved: true` only with publication permission, and set `relationship` to `direct customer` | `main contractor` | `project-associated`.
-- [ ] Confirm / rename “Visualize Interior Decsheets” if incorrect.
-- [ ] Move fit-out firms into a “Fit-out and Contractors” category where obvious.
+- [ ] Confirm renamed logo “Visualize Interior Decorations LLC” (was “Decstations” in source).
+- [ ] Fit-out firms moved into “Fit-out and Contractors” where obvious (A&T, Summertown, Arco, KG, Visualize, Royal Classic, Multiline, Kalandoor); confirm remaining Other / `[CLIENT TO PROVIDE]` sectors.
 
-All current logos remain `approved: false` (production grid empty until permissions land).
+All current logos remain `approved: false` (production grid empty until permissions land). Every entry in `data/clients.json` needs logo permission + relationship type.
 
 ## Projects
 

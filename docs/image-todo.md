@@ -17,9 +17,9 @@ Slots still waiting for dedicated photography. Until then the site uses client-u
 
 | Project | Status | Notes |
 |---------|--------|-------|
-| Dubai Hills Villa 256 | Navy tile | Need Electech villa / installation photo matched by filename |
-| Dubai Hills Villa 39 | Navy tile | Need Electech villa / installation photo |
-| DAMAC Hills Villa F307F | Navy tile | Need Electech villa / installation photo |
+| Dubai Hills Villa 256 | Navy tile | Need Electech installation photos: façade/landscape lighting, garage floor LEDs, DB/SMDB, pump/filtration, jacuzzi/sauna/BBQ/pergola provisions |
+| Dubai Hills Villa 39 | Navy tile | Need Electech photos: architectural/concealed lighting, sanitaryware, pumping/plumbing |
+| DAMAC Hills Villa F307F | Navy tile | Need Electech photos: HVAC mods, electrical/lighting, sanitary/drainage; filtration only if confirmed installed |
 
 ## Legacy stories still on navy tiles
 

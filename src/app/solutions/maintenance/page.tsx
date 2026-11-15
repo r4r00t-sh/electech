@@ -6,11 +6,12 @@ import { pageMetadata } from "@/lib/seo";
 const slug = "maintenance";
 
 export const metadata = pageMetadata({
-  title: "Maintenance Contract",
+  title: "MEP Maintenance & AMC Dubai | Electech",
   description:
-    "Electech provides planned and corrective MEP maintenance and annual maintenance contracts for residential villas and commercial offices in Dubai.",
+    "Preventive and corrective MEP maintenance for villas, offices and commercial properties.",
   image: "/images/pages/maintenance-workshop.jpg",
   path: "/solutions/maintenance",
+  absoluteTitle: true,
 });
 
 export default function Page() {

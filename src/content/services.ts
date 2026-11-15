@@ -101,19 +101,11 @@ Scope review → technical coordination → supervised installation → applicab
   },
   {
     slug: "mechanical-plumbing",
-    title: "Mechanical and Plumbing Services",
+    title: "Reliable Building Systems for Everyday Performance",
     bucket: "mechanical-plumbing",
     intro:
-      "Reliable Building Systems for Everyday Performance",
-    overview: `
-Electech provides HVAC, ventilation, plumbing, drainage and water-system installation and maintenance services for commercial and residential properties.
-
-Our mechanical and plumbing works are coordinated with architectural layouts, equipment requirements, existing services and site conditions to support functionality, accessibility and long-term maintainability.
-
-How We Work
-
-We review site requirements, coordinate the installation scope, execute the works, undertake applicable testing and provide relevant handover documentation.
-`.trim(),
+      "Electech provides HVAC, ventilation, plumbing, drainage and water-system installations and maintenance, coordinated with equipment requirements, architectural layouts and existing services.",
+    overview: "",
     keyServices: [
       {
         title: "HVAC & Ventilation",
@@ -128,33 +120,32 @@ We review site requirements, coordinate the installation scope, execute the work
       {
         title: "Water Filtration",
         description:
-          "Installation of multi-stage water filtration systems, connection of equipment, testing and maintenance support.",
+          "Multi-stage water-filtration installation, equipment connections, applicable testing and maintenance support.",
       },
       {
         title: "Pumping Systems",
         description:
-          "Transfer and circulation pumps, pressure tanks, control panels, associated pipework and system troubleshooting.",
+          "Transfer and circulation pumps, pressure tanks, control panels, associated pipework and troubleshooting.",
       },
       {
         title: "Solar Water Heating",
         description:
-          "Solar water heater installation, relocation, pipework modifications, circulation pumps and associated controls.",
+          "Solar water-heater installation and relocation, pipework modifications, circulation pumps and controls.",
       },
     ],
-    howWeWork: [
-      "Review site requirements",
-      "Coordinate the installation scope",
-      "Execute the works",
-      "Undertake applicable testing",
-      "Provide relevant handover documentation",
+    howWeWork: [],
+    sectors: ["Commercial fit-out", "Villa upgrade", "System replacement"],
+    faqs: [
+      {
+        question: "Can you install water filtration and pumping systems?",
+        answer:
+          "Yes. Electech undertakes multi-stage filtration and pumping-system installation and upgrades, subject to project-specific requirements.",
+      },
     ],
-    sectors: ["Commercial", "Residential"],
-    faqs: [],
     heroImage: "/images/pages/mechanical-factory-floor.jpg",
-    heroAlt: "Mechanical plant and plumbing services installation",
-    ctaTitle: "Discuss Your Mechanical or Plumbing Requirements",
-    ctaDescription:
-      "Tell us about the HVAC, plumbing or water-system works you need on site.",
+    heroAlt: "HVAC plant and plumbing services installation",
+    ctaTitle: "Discuss Mechanical or Plumbing Works",
+    ctaDescription: "Request Mechanical / Plumbing Assessment",
   },
   {
     slug: "hvac-installation",
@@ -266,60 +257,45 @@ Our plumbing works include PPR/PEX water distribution, uPVC drainage, sanitary c
   },
   {
     slug: "electrical",
-    title: "Electrical Services",
+    title: "Reliable Electrical Infrastructure & Lighting",
     bucket: "electrical",
     intro:
-      "Safe, Practical & Reliable Electrical Installations",
-    overview: `
-Electech undertakes electrical installation, modifications, power distribution, lighting and associated low-current infrastructure works for commercial offices, residential villas, retail premises and hospitality projects.
-
-Our electrical services include new installations, circuit modifications, equipment power provisions, electrical containment, testing and documentation.
-
-Our Approach
-
-We coordinate electrical installations with architectural layouts, equipment requirements and other building services to achieve safe and maintainable systems.
-`.trim(),
+      "Electech undertakes electrical installation, modifications, power distribution, lighting and low-current infrastructure for offices, villas, retail and hospitality properties.",
+    overview: "",
     keyServices: [
       {
         title: "Power Distribution",
         description:
-          "Distribution boards, sub-main distribution boards, circuit modifications, breakers, isolators, cabling and electrical load coordination.",
+          "Distribution boards, sub-main distribution boards, circuit modifications, breakers, isolators, cabling and load coordination.",
       },
       {
-        title: "Lighting Systems",
+        title: "Lighting",
         description:
-          "Architectural lighting, LED strips, concealed lighting, landscape lighting, decorative fixtures and lighting-control provisions.",
+          "Architectural, façade, landscape, staircase, concealed LED and decorative lighting, with lighting-control provisions.",
       },
       {
-        title: "Power & Equipment Connections",
+        title: "Power Connections",
         description:
-          "Socket outlets, dedicated equipment supplies, AC power provisions, water-heater connections, pump power and EV charging infrastructure.",
+          "Socket outlets, dedicated equipment supplies, AC and pump power, water-heater connections and EV charging infrastructure.",
       },
       {
         title: "ELV Infrastructure",
         description:
-          "Conduits, containment, cabling provisions and associated infrastructure for CCTV, data, Wi-Fi, access control and intercom systems.",
+          "Conduits, containment and installation provisions for CCTV, data, Wi-Fi, access control and intercom systems.",
       },
       {
         title: "Testing & Documentation",
         description:
-          "Applicable electrical inspections, circuit identification, load schedules, testing records and handover documentation.",
+          "Applicable inspections, circuit identification, load schedules, testing records and handover documentation.",
       },
     ],
-    howWeWork: [
-      "Coordinate with architectural layouts and equipment requirements",
-      "Install power distribution and lighting systems",
-      "Provide equipment connections and ELV infrastructure",
-      "Complete applicable testing and documentation",
-      "Hand over maintainable systems",
-    ],
-    sectors: ["Commercial offices", "Residential villas", "Retail premises", "Hospitality"],
+    howWeWork: [],
+    sectors: [],
     faqs: [],
     heroImage: "/images/pages/electrical-power-infrastructure.jpg",
-    heroAlt: "Electrical installation and switchgear works",
-    ctaTitle: "Request an Electrical Works Quotation",
-    ctaDescription:
-      "Share drawings or a brief for power, lighting or ELV infrastructure works.",
+    heroAlt: "Electrical distribution board and installation works",
+    ctaTitle: "Request an Electrical Quotation",
+    ctaDescription: "Send Electrical Scope / Drawings",
   },
   {
     slug: "electrical-installation",
@@ -629,62 +605,41 @@ Our fire-stopping works are carried out according to the project specifications 
     title: "MEP Maintenance & Annual Maintenance Contracts",
     bucket: "maintenance",
     intro:
-      "Keeping Your Building Services Reliable",
+      "Electech provides planned and corrective maintenance for residential villas, commercial offices and selected properties in Dubai. We help owners and facility managers maintain essential electrical, AC, plumbing and water systems through inspections, troubleshooting, repairs and replacements.",
     overview: `
-Electech provides planned and corrective MEP maintenance services for residential villas, commercial offices and selected properties across Dubai.
+AMC Packages
 
-We help property owners, tenants and facility managers maintain essential electrical, air-conditioning and plumbing systems through scheduled inspections, troubleshooting, repair and replacement works.
-
-Annual Maintenance Contracts
-
-Our AMC arrangements can be tailored to the property type, equipment inventory, required visit frequency and agreed response provisions.
+Tailored to property type, asset inventory, planned visit frequency and agreed response provisions.
 `.trim(),
     keyServices: [
       {
-        title: "Electrical Maintenance",
+        title: "Electrical",
         description:
-          "Distribution boards, lighting, socket outlets, isolators, circuit faults and electrical accessories.",
+          "DBs, lighting, sockets, isolators, circuit faults and accessories.",
       },
       {
-        title: "Air-Conditioning Maintenance",
+        title: "Air-Conditioning",
         description:
-          "AC inspections, routine servicing, filter cleaning, condensate drainage checks and fault investigation.",
+          "Routine servicing, filter cleaning, condensate checks and fault investigation.",
       },
       {
-        title: "Plumbing Maintenance",
+        title: "Plumbing",
         description:
-          "Water supply and drainage issues, leaks, sanitary connections, valves, water heaters and associated pipework.",
+          "Leaks, water supply, drainage, sanitary connections, valves and heaters.",
       },
       {
         title: "Pumps & Water Systems",
         description:
-          "Pump troubleshooting, pressure systems, filtration equipment and associated control components.",
-      },
-      {
-        title: "Preventive Maintenance",
-        description:
-          "Planned service visits, condition checks and recommendations for corrective action.",
-      },
-      {
-        title: "Corrective Maintenance",
-        description:
-          "Fault diagnosis, repairs, replacements and system restoration within the agreed service scope.",
+          "Pumps, pressure systems, filtration equipment and associated controls.",
       },
     ],
-    howWeWork: [
-      "Review property type and equipment inventory",
-      "Agree visit frequency and response provisions",
-      "Scheduled inspections and preventive service",
-      "Corrective diagnosis, repair and restoration",
-      "Reporting within the agreed service scope",
-    ],
-    sectors: ["Residential villas", "Commercial offices", "Selected properties"],
+    howWeWork: [],
+    sectors: ["Villas", "Offices", "Selected commercial facilities"],
     faqs: [],
     heroImage: "/images/pages/maintenance-workshop.jpg",
     heroAlt: "MEP maintenance and annual maintenance contracts",
-    ctaTitle: "Request an AMC Proposal",
-    ctaDescription:
-      "Share your property type, equipment list and preferred visit frequency.",
+    ctaTitle: "Request Property-Specific AMC",
+    ctaDescription: "Request an AMC Proposal",
   },
 ];
 

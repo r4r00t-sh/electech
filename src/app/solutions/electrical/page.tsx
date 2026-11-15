@@ -6,11 +6,12 @@ import { pageMetadata } from "@/lib/seo";
 const slug = "electrical";
 
 export const metadata = pageMetadata({
-  title: "Electrical Services",
+  title: "Electrical & Lighting Contractor Dubai | Electech",
   description:
-    "Electech undertakes electrical installation, modifications, power distribution, lighting and ELV infrastructure for commercial offices, residential villas, retail and hospitality projects in Dubai.",
+    "Power distribution, lighting, DB modifications, EV provisions and ELV containment.",
   image: "/images/pages/electrical-power-infrastructure.jpg",
   path: "/solutions/electrical",
+  absoluteTitle: true,
 });
 
 export default function Page() {
