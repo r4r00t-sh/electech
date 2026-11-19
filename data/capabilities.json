@@ -1,0 +1,52 @@
+[
+  {
+    "id": "mechanical",
+    "number": "01",
+    "title": "Mechanical",
+    "description": "HVAC and ventilation.",
+    "href": "/solutions/mechanical-plumbing",
+    "icon": "wind",
+    "image": "/images/pages/hvac-equipment-detail.jpg",
+    "imageAlt": "Exposed ceiling HVAC ductwork and air diffusers"
+  },
+  {
+    "id": "electrical",
+    "number": "02",
+    "title": "Electrical",
+    "description": "Power distribution, lighting, EV provisions and ELV infrastructure.",
+    "href": "/solutions/electrical",
+    "icon": "zap",
+    "image": "/images/pages/electrical-installation-work.jpg",
+    "imageAlt": "Organised electrical distribution board with colour-coded wiring"
+  },
+  {
+    "id": "plumbing",
+    "number": "03",
+    "title": "Plumbing",
+    "description": "Water supply, drainage, filtration, pumps and solar water heating.",
+    "href": "/solutions/mechanical-plumbing",
+    "icon": "droplets",
+    "image": "/images/heroes/hero-03-plant-room-pipework.jpg",
+    "imageAlt": "Plant-room stainless pipework and pump sets"
+  },
+  {
+    "id": "fire-protection",
+    "number": "04",
+    "title": "Fire-protection support",
+    "description": "Defined preliminary installation works.",
+    "href": "/solutions/fire-protection",
+    "icon": "flame",
+    "image": "/images/pages/fire-control-panels.jpg",
+    "imageAlt": "Fire sprinkler riser with alarm bell, gauges and control valves"
+  },
+  {
+    "id": "maintenance",
+    "number": "05",
+    "title": "Maintenance",
+    "description": "Preventive, corrective and AMC services.",
+    "href": "/solutions/maintenance",
+    "icon": "wrench",
+    "image": "/images/pages/maintenance-workshop.jpg",
+    "imageAlt": "Technician servicing a rooftop air-conditioning unit"
+  }
+]

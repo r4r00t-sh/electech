@@ -1,11 +1,11 @@
 import { ClientsMarquee } from "@/components/clients/ClientsMarquee";
-import { getFeaturedClients } from "@/content/clients";
+import { getVisibleClients } from "@/content/clients";
 
-/** Homepage / shared featured logo strip (marquee). */
+/** Homepage / shared client logo marquee. */
 export function ClientLogoStrip({
-  title = "Trusted by organisations across the UAE",
+  title = "Organisations We Work With",
 }: {
   title?: string;
 }) {
-  return <ClientsMarquee clients={getFeaturedClients()} title={title} />;
+  return <ClientsMarquee clients={getVisibleClients()} title={title} />;
 }

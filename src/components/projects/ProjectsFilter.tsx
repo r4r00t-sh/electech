@@ -9,10 +9,9 @@ import { cn } from "@/lib/utils";
 
 type FilterId =
   | "all"
-  | "residential-villas"
   | "commercial-offices"
-  | "electrical"
-  | "mechanical-plumbing";
+  | "residential-villas"
+  | "retail-fb";
 
 const FILTER_DEFS: {
   id: FilterId;
@@ -21,43 +20,31 @@ const FILTER_DEFS: {
 }[] = [
   { id: "all", label: "All", match: () => true },
   {
-    id: "residential-villas",
-    label: "Residential Villas",
-    match: (s) =>
-      s.sector === "Residential Villas" || s.sector === "Residential",
-  },
-  {
     id: "commercial-offices",
     label: "Commercial Offices",
     match: (s) =>
       s.sector === "Commercial Offices" || s.sector === "Commercial",
   },
   {
-    id: "electrical",
-    label: "Electrical",
+    id: "residential-villas",
+    label: "Residential Villas",
     match: (s) =>
-      s.primaryBucket === "electrical" ||
-      s.secondaryBuckets.includes("electrical"),
+      s.sector === "Residential Villas" || s.sector === "Residential",
   },
   {
-    id: "mechanical-plumbing",
-    label: "Mechanical & Plumbing",
+    id: "retail-fb",
+    label: "Retail & F&B",
     match: (s) =>
-      s.primaryBucket === "mechanical-plumbing" ||
-      s.secondaryBuckets.includes("mechanical-plumbing"),
+      s.sector === "Retail" ||
+      s.sector === "Retail & F&B" ||
+      s.sector === "F&B",
   },
 ];
 
 export function ProjectsFilter({ stories }: { stories: Story[] }) {
   const [active, setActive] = useState<FilterId>("all");
 
-  const visibleFilters = useMemo(
-    () =>
-      FILTER_DEFS.filter(
-        (f) => f.id === "all" || stories.some((s) => f.match(s)),
-      ),
-    [stories],
-  );
+  const visibleFilters = FILTER_DEFS;
 
   const filtered = useMemo(() => {
     const def = FILTER_DEFS.find((f) => f.id === active) ?? FILTER_DEFS[0]!;

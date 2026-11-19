@@ -33,11 +33,6 @@ const links = [
     description: "Practical engineering and accountable service.",
   },
   {
-    href: "/clients",
-    title: "Our Clients",
-    description: "Project relationships across the UAE.",
-  },
-  {
     href: "/about/certifications",
     title: "Certifications",
     description: "ISO 9001, ISO 14001 and ISO 45001.",

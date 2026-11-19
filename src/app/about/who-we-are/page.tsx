@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { CapabilitiesGrid } from "@/components/about/CapabilitiesGrid";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { aboutContent } from "@/content/about";
 import { pageMetadata } from "@/lib/seo";
@@ -33,19 +34,7 @@ export default function WhoWeArePage() {
       </Section>
       <Section tone="mist">
         <SectionHeading title="Our Capabilities" />
-        <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {content.capabilities.map((item) => (
-            <li
-              key={item.title}
-              className="rounded-md border border-navy/10 bg-white p-5"
-            >
-              <h3 className="font-display text-lg font-bold text-navy">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate">{item.description}</p>
-            </li>
-          ))}
-        </ul>
+        <CapabilitiesGrid />
       </Section>
       <Section>
         <SectionHeading title="How We Work" />

@@ -54,30 +54,6 @@ export const aboutContent = {
       "Electech provides MEP installation, modification and maintenance services across residential, commercial, retail and hospitality environments. Our work is driven by careful coordination, reliable workmanship and a commitment to resolving technical challenges.",
     story:
       "Electech grew from a passion for construction and the satisfaction of delivering successful projects. We value the trust earned through technical involvement, problem-solving and dependable service - not just through completed installations.",
-    capabilities: [
-      {
-        title: "Mechanical",
-        description: "HVAC and ventilation.",
-      },
-      {
-        title: "Electrical",
-        description:
-          "Power distribution, lighting, EV provisions and ELV infrastructure.",
-      },
-      {
-        title: "Plumbing",
-        description:
-          "Water supply, drainage, filtration, pumps and solar water heating.",
-      },
-      {
-        title: "Fire-protection support",
-        description: "Defined preliminary installation works.",
-      },
-      {
-        title: "Maintenance",
-        description: "Preventive, corrective and AMC services.",
-      },
-    ],
     howWeWork:
       "We review drawings and site conditions, define technical interfaces, coordinate materials and work sequences, supervise installation, perform applicable inspections and testing, and prepare agreed handover records.",
     commitment:

@@ -9,7 +9,6 @@ const staticRoutes = [
   "/about/vision-mission",
   "/about/why-choose-us",
   "/about/certifications",
-  "/clients",
   "/solutions",
   "/solutions/mep",
   "/solutions/mechanical-plumbing",

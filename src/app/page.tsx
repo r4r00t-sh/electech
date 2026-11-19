@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { StatsStrip } from "@/components/widgets/StatsStrip";
+import { ClientLogoStrip } from "@/components/widgets/ClientLogoStrip";
 import { BUCKETS } from "@/lib/buckets";
 import {
   getStoryDisplayImage,
@@ -227,6 +228,10 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
+      </Section>
+
+      <Section tone="mist">
+        <ClientLogoStrip />
       </Section>
 
       <section className="bg-mist">

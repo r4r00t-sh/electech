@@ -10,7 +10,6 @@ const companyLinks = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
   { label: "Industries", href: "/industries" },
-  { label: "Clients", href: "/clients" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
   { label: "Privacy notice", href: "/privacy" },

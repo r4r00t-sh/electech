@@ -19,21 +19,18 @@ const nav = [
       { label: "Who We Are", href: "/about/who-we-are" },
       { label: "Vision & Mission", href: "/about/vision-mission" },
       { label: "Why Choose Us", href: "/about/why-choose-us" },
-      { label: "Our Clients", href: "/clients" },
-      { label: "Certifications", href: "/about/certifications" },
     ],
   },
   {
     label: "Services",
-    href: "/solutions",
-    children: BUCKETS.map((b) => ({
+    href: "/solutions/mep",
+    children: BUCKETS.filter((b) => b.id !== "mep").map((b) => ({
       label: b.short,
       href: b.href,
     })),
   },
   { label: "Projects", href: "/projects" },
   { label: "Industries", href: "/industries" },
-  { label: "Clients", href: "/clients" },
   { label: "Contact", href: "/contact" },
 ];
 
