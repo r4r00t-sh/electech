@@ -10,6 +10,12 @@ export type ClientRecord = {
   name: string;
   slug: string;
   logo: string;
+  logoType?: "svg" | "raster";
+  width?: number;
+  height?: number;
+  logoSource?: string;
+  lightLogo?: boolean;
+  needsBetterLogo?: boolean;
   sector: string;
   sourceFile: string;
   order: number;
@@ -97,7 +103,20 @@ export function filterClientsBySector(sector: string | "All") {
   return all.filter((c) => c.sector === sector);
 }
 
-/** All clients needing logo permission — for docs, not the UI. */
+/** Display size helpers — never request more than 2× CSS size for rasters. */
+export function clientLogoDisplaySize(
+  client: ClientRecord,
+  maxCssHeight: number,
+) {
+  const srcW = client.width || 200;
+  const srcH = client.height || 80;
+  const cssH = maxCssHeight;
+  const cssW = Math.round((srcW / srcH) * cssH);
+  const imgW = Math.min(srcW, cssW * 2);
+  const imgH = Math.min(srcH, cssH * 2);
+  return { cssW, cssH, imgW, imgH };
+}
+
 export function getClientsNeedingPermission() {
   return clients.filter((c) => !c.approved);
 }

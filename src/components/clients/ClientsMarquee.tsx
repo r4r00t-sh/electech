@@ -1,12 +1,15 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import type { ClientRecord } from "@/content/clients";
+import { ClientLogo } from "@/components/clients/ClientLogo";
 
-/** Client logos — auto-scrolls, pauses on hover, respects reduced motion. */
+const CAPTION = "Projects delivered directly and through main contractors.";
+
+/** Client logos — auto-scrolls, pauses on hover/focus, respects reduced motion. */
 export function ClientsMarquee({
   clients,
-  title = "Trusted by organisations across the UAE",
+  title = "Organisations We Work With",
 }: {
   clients: ClientRecord[];
   title?: string;
@@ -14,6 +17,15 @@ export function ClientsMarquee({
   const logos = clients.length ? clients : [];
   const loop = [...logos, ...logos];
   const durationSec = Math.max(40, logos.length * 2.5);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const sync = () => setReduceMotion(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
 
   if (!logos.length) return null;
 
@@ -23,29 +35,30 @@ export function ClientsMarquee({
         <h2 className="text-center text-[2rem] font-bold text-navy md:text-left md:text-[2.25rem]">
           {title}
         </h2>
+        <p className="mt-2 text-center text-[15px] text-slate-dark md:text-left">
+          {CAPTION}
+        </p>
       </div>
 
-      <div className="relative overflow-hidden border-y border-navy/8 py-4">
+      <div className="group/marquee relative overflow-hidden border-y border-navy/8 py-4">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-mist to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-mist to-transparent" />
 
         <div
-          className="group flex w-max animate-clients-marquee hover:[animation-play-state:paused] motion-reduce:animate-none motion-reduce:flex-wrap motion-reduce:w-full motion-reduce:justify-center motion-reduce:gap-3"
-          style={{ animationDuration: `${durationSec}s` }}
+          className={
+            reduceMotion
+              ? "flex flex-wrap justify-center gap-3"
+              : "group flex w-max animate-clients-marquee hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]"
+          }
+          style={reduceMotion ? undefined : { animationDuration: `${durationSec}s` }}
         >
-          {loop.map((client, i) => (
+          {(reduceMotion ? logos : loop).map((client, i) => (
             <div
               key={`${client.slug}-${i}`}
-              className="mx-2 flex h-16 w-36 shrink-0 items-center justify-center rounded-md border border-navy/8 bg-white px-4 py-2"
-              aria-hidden={i >= logos.length}
+              className="group mx-2 h-20 w-40 shrink-0"
+              aria-hidden={!reduceMotion && i >= logos.length}
             >
-              <Image
-                src={client.logo}
-                alt={i < logos.length ? client.name : ""}
-                width={140}
-                height={48}
-                className="max-h-10 w-auto object-contain"
-              />
+              <ClientLogo client={client} maxHeight={56} />
             </div>
           ))}
         </div>

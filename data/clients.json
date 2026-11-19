@@ -2,24 +2,35 @@
   {
     "name": "OAKS Hotels & Resorts",
     "slug": "oaks",
-    "logo": "/images/clients/client-oaks.jpg",
+    "logo": "/images/clients/client-oaks.webp",
     "sector": "Hospitality",
     "sourceFile": "clients/client-oaks-02.jpeg",
     "order": 1,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.oakshotels.com/",
+    "needsBetterLogo": true,
+    "logoSource": "https://assets.oakshotels.com/image/upload/q_auto,f_auto/media/minor/oaks/images/rebrand/oaks-hotels--resorts-suites-logo-340x140px.png",
+    "logoType": "raster",
+    "width": 339,
+    "height": 126
   },
   {
-    "name": "M\u00f6venpick",
+    "name": "Mövenpick",
     "slug": "movenpick",
-    "logo": "/images/clients/client-movenpick.jpg",
+    "logo": "/images/clients/client-movenpick.webp",
     "sector": "Hospitality",
     "sourceFile": "clients/client-movenpick-02.jpeg",
     "order": 2,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://movenpick.accor.com/",
+    "logoSource": "https://movenpick.accor.com/content/dam/technical-folder/seo/movenpickv2/android-chrome-512x512.png",
+    "logoType": "raster",
+    "width": 446,
+    "height": 174
   },
   {
     "name": "Mall of the Emirates",
@@ -30,53 +41,77 @@
     "order": 3,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.malloftheemirates.com/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.malloftheemirates.com/"
   },
   {
     "name": "Circle Mall",
     "slug": "circle-mall",
-    "logo": "/images/clients/client-circle-mall.jpg",
+    "logo": "/images/clients/client-circle-mall.svg",
     "sector": "Retail",
     "sourceFile": "clients/client-circle-mall-02.jpeg",
     "order": 4,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.circlemall.ae/",
+    "logoSource": "https://cdn.prod.website-files.com/681b30237127014420b52a2e/685bcb88eb8fbd3bd0fe2554_circle-mall-en-black.svg",
+    "logoType": "svg",
+    "width": 356,
+    "height": 180
   },
   {
     "name": "Sofitel",
     "slug": "sofitel",
-    "logo": "/images/clients/client-sofitel.jpg",
+    "logo": "/images/clients/client-sofitel.svg",
     "sector": "Hospitality",
     "sourceFile": "clients/client-sofitel-02.jpeg",
     "order": 5,
     "featured": true,
     "storySlug": "mep-works-sofitel-hotel",
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://sofitel.accor.com/",
+    "logoSource": "https://sofitel.accor.com/content/dam/brands/sof/global-marketing/brand-identity/logos/2601_mkt_0022.svg",
+    "logoType": "svg",
+    "width": 70,
+    "height": 40
   },
   {
     "name": "Dubai Mall",
     "slug": "dubai-mall",
-    "logo": "/images/clients/client-dubai-mall.jpg",
+    "logo": "/images/clients/client-dubai-mall.svg",
     "sector": "Retail",
     "sourceFile": "clients/client-dubai-mall-02.jpeg",
     "order": 6,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.thedubaimall.com/",
+    "logoSource": "https://www.thedubaimall.com/assets/dubai-mall-online/home-banner/dmo-logo.svg",
+    "logoType": "svg",
+    "width": 260,
+    "height": 16
   },
   {
     "name": "Imdaad",
     "slug": "imdaad",
-    "logo": "/images/clients/client-imdaad.jpg",
+    "logo": "/images/clients/client-imdaad.webp",
     "sector": "Facility Management",
     "sourceFile": "clients/client-imdaad-02.jpeg",
     "order": 7,
     "featured": true,
     "storySlug": "mep-works-innovative-food-outlet-imdaad",
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.imdaad.ae/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.imdaad.ae/images/Imdaad-logo.png",
+    "logoType": "raster",
+    "width": 244,
+    "height": 228
   },
   {
     "name": "DAMAC",
@@ -87,7 +122,10 @@
     "order": 8,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.damacproperties.com/",
+    "logoSource": "https://www.damacproperties.com/",
+    "needsBetterLogo": true
   },
   {
     "name": "wasl properties",
@@ -98,7 +136,10 @@
     "order": 9,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.wasl.ae/",
+    "logoSource": "https://www.wasl.ae/",
+    "needsBetterLogo": true
   },
   {
     "name": "A&T Group Interiors",
@@ -109,18 +150,26 @@
     "order": 10,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.atgroupinteriors.com/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.atgroupinteriors.com/"
   },
   {
     "name": "Nakheel",
     "slug": "nakheel",
-    "logo": "/images/clients/client-nakheel.jpg",
+    "logo": "/images/clients/client-nakheel.svg",
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-nakheel-02.jpeg",
     "order": 11,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.nakheel.com/",
+    "logoSource": "https://www.nakheel.com/images/nakheelcorporatelibraries/logos/nakheel-log.svg?sfvrsn=f5c04a69_1",
+    "logoType": "svg",
+    "width": 121,
+    "height": 21
   },
   {
     "name": "Amazon",
@@ -132,18 +181,26 @@
     "featured": true,
     "storySlug": "mep-works-amazon-ecommerce-office",
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.amazon.ae/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.amazon.ae/"
   },
   {
     "name": "Summertown Interiors",
     "slug": "summertown",
-    "logo": "/images/clients/client-summertown.jpg",
+    "logo": "/images/clients/client-summertown.svg",
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-summertown-02.jpeg",
     "order": 13,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.summertown.ae/",
+    "logoSource": "https://www.summertown.ae/wp-content/themes/summertown_2025/assets/images/icons/logo-tree-red.svg",
+    "logoType": "svg",
+    "width": 81,
+    "height": 84
   },
   {
     "name": "Emaar",
@@ -154,18 +211,27 @@
     "order": 14,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.emaar.com/",
+    "logoSource": "https://www.emaar.com/",
+    "needsBetterLogo": true
   },
   {
     "name": "Multiline",
     "slug": "multiline",
-    "logo": "/images/clients/client-multiline.jpg",
+    "logo": "/images/clients/client-multiline.webp",
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-multiline-02.jpeg",
     "order": 15,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.multiline.ae/",
+    "logoSource": "https://multiline.ae/wp-content/uploads/2020/10/header-logo-e1602676564869.png",
+    "needsBetterLogo": true,
+    "logoType": "raster",
+    "width": 316,
+    "height": 70
   },
   {
     "name": "VAA",
@@ -176,41 +242,58 @@
     "order": 16,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "Al Barari",
     "slug": "al-barari",
-    "logo": "/images/clients/client-al-barari.jpg",
+    "logo": "/images/clients/client-al-barari.webp",
     "sector": "Residential",
     "sourceFile": "clients/client-al-barari-02.jpeg",
     "order": 17,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.albarari.com/",
+    "logoSource": "https://static.wixstatic.com/media/95d3dc_5730414b648b46e7825a247b9a9139f3~mv2.png",
+    "logoType": "raster",
+    "width": 800,
+    "height": 908
   },
   {
     "name": "Arco Interiors",
     "slug": "arco",
-    "logo": "/images/clients/client-arco.jpg",
+    "logo": "/images/clients/client-arco.webp",
     "sector": "Fit-out and Contractors",
     "sourceFile": "clients/client-arco-02.jpeg",
     "order": 18,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.arcointeriors.com/",
+    "logoSource": "https://arcointeriors.com/wp-content/uploads/2019/11/logo-arcointeriors.png",
+    "logoType": "raster",
+    "width": 250,
+    "height": 80,
+    "needsBetterLogo": true
   },
   {
     "name": "Etisalat",
     "slug": "etisalat",
-    "logo": "/images/clients/client-etisalat.jpg",
+    "logo": "/images/clients/client-etisalat.svg",
     "sector": "Commercial",
     "sourceFile": "clients/client-etisalat-02.jpeg",
     "order": 19,
     "featured": true,
     "storySlug": "mep-works-etisalat-kifaf",
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.eand.com/",
+    "logoSource": "https://www.eand.com/content/dam/eand/logo/etisalat-logo-ver-red-en-1912x536.svg",
+    "logoType": "svg",
+    "width": 137,
+    "height": 50
   },
   {
     "name": "Dubai Hills Estate",
@@ -221,7 +304,10 @@
     "order": 20,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.dubaihillsestate.com/",
+    "logoSource": "https://www.dubaihillsestate.com/",
+    "needsBetterLogo": true
   },
   {
     "name": "Ibn Battuta Mall",
@@ -232,7 +318,10 @@
     "order": 21,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.ibnbattuta.ae/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.ibnbattuta.ae/"
   },
   {
     "name": "KG Interiors",
@@ -243,7 +332,8 @@
     "order": 22,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "Liva Insurance",
@@ -254,7 +344,10 @@
     "order": 23,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.livainsurance.ae/",
+    "logoSource": "https://www.livainsurance.ae/",
+    "needsBetterLogo": true
   },
   {
     "name": "JLL",
@@ -265,7 +358,10 @@
     "order": 24,
     "featured": true,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.jll.com/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.jll.com/"
   },
   {
     "name": "Visualize Interior Decorations LLC",
@@ -276,18 +372,25 @@
     "order": 25,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "Axis Communications",
     "slug": "axis",
-    "logo": "/images/clients/client-axis.jpg",
+    "logo": "/images/clients/client-axis.webp",
     "sector": "Commercial",
     "sourceFile": "clients/client-axis-02.jpeg",
     "order": 26,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.axis.com/",
+    "logoSource": "https://www.axis.com/themes/custom/axiscom/logo.png",
+    "needsBetterLogo": true,
+    "logoType": "raster",
+    "width": 130,
+    "height": 47
   },
   {
     "name": "Emirates National Facilities Management",
@@ -298,7 +401,10 @@
     "order": 27,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.enfm.ae/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.enfm.ae/"
   },
   {
     "name": "Real Image",
@@ -310,7 +416,8 @@
     "featured": false,
     "storySlug": "mep-works-real-image-headquarters",
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "Ascentia",
@@ -322,7 +429,8 @@
     "featured": false,
     "storySlug": "mep-works-ascentia-office",
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "Grand Hyatt",
@@ -333,18 +441,27 @@
     "order": 30,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.hyatt.com/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.hyatt.com/"
   },
   {
     "name": "Barr + Wray",
     "slug": "barr-wray",
-    "logo": "/images/clients/client-barr-wray.jpg",
+    "logo": "/images/clients/client-barr-wray.svg",
     "sector": "[CLIENT TO PROVIDE]",
     "sourceFile": "clients/client-barr-wray-02.jpeg",
     "order": 31,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.barrandwray.com/",
+    "logoSource": "https://barrandwray.com/wp-content/uploads/sites/3/2025/07/barr-wray-logo-white.svg",
+    "logoType": "svg",
+    "width": 180,
+    "height": 22,
+    "lightLogo": true
   },
   {
     "name": "AEW Technik",
@@ -355,7 +472,8 @@
     "order": 32,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "Royal Classic Contracting",
@@ -366,7 +484,8 @@
     "order": 33,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "CRI",
@@ -377,7 +496,8 @@
     "order": 34,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "Kalandoor Group",
@@ -388,7 +508,10 @@
     "order": 35,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.kalandoor.com/",
+    "logoSource": "https://www.kalandoor.com/",
+    "needsBetterLogo": true
   },
   {
     "name": "Vogo Grand Hotel",
@@ -399,7 +522,8 @@
     "order": 36,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "needsBetterLogo": true
   },
   {
     "name": "MEBS Facility Services",
@@ -410,7 +534,10 @@
     "order": 37,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.mebs.ae/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.mebs.ae/"
   },
   {
     "name": "Marriott",
@@ -421,17 +548,25 @@
     "order": 38,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.marriott.com/",
+    "needsBetterLogo": true,
+    "logoSource": "https://www.marriott.com/"
   },
   {
     "name": "The Ritz-Carlton",
     "slug": "ritz-carlton",
-    "logo": "/images/clients/client-ritz-carlton.jpg",
+    "logo": "/images/clients/client-ritz-carlton.webp",
     "sector": "Hospitality",
     "sourceFile": "clients/client-ritz-carlton-02.jpeg",
     "order": 39,
     "featured": false,
     "approved": true,
-    "relationship": "unknown"
+    "relationship": "unknown",
+    "website": "https://www.ritzcarlton.com/",
+    "logoSource": "https://www.ritzcarlton.com/",
+    "logoType": "raster",
+    "width": 400,
+    "height": 267
   }
 ]
