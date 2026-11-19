@@ -27,13 +27,14 @@ export function ContactActionLinks() {
         WhatsApp {siteConfig.whatsapp}
       </a>
       <a
-        href={`mailto:${siteConfig.projectsEmail}`}
+        href={`mailto:${siteConfig.email}`}
         onClick={() => trackEvent("email_click", { context: "contact" })}
         className="inline-flex items-center gap-2 rounded-md border border-navy/15 bg-white px-4 py-2.5 text-[15px] font-semibold text-navy hover:border-navy/30"
       >
         <Mail className="h-4 w-4 text-green" />
-        Email {siteConfig.projectsEmail}
+        Email {siteConfig.email}
       </a>
+
     </div>
   );
 }

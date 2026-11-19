@@ -6,7 +6,10 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { StatsStrip } from "@/components/widgets/StatsStrip";
 import { ClientLogoStrip } from "@/components/widgets/ClientLogoStrip";
+import { TestimonialsBanner } from "@/components/widgets/TestimonialsBanner";
 import { BUCKETS } from "@/lib/buckets";
+import { getFeaturedTestimonials } from "@/content/testimonials";
+
 import {
   getStoryDisplayImage,
   homeBucketImages,
@@ -30,8 +33,10 @@ export const metadata = pageMetadata({
 
 export default function HomePage() {
   const stories = getFeaturedStories(3);
+  const testimonials = getFeaturedTestimonials(12);
   const hero = resolveHeroSlides()[0]!;
   const [featuredBucket, ...restBuckets] = BUCKETS;
+
 
   return (
     <>
@@ -76,14 +81,17 @@ export default function HomePage() {
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-md border border-navy/10 bg-mist p-6 md:p-8">
             <p className="text-[14px] font-semibold text-green">
-              For Main Contractors &amp; Fit-Out Teams
+              For Fit-Out &amp; General Contractors
             </p>
             <h3 className="mt-2 font-display text-2xl font-bold text-navy">
-              Commercial MEP Partner
+              Your Trusted MEP Delivery Partner
             </h3>
             <p className="mt-3 text-slate-dark">
-              Coordinated mechanical, electrical and plumbing works for new
-              projects, renovations and system upgrades.
+              From commercial offices and retail spaces to hospitality and
+              residential projects, Electech delivers coordinated mechanical,
+              electrical and plumbing works with technical expertise, reliable
+              execution and accountability—helping contractors meet project
+              commitments with confidence.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/solutions/mep">Integrated MEP</Button>
@@ -94,14 +102,15 @@ export default function HomePage() {
           </div>
           <div className="rounded-md border border-navy/10 bg-mist p-6 md:p-8">
             <p className="text-[14px] font-semibold text-green">
-              For Villa Owners
+              For Property Owners &amp; Facility Managers
             </p>
             <h3 className="mt-2 font-display text-2xl font-bold text-navy">
-              Premium Villa Systems &amp; Maintenance
+              MEP Solutions for Every Space
             </h3>
             <p className="mt-3 text-slate-dark">
-              Architectural lighting, electrical upgrades, water filtration,
-              pumps, plumbing and specialist provisions.
+              From premium villas to commercial offices, we deliver electrical
+              and lighting upgrades, HVAC, plumbing, water filtration, pumping
+              systems and dependable MEP maintenance.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button href="/solutions/mechanical-plumbing">
@@ -233,6 +242,10 @@ export default function HomePage() {
       <Section tone="mist">
         <ClientLogoStrip />
       </Section>
+
+      {testimonials.length ? (
+        <TestimonialsBanner items={testimonials} />
+      ) : null}
 
       <section className="bg-mist">
         <div className="grid lg:grid-cols-2">

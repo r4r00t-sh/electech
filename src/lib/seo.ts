@@ -60,7 +60,8 @@ export function organizationSchema() {
     image: `${origin}/images/brand/electech-logo.png`,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Hamsah-A Building, Oud Metha",
+      streetAddress: "Hamsah-A Building, Al Karama",
+
       addressLocality: "Dubai",
       addressRegion: "Dubai",
       addressCountry: "AE",

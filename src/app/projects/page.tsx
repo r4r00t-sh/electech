@@ -1,8 +1,13 @@
+import { Suspense } from "react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { CtaBanner } from "@/components/widgets/CtaBanner";
 import { ProjectsFilter } from "@/components/projects/ProjectsFilter";
 import { getPublishedStories } from "@/content/stories";
+import {
+  isProjectSectorId,
+  type ProjectSectorId,
+} from "@/lib/project-sectors";
 import { pageMetadata } from "@/lib/seo";
 import { pageHeroes } from "@/lib/media";
 
@@ -15,7 +20,16 @@ export const metadata = pageMetadata({
   absoluteTitle: true,
 });
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ sector?: string }>;
+}) {
+  const params = await searchParams;
+  const initialSector: ProjectSectorId = isProjectSectorId(params.sector)
+    ? params.sector
+    : "all";
+
   return (
     <>
       <PageHero
@@ -25,8 +39,16 @@ export default function ProjectsPage() {
         crumbs={[{ label: "Projects" }]}
       />
       <Section>
-        <SectionHeading title="Selected MEP Projects" />
-        <ProjectsFilter stories={getPublishedStories()} />
+        <SectionHeading
+          title="Selected MEP Projects"
+          description="Filter by sector to browse Electech work across commercial offices, residential villas, retail & F&B, hospitality and other facilities."
+        />
+        <Suspense fallback={<p className="text-slate-dark">Loading projects…</p>}>
+          <ProjectsFilter
+            stories={getPublishedStories()}
+            initialSector={initialSector}
+          />
+        </Suspense>
       </Section>
       <Section tone="mist">
         <CtaBanner

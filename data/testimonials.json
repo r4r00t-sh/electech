@@ -1,0 +1,134 @@
+[
+  {
+    "id": "al-zahiya-villa",
+    "quote": "Electech exceeded our expectations in every way. Their attention to detail and dedication to quality were evident throughout the project. We now have a beautiful home that perfectly blends modern amenities with traditional charm.",
+    "name": "Property Owner",
+    "role": "Property Owner",
+    "company": "Al Zahiya Villa 5-SPA-46 – Sharjah",
+    "buckets": ["mep", "electrical", "mechanical-plumbing"],
+    "featured": true,
+    "storySlug": "mep-works-al-zahiya-villa",
+    "verified": true
+  },
+  {
+    "id": "ascentia-office",
+    "quote": "The transformation of our office space has been remarkable. Electech’s innovative design and efficient project management have created an environment that truly enhances our team’s productivity and collaboration.",
+    "name": "CEO",
+    "role": "CEO",
+    "company": "Ascentia",
+    "buckets": ["mep", "electrical"],
+    "featured": true,
+    "storySlug": "mep-works-ascentia-office",
+    "verified": true
+  },
+  {
+    "id": "atelier-difc",
+    "quote": "Electech brought our vision to life with such creativity and precision. The new store design has significantly increased our foot traffic and sales. We couldn’t be happier with the results.",
+    "name": "Creative Director",
+    "role": "Creative Director",
+    "company": "Atelier – Gate Avenue DIFC",
+    "buckets": ["electrical", "mep"],
+    "featured": true,
+    "storySlug": "mep-works-atelier-difc",
+    "verified": true
+  },
+  {
+    "id": "smart-salem-city-walk",
+    "quote": "Electech’s professionalism and expertise were evident throughout the project. The upgraded facilities have greatly improved our patient care and operational efficiency. We highly recommend their services.",
+    "name": "Facility Manager",
+    "role": "Facility Manager",
+    "company": "Smart Salem Medical Fitness Centre – City Walk",
+    "buckets": ["mep", "mechanical-plumbing"],
+    "featured": true,
+    "storySlug": "mep-works-smart-salem-city-walk",
+    "verified": true
+  },
+  {
+    "id": "etisalat-kifaf",
+    "quote": "Electech’s expertise and attention to detail have transformed our office space into a modern, efficient workspace. The new design has significantly improved our team’s productivity and collaboration. We highly recommend their services.",
+    "name": "Facilities Manager",
+    "role": "Facilities Manager",
+    "company": "Etisalat",
+    "buckets": ["electrical", "mep"],
+    "featured": true,
+    "storySlug": "mep-works-etisalat-kifaf",
+    "verified": true
+  },
+  {
+    "id": "sofitel-hotel",
+    "quote": "The renovation of our flagship property has been a tremendous success. Electech’s dedication to excellence and innovative approach have elevated our guest experience to new heights.",
+    "name": "Assistant Chief Engineer",
+    "role": "Assistant Chief Engineer",
+    "company": "Sofitel Hotel",
+    "buckets": ["mep", "mechanical-plumbing"],
+    "featured": true,
+    "storySlug": "mep-works-sofitel-hotel",
+    "verified": true
+  },
+  {
+    "id": "anex-hamariya",
+    "quote": "Electech’s professionalism and expertise were evident throughout the project. The modernization of our office has greatly improved our operational efficiency and the overall environment. We highly recommend their services.",
+    "name": "Floor Manager",
+    "role": "Floor Manager",
+    "company": "Anex Building 1st Floor – Hamariya Free Zone, Sharjah",
+    "buckets": ["mep", "electrical", "fire-protection"],
+    "featured": true,
+    "storySlug": "mep-works-anex-building-hamariya",
+    "verified": true
+  },
+  {
+    "id": "real-image",
+    "quote": "Electech’s expertise and attention to detail have transformed our headquarters into a modern, efficient workspace. The feedback from our employees has been overwhelmingly positive.",
+    "name": "Design Head",
+    "role": "Design Head",
+    "company": "Real Image",
+    "buckets": ["mep", "electrical"],
+    "featured": true,
+    "storySlug": "mep-works-real-image-headquarters",
+    "verified": true
+  },
+  {
+    "id": "gtz-shipping",
+    "quote": "Electech’s innovative solutions and meticulous execution have transformed our logistics hub into a highly efficient and sustainable facility. Their expertise has been invaluable to our operations.",
+    "name": "CEO",
+    "role": "CEO",
+    "company": "GTZ Shipping LLC",
+    "buckets": ["mep", "electrical"],
+    "featured": true,
+    "storySlug": "mep-works-gtz-shipping",
+    "verified": true
+  },
+  {
+    "id": "imdaad-food-outlet",
+    "quote": "Electech’s expertise and commitment to quality were instrumental in the success of our innovative food outlet project. Their attention to detail and ability to meet deadlines were impressive. We look forward to collaborating on future projects.",
+    "name": "Facilities Manager",
+    "role": "Facilities Manager (Last Exist 11 – Innovative Food Outlet)",
+    "company": "Imdaad",
+    "buckets": ["mep", "mechanical-plumbing"],
+    "featured": true,
+    "storySlug": "mep-works-innovative-food-outlet-imdaad",
+    "verified": true
+  },
+  {
+    "id": "dhiraj-kumar-flat",
+    "quote": "Electech turned our flat into a dream home. Their innovative design solutions and attention to detail have made our space both beautiful and functional. We couldn’t be happier with the outcome.",
+    "name": "Flat Owner",
+    "role": "Flat Owner",
+    "company": "Mr. Dhiraj Kumar",
+    "buckets": ["mechanical-plumbing", "electrical"],
+    "featured": true,
+    "storySlug": "mep-works-two-bedroom-flat",
+    "verified": true
+  },
+  {
+    "id": "amazon-multiline",
+    "quote": "Electech’s efficient project management have created an office space that perfectly supports our operations and enhances our team’s productivity. The new workspace is not only functional but also inspiring.",
+    "name": "Projects Manager",
+    "role": "Projects Manager",
+    "company": "Multiline",
+    "buckets": ["mep", "electrical"],
+    "featured": true,
+    "storySlug": "mep-works-amazon-ecommerce-office",
+    "verified": true
+  }
+]

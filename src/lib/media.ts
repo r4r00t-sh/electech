@@ -217,6 +217,12 @@ export const pageHeroes = {
     alt: "Electech MEP installation — coordinated building-services infrastructure.",
     objectPosition: "center center",
   },
+  buildingIntelligence: {
+    src: "/images/pages/elv-server-racks.jpg",
+    alt: "Organised low-current infrastructure illustrating connected building systems.",
+    objectPosition: "center center",
+  },
+
   projects: {
     src: "/images/heroes/hero-02-electrical-installation.jpg",
     alt: "Electech electrical installation works on site.",

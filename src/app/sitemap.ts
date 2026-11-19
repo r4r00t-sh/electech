@@ -22,6 +22,7 @@ const staticRoutes = [
   "/solutions/fire-protection/fire-fighting-fire-alarm-installation",
   "/solutions/fire-protection/fire-stopping-sealant-application",
   "/solutions/maintenance",
+  "/solutions/building-intelligence",
   "/projects",
   "/industries",
   "/careers",

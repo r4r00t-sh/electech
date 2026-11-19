@@ -52,6 +52,31 @@ export default function SolutionsLandingPage() {
               </span>
             </Link>
           ))}
+          <Link
+            href="/solutions/building-intelligence"
+            className="group grid gap-4 overflow-hidden rounded-[var(--radius-card)] border border-navy/8 bg-mist transition hover:bg-white hover:shadow-[var(--shadow-card)] md:grid-cols-[200px_1fr_auto] md:items-center"
+          >
+            <div className="relative aspect-[16/10] md:aspect-auto md:h-full md:min-h-[140px]">
+              <PhotoMedia
+                image={pageHeroes.buildingIntelligence}
+                sizes="(max-width: 768px) 100vw, 200px"
+                className="transition duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="px-6 pb-2 md:py-6 md:pl-2 md:pr-0">
+              <h2 className="font-display text-2xl font-bold text-navy md:text-3xl">
+                Building Intelligence
+              </h2>
+              <p className="mt-2 max-w-3xl text-slate">
+                Imagine Smarter. Live Better. Operate Intelligently. Connected
+                villas, workplaces and commercial properties through practical
+                engineering and trusted technology partnerships.
+              </p>
+            </div>
+            <span className="inline-flex items-center gap-2 px-6 pb-6 text-sm font-semibold text-navy group-hover:text-amber md:px-8 md:pb-0">
+              Explore <ArrowRight className="h-4 w-4" />
+            </span>
+          </Link>
         </div>
       </Section>
       <Section tone="mist">

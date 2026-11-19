@@ -14,6 +14,11 @@ import { PhotoMedia } from "@/components/ui/PhotoMedia";
 import { pageMetadata } from "@/lib/seo";
 import { pageHeroes, type MediaRef } from "@/lib/media";
 import { FadeIn } from "@/components/ui/FadeIn";
+import {
+  projectsHrefForSector,
+  type ProjectSectorId,
+} from "@/lib/project-sectors";
+
 
 export const metadata = pageMetadata({
   title: "Industries Served | Electech MEP Dubai",
@@ -27,6 +32,7 @@ export const metadata = pageMetadata({
 const industries: {
   title: string;
   description: string;
+  sectorId: ProjectSectorId;
   links: { label: string; href: string }[];
   image?: MediaRef;
   Icon: typeof Building2;
@@ -35,6 +41,7 @@ const industries: {
     title: "Commercial Offices",
     description:
       "Electrical distribution, lighting, HVAC modifications, ventilation, plumbing, server-room power and service coordination.",
+    sectorId: "commercial-offices",
     links: [
       { label: "Integrated MEP", href: "/solutions/mep" },
       { label: "Electrical", href: "/solutions/electrical" },
@@ -50,6 +57,7 @@ const industries: {
     title: "Premium Residential Villas",
     description:
       "Architectural lighting, electrical upgrades, plumbing, pumps, filtration, solar water heating, lifestyle equipment provisions and maintenance.",
+    sectorId: "residential-villas",
     links: [
       { label: "Mechanical & Plumbing", href: "/solutions/mechanical-plumbing" },
       { label: "Electrical", href: "/solutions/electrical" },
@@ -65,6 +73,7 @@ const industries: {
     title: "Retail & F&B",
     description:
       "MEP modifications, equipment power, lighting, ventilation, plumbing and drainage aligned with fit-out programmes.",
+    sectorId: "retail-fb",
     links: [
       { label: "Integrated MEP", href: "/solutions/mep" },
       { label: "Mechanical & Plumbing", href: "/solutions/mechanical-plumbing" },
@@ -79,6 +88,7 @@ const industries: {
     title: "Hospitality",
     description:
       "Refurbishment and MEP maintenance support, coordinated around operational constraints and guest-facing finishes.",
+    sectorId: "hospitality",
     links: [
       { label: "Integrated MEP", href: "/solutions/mep" },
       { label: "Maintenance", href: "/solutions/maintenance" },
@@ -93,6 +103,7 @@ const industries: {
     title: "Other Facilities",
     description:
       "Scope-specific MEP works for suitable commercial properties, subject to technical review and project requirements.",
+    sectorId: "other-facilities",
     links: [
       { label: "Integrated MEP", href: "/solutions/mep" },
       { label: "Fire Protection Support", href: "/solutions/fire-protection" },
@@ -104,6 +115,7 @@ const industries: {
     Icon: Warehouse,
   },
 ];
+
 
 export default function IndustriesPage() {
   return (
@@ -163,7 +175,14 @@ export default function IndustriesPage() {
                     <p className="mt-3 flex-1 text-[15px] text-slate-dark">
                       {item.description}
                     </p>
-                    <ul className="mt-5 space-y-2">
+                    <Link
+                      href={projectsHrefForSector(item.sectorId)}
+                      className="mt-5 inline-flex items-center gap-1 text-[15px] font-semibold text-navy hover:text-green"
+                    >
+                      View projects
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <ul className="mt-4 space-y-2 border-t border-navy/10 pt-4">
                       {item.links.map((link) => (
                         <li key={link.href}>
                           <Link

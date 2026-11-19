@@ -20,7 +20,6 @@ export const siteConfig = {
     return configured;
   })(),
   email: "info@electechmep.com",
-  projectsEmail: "projects@electechmep.com",
   websiteDisplay: "www.electechmep.com",
   phone: "+971 4 880 6332",
   phoneTel: "+97148806332",
@@ -28,16 +27,17 @@ export const siteConfig = {
   whatsappTel: "+971586452051",
   address: {
     lines: [
-      "Hamsah-A Building, Oud Metha",
+      "Hamsah-A Building, Al Karama",
       "Dubai, UAE",
       "P.O. Box 87556",
     ],
     mapSearchUrl:
-      "https://www.google.com/maps/search/?api=1&query=Hamsah+Building+Oud+Metha+Dubai",
+      "https://www.google.com/maps/search/?api=1&query=Hamsah+Building+Al+Karama+Dubai",
     /** @deprecated Prefer mapSearchUrl — embed kept only until Contact Batch 3. */
     mapEmbedUrl:
-      "https://www.google.com/maps?q=Hamsah+Building+Oud+Metha+Dubai&output=embed",
+      "https://www.google.com/maps?q=Hamsah+Building+Al+Karama+Dubai&output=embed",
   },
+
   /** Removed from UI until establishment year confirmed — kept empty for legacy imports. */
   stats: [] as {
     value: number;

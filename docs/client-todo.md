@@ -46,4 +46,5 @@ All 39 logos are currently `approved: true` on the live site (flipped at client 
 
 ## Testimonials
 
-- [ ] Verify testimonials (`verified: true`) with name, role, company and publication permission before any widget is shown.
+- [x] Testimonials published from client-supplied Client Success Stories set (`data/testimonials.json`, verified).
+

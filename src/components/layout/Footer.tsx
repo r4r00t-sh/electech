@@ -58,8 +58,17 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/solutions/building-intelligence"
+                className="text-sm text-white/70 hover:text-green"
+              >
+                Building Intelligence
+              </Link>
+            </li>
           </ul>
         </div>
+
 
         <div>
           <h3 className="font-display text-sm font-bold text-white">Contact</h3>
@@ -117,18 +126,8 @@ export function Footer() {
                 {siteConfig.email}
               </TrackedAnchor>
             </li>
-            <li>
-              <TrackedAnchor
-                href={`mailto:${siteConfig.projectsEmail}`}
-                event="email_click"
-                context="footer_projects"
-                className="inline-flex items-center gap-2 hover:text-green"
-              >
-                <Mail className="h-4 w-4 text-green" />
-                {siteConfig.projectsEmail}
-              </TrackedAnchor>
-            </li>
             <li className="text-white/55">{siteConfig.websiteDisplay}</li>
+
           </ul>
         </div>
       </div>

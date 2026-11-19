@@ -83,12 +83,6 @@ export default function ContactPage() {
                     >
                       {siteConfig.email}
                     </a>
-                    <a
-                      href={`mailto:${siteConfig.projectsEmail}`}
-                      className="mt-1 block hover:text-green"
-                    >
-                      {siteConfig.projectsEmail}
-                    </a>
                     <span className="mt-1 block">{siteConfig.websiteDisplay}</span>
                   </span>
                 </li>
@@ -103,8 +97,9 @@ export default function ContactPage() {
               </a>
             </div>
             <p className="text-[13px] text-slate">
-              Prefer to send drawings? Email {siteConfig.projectsEmail}
+              Prefer to send drawings? Email {siteConfig.email}
             </p>
+
           </aside>
         </div>
       </Section>

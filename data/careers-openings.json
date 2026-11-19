@@ -1,0 +1,9 @@
+[
+  { "title": "Electrical Engineer", "department": "Engineering" },
+  { "title": "Mechanical Engineer", "department": "Engineering" },
+  { "title": "MEP Supervisor", "department": "Site Operations" },
+  { "title": "Sales Engineer", "department": "Commercial" },
+  { "title": "Electrical Technician", "department": "Trades" },
+  { "title": "HVAC Technician", "department": "Trades" },
+  { "title": "Plumbing Technician", "department": "Trades" }
+]

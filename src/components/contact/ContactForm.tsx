@@ -159,13 +159,14 @@ export function ContactForm() {
       <p className="mt-4 text-[14px] text-slate-dark">
         Prefer to send drawings? Email{" "}
         <a
-          href="mailto:projects@electechmep.com"
+          href="mailto:info@electechmep.com"
           className="font-semibold text-navy hover:text-green"
           onClick={() => trackEvent("email_click", { context: "contact_drawings" })}
         >
-          projects@electechmep.com
+          info@electechmep.com
         </a>
       </p>
+
 
       <label className="mt-5 flex items-start gap-3 text-[14px] text-slate-dark">
         <input

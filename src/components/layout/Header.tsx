@@ -22,15 +22,21 @@ const nav = [
     ],
   },
   {
-    label: "Services",
+    label: "Our Services",
     href: "/solutions/mep",
-    children: BUCKETS.filter((b) => b.id !== "mep").map((b) => ({
-      label: b.short,
-      href: b.href,
-    })),
+    children: [
+      ...BUCKETS.filter((b) => b.id !== "mep").map((b) => ({
+        label: b.short,
+        href: b.href,
+      })),
+      {
+        label: "Building Intelligence",
+        href: "/solutions/building-intelligence",
+      },
+    ],
   },
+
   { label: "Projects", href: "/projects" },
-  { label: "Industries", href: "/industries" },
   { label: "Contact", href: "/contact" },
 ];
 
