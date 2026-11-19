@@ -193,6 +193,32 @@ body {
   top: 1rem;
 }
 
+/* Who We Are — interactive MEP building cross-section */
+.cap-diagram .cap-structure {
+  color: var(--color-navy);
+  opacity: 0.3;
+}
+
+.cap-diagram .cap-system {
+  stroke: var(--color-navy);
+  fill: none;
+  opacity: 0.35;
+  transition:
+    opacity 250ms ease,
+    stroke 250ms ease;
+}
+
+.cap-diagram .cap-system.is-active {
+  stroke: var(--color-green);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cap-diagram .cap-system {
+    transition: none;
+  }
+}
+
 @keyframes clients-marquee {
   from {
     transform: translateX(0);

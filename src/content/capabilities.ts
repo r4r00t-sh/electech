@@ -14,6 +14,8 @@ export type CapabilityRecord = {
   description: string;
   href: string;
   icon: CapabilityIconId;
+  /** Matches the SVG group id in the building cross-section */
+  svgGroupId: string;
   /** Absolute public path, or null for navy icon tile */
   image: string | null;
   imageAlt: string;

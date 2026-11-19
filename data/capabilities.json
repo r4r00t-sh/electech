@@ -6,8 +6,9 @@
     "description": "HVAC and ventilation.",
     "href": "/solutions/mechanical-plumbing",
     "icon": "wind",
-    "image": "/images/pages/hvac-equipment-detail.jpg",
-    "imageAlt": "Exposed ceiling HVAC ductwork and air diffusers"
+    "svgGroupId": "cap-mechanical",
+    "image": null,
+    "imageAlt": "HVAC equipment or ductwork from Electech mechanical works"
   },
   {
     "id": "electrical",
@@ -16,8 +17,9 @@
     "description": "Power distribution, lighting, EV provisions and ELV infrastructure.",
     "href": "/solutions/electrical",
     "icon": "zap",
-    "image": "/images/pages/electrical-installation-work.jpg",
-    "imageAlt": "Organised electrical distribution board with colour-coded wiring"
+    "svgGroupId": "cap-electrical",
+    "image": null,
+    "imageAlt": "Distribution board and lighting installation from Electech electrical works"
   },
   {
     "id": "plumbing",
@@ -26,8 +28,9 @@
     "description": "Water supply, drainage, filtration, pumps and solar water heating.",
     "href": "/solutions/mechanical-plumbing",
     "icon": "droplets",
-    "image": "/images/heroes/hero-03-plant-room-pipework.jpg",
-    "imageAlt": "Plant-room stainless pipework and pump sets"
+    "svgGroupId": "cap-plumbing",
+    "image": null,
+    "imageAlt": "Pipework, pumps or filtration plant from Electech plumbing works"
   },
   {
     "id": "fire-protection",
@@ -36,8 +39,9 @@
     "description": "Defined preliminary installation works.",
     "href": "/solutions/fire-protection",
     "icon": "flame",
-    "image": "/images/pages/fire-control-panels.jpg",
-    "imageAlt": "Fire sprinkler riser with alarm bell, gauges and control valves"
+    "svgGroupId": "cap-fire-protection",
+    "image": null,
+    "imageAlt": "Fire-alarm or containment preliminary installation from Electech works"
   },
   {
     "id": "maintenance",
@@ -46,7 +50,8 @@
     "description": "Preventive, corrective and AMC services.",
     "href": "/solutions/maintenance",
     "icon": "wrench",
-    "image": "/images/pages/maintenance-workshop.jpg",
-    "imageAlt": "Technician servicing a rooftop air-conditioning unit"
+    "svgGroupId": "cap-maintenance",
+    "image": null,
+    "imageAlt": "Technician servicing MEP equipment on an Electech maintenance visit"
   }
 ]
